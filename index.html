@@ -1,0 +1,1892 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Walida — Qualificação Térmica e Validação no Nordeste</title>
+<meta name="description" content="Qualificação de instalação, operação e performance (QI/QO/QP) de câmaras climáticas, frias, autoclaves e áreas controladas. Em conformidade com RDC 658, ISO 17025 e ICH." />
+<link rel="icon" href="logo-walida.png" type="image/png">
+<meta name="theme-color" content="#E8522A">
+
+<!-- Google Analytics GA4 -->
+<!-- Substitua G-XXXXXXXXXX pelo seu Measurement ID após criar a conta em analytics.google.com -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VTQ2SMV3C1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VTQ2SMV3C1');
+</script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Walida — Qualificação Térmica e Validação no Nordeste">
+<meta property="og:description" content="Qualificação de câmaras climáticas, frias, autoclaves e áreas controladas. Conforme RDC 658, ISO 17025 e ICH — atendendo todo o Nordeste.">
+<meta property="og:image" content="foto-camara-estabilidade.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Anton&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg: #FFFFFF;
+  --surface: #F7F4FC;
+  --surface-2: #EDE8F8;
+  --line: rgba(90,50,120,0.10);
+  --text: #18053A;
+  --text-2: #5C4878;
+  --text-3: #9C8CB8;
+  --accent: #E8522A;
+  --accent-2: #6B57B8;
+  --grad: linear-gradient(135deg, #E8522A 0%, #A8508A 50%, #6B57B8 100%);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.5;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+.container{max-width:1280px;margin:0 auto;padding:0 32px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:12px;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent);
+}
+.eyebrow::before{content:"";width:32px;height:1px;background:var(--accent)}
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.02em;line-height:1}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 28px;border-radius:999px;
+  font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px;
+  letter-spacing:.06em;text-transform:uppercase;
+  text-decoration:none;border:1px solid transparent;
+  transition:all .3s cubic-bezier(.2,.8,.2,1);cursor:pointer;
+}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-2);transform:translateY(-2px);box-shadow:0 12px 36px rgba(107,87,184,.35)}
+.btn-ghost{border-color:rgba(24,5,58,.2);color:var(--text-2);background:transparent}
+.btn-ghost:hover{border-color:var(--accent-2);color:var(--accent-2);background:rgba(107,87,184,.06);transform:translateY(-2px)}
+.btn .arrow{transition:transform .3s}
+.btn:hover .arrow{transform:translateX(4px)}
+
+/* ===== Header ===== */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:12px 0;
+  transition:all .3s ease;
+  border-bottom:1px solid transparent;
+}
+.header.scrolled{
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border-bottom-color:var(--line);
+  box-shadow:0 2px 24px rgba(90,50,120,.07);
+}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-mark{height:44px;width:auto;display:block}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{
+  color:var(--text-2);text-decoration:none;font-size:14px;font-weight:500;
+  transition:color .2s;position:relative;padding:6px 0;
+}
+.nav-links a:hover{color:var(--accent-2)}
+.nav-links a::after{
+  content:"";position:absolute;bottom:0;left:0;width:0;height:1px;
+  background:var(--accent);transition:width .3s;
+}
+.nav-links a:hover::after{width:100%}
+.nav-cta{display:flex;gap:12px;align-items:center}
+.menu-toggle{
+  display:none;background:none;border:none;color:var(--text);
+  width:40px;height:40px;cursor:pointer;
+}
+.menu-toggle span{
+  display:block;width:22px;height:2px;background:var(--text);margin:5px auto;
+  transition:all .3s;
+}
+
+/* ===== Hero ===== */
+.hero{
+  position:relative;min-height:100vh;
+  display:flex;align-items:center;
+  padding:200px 0 80px;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(232,82,42,.08), transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(107,87,184,.07), transparent 55%),
+    radial-gradient(ellipse at 50% 100%, rgba(168,80,138,.05), transparent 60%);
+}
+.hero-grid{
+  position:absolute;inset:0;z-index:0;opacity:.5;
+  background-image:
+    linear-gradient(rgba(90,50,120,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(90,50,120,.05) 1px, transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  -webkit-mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
+}
+.hero-orb{
+  position:absolute;width:520px;height:520px;border-radius:50%;
+  filter:blur(120px);z-index:0;opacity:.25;
+  animation:float 14s ease-in-out infinite;
+}
+.hero-orb.a{background:#E8522A;top:-100px;right:-80px}
+.hero-orb.b{background:#6B57B8;bottom:-160px;left:-100px;animation-delay:-7s}
+@keyframes float{
+  0%,100%{transform:translate(0,0) scale(1)}
+  50%{transform:translate(30px,-40px) scale(1.08)}
+}
+.hero-inner{position:relative;z-index:2;width:100%}
+.hero-meta{display:flex;align-items:center;gap:24px;margin-bottom:36px;flex-wrap:wrap}
+.hero-meta .pulse{
+  width:8px;height:8px;border-radius:50%;background:var(--accent);
+  box-shadow:0 0 0 0 rgba(232,82,42,.5);animation:pulse 2s infinite;
+}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(232,82,42,.5)}
+  70%{box-shadow:0 0 0 14px rgba(232,82,42,0)}
+  100%{box-shadow:0 0 0 0 rgba(232,82,42,0)}
+}
+.hero h1{
+  font-family:'Anton',sans-serif;font-weight:400;
+  font-size:clamp(56px, 11vw, 168px);
+  line-height:.86;letter-spacing:-.02em;
+  text-transform:uppercase;color:var(--text);
+  margin-bottom:32px;
+}
+.hero h1 .grad{
+  background:var(--grad);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+  display:inline-block;
+}
+.hero h1 .line{display:block;overflow:hidden}
+.hero h1 .line span{display:inline-block}
+.hero-sub{
+  max-width:640px;font-size:18px;color:var(--text-2);
+  margin-bottom:48px;line-height:1.6;
+}
+.hero-sub strong{color:var(--text);font-weight:600}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:80px}
+.hero-stats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:48px;
+  padding-top:48px;border-top:1px solid var(--line);
+}
+.stat-num{
+  font-family:'Space Grotesk',sans-serif;font-size:44px;font-weight:700;
+  letter-spacing:-.02em;line-height:1;margin-bottom:8px;
+  background:var(--grad);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.stat-label{color:var(--text-2);font-size:13px;font-weight:500;letter-spacing:.04em;line-height:1.5}
+.scroll-indicator{
+  position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  color:var(--text-3);font-size:11px;font-weight:600;letter-spacing:.2em;
+  text-transform:uppercase;z-index:3;
+}
+.scroll-indicator .line{
+  width:1px;height:48px;background:linear-gradient(to bottom, var(--accent), transparent);
+  animation:slide 2s ease-in-out infinite;
+}
+@keyframes slide{
+  0%{transform:translateY(-20px);opacity:0}
+  50%{opacity:1}
+  100%{transform:translateY(20px);opacity:0}
+}
+
+/* ===== Section base ===== */
+section{position:relative;padding:140px 0}
+.section-head{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:80px;gap:48px;
+}
+.section-head h2{
+  font-family:'Anton',sans-serif;font-weight:400;
+  font-size:clamp(40px,6.5vw,96px);
+  line-height:.92;text-transform:uppercase;letter-spacing:-.01em;
+  max-width:900px;
+}
+.section-head .right{max-width:420px;color:var(--text-2);font-size:16px;line-height:1.7;flex-shrink:0}
+.fade-up{opacity:0;transform:translateY(40px);transition:all 1s cubic-bezier(.2,.8,.2,1)}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+/* ===== Clientes ===== */
+.clients{padding:72px 0;background:var(--surface);overflow:hidden}
+.clients-head{text-align:center;margin-bottom:40px}
+.clients-head .eyebrow{justify-content:center;margin-bottom:10px}
+.clients-head .eyebrow::before{display:none}
+.clients-sub{color:var(--text-2);font-size:15px;max-width:520px;margin:0 auto}
+.clients-track-wrap{
+  position:relative;overflow:hidden;
+}
+.clients-track-wrap::before,
+.clients-track-wrap::after{
+  content:"";position:absolute;top:0;bottom:0;width:140px;z-index:2;pointer-events:none;
+}
+.clients-track-wrap::before{left:0;background:linear-gradient(to right,var(--surface) 10%,transparent)}
+.clients-track-wrap::after{right:0;background:linear-gradient(to left,var(--surface) 10%,transparent)}
+.clients-track{
+  display:flex;gap:20px;width:max-content;align-items:center;
+  animation:clientScroll 56s linear infinite;
+}
+.clients-track:hover{animation-play-state:paused}
+@keyframes clientScroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+.client-item{
+  display:flex;align-items:center;justify-content:center;
+  height:68px;padding:12px 24px;min-width:120px;
+  background:var(--bg);
+  border:1px solid var(--line);
+  border-radius:12px;
+  flex-shrink:0;
+  transition:all .35s cubic-bezier(.2,.8,.2,1);
+  cursor:default;
+}
+.client-item:hover{
+  border-color:rgba(107,87,184,.35);
+  transform:translateY(-3px);
+  box-shadow:0 10px 28px rgba(107,87,184,.13);
+}
+.client-item img{
+  height:38px;max-width:150px;
+  object-fit:contain;
+  filter:grayscale(1) brightness(.75) opacity(.6);
+  transition:filter .35s ease;
+}
+.client-item:hover img{
+  filter:grayscale(0) brightness(1) opacity(1);
+}
+.client-badge{
+  font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:12px;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--text-2);
+  opacity:.55;transition:opacity .35s ease;
+}
+.client-item:hover .client-badge{opacity:1}
+
+/* ===== Sobre ===== */
+.about{background:var(--bg)}
+.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:center}
+.about-text p{color:var(--text-2);font-size:18px;line-height:1.75;margin-bottom:24px}
+.about-text p strong{color:var(--text);font-weight:600}
+.about-visual{
+  position:relative;aspect-ratio:4/3;border-radius:24px;
+  overflow:hidden;border:1px solid var(--line);
+  box-shadow:0 16px 64px rgba(90,50,120,.12);
+}
+.about-photo{width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block}
+.about-visual .tag{
+  position:absolute;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);
+  border:1px solid var(--line);border-radius:8px;padding:8px 14px;
+  font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--accent);
+  box-shadow:0 4px 16px rgba(0,0,0,.08);
+}
+.about-visual .tag.t2,.about-visual .tag.t4{color:var(--accent-2)}
+.about-visual .tag.t1{top:10%;left:8%}
+.about-visual .tag.t2{top:10%;right:6%}
+.about-visual .tag.t3{bottom:14%;left:6%}
+.about-visual .tag.t4{bottom:14%;right:8%}
+
+/* ===== Serviços ===== */
+.services{background:var(--surface)}
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.service-card{
+  position:relative;padding:48px 40px;
+  background:var(--bg);
+  border:1px solid var(--line);border-radius:20px;
+  transition:all .5s cubic-bezier(.2,.8,.2,1);
+  overflow:hidden;cursor:pointer;
+  display:flex;flex-direction:column;min-height:380px;
+  box-shadow:0 2px 16px rgba(90,50,120,.05);
+}
+.service-card::before{
+  content:"";position:absolute;inset:-1px;border-radius:20px;
+  background:var(--grad);opacity:0;transition:opacity .5s;z-index:0;
+}
+.service-card::after{
+  content:"";position:absolute;inset:1px;border-radius:19px;
+  background:var(--bg);z-index:1;
+}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(90,50,120,.12)}
+.service-card:hover::before{opacity:1}
+.service-card > *{position:relative;z-index:2}
+.service-num{
+  font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;
+  color:var(--text-3);letter-spacing:.2em;margin-bottom:24px;
+}
+.service-icon{
+  width:64px;height:64px;border-radius:16px;
+  background:linear-gradient(135deg, rgba(232,82,42,.12), rgba(107,87,184,.08));
+  border:1px solid var(--line);
+  display:grid;place-items:center;margin-bottom:32px;
+  color:var(--accent);transition:all .5s;
+}
+.service-card:hover .service-icon{
+  background:linear-gradient(135deg, rgba(232,82,42,.22), rgba(107,87,184,.16));
+  border-color:rgba(232,82,42,.3);transform:scale(1.05);
+}
+.service-card h3{font-size:30px;margin-bottom:18px}
+.service-card p{color:var(--text-2);font-size:15px;line-height:1.7;margin-bottom:28px;flex:1}
+.service-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.service-tag{
+  padding:6px 12px;border-radius:999px;
+  background:var(--surface);border:1px solid var(--line);
+  font-size:12px;color:var(--text-2);font-weight:500;
+}
+
+/* ===== Carrossel de Fotos ===== */
+.photos{padding:0;background:var(--text);position:relative}
+.carousel-header{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:48px 0 32px;
+}
+.carousel-header h3{
+  font-family:'Anton',sans-serif;font-weight:400;
+  font-size:clamp(28px,4vw,48px);text-transform:uppercase;
+  letter-spacing:-.01em;color:#fff;
+}
+.carousel-header .carousel-controls{display:flex;gap:10px;align-items:center}
+.carousel-wrap{
+  position:relative;overflow:hidden;
+  aspect-ratio:16/9;border-radius:20px;
+}
+@media(max-width:980px){.carousel-wrap{aspect-ratio:4/3}}
+@media(max-width:560px){.carousel-wrap{aspect-ratio:3/4;border-radius:12px}}
+.carousel-track{
+  display:flex;height:100%;
+  transition:transform .75s cubic-bezier(.2,.8,.2,1);
+}
+.carousel-slide{flex:0 0 100%;position:relative;overflow:hidden}
+.carousel-slide img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform 8s ease;
+}
+.carousel-slide.active img{transform:scale(1.04)}
+.carousel-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(24,5,58,.72) 0%,rgba(24,5,58,.1) 50%,transparent 100%);
+}
+.carousel-caption{
+  position:absolute;bottom:36px;left:44px;
+  color:#fff;font-family:'Space Grotesk',sans-serif;
+  font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  opacity:.85;
+}
+@media(max-width:560px){.carousel-caption{left:20px;bottom:20px;font-size:11px}}
+.carousel-counter{
+  position:absolute;top:28px;right:40px;
+  color:rgba(255,255,255,.55);
+  font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:.2em;
+}
+.carousel-btn{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:52px;height:52px;border-radius:50%;
+  background:rgba(255,255,255,.12);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.2);color:#fff;
+  cursor:pointer;display:grid;place-items:center;
+  transition:all .3s;z-index:10;
+}
+.carousel-btn:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-50%) scale(1.08)}
+.carousel-wrap .carousel-btn.prev{left:20px}
+.carousel-wrap .carousel-btn.next{right:20px}
+.carousel-header .carousel-btn{position:static;transform:none!important;width:44px;height:44px;background:rgba(255,255,255,.1)}
+.carousel-header .carousel-btn:hover{background:var(--accent);border-color:var(--accent);transform:none!important}
+@media(max-width:560px){.carousel-wrap .carousel-btn{width:40px;height:40px}}
+.carousel-dots{
+  display:flex;gap:8px;justify-content:center;
+  padding:28px 0 40px;
+}
+.carousel-dot{
+  width:6px;height:6px;border-radius:3px;
+  background:rgba(255,255,255,.25);cursor:pointer;
+  transition:all .4s cubic-bezier(.2,.8,.2,1);border:none;padding:0;
+}
+.carousel-dot.active{background:#fff;width:28px}
+.carousel-dot:hover{background:rgba(255,255,255,.6)}
+
+/* ===== Marquee normas ===== */
+.norms{padding:80px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface)}
+.norms-label{
+  text-align:center;color:var(--text-3);font-size:11px;font-weight:600;
+  letter-spacing:.25em;text-transform:uppercase;margin-bottom:40px;
+}
+.marquee{
+  display:flex;overflow:hidden;gap:80px;
+  mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+}
+.marquee-track{
+  display:flex;gap:80px;flex-shrink:0;
+  animation:marquee 30s linear infinite;
+}
+.marquee-item{
+  font-family:'Anton',sans-serif;font-size:36px;color:var(--text-3);
+  letter-spacing:.04em;text-transform:uppercase;flex-shrink:0;
+  display:flex;align-items:center;gap:80px;
+}
+.marquee-item::after{content:"●";color:var(--accent);font-size:12px}
+@keyframes marquee{to{transform:translateX(-100%)}}
+
+/* ===== Processo ===== */
+.process{background:var(--bg)}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
+.process-grid::before{
+  content:"";position:absolute;top:34px;left:5%;right:5%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--accent) 20%,var(--accent-2) 80%,transparent);
+  opacity:.4;
+}
+.process-step{position:relative;padding:0 8px}
+.process-num{
+  width:68px;height:68px;border-radius:50%;
+  background:var(--surface);border:1px solid var(--line);
+  display:grid;place-items:center;
+  font-family:'Anton',sans-serif;font-size:28px;color:var(--text-2);
+  margin-bottom:24px;position:relative;z-index:2;transition:all .5s;
+}
+.process-step:hover .process-num{
+  background:var(--accent);color:#fff;
+  border-color:var(--accent);box-shadow:0 0 32px rgba(232,82,42,.3);
+}
+.process-step h3{font-size:22px;margin-bottom:12px}
+.process-step p{color:var(--text-2);font-size:14px;line-height:1.65}
+
+/* ===== Setores ===== */
+.sectors{background:var(--surface-2)}
+.sectors-list{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.sector{
+  padding:48px 32px;
+  border-bottom:1px solid var(--line);border-right:1px solid var(--line);
+  display:flex;align-items:center;gap:20px;
+  transition:all .4s;cursor:default;
+  position:relative;overflow:hidden;
+}
+.sector:nth-child(3n){border-right:none}
+.sector::before{
+  content:"";position:absolute;left:0;top:0;width:3px;height:100%;
+  background:var(--accent);transform:scaleY(0);transform-origin:bottom;
+  transition:transform .4s;
+}
+.sector:hover{background:var(--surface);padding-left:48px}
+.sector:hover::before{transform:scaleY(1);transform-origin:top}
+.sector-icon{
+  width:48px;height:48px;border-radius:12px;
+  background:rgba(232,82,42,.08);border:1px solid var(--line);
+  display:grid;place-items:center;flex-shrink:0;color:var(--accent);
+}
+.sector h4{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:600;margin-bottom:4px}
+.sector p{color:var(--text-2);font-size:13px}
+
+/* ===== Diferenciais ===== */
+.diff{background:var(--bg)}
+.diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.diff-card{padding:48px 40px 48px 0;border-right:1px solid var(--line)}
+.diff-card:last-child{border-right:none;padding-right:0}
+.diff-card:not(:first-child){padding-left:48px}
+.diff-num{
+  font-family:'Anton',sans-serif;font-size:96px;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  line-height:1;margin-bottom:24px;letter-spacing:-.02em;
+}
+.diff-card h4{font-size:24px;margin-bottom:14px}
+.diff-card p{color:var(--text-2);font-size:15px;line-height:1.7}
+
+/* ===== CTA ===== */
+.cta{
+  position:relative;padding:140px 0;overflow:hidden;
+  background:linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
+}
+.cta::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(232,82,42,.09), transparent 50%),
+    radial-gradient(ellipse at 70% 50%, rgba(107,87,184,.08), transparent 50%);
+  z-index:0;
+}
+.cta-inner{position:relative;z-index:1;text-align:center;max-width:900px;margin:0 auto}
+.cta h2{
+  font-family:'Anton',sans-serif;font-weight:400;
+  font-size:clamp(48px,9vw,128px);line-height:.9;text-transform:uppercase;
+  margin-bottom:32px;color:var(--text);
+}
+.cta h2 .grad{
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.cta-sub{font-size:18px;color:var(--text-2);max-width:640px;margin:0 auto 48px}
+.cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:64px}
+.cta-email{
+  display:inline-flex;align-items:center;gap:14px;
+  font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;
+  color:var(--accent-2);text-decoration:none;
+  padding:18px 32px;border-radius:999px;
+  border:1px solid rgba(107,87,184,.3);background:rgba(107,87,184,.06);
+  transition:all .3s;
+}
+.cta-email:hover{background:rgba(107,87,184,.12);border-color:var(--accent-2);transform:translateY(-2px)}
+
+/* Formulário de contato */
+.cta-form{
+  margin-top:56px;border-top:1px solid var(--line);padding-top:56px;
+  max-width:620px;margin-left:auto;margin-right:auto;
+  text-align:left;
+}
+.cta-form h3{
+  font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;
+  color:var(--text);margin-bottom:8px;text-align:center;
+}
+.cta-form p.form-sub{
+  font-size:14px;color:var(--text-2);text-align:center;margin-bottom:32px;
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}}
+.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.form-group label{
+  font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--text-2);
+}
+.form-group input,
+.form-group select,
+.form-group textarea{
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:10px;padding:14px 16px;
+  font-family:'Space Grotesk',sans-serif;font-size:15px;color:var(--text);
+  outline:none;transition:border-color .25s,box-shadow .25s;
+  width:100%;box-sizing:border-box;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder{color:var(--text-2);opacity:.5}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+  border-color:var(--accent-2);
+  box-shadow:0 0 0 3px rgba(107,87,184,.15);
+}
+.form-group select{
+  appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;
+  padding-right:40px;cursor:pointer;
+}
+.form-group textarea{resize:vertical;min-height:110px}
+.btn-form{
+  width:100%;padding:17px;margin-top:8px;font-size:16px;
+  background:var(--grad);color:#fff;border:none;border-radius:12px;
+  font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:.04em;
+  cursor:pointer;transition:opacity .25s,transform .25s;
+}
+.btn-form:hover{opacity:.88;transform:translateY(-2px)}
+.btn-form:active{transform:translateY(0)}
+.form-success{
+  display:none;text-align:center;padding:32px;
+  background:rgba(107,87,184,.08);border:1px solid rgba(107,87,184,.25);
+  border-radius:16px;
+}
+.form-success svg{color:var(--accent-2);margin-bottom:16px}
+.form-success h4{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px}
+.form-success p{font-size:14px;color:var(--text-2)}
+
+/* ===== Footer ===== */
+.footer{padding:60px 0 40px;border-top:1px solid var(--line);background:var(--bg)}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer h5{
+  font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--text-3);margin-bottom:20px;
+}
+.footer ul{list-style:none}
+.footer li{margin-bottom:10px}
+.footer a{color:var(--text-2);text-decoration:none;font-size:14px;transition:color .2s}
+.footer a:hover{color:var(--accent-2)}
+.footer p{color:var(--text-2);font-size:14px;line-height:1.7;margin-top:16px;max-width:340px}
+.footer-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-top:32px;border-top:1px solid var(--line);
+  color:var(--text-3);font-size:12px;letter-spacing:.04em;flex-wrap:wrap;gap:16px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width:980px){
+  .container{padding:0 24px}
+  .nav-links{display:none}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);padding:24px 32px 32px;gap:20px;border-bottom:1px solid var(--line);border-radius:0 0 20px 20px;z-index:100}
+  .menu-toggle{display:block}
+  section{padding:90px 0}
+  .hero{padding:190px 0 60px}
+  .hero-stats{grid-template-columns:repeat(2,1fr);gap:32px}
+  .section-head{flex-direction:column;align-items:flex-start;gap:24px}
+  .about-grid{grid-template-columns:1fr;gap:48px}
+  .services-grid{grid-template-columns:1fr}
+  .service-card{padding:36px 28px;min-height:auto}
+  .photos-grid{grid-template-columns:repeat(2,1fr)}
+  .process-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .process-grid::before{display:none}
+  .sectors-list{grid-template-columns:1fr 1fr}
+  .sector:nth-child(3n){border-right:1px solid var(--line)}
+  .sector:nth-child(2n){border-right:none}
+  .diff-grid{grid-template-columns:1fr}
+  .diff-card{border-right:none;border-bottom:1px solid var(--line);padding:32px 0!important}
+  .diff-card:last-child{border-bottom:none}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media (max-width:560px){
+  .container{padding:0 20px}
+  .hero h1{font-size:64px}
+  .hero-cta{flex-direction:column;align-items:stretch}
+  .btn{justify-content:center}
+  .photos-grid{grid-template-columns:1fr 1fr}
+  .sectors-list{grid-template-columns:1fr}
+  .sector{border-right:none!important}
+  .footer-grid{grid-template-columns:1fr}
+  .marquee-item{font-size:24px;gap:48px}
+  .marquee-track{gap:48px}
+}
+
+/* ===== Scroll Progress Bar ===== */
+.scroll-progress{position:fixed;top:0;left:0;right:0;z-index:500;height:3px;pointer-events:none;background:transparent}
+.scroll-progress-bar{height:100%;width:0%;background:var(--grad);transition:width .08s linear}
+
+/* ===== Cursor Glow ===== */
+.cursor-glow{
+  position:fixed;pointer-events:none;z-index:9998;
+  width:360px;height:360px;border-radius:50%;
+  background:radial-gradient(circle,rgba(232,82,42,.07) 0%,rgba(107,87,184,.05) 45%,transparent 70%);
+  transform:translate(-50%,-50%);
+  opacity:0;transition:opacity .5s ease;
+  will-change:left,top;
+}
+@media(hover:none),(max-width:980px){.cursor-glow{display:none}}
+
+/* ===== Ripple ===== */
+.btn{position:relative;overflow:hidden}
+.ripple{
+  position:absolute;border-radius:50%;
+  background:rgba(255,255,255,.28);
+  transform:scale(0);animation:ripple-anim .6s linear forwards;
+  pointer-events:none;
+}
+@keyframes ripple-anim{to{transform:scale(4.5);opacity:0}}
+
+/* ===== Stagger service cards ===== */
+.services-grid .service-card:nth-child(1){transition-delay:.05s}
+.services-grid .service-card:nth-child(2){transition-delay:.15s}
+.services-grid .service-card:nth-child(3){transition-delay:.25s}
+.services-grid .service-card:nth-child(4){transition-delay:.35s}
+
+/* ===== Stagger process steps ===== */
+.process-step:nth-child(1){transition-delay:.05s}
+.process-step:nth-child(2){transition-delay:.18s}
+.process-step:nth-child(3){transition-delay:.31s}
+.process-step:nth-child(4){transition-delay:.44s}
+
+/* ===== Floating buttons ===== */
+.float-wa{
+  position:fixed;bottom:24px;right:24px;z-index:50;
+  background:#25D366;color:#fff;
+  padding:14px 22px;border-radius:999px;
+  font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px;
+  text-decoration:none;display:inline-flex;align-items:center;gap:10px;
+  box-shadow:0 12px 36px rgba(37,211,102,.35);
+  transition:all .3s;
+}
+.float-wa:hover{transform:translateY(-3px);box-shadow:0 18px 48px rgba(37,211,102,.45)}
+.float-mail{
+  position:fixed;bottom:88px;right:24px;z-index:50;
+  background:var(--accent);color:#fff;
+  padding:14px 22px;border-radius:999px;
+  font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px;
+  text-decoration:none;display:inline-flex;align-items:center;gap:10px;
+  box-shadow:0 12px 36px rgba(232,82,42,.35);
+  transition:all .3s;
+}
+.float-mail:hover{transform:translateY(-3px);box-shadow:0 18px 48px rgba(232,82,42,.45)}
+@media (max-width:560px){
+  .float-mail span,.float-wa span{display:none}
+  .float-mail,.float-wa{padding:14px}
+}
+
+/* ===== Prefers reduced motion ===== */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .marquee-inner{animation:none!important}
+  .cursor-glow{display:none!important}
+}
+
+/* ===== Active nav links ===== */
+.nav-links a.active{color:var(--accent);font-weight:700}
+.nav-links a.active::after{width:100%}
+
+/* ===== Service expandable cards ===== */
+.service-card{transform-style:preserve-3d}
+.service-actions{margin-top:18px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.service-toggle{
+  border:1px solid rgba(107,87,184,.22);background:rgba(107,87,184,.06);color:var(--accent-2);
+  border-radius:999px;padding:10px 14px;font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .25s ease;
+}
+.service-toggle:hover{background:rgba(232,82,42,.08);border-color:rgba(232,82,42,.28);color:var(--accent);transform:translateY(-1px)}
+.service-more{max-height:0;overflow:hidden;opacity:0;transition:max-height .45s ease,opacity .35s ease,margin-top .35s ease;margin-top:0}
+.service-card.expanded .service-more{max-height:340px;opacity:1;margin-top:18px}
+.service-more ul{margin:0;padding-left:18px;color:var(--text-2);font-size:14px;line-height:1.75}
+.service-more li::marker{color:var(--accent)}
+
+/* ===== Quote builder / Simulador ===== */
+.quote-builder{background:linear-gradient(180deg,#fff 0%,var(--surface) 100%);padding:130px 0}
+.quote-shell{display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:start}
+.quote-panel,.quote-preview{
+  background:rgba(255,255,255,.86);border:1px solid var(--line);border-radius:24px;padding:32px;
+  box-shadow:0 14px 54px rgba(90,50,120,.08);backdrop-filter:blur(10px);
+}
+.quote-step{margin-top:26px}
+.quote-step:first-child{margin-top:0}
+.quote-step h3{font-size:19px;margin-bottom:14px;color:var(--text)}
+.choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.choice-btn{
+  width:100%;text-align:left;border:1px solid var(--line);background:#fff;color:var(--text-2);border-radius:16px;padding:16px 16px;
+  font-family:'Inter',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .25s ease;position:relative;overflow:hidden;
+}
+.choice-btn small{display:block;margin-top:5px;color:var(--text-3);font-weight:500;line-height:1.45}
+.choice-btn:hover{border-color:rgba(232,82,42,.28);transform:translateY(-2px);box-shadow:0 10px 26px rgba(90,50,120,.08)}
+.choice-btn.selected{border-color:var(--accent);background:linear-gradient(135deg,rgba(232,82,42,.10),rgba(107,87,184,.08));color:var(--text)}
+.choice-btn.selected::after{content:'✓';position:absolute;top:12px;right:14px;color:var(--accent);font-weight:800}
+.quote-preview{position:sticky;top:100px}
+.quote-preview h3{font-size:24px;margin-bottom:12px}
+.quote-summary{display:grid;gap:10px;margin:18px 0}
+.quote-chip{display:flex;justify-content:space-between;gap:14px;border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:12px 14px;color:var(--text-2);font-size:13px}
+.quote-chip strong{color:var(--text);font-weight:700;text-align:right}
+.quote-message{width:100%;min-height:150px;border:1px solid var(--line);border-radius:16px;background:#fff;padding:14px;color:var(--text-2);font-size:13px;line-height:1.6;resize:vertical;margin:8px 0 16px}
+.quote-actions{display:flex;gap:12px;flex-wrap:wrap}
+.copy-feedback{font-size:12px;color:var(--accent-2);font-weight:700;min-height:18px;margin-top:10px}
+
+/* ===== FAQ ===== */
+.faq{background:var(--bg);padding:120px 0}
+.faq-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.faq-list{display:grid;gap:12px}
+.faq-item{border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 6px 28px rgba(90,50,120,.05);overflow:hidden}
+.faq-question{width:100%;display:flex;justify-content:space-between;align-items:center;gap:18px;background:transparent;border:0;padding:22px 24px;cursor:pointer;text-align:left;font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;color:var(--text)}
+.faq-question span:last-child{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--surface);color:var(--accent);transition:transform .25s ease}
+.faq-item.open .faq-question span:last-child{transform:rotate(45deg);background:rgba(232,82,42,.12)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease,opacity .25s ease;opacity:0}
+.faq-answer p{padding:0 24px 22px;color:var(--text-2);font-size:15px;line-height:1.75;margin:0}
+.faq-item.open .faq-answer{max-height:260px;opacity:1}
+
+/* ===== Back to top ===== */
+.back-top{position:fixed;right:24px;bottom:112px;z-index:60;width:48px;height:48px;border-radius:50%;border:1px solid rgba(24,5,58,.12);background:#fff;color:var(--accent);font-weight:900;font-size:20px;box-shadow:0 10px 30px rgba(90,50,120,.14);cursor:pointer;opacity:0;pointer-events:none;transform:translateY(12px);transition:all .25s ease}
+.back-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+.back-top:hover{background:var(--accent);color:#fff;transform:translateY(-2px)}
+
+@media (max-width:980px){
+  .quote-shell,.faq-grid{grid-template-columns:1fr}
+  .quote-preview{position:relative;top:auto}
+}
+@media (max-width:560px){
+  .choice-grid{grid-template-columns:1fr}
+  .quote-panel,.quote-preview{padding:24px}
+  .quote-builder,.faq{padding:88px 0}
+  .back-top{right:18px;bottom:104px}
+}
+</style>
+</head>
+<body>
+
+<!-- Scroll progress bar -->
+<div class="scroll-progress"><div class="scroll-progress-bar" id="progressBar"></div></div>
+<!-- Cursor glow -->
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- Header -->
+<header class="header" id="header">
+  <div class="container">
+    <nav class="nav">
+      <a href="#" class="logo">
+        <img src="logo-walida.png" class="logo-mark" alt="Walida">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#processo">Processo</a></li>
+        <li><a href="#setores">Setores</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="#simulador">Simulador</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="#contato" class="btn btn-primary">Orçamento <span class="arrow">→</span></a>
+      </div>
+      <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-orb a"></div>
+  <div class="hero-orb b"></div>
+
+  <div class="container hero-inner">
+    <div class="hero-meta">
+      <span class="eyebrow">Validação · Qualificação · Calibração</span>
+    </div>
+
+    <h1>
+      <span class="line"><span>PRECISÃO</span></span>
+      <span class="line"><span>TÉRMICA</span></span>
+      <span class="line"><span class="grad">SEM MARGEM</span></span>
+      <span class="line"><span>PARA ERRO.</span></span>
+    </h1>
+
+    <p class="hero-sub">
+      Qualificação de instalação, operação e performance <strong>(QI · QO · QP)</strong> de câmaras climáticas, frias, autoclaves e áreas controladas. Em conformidade com <strong>RDC 658, ISO 17025 e ICH</strong> — atendendo todo o Nordeste.
+    </p>
+
+    <div class="hero-cta">
+      <a href="#contato" class="btn btn-primary">Solicitar orçamento <span class="arrow">→</span></a>
+      <a href="https://wa.me/5581995861615?text=Ola!%20Gostaria%20de%20solicitar%20um%20orcamento%20Walida." class="btn btn-ghost" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="fade-up">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Instrumentos com<br>rastreabilidade RBC</div>
+      </div>
+      <div class="fade-up">
+        <div class="stat-num">±0,5°C</div>
+        <div class="stat-label">Estabilidade térmica<br>nos ensaios</div>
+      </div>
+      <div class="fade-up">
+        <div class="stat-num">≥9</div>
+        <div class="stat-label">Sensores por mapeamento<br>(mín. ISPE/WHO)</div>
+      </div>
+      <div class="fade-up">
+        <div class="stat-num">24/7</div>
+        <div class="stat-label">Aquisição de dados<br>contínua</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <span class="line"></span>
+  </div>
+</section>
+
+<!-- Clientes -->
+<section class="clients" id="clientes">
+  <div class="container">
+    <div class="clients-head fade-up">
+      <span class="eyebrow">Clientes</span>
+      <p class="clients-sub">Instituições de saúde e indústria que nos confiam suas qualificações em todo o Nordeste.</p>
+    </div>
+  </div>
+  <div class="clients-track-wrap" aria-label="Clientes atendidos pela Walida">
+    <div class="clients-track">
+      <!-- Set 1 -->
+      <div class="client-item"><img src="https://www.gov.br/hubrasil/pt-br/hospitais-universitarios/regiao-nordeste/huol-ufrn/logos/huol-ufrn.png" alt="Hospital Onofre Lopes" loading="lazy"></div>
+      <div class="client-item"><img src="https://www.gov.br/hubrasil/pt-br/hospitais-universitarios/regiao-nordeste/hc-ufpe/logos/hc-ufpe.png" alt="Hospital das Clínicas PE" loading="lazy"></div>
+      <div class="client-item"><img src="https://static.wixstatic.com/media/094e6f_8dd2c6a886114fbe908c4beab9bcd91d~mv2.png/v1/crop/x_0,y_1,w_292,h_177/fill/w_225,h_136,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/fav.png" alt="Fundação Altino Ventura" loading="lazy"></div>
+      <div class="client-item"><img src="https://abraceesperanca.org.br/wp-content/uploads/2024/11/logo-300x80-1.png" alt="ABRACE Esperança PB" loading="lazy"></div>
+      <div class="client-item"><img src="https://wp.rededorsaoluiz.com.br/wp-content/uploads/2022/01/RedeDor-SaoLuiz-2.svg" alt="Hospital Esperança Recife" loading="lazy"></div>
+      <div class="client-item"><img src="https://wp.rededorsaoluiz.com.br/wp-content/uploads/sites/23/2019/03/logo_memorial.svg" alt="Memorial São José" loading="lazy"></div>
+      <div class="client-item"><img src="https://www2.hapvida.com.br/o/hapvida-theme/images/logos/Hapvida/logo.webp" alt="Hapvida" loading="lazy"></div>
+      <div class="client-item"><img src="https://www.anahp.com.br/wp-content/uploads/2018/08/Hospital-Santa-Joana-Recife_logo.png" alt="Hospital Santa Joana PE" loading="lazy"></div>
+      <div class="client-item"><img src="https://attachments.gupy.io/production/companies/78610/career/197449/images/2024-12-02_19-00_companyLogoUrl.jpg" alt="Unimed Campina Grande" loading="lazy"></div>
+      <div class="client-item"><span class="client-badge">ICONE</span></div>
+      <div class="client-item"><span class="client-badge">BELLOBELA</span></div>
+      <div class="client-item"><img src="https://mackmedical.com.br/site/assets/images/demoes/demo38/logo.png" alt="Mackmedical" loading="lazy"></div>
+      <div class="client-item"><img src="https://www.gov.br/hubrasil/pt-br/hospitais-universitarios/regiao-nordeste/mejc-ufrn/logos/mejc-ufrn.png" alt="Maternidade Januário Cicco" loading="lazy"></div>
+      <div class="client-item"><img src="https://www.raymundodafonte.com.br/wp-content/themes/raymundodafonte/assets/images/logo-grupo-raymundo-da-fonte.svg" alt="Lab. Raymundo da Fonte" loading="lazy"></div>
+      <div class="client-item"><img src="https://static.wixstatic.com/media/beae03_cffaea284ad94e3c9c356102187d0db6~mv2.png/v1/crop/x_0,y_0,w_1200,h_665/fill/w_220,h_122,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/CP_-_LOGO_HOR.png" alt="Instituto Clovis Paiva" loading="lazy"></div>
+      <div class="client-item"><img src="https://hcpgestao.org.br/public/img/gestao.png" alt="Hospital da Mulher" loading="lazy"></div>
+      <div class="client-item"><img src="https://cdn-sites-assets.mziq.com/wp-content/themes/mziq_ambipar_ri/img/logonewHeader.png" alt="Ambipar" loading="lazy"></div>
+      <div class="client-item"><img src="https://www.drogariaeconomia.com.br/images/logo_01.png" alt="Drogaria da Economia" loading="lazy"></div>
+      <!-- Set 2 — duplicado para loop infinito -->
+      <div class="client-item"><img src="https://www.gov.br/hubrasil/pt-br/hospitais-universitarios/regiao-nordeste/huol-ufrn/logos/huol-ufrn.png" alt="Hospital Onofre Lopes" loading="lazy"></div>
+      <div class="client-item"><img src="https://www.gov.br/hubrasil/pt-br/hospitais-universitarios/regiao-nordeste/hc-ufpe/logos/hc-ufpe.png" alt="Hospital das Clínicas PE" loading="lazy"></div>
+      <div class="client-item"><img src="https://static.wixstatic.com/media/094e6f_8dd2c6a886114fbe908c4beab9bcd91d~mv2.png/v1/crop/x_0,y_1,w_292,h_177/fill/w_225,h_136,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/fav.png" alt="Fundação Altino Ventura" loading="lazy"></div>
+      <div class="client-item"><img src="https://abraceesperanca.org.br/wp-content/uploads/2024/11/logo-300x80-1.png" alt="ABRACE Esperança PB" loading="lazy"></div>
+      <div class="client-item"><img src="https://wp.rededorsaoluiz.com.br/wp-content/uploads/2022/01/RedeDor-SaoLuiz-2.svg" alt="Hospital Esperança Recife" loading="lazy"></div>
+      <div class="client-item"><img src="https://wp.rededorsaoluiz.com.br/wp-content/uploads/sites/23/2019/03/logo_memorial.svg" alt="Memorial São José" loading="lazy"></div>
+      <div class="client-item"><img src="https://www2.hapvida.com.br/o/hapvida-theme/images/logos/Hapvida/logo.webp" alt="Hapvida" loading="lazy"></div>
+      <div class="client-item"><img src="https://www.anahp.com.br/wp-content/uploads/2018/08/Hospital-Santa-Joana-Recife_logo.png" alt="Hospital Santa Joana PE" loading="lazy"></div>
+      <div class="client-item"><img src="https://attachments.gupy.io/production/companies/78610/career/197449/images/2024-12-02_19-00_companyLogoUrl.jpg" alt="Unimed Campina Grande" loading="lazy"></div>
+      <div class="client-item"><span class="client-badge">ICONE</span></div>
+      <div class="client-item"><span class="client-badge">BELLOBELA</span></div>
+      <div class="client-item"><img src="https://mackmedical.com.br/site/assets/images/demoes/demo38/logo.png" alt="Mackmedical" loading="lazy"></div>
+      <div class="client-item"><img src="https://www.gov.br/hubrasil/pt-br/hospitais-universitarios/regiao-nordeste/mejc-ufrn/logos/mejc-ufrn.png" alt="Maternidade Januário Cicco" loading="lazy"></div>
+      <div class="client-item"><img src="https://www.raymundodafonte.com.br/wp-content/themes/raymundodafonte/assets/images/logo-grupo-raymundo-da-fonte.svg" alt="Lab. Raymundo da Fonte" loading="lazy"></div>
+      <div class="client-item"><img src="https://static.wixstatic.com/media/beae03_cffaea284ad94e3c9c356102187d0db6~mv2.png/v1/crop/x_0,y_0,w_1200,h_665/fill/w_220,h_122,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/CP_-_LOGO_HOR.png" alt="Instituto Clovis Paiva" loading="lazy"></div>
+      <div class="client-item"><img src="https://hcpgestao.org.br/public/img/gestao.png" alt="Hospital da Mulher" loading="lazy"></div>
+      <div class="client-item"><img src="https://cdn-sites-assets.mziq.com/wp-content/themes/mziq_ambipar_ri/img/logonewHeader.png" alt="Ambipar" loading="lazy"></div>
+      <div class="client-item"><img src="https://www.drogariaeconomia.com.br/images/logo_01.png" alt="Drogaria da Economia" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Sobre -->
+<section class="about" id="sobre">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text fade-up">
+        <span class="eyebrow" style="margin-bottom:24px">Sobre a Walida</span>
+        <h2 style="font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(40px,5.5vw,72px);text-transform:uppercase;line-height:.92;letter-spacing:-.01em;margin:24px 0 32px">Validação técnica<br>com olhar do <span style="background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">Nordeste</span>.</h2>
+        <p>A <strong>Walida</strong> nasceu para entregar qualificação térmica, validação de processos e calibração com a precisão exigida pela ANVISA — e a agilidade que o Nordeste merece.</p>
+        <p>Atuamos com <strong>indústrias farmacêuticas, hospitais, distribuidores, laboratórios analíticos e operadores logísticos</strong>, executando QI, QO e QP de câmaras climáticas, frias, BOD, estufas, autoclaves e áreas controladas.</p>
+        <p>Cada protocolo é construído sob medida para o seu equipamento e a sua URS, com documentação preparada para auditorias regulatórias.</p>
+      </div>
+
+      <div class="about-visual fade-up">
+        <img src="foto-tecnico-manometro.jpg" alt="Técnico Walida verificando manômetro em equipamento industrial" class="about-photo" loading="lazy">
+        <span class="tag t1">QI · IQ</span>
+        <span class="tag t2">QO · OQ</span>
+        <span class="tag t3">QP · PQ</span>
+        <span class="tag t4">CALIBRAÇÃO</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Serviços -->
+<section class="services" id="servicos">
+  <div class="container">
+    <div class="section-head fade-up">
+      <h2>Serviços de<br>qualificação<br><span style="background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">e validação.</span></h2>
+      <div class="right">
+        Cada serviço é executado com instrumentos calibrados rastreáveis, protocolos alinhados às normas vigentes e documentação técnica completa, pronta para auditoria.
+      </div>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card fade-up">
+        <div class="service-num">01 · CÂMARAS</div>
+        <div class="service-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/><circle cx="15" cy="15" r="2"/></svg>
+        </div>
+        <h3>Qualificação Térmica<br>de Câmaras</h3>
+        <p>QI, QO e QP completas em câmaras climáticas, frias, BOD, estabilidade ICH (25°C/60% UR e 40°C/75% UR), freezers e ultrafreezers, com mapeamento de até 24h ou mais.</p>
+        <div class="service-tags">
+          <span class="service-tag">ICH Q1A(R2)</span>
+          <span class="service-tag">RDC 658</span>
+          <span class="service-tag">2-8 °C</span>
+          <span class="service-tag">Estabilidade</span>
+        </div>
+      </article>
+
+      <article class="service-card fade-up">
+        <div class="service-num">02 · MAPEAMENTO</div>
+        <div class="service-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3>Mapeamento Térmico<br>de Áreas e Veículos</h3>
+        <p>Estudos de distribuição e estabilidade em almoxarifados, salas climatizadas, caminhões refrigerados e contêineres — com sensores distribuídos conforme padrão ISPE/WHO.</p>
+        <div class="service-tags">
+          <span class="service-tag">Almoxarifados</span>
+          <span class="service-tag">Logística farma</span>
+          <span class="service-tag">Cold chain</span>
+          <span class="service-tag">WHO TRS 961</span>
+        </div>
+      </article>
+
+      <article class="service-card fade-up">
+        <div class="service-num">03 · AUTOCLAVES</div>
+        <div class="service-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg>
+        </div>
+        <h3>Qualificação de<br>Autoclaves e Estufas</h3>
+        <p>Validação de ciclos de esterilização a vapor, despirogenização e secagem em estufas, com termopares Tipo T calibrados, distribuição de calor e penetração em carga.</p>
+        <div class="service-tags">
+          <span class="service-tag">ISO 17665</span>
+          <span class="service-tag">NBR 16328</span>
+          <span class="service-tag">F0 · Bowie-Dick</span>
+          <span class="service-tag">Carga máxima</span>
+        </div>
+      </article>
+
+      <article class="service-card fade-up">
+        <div class="service-num">04 · CALIBRAÇÃO</div>
+        <div class="service-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M12 19v3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M2 12h3M19 12h3M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/><circle cx="12" cy="12" r="4"/></svg>
+        </div>
+        <h3>Calibração de<br>Instrumentos</h3>
+        <p>Calibração de termômetros, data loggers, termo-higrômetros e sensores embarcados, com instrumentos rastreáveis a padrões RBC/INMETRO e emissão de certificados completos com declaração de incerteza.</p>
+        <div class="service-tags">
+          <span class="service-tag">RBC</span>
+          <span class="service-tag">ISO/IEC 17025</span>
+          <span class="service-tag">Data loggers</span>
+          <span class="service-tag">Incerteza</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Carrossel de Fotos -->
+<div class="photos" id="galeria">
+  <div class="container">
+    <div class="carousel-header fade-up">
+      <h3>Walida<br>em Campo.</h3>
+      <div class="carousel-controls">
+        <button class="carousel-btn prev" aria-label="Anterior">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="carousel-btn next" aria-label="Próximo" style="position:static;transform:none">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="padding-bottom:0">
+    <div class="carousel-wrap">
+      <div class="carousel-track" id="carouselTrack">
+
+        <div class="carousel-slide active">
+          <img src="foto-tecnico-campo.jpg" alt="Técnico Walida em campo com equipamento de qualificação" loading="lazy">
+          <div class="carousel-overlay"></div>
+          <span class="carousel-caption">Qualificação em Campo</span>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="foto-autoclave.jpg" alt="Autoclave industrial — qualificação de ciclos de esterilização" loading="lazy">
+          <div class="carousel-overlay"></div>
+          <span class="carousel-caption">Autoclave Industrial</span>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="foto-manometro.jpg" alt="Verificação de manômetro em equipamento industrial" loading="lazy">
+          <div class="carousel-overlay"></div>
+          <span class="carousel-caption">Verificação de Instrumentos</span>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="foto-clipboard.jpg" alt="Especialista registrando protocolo de qualificação operacional" loading="lazy">
+          <div class="carousel-overlay"></div>
+          <span class="carousel-caption">Protocolos QI · QO · QP</span>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="foto-camara-fria.jpg" alt="Câmara fria com estrutura de prateleiras para armazenamento de medicamentos" loading="lazy">
+          <div class="carousel-overlay"></div>
+          <span class="carousel-caption">Mapeamento de Câmara Fria</span>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="foto-rack-esterilizacao.jpg" alt="Rack com material cirúrgico aguardando esterilização em autoclave" loading="lazy">
+          <div class="carousel-overlay"></div>
+          <span class="carousel-caption">Esterilização Hospitalar</span>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="foto-autoclave-material.jpg" alt="Material médico-hospitalar preparado para ciclo de esterilização" loading="lazy">
+          <div class="carousel-overlay"></div>
+          <span class="carousel-caption">Ciclos de Esterilização</span>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="foto-camara-estabilidade.jpg" alt="Câmara de estabilidade ICH com sensores posicionados em todos os pontos de mapeamento" loading="lazy">
+          <div class="carousel-overlay"></div>
+          <span class="carousel-caption">Câmara de Estabilidade — ICH Q1A</span>
+        </div>
+
+      </div><!-- /track -->
+
+      <!-- Navigation arrows (inside wrap) -->
+      <button class="carousel-btn prev" id="carouselPrev" aria-label="Anterior">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="carousel-btn next" id="carouselNext" aria-label="Próximo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+
+      <span class="carousel-counter" id="carouselCounter">01 / 08</span>
+
+    </div><!-- /wrap -->
+
+    <!-- Dots -->
+    <div class="carousel-dots" id="carouselDots">
+      <button class="carousel-dot active" aria-label="Slide 1"></button>
+      <button class="carousel-dot" aria-label="Slide 2"></button>
+      <button class="carousel-dot" aria-label="Slide 3"></button>
+      <button class="carousel-dot" aria-label="Slide 4"></button>
+      <button class="carousel-dot" aria-label="Slide 5"></button>
+      <button class="carousel-dot" aria-label="Slide 6"></button>
+      <button class="carousel-dot" aria-label="Slide 7"></button>
+      <button class="carousel-dot" aria-label="Slide 8"></button>
+    </div>
+
+  </div><!-- /container -->
+</div>
+
+<!-- Marquee normas -->
+<div class="norms">
+  <div class="container">
+    <div class="norms-label">Em conformidade com</div>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track">
+      <div class="marquee-item">ANVISA RDC 658/2022</div>
+      <div class="marquee-item">ANVISA RDC 204/2017</div>
+      <div class="marquee-item">ABNT NBR ISO/IEC 17025</div>
+      <div class="marquee-item">ICH Q1A(R2)</div>
+      <div class="marquee-item">USP &lt;1118&gt;</div>
+      <div class="marquee-item">WHO TRS 961</div>
+      <div class="marquee-item">ISPE Baseline Guide</div>
+      <div class="marquee-item">ISO 17665</div>
+    </div>
+    <div class="marquee-track" aria-hidden="true">
+      <div class="marquee-item">ANVISA RDC 658/2022</div>
+      <div class="marquee-item">ANVISA RDC 204/2017</div>
+      <div class="marquee-item">ABNT NBR ISO/IEC 17025</div>
+      <div class="marquee-item">ICH Q1A(R2)</div>
+      <div class="marquee-item">USP &lt;1118&gt;</div>
+      <div class="marquee-item">WHO TRS 961</div>
+      <div class="marquee-item">ISPE Baseline Guide</div>
+      <div class="marquee-item">ISO 17665</div>
+    </div>
+  </div>
+</div>
+
+<!-- Processo -->
+<section class="process" id="processo">
+  <div class="container">
+    <div class="section-head fade-up">
+      <h2>Como executamos<br>cada projeto.</h2>
+      <div class="right">
+        Um fluxo de trabalho transparente, do diagnóstico inicial à entrega do dossiê de validação — pronto para ser apresentado em qualquer auditoria regulatória.
+      </div>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-step fade-up">
+        <div class="process-num">01</div>
+        <h3>Diagnóstico</h3>
+        <p>Análise da URS, documentação existente, equipamentos e necessidades do cliente.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-num">02</div>
+        <h3>Planejamento</h3>
+        <p>Elaboração de protocolos QI/QO/QP customizados, com critérios de aceitação claros.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-num">03</div>
+        <h3>Execução</h3>
+        <p>Mapeamento térmico em campo com sensores rastreáveis e aquisição contínua de dados.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-num">04</div>
+        <h3>Relatório</h3>
+        <p>Dossiê completo com gráficos, certificados, desvios, conclusões e aprovação técnica.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Simulador de solicitação -->
+<section class="quote-builder" id="simulador">
+  <div class="container">
+    <div class="section-head fade-up">
+      <h2>Monte sua<br>solicitação<br><span style="background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">em segundos.</span></h2>
+      <div class="right">Selecione o equipamento, o tipo de serviço e a urgência. O site gera uma mensagem técnica pronta para enviar à Walida pelo WhatsApp.</div>
+    </div>
+    <div class="quote-shell">
+      <div class="quote-panel fade-up" aria-label="Simulador de solicitação técnica">
+        <div class="quote-step" data-step="equipamento">
+          <h3>1. Qual equipamento ou área?</h3>
+          <div class="choice-grid">
+            <button class="choice-btn selected" type="button" data-field="equipamento" data-value="Autoclave"><strong>Autoclave</strong><small>Ciclos 121 °C, 134 °C, carga, vazio ou príons</small></button>
+            <button class="choice-btn" type="button" data-field="equipamento" data-value="Câmara fria / refrigerador"><strong>Câmara fria / refrigerador</strong><small>2 °C a 8 °C, freezer, BOD ou estabilidade</small></button>
+            <button class="choice-btn" type="button" data-field="equipamento" data-value="Sala ou área controlada"><strong>Sala ou área controlada</strong><small>Mapeamento térmico e umidade relativa</small></button>
+            <button class="choice-btn" type="button" data-field="equipamento" data-value="Veículo ou logística térmica"><strong>Veículo / logística</strong><small>Caminhão, caixa térmica ou rota cold chain</small></button>
+          </div>
+        </div>
+        <div class="quote-step" data-step="servico">
+          <h3>2. Qual serviço precisa?</h3>
+          <div class="choice-grid">
+            <button class="choice-btn selected" type="button" data-field="servico" data-value="Qualificação QI/QO/QP"><strong>QI / QO / QP</strong><small>Qualificação completa documentada</small></button>
+            <button class="choice-btn" type="button" data-field="servico" data-value="Mapeamento térmico"><strong>Mapeamento térmico</strong><small>Distribuição, estabilidade e pontos críticos</small></button>
+            <button class="choice-btn" type="button" data-field="servico" data-value="Requalificação periódica"><strong>Requalificação</strong><small>Rotina anual, pós-manutenção ou mudança de uso</small></button>
+            <button class="choice-btn" type="button" data-field="servico" data-value="Consultoria documental"><strong>Consultoria documental</strong><small>Protocolo, relatório, desvio e CAPA</small></button>
+          </div>
+        </div>
+        <div class="quote-step" data-step="urgencia">
+          <h3>3. Qual a prioridade?</h3>
+          <div class="choice-grid">
+            <button class="choice-btn selected" type="button" data-field="urgencia" data-value="Programado"><strong>Programado</strong><small>Planejamento com menor impacto operacional</small></button>
+            <button class="choice-btn" type="button" data-field="urgencia" data-value="Urgente"><strong>Urgente</strong><small>Auditoria, equipamento parado ou operação crítica</small></button>
+          </div>
+        </div>
+      </div>
+      <aside class="quote-preview fade-up" aria-live="polite">
+        <span class="eyebrow" style="margin-bottom:18px">Pré-proposta</span>
+        <h3>Mensagem pronta</h3>
+        <p style="color:var(--text-2);font-size:14px;line-height:1.7">Revise a mensagem e envie direto para o WhatsApp. Ela já sai com o contexto técnico mínimo.</p>
+        <div class="quote-summary">
+          <div class="quote-chip"><span>Equipamento</span><strong id="summaryEquip">Autoclave</strong></div>
+          <div class="quote-chip"><span>Serviço</span><strong id="summaryService">Qualificação QI/QO/QP</strong></div>
+          <div class="quote-chip"><span>Prioridade</span><strong id="summaryUrgency">Programado</strong></div>
+        </div>
+        <textarea class="quote-message" id="quoteMessage" aria-label="Mensagem gerada para WhatsApp"></textarea>
+        <div class="quote-actions">
+          <a class="btn btn-primary" id="quoteWhatsApp" href="https://wa.me/5581995861615" target="_blank" rel="noopener">Enviar pelo WhatsApp <span class="arrow">→</span></a>
+          <button type="button" class="btn btn-ghost" id="copyQuote">Copiar texto</button>
+        </div>
+        <div class="copy-feedback" id="copyFeedback" aria-live="polite"></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="faq-grid">
+      <div class="fade-up">
+        <span class="eyebrow" style="margin-bottom:24px">Dúvidas frequentes</span>
+        <h2 style="font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(40px,5.5vw,82px);text-transform:uppercase;line-height:.92;letter-spacing:-.01em;margin:24px 0 24px">Antes da<br>qualificação.</h2>
+        <p style="color:var(--text-2);font-size:16px;line-height:1.8;max-width:420px">Respostas rápidas para quem precisa contratar qualificação térmica com critério técnico e documentação defensável.</p>
+      </div>
+      <div class="faq-list fade-up">
+        <article class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false"><span>Quando devo requalificar um equipamento?</span><span>+</span></button>
+          <div class="faq-answer"><p>Normalmente após manutenção crítica, alteração de carga/processo, mudança de local, desvio relevante ou periodicidade definida pelo sistema da qualidade. A frequência final deve estar prevista no procedimento interno do cliente.</p></div>
+        </article>
+        <article class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false"><span>O relatório serve para auditoria?</span><span>+</span></button>
+          <div class="faq-answer"><p>O relatório é estruturado para auditoria, com identificação do equipamento, metodologia, instrumentação, critérios, resultados, anexos e rastreabilidade. A aceitação final depende dos critérios aprovados e dos dados reais coletados.</p></div>
+        </article>
+        <article class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false"><span>Vocês atendem fora de Recife?</span><span>+</span></button>
+          <div class="faq-answer"><p>Sim. A atuação é regional, com foco no Nordeste. O planejamento considera deslocamento, tipo de equipamento, duração do estudo, quantidade de sensores e urgência operacional.</p></div>
+        </article>
+        <article class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false"><span>Qual informação devo enviar para orçamento?</span><span>+</span></button>
+          <div class="faq-answer"><p>Tipo de equipamento, modelo, número de câmaras, faixa de trabalho, carga/processo, local de instalação, prazo desejado e se existe URS, protocolo anterior ou relatório de qualificação anterior.</p></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Setores -->
+<section class="sectors" id="setores">
+  <div class="container">
+    <div class="section-head fade-up">
+      <h2>Setores que<br>atendemos.</h2>
+      <div class="right">
+        Cada setor tem suas exigências regulatórias específicas. Atendemos com a expertise certa para o seu segmento.
+      </div>
+    </div>
+
+    <div class="sectors-list fade-up">
+      <div class="sector">
+        <div class="sector-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11h6M12 8v6M5 7l1.5-3h11L19 7l-1 13H6L5 7z"/></svg>
+        </div>
+        <div><h4>Farmacêutico</h4><p>Indústrias e distribuidores</p></div>
+      </div>
+      <div class="sector">
+        <div class="sector-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h3l3-9 6 18 3-9h3"/></svg>
+        </div>
+        <div><h4>Hospitalar</h4><p>Hospitais, clínicas e CMEs</p></div>
+      </div>
+      <div class="sector">
+        <div class="sector-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 9c0-3.5 3-6 7-6s7 2.5 7 6c0 5-7 12-7 12S5 14 5 9z"/><circle cx="12" cy="9" r="2"/></svg>
+        </div>
+        <div><h4>Alimentos &amp; Bebidas</h4><p>Câmaras frias e conservação</p></div>
+      </div>
+      <div class="sector">
+        <div class="sector-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1l2.1-2.1M17 7l2.1-2.1"/></svg>
+        </div>
+        <div><h4>Cosméticos</h4><p>Estabilidade e câmaras climáticas</p></div>
+      </div>
+      <div class="sector">
+        <div class="sector-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 2v6M15 2v6M9 8c-2 0-3 2-3 4 0 4 3 8 6 8s6-4 6-8c0-2-1-4-3-4M9 14h6"/></svg>
+        </div>
+        <div><h4>Biotecnologia</h4><p>Laboratórios analíticos</p></div>
+      </div>
+      <div class="sector">
+        <div class="sector-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="14" height="10" rx="1"/><path d="M16 10h4l2 3v4h-6"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg>
+        </div>
+        <div><h4>Logística Farma</h4><p>Caminhões e cold chain</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Diferenciais -->
+<section class="diff">
+  <div class="container">
+    <div class="section-head fade-up">
+      <h2>Por que<br>a Walida.</h2>
+      <div class="right">
+        Mais que executar protocolos: entregamos confiança técnica e tranquilidade regulatória para o seu negócio.
+      </div>
+    </div>
+
+    <div class="diff-grid">
+      <div class="diff-card fade-up">
+        <div class="diff-num">01</div>
+        <h4>Rastreabilidade total</h4>
+        <p>Todos os instrumentos utilizados são calibrados com rastreabilidade RBC/INMETRO, com incertezas compatíveis com as tolerâncias do processo.</p>
+      </div>
+      <div class="diff-card fade-up">
+        <div class="diff-num">02</div>
+        <h4>Agilidade no Nordeste</h4>
+        <p>Atuação regional com time técnico especializado, reduzindo prazos, custos de deslocamento e tempo de equipamento parado.</p>
+      </div>
+      <div class="diff-card fade-up">
+        <div class="diff-num">03</div>
+        <h4>Documentação auditável</h4>
+        <p>Protocolos, relatórios e certificados padrão ANVISA, com tratamento de desvios e CAPA quando necessário — prontos para inspeção.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contato">
+  <div class="container cta-inner">
+    <span class="eyebrow" style="margin-bottom:32px">Vamos conversar</span>
+    <h2>FALE COM A<br>WALIDA <span class="grad">AGORA.</span></h2>
+    <p class="cta-sub">Conte sobre seu equipamento, sua área controlada ou seu cronograma de qualificação. Respondemos com um plano técnico personalizado — sem enrolação.</p>
+
+    <div class="cta-actions">
+      <a href="https://wa.me/5581995861615?text=Ola!%20Gostaria%20de%20solicitar%20um%20orcamento%20Walida." class="btn btn-primary" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chamar no WhatsApp <span class="arrow">→</span>
+      </a>
+      <a href="mailto:walida.nordeste@gmail.com?subject=Solicita%C3%A7%C3%A3o%20de%20or%C3%A7amento%20-%20Qualifica%C3%A7%C3%A3o%20T%C3%A9rmica" class="btn btn-ghost">Enviar e-mail</a>
+    </div>
+
+    <a href="mailto:walida.nordeste@gmail.com" class="cta-email">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      walida.nordeste@gmail.com
+    </a>
+
+    <!-- Formulário de contato via Formspree -->
+    <!-- Substitua YOUR_FORM_ID em action= pelo ID que você obterá em formspree.io/new -->
+    <div class="cta-form">
+      <h3>Ou preencha o formulário</h3>
+      <p class="form-sub">Respondemos em até 24 horas úteis.</p>
+
+      <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="b34292b5-4158-4b78-bbb5-17d99b11a246">
+        <input type="hidden" name="subject" value="Novo contato pelo site Walida">
+        <input type="hidden" name="from_name" value="Site Walida">
+        <input type="checkbox" name="botcheck" style="display:none">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nome">Nome *</label>
+            <input type="text" id="nome" name="name" placeholder="Seu nome completo" required>
+          </div>
+          <div class="form-group">
+            <label for="empresa">Empresa</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Nome da instituição">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">E-mail *</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="telefone">WhatsApp / Telefone</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(81) 9 0000-0000">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="servico">Serviço de interesse</label>
+          <select id="servico" name="servico">
+            <option value="" disabled selected>Selecione um serviço…</option>
+            <option>Qualificação de Câmaras Climáticas / Frias</option>
+            <option>Mapeamento Térmico de Áreas</option>
+            <option>Qualificação de Autoclaves / Estufas</option>
+            <option>Calibração de Instrumentos</option>
+            <option>Validação de Processos</option>
+            <option>Outro / Não sei ainda</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="mensagem">Mensagem *</label>
+          <textarea id="mensagem" name="message" placeholder="Descreva brevemente seu equipamento, área controlada ou o que precisa qualificar…" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-form">Enviar mensagem →</button>
+      </form>
+
+      <!-- Mensagem de sucesso (exibida por JS após envio) -->
+      <div class="form-success" id="formSuccess">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 13.01 9 10.01"/></svg>
+        <h4>Mensagem enviada!</h4>
+        <p>Obrigado pelo contato. A equipe Walida responderá em breve.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="#" class="logo" style="margin-bottom:0">
+          <img src="logo-walida.png" class="logo-mark" alt="Walida">
+        </a>
+        <p>Soluções em qualificação térmica, validação e calibração para indústrias e laboratórios em todo o Nordeste.</p>
+      </div>
+      <div>
+        <h5>Serviços</h5>
+        <ul>
+          <li><a href="#servicos">Qualificação de Câmaras</a></li>
+          <li><a href="#servicos">Mapeamento Térmico</a></li>
+          <li><a href="#servicos">Autoclaves e Estufas</a></li>
+          <li><a href="#servicos">Calibração</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#processo">Processo</a></li>
+          <li><a href="#setores">Setores</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contato</h5>
+        <ul>
+          <li><a href="mailto:walida.nordeste@gmail.com">walida.nordeste@gmail.com</a></li>
+          <li><a href="https://wa.me/5581995861615" target="_blank" rel="noopener">(81) 99586-1615 · WhatsApp</a></li>
+          <li style="color:var(--text-2)">Rua Três, s/n - Bloco 8 - Sala 105 - Curado - Jaboatão dos Guararapes - PE</li>
+          <li style="color:var(--text-2)">CNPJ 59.818.540/0001-20</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Walida — Todos os direitos reservados.</span>
+      <span>Qualificação · Validação · Calibração</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating mail -->
+<a href="https://wa.me/5581995861615?text=Ola!%20Gostaria%20de%20solicitar%20um%20orcamento%20Walida." class="float-wa" aria-label="WhatsApp" target="_blank" rel="noopener">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span>WhatsApp</span>
+</a>
+<a href="mailto:walida.nordeste@gmail.com?subject=Or%C3%A7amento%20Walida" class="float-mail" aria-label="E-mail">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+  <span>E-mail</span>
+</a>
+
+<button class="back-top" id="backTop" type="button" aria-label="Voltar ao topo">↑</button>
+
+<script>
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 20) header.classList.add('scrolled');
+  else header.classList.remove('scrolled');
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+
+const heroLines = document.querySelectorAll('.hero h1 .line span');
+heroLines.forEach((s, i) => {
+  s.style.transform = 'translateY(110%)';
+  s.style.transition = `transform .9s cubic-bezier(.2,.8,.2,1) ${0.15 + i * 0.12}s`;
+  requestAnimationFrame(() => { requestAnimationFrame(() => { s.style.transform = 'translateY(0)'; }); });
+});
+
+document.querySelectorAll('.service-card').forEach((card) => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    card.style.transform = `translateY(-6px) rotateX(${y * -4}deg) rotateY(${x * 4}deg)`;
+  });
+  card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+});
+
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+if (menuToggle) {
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    const isOpen = navLinks.classList.contains('open');
+    menuToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A' && window.innerWidth <= 980) {
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+  window.addEventListener('resize', () => {
+    if(window.innerWidth > 980) navLinks.classList.remove('open');
+  });
+}
+
+// ===== Scroll progress bar =====
+(function(){
+  var bar = document.getElementById('progressBar');
+  if(!bar) return;
+  window.addEventListener('scroll', function(){
+    var s = document.documentElement.scrollTop || document.body.scrollTop;
+    var h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    bar.style.width = (h > 0 ? (s/h)*100 : 0) + '%';
+  }, {passive:true});
+})();
+
+// ===== Cursor glow =====
+(function(){
+  var glow = document.getElementById('cursorGlow');
+  if(!glow) return;
+  var mx=window.innerWidth/2, my=window.innerHeight/2;
+  var cx=mx, cy=my;
+  document.addEventListener('mousemove', function(e){
+    mx = e.clientX; my = e.clientY;
+    glow.style.opacity = '1';
+  });
+  document.addEventListener('mouseleave', function(){ glow.style.opacity = '0'; });
+  (function loop(){
+    cx += (mx - cx) * 0.11;
+    cy += (my - cy) * 0.11;
+    glow.style.left = cx + 'px';
+    glow.style.top  = cy + 'px';
+    requestAnimationFrame(loop);
+  })();
+})();
+
+// ===== Animated stat counters =====
+(function(){
+  var nums = document.querySelectorAll('.stat-num');
+  var configs = [
+    {from:0, to:100, decimals:0, suffix:'%'},
+    {from:0, to:0.5, decimals:1, prefix:'±', suffix:'°C', sep:','},
+    {from:0, to:9,   decimals:0, prefix:'≥', suffix:''},
+    {text:'24/7'}
+  ];
+  function animateStat(el, cfg){
+    if(cfg.text){ el.textContent = cfg.text; return; }
+    var dur = 1800, start = null;
+    function tick(now){
+      if(!start) start = now;
+      var t = Math.min((now - start)/dur, 1);
+      var ease = 1 - Math.pow(1-t, 3);
+      var val = cfg.from + (cfg.to - cfg.from) * ease;
+      var str = val.toFixed(cfg.decimals);
+      if(cfg.sep) str = str.replace('.', cfg.sep);
+      el.textContent = (cfg.prefix||'') + str + (cfg.suffix||'');
+      if(t < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var i = Array.prototype.indexOf.call(nums, e.target);
+      if(configs[i]) animateStat(e.target, configs[i]);
+      obs.unobserve(e.target);
+    });
+  }, {threshold:0.6});
+  nums.forEach(function(n){ obs.observe(n); });
+})();
+
+// ===== Ripple on buttons =====
+(function(){
+  document.querySelectorAll('.btn').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      var r = btn.getBoundingClientRect();
+      var size = Math.max(r.width, r.height);
+      var x = e.clientX - r.left - size/2;
+      var y = e.clientY - r.top - size/2;
+      var rpl = document.createElement('span');
+      rpl.className = 'ripple';
+      rpl.style.cssText = 'width:'+size+'px;height:'+size+'px;left:'+x+'px;top:'+y+'px';
+      btn.appendChild(rpl);
+      setTimeout(function(){ rpl.remove(); }, 700);
+    });
+  });
+})();
+
+// ===== Magnetic buttons =====
+(function(){
+  document.querySelectorAll('.btn-primary').forEach(function(btn){
+    btn.addEventListener('mousemove', function(e){
+      var r = btn.getBoundingClientRect();
+      var dx = (e.clientX - (r.left + r.width/2)) * 0.28;
+      var dy = (e.clientY - (r.top + r.height/2)) * 0.28;
+      btn.style.transform = 'translate('+dx+'px,'+dy+'px) translateY(-2px)';
+    });
+    btn.addEventListener('mouseleave', function(){
+      btn.style.transform = '';
+    });
+  });
+})();
+
+// ===== Hero parallax =====
+(function(){
+  var orbA = document.querySelector('.hero-orb.a');
+  var orbB = document.querySelector('.hero-orb.b');
+  var hero = document.querySelector('.hero');
+  if(!orbA || !orbB || !hero) return;
+  hero.addEventListener('mousemove', function(e){
+    var r = hero.getBoundingClientRect();
+    var x = (e.clientX - r.left)/r.width - 0.5;
+    var y = (e.clientY - r.top)/r.height - 0.5;
+    // Pause CSS float animation to avoid transform conflict
+    orbA.style.animationPlayState = 'paused';
+    orbB.style.animationPlayState = 'paused';
+    orbA.style.transform = 'translate('+x*45+'px,'+y*30+'px)';
+    orbB.style.transform = 'translate('+x*-30+'px,'+y*-20+'px)';
+  });
+  hero.addEventListener('mouseleave', function(){
+    orbA.style.animationPlayState = '';
+    orbB.style.animationPlayState = '';
+    orbA.style.transform = '';
+    orbB.style.transform = '';
+  });
+})();
+
+// ===== Carousel =====
+(function(){
+  const track   = document.getElementById('carouselTrack');
+  const slides  = track ? Array.from(track.querySelectorAll('.carousel-slide')) : [];
+  const dots    = Array.from(document.querySelectorAll('#carouselDots .carousel-dot'));
+  const counter = document.getElementById('carouselCounter');
+  const btnPrev = document.getElementById('carouselPrev');
+  const btnNext = document.getElementById('carouselNext');
+  if (!track || !slides.length) return;
+
+  const total = slides.length;
+  let cur = 0, autoTimer, startX = 0;
+
+  function goTo(n) {
+    slides[cur].classList.remove('active');
+    dots[cur].classList.remove('active');
+    cur = (n + total) % total;
+    track.style.transform = 'translateX(-' + (cur * 100) + '%)';
+    slides[cur].classList.add('active');
+    dots[cur].classList.add('active');
+    if (counter) counter.textContent =
+      String(cur + 1).padStart(2,'0') + ' / ' + String(total).padStart(2,'0');
+  }
+
+  function next() { goTo(cur + 1); }
+  function prev() { goTo(cur - 1); }
+
+  function startAuto() { autoTimer = setInterval(next, 4800); }
+  function stopAuto()  { clearInterval(autoTimer); }
+
+  btnNext.addEventListener('click', () => { stopAuto(); next(); startAuto(); });
+  btnPrev.addEventListener('click', () => { stopAuto(); prev(); startAuto(); });
+  dots.forEach((d, i) => d.addEventListener('click', () => { stopAuto(); goTo(i); startAuto(); }));
+
+  // Touch / swipe
+  const wrap = track.closest('.carousel-wrap');
+  wrap.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive:true });
+  wrap.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 48) { stopAuto(); (dx < 0 ? next : prev)(); startAuto(); }
+  });
+
+  // Pause on hover
+  wrap.addEventListener('mouseenter', stopAuto);
+  wrap.addEventListener('mouseleave', startAuto);
+
+  // Header controls (duplicate prev/next above the wrap)
+  document.querySelectorAll('.carousel-header .carousel-btn.prev').forEach(b =>
+    b.addEventListener('click', () => { stopAuto(); prev(); startAuto(); }));
+  document.querySelectorAll('.carousel-header .carousel-btn.next').forEach(b =>
+    b.addEventListener('click', () => { stopAuto(); next(); startAuto(); }));
+
+  // Keyboard
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft')  { stopAuto(); prev(); startAuto(); }
+    if (e.key === 'ArrowRight') { stopAuto(); next(); startAuto(); }
+  });
+
+  goTo(0);
+  startAuto();
+})();
+
+// ===== Navegação ativa por seção =====
+(function(){
+  const links = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+  const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  if(!links.length || !sections.length) return;
+  const setActive = (id) => {
+    links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+  };
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if(entry.isIntersecting) setActive(entry.target.id); });
+  }, {rootMargin:'-40% 0px -52% 0px', threshold:0.01});
+  sections.forEach(sec => obs.observe(sec));
+})();
+
+// ===== Cards de serviço expansíveis =====
+(function(){
+  const details = [
+    ['Protocolo QI/QO/QP conforme escopo aprovado', 'Mapeamento com sensores distribuídos conforme estudo', 'Relatório técnico com critérios, gráficos e anexos'],
+    ['Identificação de pontos frios e quentes', 'Análise de estabilidade e excursões térmicas', 'Recomendação técnica para rotina e monitoramento'],
+    ['Avaliação de ciclo vazio e carga quando aplicável', 'Análise de exposição, distribuição e penetração térmica', 'Documentação para rastreabilidade e auditoria'],
+    ['Certificados e registros conforme escopo contratado', 'Rastreabilidade metrológica dos instrumentos', 'Dados organizados para controle documental']
+  ];
+  document.querySelectorAll('.service-card').forEach((card, index) => {
+    if(card.querySelector('.service-toggle')) return;
+    const wrap = document.createElement('div');
+    wrap.className = 'service-actions';
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'service-toggle';
+    btn.setAttribute('aria-expanded','false');
+    btn.textContent = 'Ver entregáveis';
+    const more = document.createElement('div');
+    more.className = 'service-more';
+    more.innerHTML = '<ul>' + (details[index] || details[0]).map(item => '<li>'+item+'</li>').join('') + '</ul>';
+    btn.addEventListener('click', () => {
+      const open = card.classList.toggle('expanded');
+      btn.setAttribute('aria-expanded', String(open));
+      btn.textContent = open ? 'Ocultar entregáveis' : 'Ver entregáveis';
+    });
+    wrap.appendChild(btn);
+    card.appendChild(wrap);
+    card.appendChild(more);
+  });
+})();
+
+// ===== Simulador de solicitação técnica =====
+(function(){
+  const state = {equipamento:'Autoclave', servico:'Qualificação QI/QO/QP', urgencia:'Programado'};
+  const msg = document.getElementById('quoteMessage');
+  const wa = document.getElementById('quoteWhatsApp');
+  const copy = document.getElementById('copyQuote');
+  const feedback = document.getElementById('copyFeedback');
+  if(!msg || !wa) return;
+  function update(){
+    document.getElementById('summaryEquip').textContent = state.equipamento;
+    document.getElementById('summaryService').textContent = state.servico;
+    document.getElementById('summaryUrgency').textContent = state.urgencia;
+    const text = "Olá! Gostaria de solicitar uma proposta técnica da Walida.\n\n" +
+      "Equipamento/área: " + state.equipamento + "\n" +
+      "Serviço desejado: " + state.servico + "\n" +
+      "Prioridade: " + state.urgencia + "\n\n" +
+      "Posso enviar dados como modelo, número de série, faixa de trabalho, local de instalação e prazo desejado para avaliação?";
+    msg.value = text;
+    wa.href = 'https://wa.me/5581995861615?text=' + encodeURIComponent(text);
+  }
+  document.querySelectorAll('.choice-btn[data-field]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const field = btn.dataset.field;
+      state[field] = btn.dataset.value;
+      document.querySelectorAll('.choice-btn[data-field="'+field+'"]').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      update();
+    });
+  });
+  msg.addEventListener('input', () => { wa.href = 'https://wa.me/5581995861615?text=' + encodeURIComponent(msg.value); });
+  if(copy){
+    copy.addEventListener('click', async () => {
+      try{
+        await navigator.clipboard.writeText(msg.value);
+        feedback.textContent = 'Texto copiado para a área de transferência.';
+      }catch(e){
+        msg.select(); document.execCommand('copy');
+        feedback.textContent = 'Texto selecionado/copiado.';
+      }
+      setTimeout(() => feedback.textContent = '', 2600);
+    });
+  }
+  update();
+})();
+
+// ===== FAQ accordion =====
+(function(){
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const btn = item.querySelector('.faq-question');
+    if(!btn) return;
+    btn.addEventListener('click', () => {
+      const open = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    });
+  });
+})();
+
+// ===== Voltar ao topo =====
+(function(){
+  const btn = document.getElementById('backTop');
+  if(!btn) return;
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('show', window.scrollY > 720);
+  }, {passive:true});
+  btn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+})();
+
+// Formulário de contato — Formspree (AJAX)
+(function(){
+  const form = document.getElementById('contactForm');
+  const success = document.getElementById('formSuccess');
+  if(!form || !success) return;
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    const btn = form.querySelector('.btn-form');
+    btn.textContent = 'Enviando…';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if(res.ok){
+        form.style.display = 'none';
+        success.style.display = 'block';
+      } else {
+        btn.textContent = 'Erro ao enviar — tente novamente';
+        btn.disabled = false;
+      }
+    } catch(err) {
+      btn.textContent = 'Erro ao enviar — tente novamente';
+      btn.disabled = false;
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
