@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FAQ — Qualificação Térmica | Walida</title>
+<meta name="description" content="Perguntas frequentes sobre qualificação térmica: IQ/OQ/QP, custos, prazos, normas e conformidade ANVISA." />
+<link rel="icon" href="logo-walida.png" type="image/png">
+<link rel="canonical" href="https://walidanordeste-create.github.io/site-walida/faq.html">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://walidanordeste-create.github.io/site-walida/faq.html">
+<meta property="og:title" content="FAQ — Qualificação Térmica">
+<meta property="og:description" content="Respostas às perguntas mais comuns sobre qualificação térmica.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg: #FFFFFF;
+  --surface: #F7F4FC;
+  --text: #18053A;
+  --accent: #E8522A;
+  --accent-2: #6B57B8;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+.container{max-width:1000px;margin:0 auto;padding:0 32px}
+
+header{
+  padding:40px 0;
+  border-bottom:1px solid rgba(24,5,58,0.1);
+  margin-bottom:40px;
+}
+
+h1{font-size:2.5rem;margin-bottom:16px;color:var(--accent)}
+header p{color:rgba(24,5,58,0.7);font-size:1.1rem}
+
+.faq-grid{
+  display:grid;
+  gap:24px;
+  margin:40px 0;
+}
+
+.faq-item{
+  background:var(--surface);
+  padding:24px;
+  border-radius:8px;
+  border-left:4px solid var(--accent);
+  cursor:pointer;
+  transition:all 0.3s ease;
+}
+
+.faq-item:hover{
+  box-shadow:0 4px 12px rgba(24,5,58,0.1);
+  transform:translateX(4px);
+}
+
+.faq-question{
+  font-weight:600;
+  font-size:1.1rem;
+  color:var(--accent);
+  margin-bottom:12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.faq-question::after{
+  content:'▼';
+  font-size:0.8rem;
+  transition:transform 0.3s ease;
+}
+
+.faq-item.open .faq-question::after{
+  transform:rotate(180deg);
+}
+
+.faq-answer{
+  display:none;
+  color:var(--text);
+  line-height:1.8;
+  margin-top:16px;
+}
+
+.faq-item.open .faq-answer{
+  display:block;
+}
+
+.faq-answer p{margin-bottom:12px}
+.faq-answer ul{margin-left:20px;margin-bottom:12px;line-height:1.9}
+
+footer{
+  background:var(--surface);
+  padding:40px 0;
+  margin-top:80px;
+  border-top:1px solid rgba(24,5,58,0.1);
+  text-align:center;
+  color:var(--text);
+  font-size:0.9rem;
+}
+
+.cta{
+  display:inline-block;
+  background:var(--accent);
+  color:white;
+  padding:16px 32px;
+  border-radius:4px;
+  text-decoration:none;
+  margin-top:40px;
+  font-weight:600;
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que é qualificação térmica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Qualificação térmica é a validação sistemática de que um equipamento térmico funciona conforme especificado, em todos os pontos do seu espaço de trabalho, sob diferentes condições de operação. É mandatória pela RDC 658 ANVISA."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual é a diferença entre IQ, OQ e QP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IQ (Qualificação de Instalação) verifica se o equipamento foi instalado corretamente. OQ (Qualificação Operacional) testa se funciona sob condições normais. QP (Qualificação de Performance) valida o desempenho sob condições extremas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto custa uma qualificação térmica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Os custos variam: Autoclave (vapor) R$ 2.500–4.500; Câmara climática R$ 3.500–6.000; Termodesinfectora R$ 2.000–3.500; Mapeamento de sala R$ 1.500–2.500."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto tempo leva uma qualificação térmica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Agendamento em 3–7 dias; execução em 2–3 dias úteis, dependendo do tipo de equipamento e quantidade de testes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Com que frequência preciso re-qualificar meu equipamento?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Após reparo ou manutenção corretiva; após mudança de localização; anualmente (recomendado como manutenção preventiva); antes de decommission."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "A qualificação térmica é obrigatória?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. É exigida pela RDC 658 (ANVISA), ABNT NBR 16328 e reconhecida internacionalmente. Laboratórios e hospitais que não têm qualificação correm risco regulatório."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vocês fornecem relatório? Em qual formato?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Fornecemos relatórios técnicos completos em PDF com 50–100 páginas incluindo: gráficos, cálculos de F₀/A₀, certificação, cronograma de testes e conformidade com normas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Atende todo Nordeste ou só Pernambuco?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Walida atende 9 estados: Pernambuco, Alagoas, Ceará, Bahia, Paraíba, Maranhão, Rio Grande do Norte, Piauí e Sergipe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O equipamento precisa ser enviado ou vocês vêm aqui?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vamos até você. Realizamos testes em campo (no local do equipamento) sem necessidade de transporte."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual é a conformidade que vocês cobrem?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Walida é conforme RDC 658 ANVISA, ISO 17025, ABNT NBR 16328, ICH Q1A/Q1B (câmaras climáticas) e FDA 21 CFR Part 11 (para cliente internacional)."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+<header>
+  <div class="container">
+    <a href="index.html" style="text-decoration:none;color:var(--accent);font-weight:700">← Voltar</a>
+    <h1>Perguntas Frequentes</h1>
+    <p>Dúvidas sobre qualificação térmica? Encontre as respostas aqui.</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="faq-grid">
+
+    <div class="faq-item">
+      <div class="faq-question">O que é qualificação térmica?</div>
+      <div class="faq-answer">
+        <p>Qualificação térmica é a <strong>validação sistemática</strong> de que um equipamento térmico funciona conforme especificado, em todos os pontos do seu espaço de trabalho, sob diferentes condições de operação.</p>
+        <p>É mandatória pela <strong>RDC 658 ANVISA</strong> e é essencial para garantir a segurança de produtos, medicamentos e materiais esterilizados.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Qual é a diferença entre IQ, OQ e QP?</div>
+      <div class="faq-answer">
+        <p><strong>IQ (Qualificação de Instalação)</strong></p>
+        <ul>
+          <li>Verifica se o equipamento foi instalado corretamente</li>
+          <li>Confere certificados e documentação</li>
+          <li>Leva ~2h</li>
+        </ul>
+        <p><strong>OQ (Qualificação Operacional)</strong></p>
+        <ul>
+          <li>Testa se funciona sob condições normais</li>
+          <li>Mapeamento térmico com múltiplos sensores</li>
+          <li>Validação de ciclos padrão</li>
+          <li>Leva ~8h</li>
+        </ul>
+        <p><strong>QP (Qualificação de Performance)</strong></p>
+        <ul>
+          <li>Valida o desempenho sob condições extremas</li>
+          <li>Testes de carga máxima e mínima</li>
+          <li>Cálculo de F₀ e A₀</li>
+          <li>Leva ~8h</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Quanto custa uma qualificação térmica?</div>
+      <div class="faq-answer">
+        <p>Os custos variam conforme o equipamento:</p>
+        <ul>
+          <li><strong>Autoclave (vapor):</strong> R$ 2.500–4.500</li>
+          <li><strong>Câmara climática:</strong> R$ 3.500–6.000</li>
+          <li><strong>Termodesinfectora:</strong> R$ 2.000–3.500</li>
+          <li><strong>Mapeamento de sala:</strong> R$ 1.500–2.500</li>
+        </ul>
+        <p>Estes valores incluem relatório técnico completo com gráficos, certificação e compliance com normas.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Quanto tempo leva uma qualificação térmica?</div>
+      <div class="faq-answer">
+        <ul>
+          <li><strong>Agendamento:</strong> 3–7 dias</li>
+          <li><strong>Execução:</strong> 2–3 dias úteis</li>
+          <li><strong>Relatório final:</strong> 3–5 dias após conclusão dos testes</li>
+        </ul>
+        <p>O tempo total depende do tipo de equipamento e do número de testes necessários.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Com que frequência preciso re-qualificar meu equipamento?</div>
+      <div class="faq-answer">
+        <ul>
+          <li><strong>✅ Após reparo:</strong> Manutenção corretiva</li>
+          <li><strong>✅ Após mudança de localização:</strong> Mudança de local de funcionamento</li>
+          <li><strong>✅ Anualmente:</strong> Recomendado como manutenção preventiva e compliance</li>
+          <li><strong>✅ Antes de decommission:</strong> Ao retirar o equipamento de operação</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">A qualificação térmica é obrigatória?</div>
+      <div class="faq-answer">
+        <p><strong>Sim.</strong> É exigida por:</p>
+        <ul>
+          <li><strong>RDC 658</strong> (ANVISA) — Órgão regulador brasileiro</li>
+          <li><strong>ABNT NBR 16328</strong> — Norma técnica brasileira</li>
+          <li><strong>ISO 17025</strong> — Padrão de competência técnica</li>
+          <li><strong>FDA 21 CFR Part 11</strong> — Regulação internacional</li>
+        </ul>
+        <p>Laboratórios, farmácias e hospitais que não possuem qualificação correm risco regulatório e de segurança.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Vocês fornecem relatório? Em qual formato?</div>
+      <div class="faq-answer">
+        <p><strong>Sim.</strong> Fornecemos relatórios técnicos completos em <strong>PDF</strong> com:</p>
+        <ul>
+          <li>50–100 páginas</li>
+          <li>Gráficos de temperatura e uniformidade</li>
+          <li>Cálculos de F₀ e A₀</li>
+          <li>Certificação de conformidade</li>
+          <li>Cronograma detalhado de testes</li>
+          <li>Recomendações para manutenção futura</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Atende todo Nordeste ou só Pernambuco?</div>
+      <div class="faq-answer">
+        <p><strong>Walida atende 9 estados do Nordeste:</strong></p>
+        <ul>
+          <li>Pernambuco (PE) — Recife, Caruaru, Petrolina</li>
+          <li>Alagoas (AL)</li>
+          <li>Ceará (CE)</li>
+          <li>Bahia (BA)</li>
+          <li>Paraíba (PB)</li>
+          <li>Maranhão (MA)</li>
+          <li>Rio Grande do Norte (RN)</li>
+          <li>Piauí (PI)</li>
+          <li>Sergipe (SE)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">O equipamento precisa ser enviado ou vocês vêm aqui?</div>
+      <div class="faq-answer">
+        <p><strong>Vamos até você.</strong></p>
+        <p>Realizamos <strong>testes em campo</strong> (no local do equipamento) sem necessidade de transporte. Isso reduz custos, riscos de dano e tempo de parada do equipamento.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Qual é a conformidade que vocês cobrem?</div>
+      <div class="faq-answer">
+        <ul>
+          <li><strong>RDC 658</strong> (ANVISA) — Requisitos regulatórios brasileiros</li>
+          <li><strong>ISO 17025</strong> — Competência técnica e gestão da qualidade</li>
+          <li><strong>ABNT NBR 16328</strong> — Câmaras climáticas</li>
+          <li><strong>ICH Q1A/Q1B</strong> — Testes de estabilidade farmacêutica</li>
+          <li><strong>FDA 21 CFR Part 11</strong> — Integridade de dados e auditoria (para clientes internacionais)</li>
+          <li><strong>ABNT NBR ISO 17665</strong> — Processamento de dispositivos médicos</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <section style="text-align:center;margin-top:60px">
+    <h2>Ainda tem dúvidas?</h2>
+    <p>Entre em contato com nosso time. Faremos uma consulta gratuita.</p>
+    <a href="index.html#contato" class="cta">Conversar com Walida →</a>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Walida — Qualificação Térmica. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('click', () => {
+    item.classList.toggle('open');
+  });
+});
+</script>
+</body>
+</html>
