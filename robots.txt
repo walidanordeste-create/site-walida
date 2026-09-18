@@ -1,4 +1,21 @@
+# Permitir todos os bots para máxima indexação
 User-agent: *
 Allow: /
+Disallow:
 
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+# Configuração global
 Sitemap: https://walidanordeste-create.github.io/site-walida/sitemap.xml
+Sitemap: https://walidanordeste-create.github.io/site-walida/
+
+# Cache permissão
+# Cache de 30 dias é OK

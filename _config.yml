@@ -1,0 +1,31 @@
+# Jekyll Configuration for GitHub Pages
+# Desabilita Jekyll processing para máximo controle
+plugins:
+  - jekyll-seo-tag
+
+# Configurações de segurança
+safe: true
+lsi: false
+future: false
+jailed: true
+incremental: false
+
+# Configurações de encoding
+encoding: UTF-8
+
+# Configurações de tema
+markdown: kramdown
+highlighter: rouge
+
+# Configurações de URL
+url: "https://walidanordeste-create.github.io/site-walida"
+baseurl: "/site-walida"
+
+# Meta informações
+title: "Walida"
+description: "Qualificação Térmica e Validação no Nordeste"
+author: "Walida"
+lang: pt-BR
+
+# CORS e headers (para documentação, GitHub Pages não processa .htaccess)
+# Adicionar headers de segurança no HTML conforme já feito
