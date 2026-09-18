@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://walidanordeste-create.github.io/site-walida/</loc>
+    <image:image>
+      <image:loc>https://walidanordeste-create.github.io/site-walida/foto-camara-estabilidade.jpg</image:loc>
+      <image:title>Câmara de Estabilidade — Qualificação Térmica</image:title>
+      <image:caption>Câmara climática para testes de estabilidade farmacêutica conforme ICH</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://walidanordeste-create.github.io/site-walida/foto-autoclave.jpg</image:loc>
+      <image:title>Autoclave — Esterilização por Vapor</image:title>
+      <image:caption>Equipamento de esterilização por vapor com qualificação térmica</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://walidanordeste-create.github.io/site-walida/foto-camara-fria.jpg</image:loc>
+      <image:title>Câmara Fria — Refrigeração</image:title>
+      <image:caption>Câmara de armazenamento refrigerado para produtos farmacêuticos</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://walidanordeste-create.github.io/site-walida/foto-autoclave-material.jpg</image:loc>
+      <image:title>Material para Esterilização em Autoclave</image:title>
+      <image:caption>Instrumentos e equipamentos sendo esterilizados em processo validado</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://walidanordeste-create.github.io/site-walida/foto-rack-esterilizacao.jpg</image:loc>
+      <image:title>Rack de Esterilização Organizado</image:title>
+      <image:caption>Sistema de organização para processos de esterilização conforme normas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://walidanordeste-create.github.io/site-walida/foto-equipe.jpg</image:loc>
+      <image:title>Equipe de Engenharia Clínica Walida</image:title>
+      <image:caption>Profissionais especializados em qualificação térmica e validação</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://walidanordeste-create.github.io/site-walida/foto-manometro.jpg</image:loc>
+      <image:title>Manômetro de Precisão para Qualificação</image:title>
+      <image:caption>Instrumento de medição para validação de equipamentos</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://walidanordeste-create.github.io/site-walida/foto-tecnico-manometro.jpg</image:loc>
+      <image:title>Técnico Usando Manômetro em Validação</image:title>
+      <image:caption>Profissional realizando medições em equipamento de qualificação térmica</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://walidanordeste-create.github.io/site-walida/foto-campo-camara.jpg</image:loc>
+      <image:title>Inspeção em Campo de Câmara Climática</image:title>
+      <image:caption>Qualificação de equipamento no local do cliente</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://walidanordeste-create.github.io/site-walida/foto-equipamento-lab.jpg</image:loc>
+      <image:title>Equipamento de Laboratório Qualificado</image:title>
+      <image:caption>Instrumento laboratorial submetido a processo de validação</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://walidanordeste-create.github.io/site-walida/foto-tecnico-campo.jpg</image:loc>
+      <image:title>Técnico em Atividade de Campo</image:title>
+      <image:caption>Profissional executando qualificação térmica no local do cliente</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://walidanordeste-create.github.io/site-walida/foto-clipboard.jpg</image:loc>
+      <image:title>Documento de Qualificação Térmica</image:title>
+      <image:caption>Registro e documentação de processo de qualificação conforme RDC 658</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://walidanordeste-create.github.io/site-walida/logo-walida.png</image:loc>
+      <image:title>Logotipo Walida</image:title>
+      <image:caption>Logo da empresa Walida — Qualificação Térmica e Validação</image:caption>
+    </image:image>
+  </url>
+</urlset>

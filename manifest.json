@@ -1,0 +1,74 @@
+{
+  "name": "Walida — Qualificação Térmica e Validação",
+  "short_name": "Walida",
+  "description": "Qualificação de instalação, operação e performance de câmaras climáticas, frias, autoclaves e áreas controladas no Nordeste.",
+  "start_url": "/site-walida/",
+  "scope": "/site-walida/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#E8522A",
+  "background_color": "#FFFFFF",
+  "icons": [
+    {
+      "src": "/site-walida/logo-walida.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/site-walida/logo-walida.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/site-walida/logo-walida.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["business", "medical"],
+  "screenshots": [
+    {
+      "src": "/site-walida/foto-camara-estabilidade.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/site-walida/foto-camara-estabilidade.jpg",
+      "sizes": "540x720",
+      "type": "image/jpeg",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Serviços",
+      "short_name": "Serviços",
+      "description": "Veja nossos serviços de qualificação térmica",
+      "url": "/site-walida/#servicos",
+      "icons": [
+        {
+          "src": "/site-walida/logo-walida.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Contato",
+      "short_name": "Contato",
+      "description": "Entre em contato conosco",
+      "url": "/site-walida/#contato",
+      "icons": [
+        {
+          "src": "/site-walida/logo-walida.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}

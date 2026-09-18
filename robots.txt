@@ -15,7 +15,7 @@ Crawl-delay: 0
 
 # Configuração global
 Sitemap: https://walidanordeste-create.github.io/site-walida/sitemap.xml
-Sitemap: https://walidanordeste-create.github.io/site-walida/
+Sitemap: https://walidanordeste-create.github.io/site-walida/sitemap-images.xml
 
 # Cache permissão
 # Cache de 30 dias é OK
