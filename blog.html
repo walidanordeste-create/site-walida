@@ -11,259 +11,126 @@
 <meta property="og:url" content="https://walidanordeste-create.github.io/site-walida/blog.html">
 <meta property="og:title" content="Blog | Walida">
 <meta property="og:description" content="Artigos técnicos sobre qualificação térmica, validação de processos e boas práticas regulatórias.">
+<meta property="og:image" content="https://walidanordeste-create.github.io/site-walida/foto-equipamento-lab.jpg">
 <link rel="sitemap" type="application/xml" href="/site-walida/sitemap.xml">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Anton&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --bg: #FFFFFF;
-  --surface: #F7F4FC;
-  --line: rgba(90,50,120,0.10);
-  --text: #18053A;
-  --text-2: #5C4878;
-  --text-3: #9C8CB8;
-  --accent: #E8522A;
-  --accent-2: #6B57B8;
-  --grad: linear-gradient(135deg, #E8522A 0%, #A8508A 50%, #6B57B8 100%);
-}
-
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  font-family:'Inter',sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.5;
-}
-
-.container{max-width:1280px;margin:0 auto;padding:0 32px}
-
-.header{
-  padding:12px 0;
-  border-bottom:1px solid var(--line);
-  background:rgba(255,255,255,.95);
-}
-
-.nav{display:flex;align-items:center;justify-content:space-between}
-.logo{font-weight:700;color:var(--text);text-decoration:none;font-size:18px}
-
-.nav-links{display:flex;gap:36px;list-style:none}
-.nav-links a{
-  color:var(--text-2);text-decoration:none;font-size:14px;font-weight:500;
-}
-.nav-links a:hover{color:var(--accent)}
-
-.btn{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:12px 24px;border-radius:999px;
-  font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:12px;
-  letter-spacing:.06em;text-transform:uppercase;
-  text-decoration:none;background:var(--accent);color:#fff;
-  border:none;cursor:pointer;
-}
-
-.btn:hover{background:var(--accent-2)}
-
-.hero{
-  padding:80px 0;
-  background:var(--surface);
-  text-align:center;
-}
-
-.hero h1{
-  font-family:'Anton',sans-serif;
-  font-size:3.5rem;font-weight:400;
-  text-transform:uppercase;
-  margin-bottom:20px;
-  letter-spacing:-.02em;
-}
-
-.hero p{
-  font-size:18px;color:var(--text-2);
-  max-width:600px;margin:0 auto;
-}
-
-.blog-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-  gap:40px;
-  padding:80px 0;
-}
-
-.blog-card{
-  background:white;
-  border:1px solid var(--line);
-  border-radius:16px;
-  overflow:hidden;
-  transition:all .3s ease;
-  text-decoration:none;
-  color:inherit;
-  cursor:pointer;
-  display:flex;
-  flex-direction:column;
-}
-
-.blog-card:hover{
-  border-color:var(--accent);
-  box-shadow:0 12px 36px rgba(232,82,42,.15);
-  transform:translateY(-8px);
-}
-
-.blog-image{
-  width:100%;
-  height:200px;
-  background:var(--surface);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:60px;
-}
-
-.blog-content{
-  padding:28px;
-  flex:1;
-  display:flex;
-  flex-direction:column;
-}
-
-.blog-category{
-  display:inline-block;
-  font-size:11px;font-weight:600;
-  letter-spacing:.1em;text-transform:uppercase;
-  color:var(--accent);margin-bottom:12px;
-  width:fit-content;
-}
-
-.blog-title{
-  font-family:'Space Grotesk',sans-serif;
-  font-size:20px;font-weight:700;
-  margin-bottom:12px;line-height:1.3;
-}
-
-.blog-excerpt{
-  font-size:14px;color:var(--text-2);
-  margin-bottom:16px;line-height:1.6;
-  flex:1;
-}
-
-.blog-meta{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  font-size:12px;color:var(--text-3);
-}
-
-.footer{
-  background:var(--text);
-  color:#fff;
-  padding:60px 0 30px;
-  margin-top:80px;
-}
-
-.footer-text{
-  text-align:center;
-  font-size:12px;color:rgba(255,255,255,.6);
-}
-
-.coming-soon{
-  opacity:.5;
-  cursor:default;
-}
-
-.coming-soon:hover{
-  transform:none;
-  box-shadow:none;
-  border-color:var(--line);
-}
-
-@media(max-width:768px){
-  .hero h1{font-size:2rem}
-  .nav-links{gap:20px;font-size:12px}
-  .blog-grid{gap:20px;padding:40px 0}
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
 </head>
-<body>
+<body class="blog-page">
 
-<header class="header">
-  <div class="container">
-    <nav class="nav">
-      <a href="index.html" class="logo"><img src="logo-walida.png" alt="Walida" style="height:44px;width:auto;display:block"></a>
-      <ul class="nav-links">
-        <li><a href="index.html#sobre">Sobre</a></li>
-        <li><a href="servicos.html">Serviços</a></li>
-        <li><a href="blog.html" style="color:var(--accent);font-weight:600">Blog</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="index.html#contato">Contato</a></li>
-      </ul>
-      <a href="index.html#contato" class="btn">Orçamento</a>
-    </nav>
+<header class="site-header">
+  <div class="hdr">
+    <a href="index.html" class="brand"><img src="logo-walida.png" alt="Walida"></a>
+    <ul>
+      <li><a href="index.html#sobre">Sobre</a></li>
+      <li><a href="servicos.html">Serviços</a></li>
+      <li><a href="index.html#processo">Processo</a></li>
+      <li><a href="index.html#setores">Setores</a></li>
+      <li><a href="blog.html" aria-current="page">Blog</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="index.html#contato">Contato</a></li>
+      <li><a href="index.html#simulador">Simulador</a></li>
+    </ul>
+    <a href="index.html#contato" class="pill">Orçamento</a>
   </div>
 </header>
 
-<section class="hero">
-  <div class="container">
-    <h1>Blog Walida</h1>
-    <p>Artigos técnicos sobre qualificação térmica, validação de processos e melhores práticas regulatórias no Nordeste.</p>
-  </div>
-</section>
-
-<section class="container">
-  <div class="blog-grid">
-
-    <!-- Card 1: Qualificação Térmica -->
-    <a href="blog-qualificacao-termica.html" class="blog-card">
-      <div class="blog-image">🌡️</div>
-      <div class="blog-content">
-        <span class="blog-category">Qualificação</span>
-        <h3 class="blog-title">Qualificação térmica: o que é e por que é importante</h3>
-        <p class="blog-excerpt">Entenda os três pilares da qualificação térmica: QI, QO e QD. Normas, mapeamento e critérios de aceitação.</p>
-        <div class="blog-meta">
-          <span>18 set 2026</span>
-          <span>8 min</span>
-        </div>
-      </div>
-    </a>
-
-    <!-- Card 2: Validação de Processos -->
-    <a href="blog-validacao-processos.html" class="blog-card">
-      <div class="blog-image">📋</div>
-      <div class="blog-content">
-        <span class="blog-category">Validação</span>
-        <h3 class="blog-title">Validação de processos farmacêuticos e hospitalares</h3>
-        <p class="blog-excerpt">Validação de processos: requisitos regulatórios, fases do protocolo e documentação defensável.</p>
-        <div class="blog-meta">
-          <span>18 set 2026</span>
-          <span>8 min</span>
-        </div>
-      </div>
-    </a>
-
-    <!-- Card 3: Artigo de Parceiro (Coming Soon) -->
-    <div class="blog-card coming-soon">
-      <div class="blog-image">🤝</div>
-      <div class="blog-content">
-        <span class="blog-category">Parceiros</span>
-        <h3 class="blog-title">Artigos de parceiros</h3>
-        <p class="blog-excerpt">Em breve: novos artigos de parceiros da Walida sobre tópicos regulatórios e técnicos.</p>
-        <div class="blog-meta">
-          <span>--</span>
-          <span>--</span>
-        </div>
-      </div>
+<div class="tagline">
+  <div class="tagline-in">
+    <img src="logo-walida.png" alt="">
+    <div>
+      <p>Conteúdo técnico sobre qualificação térmica, validação de processos e boas práticas regulatórias.</p>
+      <a href="index.html#sobre" class="learn">Conheça a Walida</a>
     </div>
+  </div>
+</div>
 
+<main class="front">
+
+  <aside class="topic">
+    <a href="blog-qualificacao-termica.html">
+      <img src="foto-tecnico-campo.jpg" alt="Técnico Walida registrando protocolo de qualificação em campo" loading="eager">
+      <span class="label">Tema em foco</span>
+      <h2>Qualificação térmica</h2>
+      <p>QI, QO e QD, normas de referência e critérios de aceitação: o que é preciso para qualificar equipamentos térmicos com segurança e documentação defensável.</p>
+    </a>
+  </aside>
+
+  <section class="lead">
+    <a href="blog-qualificacao-termica.html">
+      <img src="foto-equipamento-lab.jpg" alt="Seladora de bancada em qualificação de selagem e monitoramento térmico" loading="eager">
+      <span class="label">Qualificação</span>
+      <h2>Qualificação térmica: o que é e por que é importante</h2>
+      <p class="dek">Entenda os três pilares da qualificação, QI, QO e QD, e as normas de referência: RDC 15/2012, RDC 658/2022 e ABNT NBR 16328:2024.</p>
+      <p class="byline">Walida · 18 set 2026 · 8 min de leitura</p>
+    </a>
+  </section>
+
+  <aside class="side">
+    <article class="card">
+      <a href="blog-validacao-processos.html">
+        <img src="foto-camara-estabilidade.jpg" alt="Câmara climática com sensores posicionados para validação do processo" loading="eager">
+        <span class="label">Validação</span>
+        <h3>Validação de processos farmacêuticos e hospitalares</h3>
+        <p class="byline">Walida · 18 set 2026 · 8 min de leitura</p>
+      </a>
+    </article>
+    <article class="card soon">
+      <span class="label">Parceiros</span>
+      <h3>Artigos de parceiros</h3>
+      <p class="txt">Em breve: novos artigos de parceiros da Walida sobre tópicos regulatórios e técnicos.</p>
+    </article>
+  </aside>
+
+</main>
+
+<section class="more">
+  <div class="more-in">
+    <div class="sec-head"><span class="label">Guia rápido</span><h2>O que as normas dizem, em poucas linhas</h2></div>
+    <div class="tips">
+      <article class="tip"><span class="label">Periodicidade</span><h3>Qualificação térmica: no mínimo uma vez por ano</h3><p>A RDC 15/2012 (arts. 37 e 39) exige qualificação de instalação, de operação e de desempenho com periodicidade mínima anual, e a qualificação térmica por laboratório capacitado. A NBR 16328:2024 (item 16) também prevê qualificação anual, ou antes, após manutenção que impacte as funções do equipamento.</p></article>
+      <article class="tip"><span class="label">Mapeamento</span><h3>Quantos sensores usar?</h3><p>A NBR 16328:2024 pede no mínimo 12 termopares em equipamentos com volume interno a partir de 60 L e no mínimo 3 abaixo disso. Um sensor deve ficar adjacente ao sensor de controle e nenhum pode ser desconsiderado no relatório final.</p></article>
+      <article class="tip"><span class="label">Câmaras climáticas</span><h3>24 horas de registro</h3><p>No Anexo H (informativo) da NBR 16328:2024, o estudo de distribuição usa no mínimo 12 sensores de temperatura e 3 de umidade, com registro a cada 60 segundos por 24 horas consecutivas, a partir da estabilização do equipamento.</p></article>
+      <article class="tip"><span class="label">Cálculos</span><h3>F₀ e A₀: qual usar?</h3><p>O F₀ expressa a letalidade da esterilização a vapor, com referência de 121 °C. O A₀ expressa a letalidade da desinfecção térmica, com referência de 80 °C, e é usado em termodesinfectoras e lavadoras desinfetadoras (ISO 15883).</p></article>
+      <article class="tip"><span class="label">Autoclaves</span><h3>Bowie & Dick no primeiro ciclo do dia</h3><p>Nas autoclaves assistidas por bomba de vácuo, o art. 93 da RDC 15/2012 torna obrigatório o teste Bowie & Dick no primeiro ciclo do dia, para avaliar o desempenho do sistema de remoção de ar.</p></article>
+      <article class="tip"><span class="label">Seladoras</span><h3>Seladoras térmicas: calibração anual</h3><p>O art. 38 da RDC 15/2012 determina que as seladoras térmicas e as leitoras de indicadores biológicos sejam calibradas, no mínimo, anualmente.</p></article>
+      <article class="tip"><span class="label">Parâmetros</span><h3>O que foi qualificado não se altera</h3><p>Segundo o art. 94 da RDC 15/2012, não é permitido alterar os parâmetros estabelecidos na qualificação de operação e de desempenho de qualquer ciclo dos equipamentos de esterilização.</p></article>
+      <article class="tip"><span class="label">Carga</span><h3>Carga mais desafiadora exige nova qualificação</h3><p>Pelo parágrafo único do art. 37 da RDC 15/2012, sempre que a carga de esterilização apresentar desafios superiores aos da qualificação de desempenho, essa qualificação deve ser refeita.</p></article>
+    </div>
   </div>
 </section>
 
-<footer class="footer">
-  <div class="footer-text">
-    <p>© 2026 Walida — Qualificação · Validação · Calibração</p>
+<section class="more alt">
+  <div class="more-in two">
+    <div>
+      <div class="sec-head"><span class="label">Dúvidas frequentes</span><h2>Perguntas que recebemos</h2></div>
+      <ul class="qlist">
+        <li><a href="faq.html">Quanto tempo leva uma qualificação térmica?</a></li>
+        <li><a href="faq.html">Com que frequência preciso requalificar meu equipamento?</a></li>
+        <li><a href="faq.html">A qualificação térmica é obrigatória?</a></li>
+        <li><a href="faq.html">Vocês atendem todo o Nordeste ou só Pernambuco?</a></li>
+      </ul>
+      <a href="faq.html" class="learn">Ver todas as perguntas</a>
+    </div>
+    <div>
+      <div class="sec-head"><span class="label">Referências</span><h2>Normas que orientam os artigos</h2></div>
+      <ul class="nlist">
+        <li><strong>ABNT NBR 16328:2024</strong><span>Ensaios de medição de temperatura, pressão e umidade em equipamentos</span></li>
+        <li><strong>RDC 15/2012 (ANVISA)</strong><span>Boas práticas para o processamento de produtos para saúde</span></li>
+        <li><strong>RDC 658/2022 (ANVISA)</strong><span>Diretrizes gerais de Boas Práticas de Fabricação de medicamentos</span></li>
+        <li><strong>ABNT NBR ISO 17665-1</strong><span>Esterilização por vapor: desenvolvimento, validação e controle de rotina</span></li>
+        <li><strong>ISO 15883</strong><span>Lavadoras desinfetadoras</span></li>
+        <li><strong>ISO 22441</strong><span>Validação de processos de esterilização a baixa temperatura</span></li>
+        <li><strong>ABNT NBR ISO/IEC 17025</strong><span>Competência de laboratórios de ensaio e calibração</span></li>
+      </ul>
+    </div>
   </div>
-</footer>
+</section>
+
+<footer class="blog-footer">© 2026 Walida — Qualificação · Validação · Calibração</footer>
 
 </body>
 </html>

@@ -1,0 +1,109 @@
+:root{
+  --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+  --sans:'Inter',Helvetica,Arial,sans-serif;
+  --ink:#2c2c2c;
+  --mute:#828282;
+  --rule:#e4e4e4;
+  --accent:#E8522A;
+  --accent-2:#6B57B8;
+}
+
+/* ===== Listagem do blog ===== */
+.blog-page{margin:0;font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.5}
+.blog-page *{box-sizing:border-box}
+.blog-page a{color:inherit;text-decoration:none}
+.blog-page img{display:block}
+
+.site-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.97);border-bottom:1px solid var(--rule);box-shadow:0 1px 8px rgba(0,0,0,.04)}
+.hdr{display:flex;align-items:center;justify-content:space-between;gap:24px;max-width:1280px;margin:0 auto;padding:12px 32px}
+.hdr .brand img{height:44px;width:auto}
+.hdr ul{display:flex;gap:30px;list-style:none;margin:0;padding:0;font:500 14px var(--sans);color:#5C4878}
+.hdr ul a:hover{color:var(--accent)}
+.hdr ul a[aria-current="page"]{color:var(--accent);font-weight:600}
+.pill{display:inline-block;background:var(--accent);color:#fff!important;border-radius:999px;padding:12px 24px;font:700 13px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.pill:hover{background:var(--accent-2)}
+
+.tagline{border-bottom:1px solid var(--rule)}
+.tagline-in{display:flex;align-items:center;gap:28px;max-width:1280px;margin:0 auto;padding:22px 32px}
+.tagline-in img{height:58px;width:auto}
+.tagline-in p{margin:0 0 6px;font:400 20px/1.35 var(--serif);color:var(--ink)}
+.learn{font:600 13px var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--mute);text-decoration:underline!important;text-underline-offset:3px}
+.learn:hover{color:var(--accent)}
+
+.front{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.1fr) minmax(0,1fr);gap:44px;max-width:1280px;margin:0 auto;padding:36px 32px 72px}
+.label{display:block;font:600 13px var(--sans);letter-spacing:.09em;text-transform:uppercase;color:var(--mute)}
+.byline{margin:14px 0 0;font:600 12px var(--sans);letter-spacing:.09em;text-transform:uppercase;color:var(--mute)}
+
+.topic img{width:100%;aspect-ratio:1;object-fit:cover;margin-bottom:22px}
+.topic h2{margin:8px 0 14px;font:800 34px/1.1 var(--serif);letter-spacing:-.025em}
+.topic p{margin:0;font:400 16px/1.6 var(--serif);color:#4a4a4a}
+
+.lead img{width:100%;aspect-ratio:16/10;object-fit:cover;margin-bottom:18px}
+.lead h2{margin:10px 0 14px;font:800 clamp(30px,3.4vw,46px)/1.08 var(--serif);letter-spacing:-.025em}
+.lead .dek{margin:0;font:400 19px/1.55 var(--serif);color:#4a4a4a}
+
+.card img{width:100%;aspect-ratio:4/3;object-fit:cover;margin-bottom:16px}
+.card h3{margin:8px 0 10px;font:800 24px/1.15 var(--serif);letter-spacing:-.02em}
+.card p.txt{margin:0;font:400 15px/1.55 var(--serif);color:#4a4a4a}
+.card + .card{margin-top:30px;padding-top:30px;border-top:1px solid var(--rule)}
+
+.topic:hover h2,.lead a:hover h2,.card a:hover h3{color:var(--accent)}
+.soon{opacity:.75}
+
+.blog-footer{border-top:1px solid var(--rule);padding:36px 32px;text-align:center;font:400 13px var(--sans);color:var(--mute)}
+
+@media(max-width:1000px){
+  .front{grid-template-columns:1fr;gap:40px;padding:28px 20px 56px}
+  .lead{order:-1}
+  .hdr{flex-wrap:wrap;padding:12px 20px}
+  .hdr ul{order:3;width:100%;overflow-x:auto;gap:22px;padding-bottom:4px}
+  .tagline-in{padding:18px 20px}
+  .tagline-in img{height:44px}
+  .tagline-in p{font-size:17px}
+}
+
+
+/* ===== Seções abaixo da capa ===== */
+.more{border-top:1px solid var(--rule)}
+.more-in{max-width:1280px;margin:0 auto;padding:48px 32px 56px}
+.sec-head{margin-bottom:26px}
+.sec-head h2{margin:8px 0 0;font:800 clamp(26px,3vw,36px)/1.12 var(--serif);letter-spacing:-.025em}
+.tips{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:36px 32px}
+.tip{border-top:2px solid var(--ink);padding-top:14px}
+.tip h3{margin:8px 0 10px;font:800 21px/1.18 var(--serif);letter-spacing:-.02em}
+.tip p{margin:0;font:400 15px/1.6 var(--serif);color:#4a4a4a}
+.more.alt{background:#faf9fc}
+.more-in.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px}
+.qlist,.nlist{list-style:none;margin:0 0 22px;padding:0}
+.qlist li{border-top:1px solid var(--rule);padding:16px 0;font:600 20px/1.3 var(--serif)}
+.qlist li:last-child{border-bottom:1px solid var(--rule)}
+.qlist a:hover{color:var(--accent)}
+.nlist li{border-top:1px solid var(--rule);padding:14px 0;display:flex;flex-direction:column;gap:2px}
+.nlist li:last-child{border-bottom:1px solid var(--rule)}
+.nlist strong{font:600 14px var(--sans);letter-spacing:.04em;color:var(--ink)}
+.nlist span{font:400 15px/1.5 var(--serif);color:#4a4a4a}
+@media(max-width:1000px){
+  .tips{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .more-in{padding:36px 20px 44px}
+  .more-in.two{grid-template-columns:1fr;gap:40px}
+}
+@media(max-width:600px){.tips{grid-template-columns:1fr}}
+
+/* ===== Artigos (mesma linguagem editorial) ===== */
+.artigo{font-family:var(--serif);color:var(--ink)}
+.artigo .container{max-width:720px}
+.artigo header{padding:40px 0 8px;border-bottom:0;margin-bottom:8px}
+.artigo header a{font:600 13px var(--sans)!important;letter-spacing:.09em;text-transform:uppercase;color:var(--mute)!important}
+.artigo header a:hover{color:var(--accent)!important}
+.artigo h1{margin:14px 0 18px;font:800 clamp(34px,5vw,52px)/1.08 var(--serif);letter-spacing:-.025em;color:var(--ink)}
+.artigo .meta{margin:0;font:600 12px var(--sans);letter-spacing:.09em;text-transform:uppercase;color:var(--mute)}
+.artigo h2{margin:48px 0 16px;font:800 30px/1.15 var(--serif);letter-spacing:-.02em;color:var(--ink)}
+.artigo h3{margin:32px 0 10px;font:700 22px/1.25 var(--serif);color:var(--ink)}
+.artigo p,.artigo li{font:400 19px/1.75 var(--serif)}
+.artigo ul{margin-left:24px}
+.artigo main a{color:var(--accent)}
+.artigo table,.artigo th,.artigo td{font:400 15px/1.5 var(--sans)}
+.artigo th{font-weight:600}
+.artigo .highlight{background:#f7f4fc;border-left:3px solid var(--accent);border-radius:0}
+.artigo .cta{border-radius:999px;font-family:var(--sans);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#fff!important}
+.artigo footer{background:#fff;font-family:var(--sans);color:var(--mute)}
