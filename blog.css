@@ -89,6 +89,20 @@
 }
 @media(max-width:600px){.tips{grid-template-columns:1fr}}
 
+
+/* ===== Vídeos ===== */
+.vgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 36px}
+.vcard video{display:block;width:100%;height:auto;max-width:340px;aspect-ratio:9/16;background:#150a2c;margin-bottom:16px;object-fit:cover}
+#videos{scroll-margin-top:84px}
+.vcard h3{margin:8px 0 10px;font:800 24px/1.15 var(--serif);letter-spacing:-.02em}
+.vcard>p{margin:0 0 12px;font:400 16px/1.55 var(--serif);color:#4a4a4a}
+.vcard details{margin:0 0 12px;font:400 15px/1.6 var(--serif);color:#4a4a4a}
+.vcard summary{cursor:pointer;font:600 13px var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.vcard summary:hover{color:var(--accent)}
+.vcard details p{margin:10px 0 0}
+@media(max-width:1000px){.vgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.vgrid{grid-template-columns:1fr}}
+
 /* ===== Artigos (mesma linguagem editorial) ===== */
 .artigo{font-family:var(--serif);color:var(--ink)}
 .artigo .container{max-width:720px}
