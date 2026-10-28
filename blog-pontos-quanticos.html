@@ -1,0 +1,899 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pontos quânticos de CdS e CuS: da luz à célula | Blog Walida</title>
+<meta name="description" content="Guia ilustrado e interativo sobre pontos quânticos de sulfeto de cádmio (CdS) e sulfeto de cobre (CuS): como recebem energia, que cor emitem, como viajam pelo corpo e como agem em células tumorais e imunes.">
+<link rel="canonical" href="https://walidanordeste-create.github.io/site-walida/blog-pontos-quanticos.html">
+<link rel="icon" href="logo-walida.png">
+<meta name="theme-color" content="#E8522A">
+<meta name="author" content="Luís Felipe Alves Dionísio">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Pontos quânticos de CdS e CuS: da luz à célula">
+<meta property="og:description" content="Guia ilustrado e interativo, com gráficos 3D, sobre bandgap, emissão de luz, farmacocinética e farmacodinâmica de pontos quânticos em células tumorais e imunes.">
+<meta property="og:url" content="https://walidanordeste-create.github.io/site-walida/blog-pontos-quanticos.html">
+<meta property="og:image" content="https://walidanordeste-create.github.io/site-walida/capa-pontos-quanticos.svg">
+<link rel="sitemap" type="application/xml" href="/site-walida/sitemap.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Início", "item": "https://walidanordeste-create.github.io/site-walida/"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://walidanordeste-create.github.io/site-walida/blog.html"},
+    {"@type": "ListItem", "position": 3, "name": "Pontos quânticos de CdS e CuS", "item": "https://walidanordeste-create.github.io/site-walida/blog-pontos-quanticos.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Pontos quânticos de sulfeto de cádmio e de sulfeto de cobre: da luz à célula",
+  "description": "Guia ilustrado e interativo sobre bandgap, emissão de luz, farmacocinética e farmacodinâmica de pontos quânticos de CdS e CuS em células tumorais e imunes.",
+  "image": "https://walidanordeste-create.github.io/site-walida/capa-pontos-quanticos.svg",
+  "datePublished": "2026-10-28",
+  "dateModified": "2026-10-28",
+  "inLanguage": "pt-BR",
+  "author": {"@type": "Person", "name": "Luís Felipe Alves Dionísio"},
+  "publisher": {
+    "@type": "Organization",
+    "name": "Walida",
+    "logo": {"@type": "ImageObject", "url": "https://walidanordeste-create.github.io/site-walida/logo-walida.png"}
+  },
+  "mainEntityOfPage": "https://walidanordeste-create.github.io/site-walida/blog-pontos-quanticos.html"
+}
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.27.0/plotly.min.js"></script>
+<style>
+:root{
+  --bg:#fbfaf7;--panel:#ffffff;--ink:#1b2127;--muted:#5a636d;--line:#e2e4e7;--soft:#f1f3f5;
+  --accent:#6B57B8;--accent-soft:#EDE8F8;--cds:#c98a00;--cds-soft:#fdf3dc;--cus:#137e6b;--cus-soft:#e1f4ef;
+  --bad:#b83227;--good:#1d7d45;--simple:#fff7e0;--simple-ink:#5e4500;--heat:#d4582c;--light:#2f7fd1;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#111417;--panel:#1a1e22;--ink:#e6e9ec;--muted:#9da6b0;--line:#2c3238;--soft:#22282e;
+    --accent:#62b1ea;--accent-soft:#1c2b38;--cds:#f2c03a;--cds-soft:#2c2614;--cus:#3cc4a8;--cus-soft:#132b26;
+    --bad:#ff7d6e;--good:#5fd38d;--simple:#2a2414;--simple-ink:#f0d79a;--heat:#ff8a5c;--light:#6fb2f2;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#111417;--panel:#1a1e22;--ink:#e6e9ec;--muted:#9da6b0;--line:#2c3238;--soft:#22282e;
+  --accent:#62b1ea;--accent-soft:#1c2b38;--cds:#f2c03a;--cds-soft:#2c2614;--cus:#3cc4a8;--cus-soft:#132b26;
+  --bad:#ff7d6e;--good:#5fd38d;--simple:#2a2414;--simple-ink:#f0d79a;--heat:#ff8a5c;--light:#6fb2f2;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:980px;margin:0 auto;padding:0 16px 96px}
+header.hero{padding:56px 0 28px}
+.kicker{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:650}
+h1{font-size:clamp(1.8rem,4.6vw,2.7rem);line-height:1.15;margin:8px 0 12px;letter-spacing:-.02em}
+.lead{font-size:1.15rem;color:var(--muted);max-width:760px}
+h2{font-size:clamp(1.4rem,3vw,1.8rem);line-height:1.25;margin:64px 0 8px;letter-spacing:-.01em}
+h2 .num{display:inline-block;min-width:1.6em;color:var(--accent)}
+h3{font-size:1.12rem;margin:26px 0 6px}
+p{margin:8px 0 12px}
+a{color:var(--accent)}
+.q{font-size:1.05rem;color:var(--muted);font-style:italic;margin:0 0 14px}
+.simple{background:var(--simple);color:var(--simple-ink);border-radius:14px;padding:14px 18px;margin:14px 0}
+.simple b.t{display:block;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.simple p{margin:4px 0}
+details.deep{background:var(--panel);border:1px solid var(--line);border-radius:14px;margin:14px 0;overflow:hidden}
+details.deep>summary{cursor:pointer;padding:12px 18px;font-weight:650;list-style:none;display:flex;gap:10px;align-items:center}
+details.deep>summary::-webkit-details-marker{display:none}
+details.deep>summary::before{content:"+";display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;flex:none}
+details.deep[open]>summary::before{content:"−"}
+details.deep .body{padding:0 18px 14px}
+figure{margin:18px 0;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px}
+figure svg{width:100%;height:auto;display:block}
+figcaption{font-size:.88rem;color:var(--muted);margin-top:8px}
+.plot{width:100%;height:460px}
+.plot.short{height:290px}
+.howto{font-size:.9rem;background:var(--soft);border-radius:10px;padding:10px 14px;margin-top:8px}
+.howto b{color:var(--accent)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:10px;margin:14px 0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.card .k{font-size:.78rem;color:var(--muted)}
+.card .v{font-size:1.3rem;font-weight:700;font-variant-numeric:tabular-nums}
+.card .n{font-size:.8rem;color:var(--muted)}
+.mat{border-radius:14px;padding:16px 18px}
+.mat.cds{background:var(--cds-soft)} .mat.cus{background:var(--cus-soft)}
+.mat h3{margin-top:0}
+.cdsT{color:var(--cds);font-weight:700}.cusT{color:var(--cus);font-weight:700}
+.bad{color:var(--bad)}.good{color:var(--good)}
+.toc{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-top:22px}
+.toc ol{margin:6px 0 0;padding-left:22px;columns:2;column-gap:28px}
+@media (max-width:640px){.toc ol{columns:1}}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:.88rem}
+th,td{padding:8px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:var(--soft);font-weight:650}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.sec td{background:var(--soft);font-weight:700}
+.tag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:.74rem;background:var(--soft);white-space:nowrap}
+.tag.qu{color:var(--accent)}.tag.cl{color:var(--cus)}
+.dots{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;margin:10px 0}
+.dot{text-align:center;font-size:.78rem;color:var(--muted)}
+.dot i{display:block;margin:0 auto 6px;border-radius:50%;box-shadow:0 0 18px currentColor}
+.eq{font-family:ui-monospace,Consolas,monospace;font-size:.84rem;background:var(--soft);border-radius:10px;padding:10px 12px;display:block;overflow-x:auto;white-space:pre}
+.warn{border-left:4px solid var(--heat);background:var(--panel);padding:10px 14px;border-radius:0 10px 10px 0;font-size:.93rem}
+dl.gl dt{font-weight:700;margin-top:12px}
+dl.gl dd{margin:2px 0 0 0;color:var(--muted)}
+.faq details{border-bottom:1px solid var(--line);padding:10px 0}
+.faq summary{cursor:pointer;font-weight:650}
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--accent);color:var(--accent);background:var(--panel);border-radius:999px;padding:6px 14px;font:inherit;font-size:.9rem;cursor:pointer}
+.btn:hover{background:var(--accent-soft)}
+/* laboratório */
+#labBtn{position:fixed;right:16px;bottom:16px;z-index:30;background:var(--accent);color:#fff;border:0;border-radius:999px;padding:12px 18px;font:inherit;font-weight:650;box-shadow:0 6px 20px rgba(0,0,0,.2);cursor:pointer}
+#lab{position:fixed;right:16px;bottom:76px;z-index:31;width:min(370px,calc(100vw - 32px));max-height:min(78vh,700px);overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px 16px;box-shadow:0 12px 40px rgba(0,0,0,.25);display:none}
+#lab.open{display:block}
+#lab h4{margin:0 0 4px;font-size:1rem}
+#lab .row{margin:10px 0}
+#lab label{display:block;font-size:.8rem;color:var(--muted);margin-bottom:2px}
+#lab output{font-weight:700;color:var(--ink)}
+#lab input[type=range]{width:100%}
+#lab select{width:100%;padding:6px 8px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font:inherit;font-size:.9rem}
+#lab .x{float:right;border:0;background:none;color:var(--muted);font-size:1.3rem;cursor:pointer;line-height:1}
+.live{font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+/* cabeçalho do blog (blog.css) mantém a cor da marca e o fundo claro */
+.site-header{--accent:#E8522A;font-family:'Inter',Helvetica,Arial,sans-serif}
+.site-header a{color:inherit;text-decoration:none}
+.site-header img{display:block}
+.back{display:inline-block;margin-top:22px;font:600 13px 'Inter',Helvetica,Arial,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+h1,h2,h3,.mat h3{font-family:'Source Serif 4',Georgia,serif;font-weight:800}
+.byline{font:600 12px 'Inter',Helvetica,Arial,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.byline b{color:var(--ink)}
+header.hero{padding-top:8px}
+.cards .card + .card{margin-top:0;padding-top:12px;border-top:1px solid var(--line)}
+footer{margin-top:60px;font-size:.85rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+/* svg helpers */
+.s-ink{fill:var(--ink)}.s-mut{fill:var(--muted)}.s-line{stroke:var(--line)}.s-strk{stroke:var(--ink)}
+.s-cds{fill:var(--cds)}.s-cus{fill:var(--cus)}.s-acc{fill:var(--accent)}.s-heat{fill:var(--heat)}
+.s-panel{fill:var(--panel)}.s-soft{fill:var(--soft)}
+svg text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="hdr">
+    <a href="index.html" class="brand"><img src="logo-walida.png" alt="Walida"></a>
+    <ul>
+      <li><a href="index.html#sobre">Sobre</a></li>
+      <li><a href="servicos.html">Serviços</a></li>
+      <li><a href="index.html#processo">Processo</a></li>
+      <li><a href="index.html#setores">Setores</a></li>
+      <li><a href="blog.html" aria-current="page">Blog</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="index.html#contato">Contato</a></li>
+      <li><a href="index.html#simulador">Simulador</a></li>
+    </ul>
+    <a href="index.html#contato" class="pill">Orçamento</a>
+  </div>
+</header>
+<main>
+
+<a class="back" href="blog.html">← Blog</a>
+<header class="hero">
+  <div class="kicker">Artigo de parceiro · Nanomedicina</div>
+  <h1>Pontos quânticos de sulfeto de cádmio e de sulfeto de cobre: da luz à célula</h1>
+  <p class="byline">Por <b>Luís Felipe Alves Dionísio</b>, com auxílio da IA Claude · 28 de outubro de 2026 · Leitura: 25 min</p>
+  <p class="lead">Um guia em camadas. Cada seção começa com uma explicação simples, para qualquer leitor, e depois traz a parte aprofundada, com equações, simulações e gráficos 3D que você pode girar e ajustar.</p>
+  <div class="simple"><b class="t">Resumo em 30 segundos</b>
+    <p>• <b>Pontos quânticos</b> são cristais tão pequenos (poucos nanômetros) que a cor da luz que absorvem e emitem depende do tamanho deles.</p>
+    <p>• O <b class="cdsT">CdS</b> brilha em azul e verde e serve bem para enxergar células, mas libera cádmio, que é tóxico.</p>
+    <p>• O <b class="cusT">CuS</b> quase não brilha, mas absorve luz infravermelha e a transforma em calor. Esse calor pode destruir tumores e "acordar" o sistema imune.</p>
+    <p>• Tudo nesta página é uma <b>simulação baseada em modelos científicos</b>: mostra tendências, não resultados de laboratório.</p>
+  </div>
+  <button class="btn" onclick="openLab()">Abrir o laboratório virtual e ajustar os gráficos</button>
+  <nav class="toc" aria-label="Sumário"><b>Sumário</b>
+    <ol>
+      <li><a href="#s1">O que é um ponto quântico?</a></li>
+      <li><a href="#s2">Os dois personagens: CdS e CuS</a></li>
+      <li><a href="#s3">Bandgap: a escada de energia</a></li>
+      <li><a href="#s4">Recebendo energia: absorção e emissão de luz</a></li>
+      <li><a href="#s5">Plasmon: como o CuS vira um aquecedor</a></li>
+      <li><a href="#s6">A viagem pelo corpo (farmacocinética)</a></li>
+      <li><a href="#s7">O que acontece dentro das células (farmacodinâmica)</a></li>
+      <li><a href="#s8">Tumor versus sistema imune</a></li>
+      <li><a href="#s9">Interações quânticas e não quânticas</a></li>
+      <li><a href="#s10">Veredito: qual é melhor para quê?</a></li>
+      <li><a href="#s11">Glossário</a></li>
+      <li><a href="#s12">Perguntas frequentes</a></li>
+      <li><a href="#s13">Como a simulação foi feita</a></li>
+    </ol>
+  </nav>
+</header>
+
+<!-- 1 -->
+<section id="s1">
+<h2><span class="num">1</span>O que é um ponto quântico?</h2>
+<p class="q">"Quântico" parece complicado. Na prática, quer dizer "tão pequeno que as regras normais mudam".</p>
+<div class="simple"><b class="t">Em palavras simples</b>
+<p>Um ponto quântico é um grãozinho de cristal com algumas centenas a alguns milhares de átomos, com 2 a 10 nanômetros de diâmetro. Um nanômetro é um milionésimo de milímetro: cabem cerca de 10 mil pontos quânticos enfileirados na espessura de um fio de cabelo.</p>
+<p>Nesse tamanho, os elétrons ficam "apertados" dentro do cristal. Esse aperto muda a energia que eles conseguem receber e devolver. Por isso, <b>o mesmo material muda de cor só de mudar de tamanho</b>.</p></div>
+<figure>
+<svg viewBox="0 0 900 230" role="img" aria-label="Escala de tamanhos do átomo à célula">
+  <line x1="40" y1="150" x2="860" y2="150" class="s-strk" stroke-width="2"/>
+  <g class="s-mut" font-size="12" text-anchor="middle">
+    <text x="60" y="178">0,1 nm</text><text x="210" y="178">1 nm</text><text x="360" y="178">10 nm</text><text x="510" y="178">100 nm</text><text x="660" y="178">1 µm</text><text x="810" y="178">10 µm</text>
+  </g>
+  <g class="s-strk" stroke-width="1.5"><line x1="60" y1="144" x2="60" y2="156"/><line x1="210" y1="144" x2="210" y2="156"/><line x1="360" y1="144" x2="360" y2="156"/><line x1="510" y1="144" x2="510" y2="156"/><line x1="660" y1="144" x2="660" y2="156"/><line x1="810" y1="144" x2="810" y2="156"/></g>
+  <circle cx="60" cy="128" r="4" class="s-mut"/><text x="60" y="110" text-anchor="middle" font-size="13" class="s-ink">átomo</text>
+  <circle cx="270" cy="122" r="12" class="s-cds"/><circle cx="300" cy="122" r="12" class="s-cus"/><text x="285" y="92" text-anchor="middle" font-size="14" font-weight="700" class="s-acc">ponto quântico</text><text x="285" y="76" text-anchor="middle" font-size="12" class="s-mut">2–10 nm</text>
+  <circle cx="370" cy="124" r="10" fill="none" class="s-strk" stroke-width="1.5"/><text x="370" y="100" text-anchor="middle" font-size="12" class="s-ink">anticorpo</text>
+  <circle cx="510" cy="112" r="24" fill="none" class="s-strk" stroke-width="1.5" stroke-dasharray="3 3"/><text x="510" y="78" text-anchor="middle" font-size="12" class="s-ink">vírus</text>
+  <rect x="640" y="104" width="44" height="22" rx="11" fill="none" class="s-strk" stroke-width="1.5"/><text x="662" y="94" text-anchor="middle" font-size="12" class="s-ink">bactéria</text>
+  <circle cx="810" cy="96" r="44" fill="none" class="s-strk" stroke-width="1.5"/><circle cx="810" cy="96" r="14" class="s-soft"/><text x="810" y="40" text-anchor="middle" font-size="12" class="s-ink">célula humana</text>
+  <text x="450" y="215" text-anchor="middle" font-size="12" class="s-mut">escala logarítmica: cada marca é 10 vezes maior que a anterior</text>
+</svg>
+<figcaption>Um ponto quântico tem o tamanho de uma proteína grande. É pequeno o suficiente para entrar nas células e grande o suficiente para carregar milhares de átomos.</figcaption>
+</figure>
+<details class="deep"><summary>Aprofundando: por que o tamanho importa tanto?</summary><div class="body">
+<p>Em todo semicondutor, quando um elétron recebe energia, ele deixa para trás uma "vaga" de carga positiva, chamada <b>buraco</b>. O par elétron–buraco ligado é o <b>éxciton</b>, e a distância natural entre eles é o <b>raio de Bohr do éxciton</b>: cerca de 2,8 nm no CdS e 3 a 5 nm nos sulfetos de cobre.</p>
+<p>Quando o cristal é menor que esse raio, o éxciton não "cabe" e fica comprimido. A mecânica quântica diz que confinar uma partícula aumenta sua energia mínima (como a corda de um violão: quanto mais curta, mais aguda a nota). Esse é o <b>confinamento quântico</b>.</p>
+<p>Há um segundo efeito: quanto menor a partícula, maior a fração de átomos na superfície. Com R = <span class="live" data-live="R"></span> nm, cerca de <span class="live" data-live="fsurf"></span> dos átomos estão na casca externa. Esses átomos têm ligações "soltas", que criam defeitos, reagem com o meio e determinam como a partícula interage com proteínas e células.</p>
+</div></details>
+<figure>
+<div id="pXtal" class="plot"></div>
+<figcaption id="xtalCap"></figcaption>
+<div class="howto"><b>Como ler:</b> cada bolinha é um átomo. Gire com o mouse ou o dedo e use a rolagem para aproximar. Os pontinhos azulados e translúcidos em volta representam a camada de moléculas (ligantes) que recobre a partícula e a mantém estável na água.</div>
+</figure>
+</section>
+
+<!-- 2 -->
+<section id="s2">
+<h2><span class="num">2</span>Os dois personagens: CdS e CuS</h2>
+<div class="grid2">
+<div class="mat cds"><h3 class="cdsT">CdS — sulfeto de cádmio</h3>
+<p><b>Em uma frase:</b> o "pintor". Brilha em cores vivas de azul a verde.</p>
+<p><b>Estrutura:</b> cristal cúbico (blenda de zinco), um átomo de cádmio para cada átomo de enxofre.</p>
+<p><b>Ponto forte:</b> fluorescência ajustável, ótima para marcar e fotografar células.</p>
+<p><b>Ponto fraco:</b> ao se degradar, libera íons de cádmio (Cd²⁺), um metal tóxico e cancerígeno.</p></div>
+<div class="mat cus"><h3 class="cusT">CuS — sulfeto de cobre (covelita)</h3>
+<p><b>Em uma frase:</b> o "aquecedor". Quase não brilha, mas absorve luz infravermelha e vira calor.</p>
+<p><b>Estrutura:</b> cristal hexagonal em camadas, com pares de enxofre ligados entre si.</p>
+<p><b>Ponto forte:</b> terapia por calor com luz que atravessa a pele, e o cobre é metabolizado pelo corpo.</p>
+<p><b>Ponto fraco:</b> pouco útil para imagem por fluorescência; calor em excesso também lesa células sadias.</p></div>
+</div>
+</section>
+
+<!-- 3 -->
+<section id="s3">
+<h2><span class="num">3</span>Bandgap: a escada de energia</h2>
+<p class="q">Por que cada material tem uma "cor preferida"?</p>
+<div class="simple"><b class="t">Em palavras simples</b>
+<p>Imagine os elétrons morando no térreo de um prédio. Para subir ao primeiro andar, precisam pagar um "pedágio" de energia. Esse degrau é o <b>bandgap</b> (lacuna de banda). A luz paga esse pedágio: só um fóton com energia igual ou maior que o degrau consegue fazer o elétron subir.</p>
+<p>Quando o elétron desce de volta, devolve a energia em forma de luz. A cor dessa luz corresponde exatamente ao tamanho do degrau. <b>Partícula menor = degrau maior = luz mais azulada.</b></p></div>
+<figure>
+<svg viewBox="0 0 900 300" role="img" aria-label="Bandas de energia em cristal grande e em ponto quântico">
+  <text x="225" y="24" text-anchor="middle" font-size="15" font-weight="700" class="s-ink">Cristal grande</text>
+  <text x="675" y="24" text-anchor="middle" font-size="15" font-weight="700" class="s-ink">Ponto quântico (pequeno)</text>
+  <rect x="120" y="44" width="210" height="70" rx="6" class="s-soft"/><text x="225" y="84" text-anchor="middle" font-size="13" class="s-mut">banda de condução (contínua)</text>
+  <rect x="120" y="170" width="210" height="80" rx="6" class="s-soft"/><text x="225" y="214" text-anchor="middle" font-size="13" class="s-mut">banda de valência (contínua)</text>
+  <line x1="350" y1="114" x2="350" y2="170" class="s-strk" stroke-width="2" marker-start="url(#ar)" marker-end="url(#ar)"/><text x="360" y="148" font-size="13" class="s-ink">gap pequeno</text>
+  <g class="s-strk" stroke-width="3">
+    <line x1="570" y1="80" x2="780" y2="80"/><line x1="570" y1="60" x2="780" y2="60" opacity=".55"/><line x1="570" y1="44" x2="780" y2="44" opacity=".35"/>
+    <line x1="570" y1="230" x2="780" y2="230"/><line x1="570" y1="250" x2="780" y2="250" opacity=".55"/><line x1="570" y1="266" x2="780" y2="266" opacity=".35"/>
+  </g>
+  <text x="560" y="84" text-anchor="end" font-size="12" class="s-mut">níveis discretos</text>
+  <line x1="800" y1="80" x2="800" y2="230" class="s-strk" stroke-width="2" marker-start="url(#ar)" marker-end="url(#ar)"/><text x="810" y="160" font-size="13" class="s-ink">gap</text><text x="810" y="176" font-size="13" class="s-ink">maior</text>
+  <circle cx="610" cy="230" r="7" class="s-acc"/><text x="625" y="222" font-size="12" class="s-mut">elétron</text>
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="s-ink"/></marker></defs>
+</svg>
+<figcaption>No cristal grande, as energias formam faixas contínuas. No ponto quântico, viram degraus separados, e o espaço entre o último degrau ocupado e o primeiro vazio (o gap) aumenta.</figcaption>
+</figure>
+<h3>Veja a cor mudar com o tamanho</h3>
+<p>Cores calculadas pela simulação para a emissão de cada tamanho. O CuS emite pouquíssimo; as cores dele mostram onde ficaria a emissão de borda de banda.</p>
+<div id="colorDots"></div>
+<details class="deep" open><summary>Aprofundando: a equação de Brus</summary><div class="body">
+<p>Em 1984, Louis Brus descreveu a energia do gap de um nanocristal esférico de raio R somando três termos:</p>
+<span class="eq">Eg(R) = Eg,bulk  +  ħ²π² / (2R²) · (1/me* + 1/mh*)  −  1,786 · e² / (4π ε₀ εr R)
+         (material)    (confinamento: sobe com 1/R²)     (atração elétron–buraco: desce com 1/R)</span>
+<p>me* e mh* são as massas efetivas do elétron e do buraco (quanto mais "leves", maior o confinamento), e εr é a constante dielétrica, que blinda a atração. Para o tamanho atual (R = <span class="live" data-live="R"></span> nm), o CdS ganha <span class="live" data-live="conf"></span> eV de confinamento e perde <span class="live" data-live="coul"></span> eV de atração, chegando a <span class="live" data-live="EgCdS"></span> eV.</p>
+<p>Para converter energia em comprimento de onda, use λ (nm) = 1239,84 / E (eV).</p>
+<div class="tw"><table id="tSize"></table></div>
+<p style="font-size:.88rem;color:var(--muted)">Limitações: o modelo exagera o gap para raios abaixo de ~1,5 nm. Além disso, o CuS é um semicondutor "degenerado", cheio de buracos livres, então o gap excitônico dele é uma aproximação.</p>
+</div></details>
+</section>
+
+<!-- 4 -->
+<section id="s4">
+<h2><span class="num">4</span>Recebendo energia: absorção e emissão de luz</h2>
+<p class="q">O que acontece com a energia de um fóton quando ele atinge a partícula?</p>
+<div class="simple"><b class="t">Em palavras simples</b>
+<p>Pense no fóton como uma moeda. Se a moeda for pequena demais (energia menor que o gap), a partícula não aceita, e a luz passa direto. Se for suficiente, a partícula "recebe" e o elétron sobe. Depois, a energia tem três destinos possíveis:</p>
+<p>1. <b>Troco em calor:</b> se o fóton tinha energia sobrando, o excesso vira vibração dos átomos (calor) quase instantaneamente.<br>
+2. <b>Luz:</b> o elétron desce e emite um novo fóton, de cor um pouco mais avermelhada que a absorvida. Isso é a fluorescência.<br>
+3. <b>Calor de novo:</b> o elétron desce sem emitir luz, por exemplo caindo em um defeito da superfície.</p></div>
+<figure>
+<svg viewBox="0 0 900 290" role="img" aria-label="Diagrama de absorção, relaxação e emissão">
+  <g class="s-strk" stroke-width="3"><line x1="140" y1="250" x2="760" y2="250"/><line x1="140" y1="70" x2="760" y2="70"/><line x1="140" y1="40" x2="760" y2="40" opacity=".4"/><line x1="460" y1="170" x2="760" y2="170" stroke-dasharray="6 5" opacity=".6"/></g>
+  <text x="130" y="254" text-anchor="end" font-size="13" class="s-ink">estado fundamental</text>
+  <text x="130" y="74" text-anchor="end" font-size="13" class="s-ink">borda da banda</text>
+  <text x="130" y="44" text-anchor="end" font-size="12" class="s-mut">níveis mais altos</text>
+  <text x="770" y="174" font-size="12" class="s-mut">armadilha de superfície</text>
+  <line x1="220" y1="250" x2="220" y2="44" stroke="var(--light)" stroke-width="5" marker-end="url(#ar2)"/><text x="232" y="150" font-size="13" class="s-ink">1. fóton absorvido</text>
+  <path d="M300 42 q8 7 0 14 q-8 7 0 14" fill="none" stroke="var(--heat)" stroke-width="3"/><text x="312" y="60" font-size="13" class="s-ink">2. termalização (calor)</text>
+  <line x1="420" y1="72" x2="420" y2="246" stroke="var(--good)" stroke-width="5" marker-end="url(#ar3)"/><text x="432" y="220" font-size="13" class="s-ink">3. emissão de luz</text>
+  <path d="M600 74 q10 24 -4 48 q-12 24 4 46" fill="none" stroke="var(--heat)" stroke-width="3" stroke-dasharray="4 4"/>
+  <path d="M640 172 q10 20 -4 38 q-10 20 4 38" fill="none" stroke="var(--heat)" stroke-width="3"/><text x="652" y="215" font-size="13" class="s-ink">4. perda em calor / EROs</text>
+  <defs><marker id="ar2" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--light)"/></marker>
+  <marker id="ar3" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--good)"/></marker></defs>
+</svg>
+<figcaption>Diagrama simplificado (tipo Jablonski). Elétrons presos em defeitos da superfície também podem ser transferidos para o oxigênio, formando espécies reativas de oxigênio (EROs), que atacam as células.</figcaption>
+</figure>
+<div class="grid2">
+<figure><div id="pAbs" class="plot"></div>
+<div class="howto"><b>Como ler:</b> o eixo λ é a cor da luz (300–400 nm = ultravioleta, 400–700 nm = visível, acima de 700 nm = infravermelho). O eixo R é o tamanho. A altura mostra quanta luz é absorvida. A linha azul marca o tamanho escolhido no laboratório. Repare como a "crista" se desloca para a esquerda (azul) nos tamanhos menores.</div></figure>
+<figure><div id="pPL" class="plot"></div>
+<div class="howto"><b>Como ler:</b> mostra a luz emitida. O pico estreito vem do elétron descendo direto; a "colina" larga à direita vem dos defeitos de superfície. Escolha "Casca de ZnS" no laboratório e veja a colina diminuir e o pico ficar mais alto.</div></figure>
+</div>
+<figure><div id="pEnergy" class="plot short"></div>
+<div class="howto"><b>Como ler:</b> cada barra mostra, para cada 100% de energia de um fóton absorvido no comprimento de onda escolhido (<span class="live" data-live="lex"></span> nm), quanto vira luz e quanto vira calor. Mude a luz de excitação para 808 nm e veja: o CdS deixa de absorver, e o CuS transforma tudo em calor.</div></figure>
+<details class="deep"><summary>Aprofundando: rendimento quântico, deslocamento de Stokes e cascas</summary><div class="body">
+<p><b>Rendimento quântico (QY)</b> é a fração de fótons absorvidos que voltam como luz. CdS sem proteção: ~5%. Com casca de ZnS: até ~40%, porque o ZnS (gap de 3,6 eV) cobre os defeitos e funciona como barreira para os elétrons. CuS: ~1%.</p>
+<p><b>Deslocamento de Stokes:</b> a luz emitida tem energia um pouco menor que a absorvida (80–120 meV aqui), porque parte se perde em vibrações antes da emissão.</p>
+<p><b>Largura das bandas:</b> nenhuma amostra tem partículas todas iguais. Com 8% de variação de tamanho, cada partícula tem uma cor ligeiramente diferente, e a soma alarga o pico.</p>
+<p><b>Recombinação Auger:</b> quando há mais de um éxciton ou carga extra, a energia pode ser passada a outro portador em vez de virar luz. Isso causa o "piscar" (blinking) e mais calor.</p>
+</div></details>
+</section>
+
+<!-- 5 -->
+<section id="s5">
+<h2><span class="num">5</span>Plasmon: como o CuS vira um aquecedor</h2>
+<div class="simple"><b class="t">Em palavras simples</b>
+<p>O CuS tem pequenas "falhas" de cobre na estrutura, e cada falha deixa um buraco livre para circular. São tantos buracos (cerca de 10 sextilhões por cm³) que eles se comportam como um líquido de cargas. Quando a luz infravermelha chega, esse líquido balança para frente e para trás, no ritmo da onda, como água numa bacia sacudida. Esse balanço coletivo é o <b>plasmon</b>, e o atrito dele vira <b>calor</b>.</p>
+<p>A vantagem é que a luz infravermelha (700–1100 nm) atravessa a pele e os tecidos por alguns centímetros. Por isso, dá para aquecer um tumor por fora do corpo, sem cortes.</p></div>
+<figure>
+<svg viewBox="0 0 900 250" role="img" aria-label="Oscilação plasmônica da nuvem de cargas">
+  <path d="M30 125 q25 -50 50 0 t50 0 t50 0 t50 0" fill="none" stroke="#a33" stroke-width="3"/><text x="130" y="200" text-anchor="middle" font-size="13" class="s-ink">luz infravermelha</text><text x="130" y="218" text-anchor="middle" font-size="12" class="s-mut">(808–1064 nm)</text>
+  <circle cx="450" cy="125" r="80" class="s-cus" opacity=".25"/><circle cx="450" cy="125" r="80" fill="none" stroke="var(--cus)" stroke-width="2"/>
+  <ellipse cx="478" cy="125" rx="72" ry="74" fill="var(--heat)" opacity=".22"/>
+  <g font-size="18" font-weight="700" fill="var(--heat)"><text x="510" y="100">+</text><text x="525" y="135">+</text><text x="505" y="168">+</text><text x="470" y="90">+</text><text x="480" y="155">+</text></g>
+  <g font-size="18" font-weight="700" class="s-acc"><text x="385" y="100">−</text><text x="375" y="135">−</text><text x="392" y="168">−</text></g>
+  <path d="M440 222 l40 0" stroke="var(--ink)" stroke-width="2" marker-end="url(#ar)" marker-start="url(#ar)"/><text x="450" y="244" text-anchor="middle" font-size="12" class="s-mut">a nuvem de buracos oscila</text>
+  <path d="M600 90 q8 7 0 14 q-8 7 0 14 q8 7 0 14" fill="none" stroke="var(--heat)" stroke-width="3"/><path d="M630 80 q8 7 0 14 q-8 7 0 14 q8 7 0 14 q-8 7 0 14" fill="none" stroke="var(--heat)" stroke-width="3"/><path d="M660 95 q8 7 0 14 q-8 7 0 14" fill="none" stroke="var(--heat)" stroke-width="3"/>
+  <text x="740" y="115" font-size="14" font-weight="700" fill="var(--heat)">calor</text><text x="740" y="135" font-size="12" class="s-mut">tecido a 42–50 °C</text>
+</svg>
+<figcaption>O campo elétrico da luz empurra os buracos livres para um lado da partícula. Eles voltam, passam do ponto e voltam de novo, ressoando. A energia da oscilação se dissipa como calor em femtossegundos a picossegundos.</figcaption>
+</figure>
+<p>Para o tamanho atual, a simulação coloca o pico do plasmon em <span class="live" data-live="lspr"></span> nm. Esse pico aparece como uma segunda montanha no gráfico de absorção 3D da seção 4 quando o material escolhido é o CuS.</p>
+<details class="deep"><summary>Aprofundando: modelo de Drude para o plasmon</summary><div class="body">
+<span class="eq">ħωp = ħ·√(N e² / ε₀ m*)          frequência de plasma dos buracos livres
+ħωsp = √[ (ħωp)² / (ε∞ + 2εm) − γ² ]   ressonância de uma esfera em meio aquoso
+γ = 0,15 + 0,35/R  eV                amortecimento: mais forte em partículas pequenas (colisões com a superfície)</span>
+<p>Com N ≈ 1×10²² cm⁻³, m* = 0,8 m₀, ε∞ = 8 e εm = 1,77 (água), o plasmon cai perto de 1,2 eV (~1050 nm), compatível com o observado em nanocristais de covelita. Como N depende das vacâncias de cobre, oxidar a partícula (mais vacâncias) desloca o pico para o azul, e reduzi-la desloca para o vermelho. Isso abre a possibilidade de sensores redox.</p>
+<p><b>Eficiência fototérmica:</b> nanocristais de CuS costumam converter 25 a 50% da luz incidente em calor no meio, porque parte da luz é espalhada e parte atravessa sem ser absorvida.</p>
+</div></details>
+</section>
+
+<!-- 6 -->
+<section id="s6">
+<h2><span class="num">6</span>A viagem pelo corpo (farmacocinética)</h2>
+<p class="q">Farmacocinética é o que o corpo faz com a partícula: para onde ela vai, quanto tempo fica e como sai.</p>
+<div class="simple"><b class="t">Em palavras simples</b>
+<p>Depois de injetada na veia, a partícula circula no sangue e encontra quatro "saídas":</p>
+<p>• <b>Rins:</b> funcionam como uma peneira com furos de ~5,5 nm. Partículas menores que isso saem pela urina em poucas horas.<br>
+• <b>Fígado e baço:</b> têm células "lixeiras" (macrófagos) que engolem partículas maiores ou "marcadas" por proteínas do sangue.<br>
+• <b>Tumor:</b> os vasos de um tumor são malfeitos e "vazados". Partículas escapam por eles e ficam presas, porque o tumor drena mal. Esse é o efeito <b>EPR</b>.<br>
+• <b>Outros tecidos:</b> uma parte se espalha e volta ao sangue.</p>
+<p>O tamanho total na água (núcleo + revestimento) é o <b>diâmetro hidrodinâmico</b>. Hoje ele está em <span class="live" data-live="HD"></span> nm.</p></div>
+<figure>
+<svg viewBox="0 0 900 270" role="img" aria-label="Fluxo da partícula no organismo">
+  <rect x="20" y="105" width="120" height="56" rx="10" class="s-soft"/><text x="80" y="130" text-anchor="middle" font-size="13" font-weight="700" class="s-ink">Injeção</text><text x="80" y="148" text-anchor="middle" font-size="11" class="s-mut">intravenosa</text>
+  <rect x="200" y="100" width="150" height="66" rx="10" fill="var(--light)" opacity=".18"/><text x="275" y="130" text-anchor="middle" font-size="14" font-weight="700" class="s-ink">Sangue</text><text x="275" y="148" text-anchor="middle" font-size="11" class="s-mut">+ corona de proteínas</text>
+  <line x1="140" y1="133" x2="196" y2="133" class="s-strk" stroke-width="2" marker-end="url(#ar)"/>
+  <g font-size="13">
+  <rect x="470" y="10" width="200" height="50" rx="10" class="s-soft"/><text x="570" y="32" text-anchor="middle" font-weight="700" class="s-ink">Rins → urina</text><text x="570" y="49" text-anchor="middle" font-size="11" class="s-mut">só se o tamanho for &lt; 5,5 nm</text>
+  <rect x="470" y="76" width="200" height="50" rx="10" fill="var(--bad)" opacity=".14"/><text x="570" y="98" text-anchor="middle" font-weight="700" class="s-ink">Fígado e baço</text><text x="570" y="115" text-anchor="middle" font-size="11" class="s-mut">macrófagos capturam</text>
+  <rect x="470" y="142" width="200" height="50" rx="10" class="s-cus" opacity=".22"/><text x="570" y="164" text-anchor="middle" font-weight="700" class="s-ink">Tumor (efeito EPR)</text><text x="570" y="181" text-anchor="middle" font-size="11" class="s-mut">vasos vazados, drenagem ruim</text>
+  <rect x="470" y="208" width="200" height="50" rx="10" class="s-soft"/><text x="570" y="230" text-anchor="middle" font-weight="700" class="s-ink">Outros tecidos</text><text x="570" y="247" text-anchor="middle" font-size="11" class="s-mut">entram e voltam</text>
+  </g>
+  <g class="s-strk" stroke-width="2" fill="none"><path d="M350 120 C410 60 420 35 466 35" marker-end="url(#ar)"/><path d="M350 128 C410 110 430 101 466 101" marker-end="url(#ar)"/><path d="M350 140 C410 160 430 167 466 167" marker-end="url(#ar)"/><path d="M350 150 C410 210 420 233 466 233" marker-end="url(#ar)"/></g>
+  <text x="700" y="102" font-size="12" class="s-mut">→ dissolução lenta</text><text x="700" y="118" font-size="12" class="s-mut">e liberação de íons</text>
+  <text x="700" y="168" font-size="12" class="s-mut">→ ação terapêutica</text>
+</svg>
+<figcaption>Esquema dos compartimentos usados na simulação. O revestimento de PEG funciona como uma "capa de invisibilidade": reduz a captura pelos macrófagos e prolonga a circulação.</figcaption>
+</figure>
+<div class="cards" id="pkCards"></div>
+<div class="grid2">
+<figure><div id="pPK" class="plot"></div>
+<div class="howto"><b>Como ler:</b> cada fita colorida é um órgão. A altura é a porcentagem da dose injetada (%DI) que está naquele lugar em cada momento, nas primeiras 72 horas. O plasma esvazia rápido, enquanto o fígado e o tumor vão enchendo.</div></figure>
+<figure><div id="pPK2" class="plot"></div>
+<div class="howto"><b>Como ler:</b> mostra quanto chega ao tumor (µg por grama) para cada tamanho de núcleo. Partículas muito pequenas são filtradas pelos rins antes de chegar ao tumor; as maiores ficam mais tempo circulando. Troque o revestimento para PEG e compare.</div></figure>
+</div>
+<details class="deep"><summary>Aprofundando: o modelo de compartimentos</summary><div class="body">
+<span class="eq">dCp/dt = −(k_ren + k_SFM + k_T,in + k_O)·Cp + k_T,out·C_T + k_O,b·C_O
+k_ren  = 1,2 / (1 + e^((DH − 5,5)/0,5))  h⁻¹      filtração glomerular (limiar ~5,5 nm)
+k_SFM  = (0,15 + 0,35·DH/(DH+20)) · f_PEG         captura pelo sistema fagocítico mononuclear
+DH     = 2R + 2·(espessura do revestimento)       ligante: 1 nm · ZnS: 1,6 nm · PEG: 5 nm</span>
+<p>O modelo reproduz três observações clássicas: (1) pontos quânticos com DH abaixo de 5,5 nm são eliminados pelos rins (Choi et al., 2007); (2) o PEG aumenta a meia-vida e o acúmulo no tumor; (3) o CdS fica retido no fígado por meses, enquanto o CuS é degradado, e o cobre entra nas vias normais de excreção biliar.</p>
+<p><b>Corona proteica:</b> em segundos, albumina, anticorpos, ApoE e proteínas do complemento grudam na superfície. Essa "roupa" de proteínas, e não a partícula em si, é o que as células reconhecem.</p>
+</div></details>
+</section>
+
+<!-- 7 -->
+<section id="s7">
+<h2><span class="num">7</span>O que acontece dentro das células (farmacodinâmica)</h2>
+<p class="q">Farmacodinâmica é o contrário: o que a partícula faz com o corpo.</p>
+<div class="simple"><b class="t">Em palavras simples</b>
+<p>A célula "engole" a partícula em uma bolha (endocitose) e a manda para o lisossomo, o "estômago" ácido da célula (pH 4,5). Ali a partícula começa a se dissolver e libera íons metálicos. A partir daí, há quatro caminhos de dano:</p>
+<p>• <b>Íons de cádmio (Cd²⁺):</b> ocupam o lugar do zinco e do cálcio em proteínas, desligam o conserto do DNA e envenenam as mitocôndrias. Atingem qualquer célula, doente ou sadia.<br>
+• <b>Íons de cobre (Cu⁺):</b> reagem com a água oxigenada que sobra nos tumores e produzem radicais (reação de Fenton). Também causam a <b>cuproptose</b>, um tipo de morte celular descoberto em 2022.<br>
+• <b>Luz + partícula → EROs:</b> o elétron excitado passa para o oxigênio e cria radicais que danificam membranas (terapia fotodinâmica).<br>
+• <b>Calor:</b> acima de ~43 °C as proteínas se desnaturam e a célula morre (terapia fototérmica).</p></div>
+<figure>
+<svg viewBox="0 0 900 340" role="img" aria-label="Caminho da nanopartícula dentro da célula">
+  <ellipse cx="450" cy="175" rx="400" ry="150" class="s-soft" stroke="var(--muted)" stroke-width="2"/>
+  <text x="90" y="60" font-size="13" class="s-mut">membrana celular</text>
+  <circle cx="70" cy="175" r="9" class="s-cds"/><circle cx="92" cy="190" r="9" class="s-cus"/>
+  <path d="M110 175 C150 175 160 175 190 175" class="s-strk" stroke-width="2" fill="none" marker-end="url(#ar)"/>
+  <circle cx="230" cy="175" r="34" fill="none" class="s-strk" stroke-width="2"/><circle cx="222" cy="170" r="8" class="s-cds"/><circle cx="240" cy="182" r="8" class="s-cus"/>
+  <text x="230" y="230" text-anchor="middle" font-size="12" class="s-ink">1. endocitose</text>
+  <path d="M266 175 L320 175" class="s-strk" stroke-width="2" marker-end="url(#ar)"/>
+  <circle cx="370" cy="175" r="44" fill="var(--heat)" opacity=".18" stroke="var(--heat)" stroke-width="2"/>
+  <text x="370" y="170" text-anchor="middle" font-size="12" font-weight="700" class="s-ink">lisossomo</text><text x="370" y="186" text-anchor="middle" font-size="11" class="s-mut">pH 4,5</text>
+  <text x="370" y="240" text-anchor="middle" font-size="12" class="s-ink">2. dissolução → íons</text>
+  <g font-size="12" font-weight="700"><text x="430" y="120" class="s-cds">Cd²⁺</text><text x="440" y="250" class="s-cus">Cu⁺</text></g>
+  <path d="M414 150 C470 110 520 100 560 100" class="s-strk" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+  <path d="M414 200 C470 240 520 250 560 250" class="s-strk" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+  <ellipse cx="640" cy="100" rx="70" ry="38" fill="none" class="s-strk" stroke-width="2"/><text x="640" y="96" text-anchor="middle" font-size="13" font-weight="700" class="s-ink">núcleo / DNA</text><text x="640" y="113" text-anchor="middle" font-size="11" class="s-mut">reparo bloqueado (Cd)</text>
+  <ellipse cx="640" cy="250" rx="70" ry="32" fill="none" stroke="var(--good)" stroke-width="2"/><text x="640" y="246" text-anchor="middle" font-size="13" font-weight="700" class="s-ink">mitocôndria</text><text x="640" y="263" text-anchor="middle" font-size="11" class="s-mut">cuproptose · EROs</text>
+  <g font-size="12" fill="var(--heat)" font-weight="700"><text x="760" y="160">•OH</text><text x="790" y="190">O₂•⁻</text><text x="750" y="210">H₂O₂</text></g>
+  <text x="770" y="235" font-size="11" class="s-mut">EROs (luz, Fenton)</text>
+</svg>
+<figcaption>Rota simplificada de uma nanopartícula dentro da célula. A dissolução no lisossomo é o passo-chave: quanto mais rápida, mais íons e mais toxicidade. A casca de ZnS e o PEG desaceleram esse passo.</figcaption>
+</figure>
+<div class="grid2">
+<figure><div id="pPD" class="plot"></div><figcaption id="pdCap"></figcaption>
+<div class="howto"><b>Como ler:</b> a altura é a porcentagem de células vivas. Para a frente, aumenta a concentração; para o lado, passa o tempo. O ideal terapêutico é a superfície vermelha (tumor) afundar enquanto a azul (célula imune) continua alta. O "degrau" em 4 h é o momento em que a luz é ligada.</div></figure>
+<figure><div id="pPD2" class="plot"></div>
+<div class="howto"><b>Como ler:</b> cada fita é um tipo de célula após 24 h. Fitas que caem mais cedo (à esquerda) indicam células mais sensíveis. Os macrófagos costumam cair primeiro porque "comem" mais partículas.</div></figure>
+</div>
+<details class="deep"><summary>Aprofundando: modelo dose-resposta (Emax/Hill)</summary><div class="body">
+<span class="eq">Viabilidade = [1 − 0,95 · Dⁿ / (EC50ⁿ + Dⁿ)] · S_térmica          n = 1,6
+D = C · U · g(t)      dose interna = concentração × captação relativa × cinética de captação e dissolução
+g(t) = (1 − e^(−t/6)) · (0,35 + 0,65·(1 − e^(−3·k_diss·t)))
+Luz (EROs):  EC50 ÷ [1 + 4 · A_excitônica · φ_ERO · P/0,1]
+Calor:       T = 37 + 28 · A · C/(C+40) · P     S_térmica = 1 / (1 + e^((T − 45,5)/1,0))</span>
+<p><b>IC₅₀</b> é a concentração que mata metade das células. Quanto menor, mais potente. O <b>índice de seletividade</b> divide o IC₅₀ das células imunes pelo do tumor: acima de 2 é bom (o tumor morre primeiro); abaixo de 1 significa que o sistema imune sofre mais que o tumor.</p>
+<div class="tw"><table id="tIC"></table></div>
+</div></details>
+</section>
+
+<!-- 8 -->
+<section id="s8">
+<h2><span class="num">8</span>Tumor versus sistema imune</h2>
+<div class="simple"><b class="t">Em palavras simples</b>
+<p>Matar o tumor não basta: o ideal é que a morte das células tumorais "avise" o sistema imune, para que ele aprenda a reconhecer e caçar o câncer em outros lugares do corpo.</p>
+<p>Quando uma célula tumoral morre pelo calor moderado (42–50 °C) ou por radicais, ela solta sinais de alarme (<b>DAMPs</b>). As <b>células dendríticas</b> recolhem esses sinais e "treinam" os <b>linfócitos T</b>, que viram soldados específicos contra o tumor. Isso se chama <b>morte celular imunogênica</b>.</p>
+<p>Por outro lado, o cádmio mata justamente os linfócitos e enfraquece a defesa. E calor demais (acima de ~52 °C) queima tudo, inclusive as células imunes que estavam no tumor.</p></div>
+<figure>
+<svg viewBox="0 0 900 220" role="img" aria-label="Cadeia de ativação imune">
+  <circle cx="90" cy="110" r="50" fill="var(--bad)" opacity=".18" stroke="var(--bad)" stroke-width="2" stroke-dasharray="5 4"/><text x="90" y="106" text-anchor="middle" font-size="13" font-weight="700" class="s-ink">célula</text><text x="90" y="122" text-anchor="middle" font-size="13" font-weight="700" class="s-ink">tumoral</text><text x="90" y="186" text-anchor="middle" font-size="12" class="s-mut">morre pelo calor/EROs</text>
+  <g font-size="11" fill="var(--heat)" font-weight="700"><text x="160" y="80">HMGB1</text><text x="170" y="112">ATP</text><text x="155" y="146">calreticulina</text></g>
+  <path d="M250 110 L330 110" class="s-strk" stroke-width="2" marker-end="url(#ar)"/>
+  <circle cx="390" cy="110" r="46" class="s-acc" opacity=".18"/><path d="M350 90 l-20 -14 M352 132 l-22 14 M430 86 l20 -16 M432 134 l20 14 M390 64 l0 -20" class="s-strk" stroke-width="2"/>
+  <text x="390" y="106" text-anchor="middle" font-size="13" font-weight="700" class="s-ink">célula</text><text x="390" y="122" text-anchor="middle" font-size="13" font-weight="700" class="s-ink">dendrítica</text><text x="390" y="186" text-anchor="middle" font-size="12" class="s-mut">amadurece (CD80/86)</text>
+  <path d="M450 110 L530 110" class="s-strk" stroke-width="2" marker-end="url(#ar)"/>
+  <circle cx="590" cy="110" r="40" fill="var(--good)" opacity=".18" stroke="var(--good)" stroke-width="2"/><text x="590" y="106" text-anchor="middle" font-size="13" font-weight="700" class="s-ink">linfócito</text><text x="590" y="122" text-anchor="middle" font-size="13" font-weight="700" class="s-ink">T CD8⁺</text><text x="590" y="186" text-anchor="middle" font-size="12" class="s-mut">ativado e multiplicado</text>
+  <path d="M640 110 L720 110" class="s-strk" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="800" y="100" text-anchor="middle" font-size="13" font-weight="700" class="s-ink">ataca o tumor</text><text x="800" y="118" text-anchor="middle" font-size="12" class="s-mut">inclusive metástases</text><text x="800" y="134" text-anchor="middle" font-size="12" class="s-mut">(efeito abscopal)</text>
+</svg>
+<figcaption>A cadeia da imunidade antitumoral. Os macrófagos também participam: no perfil M1 atacam o tumor; no perfil M2 (comum em tumores) ajudam o tumor a crescer.</figcaption>
+</figure>
+<div id="immTxt"></div>
+</section>
+
+<!-- 9 -->
+<section id="s9">
+<h2><span class="num">9</span>Interações quânticas e não quânticas</h2>
+<div class="simple"><b class="t">Em palavras simples</b>
+<p><b>Interações quânticas</b> acontecem dentro da partícula, no mundo dos elétrons e da luz: definem a cor, quanto calor ela gera e se produz radicais.<br>
+<b>Interações não quânticas</b> são a química e a biologia "do dia a dia": cargas elétricas se atraindo, proteínas grudando, íons reagindo, células engolindo. Definem para onde a partícula vai e o que ela faz no corpo.</p>
+<p>As duas se encadeiam: a física quântica decide o que a luz faz com a partícula, e a química clássica decide o que a partícula faz com o organismo.</p></div>
+<div class="tw"><table>
+<thead><tr><th>Interação</th><th>Tipo</th><th>Em linguagem simples</th><th>No CdS</th><th>No CuS</th><th>Efeito no corpo</th></tr></thead>
+<tbody>
+<tr class="sec"><td colspan="6">Quânticas</td></tr>
+<tr><td>Confinamento quântico</td><td><span class="tag qu">quântica</span></td><td>Elétron "apertado" no cristal fica mais energético; a cor depende do tamanho</td><td>Forte: de 390 a 510 nm</td><td>Moderado: de 560 a 800 nm</td><td>Escolha da cor para imagem e da luz para terapia</td></tr>
+<tr><td>Éxciton (atração elétron–buraco)</td><td><span class="tag qu">quântica</span></td><td>O elétron excitado e a vaga que ele deixou se atraem e baixam um pouco a energia</td><td>Bem definido</td><td>Mais fraco (muitas cargas livres blindam)</td><td>Ajuste fino da cor</td></tr>
+<tr><td>Plasmon (LSPR)</td><td><span class="tag qu">quântica/semiclássica</span></td><td>Nuvem de cargas livres balança com a luz infravermelha e esquenta</td><td>Ausente</td><td>Dominante (~1050 nm)</td><td>Terapia por calor através da pele</td></tr>
+<tr><td>Armadilhas de superfície</td><td><span class="tag qu">quântica</span></td><td>Defeitos na casca "roubam" o elétron antes que ele emita luz</td><td>Emissão vermelha larga</td><td>Apaga a luz</td><td>Menos brilho; mais radicais e dissolução</td></tr>
+<tr><td>Termalização</td><td><span class="tag qu">quântica</span></td><td>A energia que sobra do fóton vira vibração (calor) em ~1 ps</td><td>Com luz UV</td><td>Com o plasmon</td><td>Aquecimento local</td></tr>
+<tr><td>Recombinação Auger</td><td><span class="tag qu">quântica</span></td><td>A energia passa para outro elétron em vez de virar luz</td><td>Causa o "piscar"</td><td>Muito forte</td><td>Mais calor, menos luz</td></tr>
+<tr><td>Transferência de elétron → EROs</td><td><span class="tag qu">quântica (tunelamento)</span></td><td>O elétron excitado pula para o oxigênio e cria radicais</td><td>Forte com luz azul</td><td>Com luz NIR (buracos quentes)</td><td>Dano oxidativo e morte celular</td></tr>
+<tr><td>FRET</td><td><span class="tag qu">quântica</span></td><td>Energia passa "sem fio" para uma molécula vizinha (até ~10 nm)</td><td>Doador de energia</td><td>Absorve e apaga</td><td>Sensores que acendem ao encontrar o alvo</td></tr>
+<tr><td>Heterojunção CdS/CuS</td><td><span class="tag qu">quântica</span></td><td>Unidos, os dois separam elétrons e buracos na interface</td><td>Recebe elétrons</td><td>Recebe buracos</td><td>Mais radicais; combina PDT e calor</td></tr>
+<tr><td>Tunelamento pela casca</td><td><span class="tag qu">quântica</span></td><td>Uma casca isolante (ZnS) dificulta a fuga de elétrons</td><td>Protege</td><td>Protege</td><td>Menos toxicidade</td></tr>
+<tr class="sec"><td colspan="6">Não quânticas</td></tr>
+<tr><td>Van der Waals</td><td><span class="tag cl">clássica*</span></td><td>"Grude" fraco entre superfícies próximas</td><td>Agrega sem ligante</td><td>Idem</td><td>Agregados param no pulmão e no fígado</td></tr>
+<tr><td>Eletrostática (carga)</td><td><span class="tag cl">clássica</span></td><td>Cargas opostas se atraem; iguais se repelem</td><td>Superfície negativa (−30 mV)</td><td>Idem</td><td>Superfície positiva entra mais nas células e é mais tóxica</td></tr>
+<tr><td>Corona proteica</td><td><span class="tag cl">clássica</span></td><td>Proteínas do sangue "vestem" a partícula</td><td>Aumenta o tamanho</td><td>Idem</td><td>Macrófagos a reconhecem; o PEG reduz isso</td></tr>
+<tr><td>Ligação metal–enxofre</td><td><span class="tag cl">química</span></td><td>Metais grudam em proteínas com enxofre (glutationa, metalotioneína)</td><td>Cd sequestrado ou envenena enzimas</td><td>Cu consome a glutationa</td><td>A célula perde a defesa antioxidante</td></tr>
+<tr><td>Ligações de H / hidrofóbicas</td><td><span class="tag cl">clássica</span></td><td>O PEG se cerca de água e fica "escorregadio"</td><td>Furtividade</td><td>Furtividade</td><td>Circula por mais tempo</td></tr>
+<tr><td>Dissolução / íons</td><td><span class="tag cl">química</span></td><td>No ambiente ácido, o cristal se desfaz e solta metal</td><td class="bad">Cd²⁺ tóxico e cancerígeno</td><td class="good">Cu metabolizável</td><td>Toxicidade (Cd) ou terapia (Cu)</td></tr>
+<tr><td>Reação de Fenton</td><td><span class="tag cl">química redox</span></td><td>Cobre + água oxigenada → radical hidroxila</td><td>Não ocorre</td><td>Forte no tumor</td><td>Ataque preferencial ao tumor</td></tr>
+<tr><td>Cuproptose</td><td><span class="tag cl">bioquímica</span></td><td>Cobre faz proteínas da mitocôndria se embolarem</td><td>—</td><td>Sim</td><td>Morte de células tumorais que dependem da mitocôndria</td></tr>
+<tr><td>Endocitose / fagocitose</td><td><span class="tag cl">biológica</span></td><td>A célula engole a partícula</td><td>Idem</td><td>Idem</td><td>Macrófagos engolem cerca de 10× mais que linfócitos</td></tr>
+<tr><td>Efeito EPR / filtração renal</td><td><span class="tag cl">fisiológica</span></td><td>Vasos vazados do tumor retêm; rins filtram as menores</td><td>Idem</td><td>Idem</td><td>Equilíbrio entre chegar ao tumor e ser eliminada</td></tr>
+<tr><td>Condução de calor</td><td><span class="tag cl">física</span></td><td>O calor se espalha pelo tecido e o sangue o leva embora</td><td>Pouco calor no NIR</td><td>42–50 °C sob laser</td><td>Morte tumoral e alarme imune</td></tr>
+<tr><td>Sinalização imune</td><td><span class="tag cl">biológica</span></td><td>Receptores detectam perigo e ligam ou desligam a defesa</td><td>Tende a suprimir</td><td>Tende a ativar</td><td>Imunoterapia combinada</td></tr>
+</tbody></table></div>
+<p style="font-size:.85rem;color:var(--muted)">* A força de van der Waals tem origem quântica (flutuações de carga), mas nessa escala é descrita por fórmulas clássicas.</p>
+<details class="deep"><summary>Aprofundando: escalas de energia, distância e tempo</summary><div class="body">
+<div class="tw"><table>
+<thead><tr><th>Interação</th><th>Escala típica</th><th>Base física</th></tr></thead><tbody>
+<tr><td>Confinamento</td><td>0,1–1,5 eV · R &lt; a<sub>B</sub> (2,8 nm no CdS)</td><td>Partícula em poço esférico, ∝ 1/R²</td></tr>
+<tr><td>Éxciton</td><td>0,1–0,4 eV</td><td>Coulomb blindado, ∝ 1/(ε<sub>r</sub>R)</td></tr>
+<tr><td>Plasmon</td><td>1,1–1,3 eV · ~10²² portadores/cm³</td><td>Modelo de Drude com amortecimento de superfície</td></tr>
+<tr><td>Armadilhas</td><td>0,3–0,8 eV abaixo da borda</td><td>Estados localizados de ligações pendentes</td></tr>
+<tr><td>Termalização / plasmon → calor</td><td>fs–ps</td><td>Acoplamento elétron–fônon</td></tr>
+<tr><td>Transferência de elétron</td><td>BC do CdS ≈ −0,5 V vs EPH; O₂/O₂•⁻ = −0,33 V</td><td>Teoria de Marcus, tunelamento</td></tr>
+<tr><td>FRET</td><td>2–10 nm, ∝ 1/r⁶</td><td>Acoplamento dipolo–dipolo</td></tr>
+<tr><td>Van der Waals</td><td>1–10 k<sub>B</sub>T a 1–5 nm</td><td>Constante de Hamaker</td></tr>
+<tr><td>Eletrostática</td><td>Comprimento de Debye ≈ 0,7 nm no soro</td><td>Teoria DLVO</td></tr>
+<tr><td>Metal–tiol</td><td>K<sub>d</sub> de nM a fM</td><td>Ligação coordenada ácido–base mole</td></tr>
+<tr><td>Fenton</td><td>k ≈ 10⁴ M⁻¹s⁻¹</td><td>Cu⁺ + H₂O₂ → Cu²⁺ + •OH + OH⁻</td></tr>
+<tr><td>Hipertermia</td><td>ΔT 5–20 °C</td><td>Equação de biotransferência de calor de Pennes</td></tr>
+</tbody></table></div>
+</div></details>
+</section>
+
+<!-- 10 -->
+<section id="s10">
+<h2><span class="num">10</span>Veredito: qual é melhor para quê?</h2>
+<div class="grid2">
+<div class="mat cds"><h3 class="cdsT">CdS</h3>
+<p class="good"><b>Bom para:</b> imagem de células em laboratório, sensores por FRET e estudos de fotofísica.</p>
+<p class="bad"><b>Ruim para:</b> uso em pacientes. O cádmio é inespecífico, atinge linfócitos e macrófagos tanto quanto o tumor (seletividade ≤ 1) e fica retido no fígado e nos rins. A luz azul que ele usa penetra menos de 1 mm no tecido.</p>
+<p><b>Se usar:</b> sempre com casca de ZnS e PEG, que na simulação reduzem a toxicidade de 4 a 6 vezes.</p></div>
+<div class="mat cus"><h3 class="cusT">CuS</h3>
+<p class="good"><b>Bom para:</b> terapia fototérmica com laser infravermelho (808, 980 e 1064 nm), terapia quimiodinâmica (Fenton), cuproptose e ativação imune. É biodegradável, e a versão radioativa (⁶⁴CuS) permite imagem por PET.</p>
+<p class="bad"><b>Cuidados:</b> controlar a dose de luz para manter o tecido entre 42 e 50 °C. Acima disso, as células imunes também morrem, e a seletividade cai para ~1.</p>
+<p><b>Resumo:</b> é o candidato mais promissor para tratamento.</p></div>
+</div>
+</section>
+
+<!-- 11 -->
+<section id="s11">
+<h2><span class="num">11</span>Glossário</h2>
+<dl class="gl">
+<dt>Bandgap (lacuna de banda)</dt><dd>Energia mínima para um elétron passar de "preso" a "livre para conduzir". Define a cor absorvida e emitida.</dd>
+<dt>Buraco</dt><dd>A vaga deixada por um elétron que saiu. Comporta-se como uma partícula de carga positiva.</dd>
+<dt>Éxciton</dt><dd>Par elétron–buraco ligado pela atração elétrica.</dd>
+<dt>Raio de Bohr do éxciton</dt><dd>Tamanho natural do éxciton. Cristais menores que ele mostram confinamento quântico.</dd>
+<dt>Fóton</dt><dd>"Pacote" de luz. Energia (eV) = 1239,84 / comprimento de onda (nm).</dd>
+<dt>Elétron-volt (eV)</dt><dd>Unidade de energia de partículas. A luz visível tem de 1,8 a 3,1 eV.</dd>
+<dt>Fluorescência / fotoluminescência (PL)</dt><dd>Luz emitida depois que a partícula absorve luz.</dd>
+<dt>Rendimento quântico (QY)</dt><dd>De cada 100 fótons absorvidos, quantos voltam como luz.</dd>
+<dt>Plasmon (LSPR)</dt><dd>Oscilação coletiva de cargas livres provocada pela luz, que gera absorção forte e calor.</dd>
+<dt>NIR</dt><dd>Infravermelho próximo (700–1700 nm). Atravessa tecidos melhor que a luz visível.</dd>
+<dt>EROs</dt><dd>Espécies reativas de oxigênio (•OH, O₂•⁻, H₂O₂): moléculas que danificam membranas, proteínas e DNA.</dd>
+<dt>PDT / PTT</dt><dd>Terapia fotodinâmica (luz → radicais) e terapia fototérmica (luz → calor).</dd>
+<dt>Farmacocinética (PK)</dt><dd>O que o corpo faz com o medicamento: absorção, distribuição, metabolismo e eliminação.</dd>
+<dt>Farmacodinâmica (PD)</dt><dd>O que o medicamento faz com o corpo: efeito, potência e toxicidade.</dd>
+<dt>Diâmetro hidrodinâmico (DH)</dt><dd>Tamanho total da partícula na água, incluindo o revestimento.</dd>
+<dt>Efeito EPR</dt><dd>Permeabilidade e retenção aumentadas: tumores acumulam partículas por terem vasos vazados e má drenagem.</dd>
+<dt>%DI</dt><dd>Porcentagem da dose injetada encontrada em um órgão.</dd>
+<dt>IC₅₀</dt><dd>Concentração que mata 50% das células.</dd>
+<dt>Índice de seletividade</dt><dd>IC₅₀ das células sadias ÷ IC₅₀ do tumor. Acima de 2 é desejável.</dd>
+<dt>Macrófago M1 / M2</dt><dd>M1: perfil "guerreiro", ataca o tumor. M2: perfil "reparador", que tumores exploram para crescer.</dd>
+<dt>Morte celular imunogênica (ICD)</dt><dd>Morte que libera sinais de alarme (DAMPs) e ativa a imunidade contra o tumor.</dd>
+<dt>Cuproptose</dt><dd>Morte celular causada por acúmulo de cobre na mitocôndria (descrita em 2022).</dd>
+<dt>Reação de Fenton</dt><dd>Metal reduzido + água oxigenada → radical hidroxila, muito reativo.</dd>
+</dl>
+</section>
+
+<!-- 12 -->
+<section id="s12" class="faq">
+<h2><span class="num">12</span>Perguntas frequentes</h2>
+<details><summary>Pontos quânticos já são usados em pessoas?</summary><p>Pontos quânticos de cádmio não são aprovados para uso humano por causa da toxicidade. Nanopartículas de sulfeto de cobre estão em fase de pesquisa pré-clínica (animais), e algumas nanopartículas para terapia fototérmica, como as de ouro, já foram testadas em humanos.</p></details>
+<details><summary>Por que não usar luz visível para a terapia?</summary><p>A hemoglobina e a melanina absorvem muito a luz visível, que penetra menos de 1 mm. A luz infravermelha próxima (a "janela biológica", de 700 a 1100 nm) chega a alguns centímetros.</p></details>
+<details><summary>O calor não queima o tecido saudável em volta?</summary><p>O laser é apontado para o tumor, e as partículas se concentram ali, então o aquecimento é local. Mesmo assim, é preciso controlar a potência e o tempo, e por isso a temperatura alvo é de 42 a 50 °C.</p></details>
+<details><summary>Por que o tamanho muda a cor?</summary><p>Porque o elétron fica "apertado" dentro do cristal (confinamento quântico). Quanto menor o espaço, maior a energia mínima, e luz de maior energia é mais azul.</p></details>
+<details><summary>Os números desta página são reais?</summary><p>São resultados de modelos físicos e farmacológicos com parâmetros típicos da literatura. As tendências (cor por tamanho, limiar renal, toxicidade do cádmio, calor do CuS) são bem estabelecidas; os valores exatos dependem de cada síntese e precisam ser medidos em laboratório.</p></details>
+<details><summary>O que é a casca de ZnS?</summary><p>Uma camada fina de sulfeto de zinco que envolve o núcleo, como uma capa de chuva. Cobre os defeitos (mais brilho) e dificulta a dissolução (menos íons tóxicos).</p></details>
+</section>
+
+<!-- 13 -->
+<section id="s13">
+<h2><span class="num">13</span>Como a simulação foi feita</h2>
+<div class="warn">Esta página é material educativo. Os modelos são simplificações semiempíricas com parâmetros de faixas da literatura. Não substituem experimentos e não são recomendação clínica.</div>
+<details class="deep" open><summary>Parâmetros e equações</summary><div class="body">
+<span class="eq">Brus:   Eg(R) = Eg,bulk + ħ²π²/(2R²)·(1/me* + 1/mh*) − 1,786·e²/(4πε₀εr R)
+        CdS: Eg=2,42 eV, me*=0,19, mh*=0,80, εr=5,7      CuS: Eg=1,55 eV, me*=0,25, mh*=0,80, εr=8,0
+LSPR:   ħωsp = √[(ħωp)²/(ε∞+2εm) − γ²],  N=1×10²² cm⁻³, m*=0,8, ε∞=8, εm=1,77, γ=0,15+0,35/R eV
+Largura: σE = √(0,05² + (|dEg/dR|·0,08R)²)     (8% de polidispersão)
+QY:     CdS 5% / 40% (ZnS) / 25% (PEG)          CuS 1% / 3% / 1,5%
+PK:     5 compartimentos, Euler dt = 0,02 h, camundongo de 20 g, tumor de 0,5 g
+PD:     EC50 base (24 h, U=1): CdS 20 µg/mL · CuS 90 µg/mL; ZnS ×6 / ×1,8; PEG ×4 / ×2,5
+        captação relativa U: tumor 1 · macrófago 3 · dendrítica 2 · T CD8⁺ 0,3 · NK 0,4</span>
+<h3>Referências</h3>
+<ul style="font-size:.9rem">
+<li>Brus, L. E. <i>J. Chem. Phys.</i> 80, 4403 (1984).</li>
+<li>Luther, J. M.; Jain, P. K.; Ewers, T.; Alivisatos, A. P. <i>Nat. Mater.</i> 10, 361 (2011).</li>
+<li>Zhou, M. et al. <i>J. Am. Chem. Soc.</i> 132, 15351 (2010).</li>
+<li>Choi, H. S. et al. <i>Nat. Biotechnol.</i> 25, 1165 (2007).</li>
+<li>Derfus, A. M.; Chan, W. C. W.; Bhatia, S. N. <i>Nano Lett.</i> 4, 11 (2004).</li>
+<li>Tsvetkov, P. et al. <i>Science</i> 375, 1254 (2022).</li>
+</ul></div></details>
+</section>
+
+<footer>Conteúdo educativo gerado a partir de simulação computacional. Gráficos interativos feitos com Plotly.js.<br>
+<a href="blog.html">← Voltar para o blog</a> · <a href="index.html">Página inicial da Walida</a></footer>
+</main>
+
+<button id="labBtn" onclick="toggleLab()" aria-controls="lab" aria-expanded="false">Laboratório virtual</button>
+<aside id="lab" aria-label="Laboratório virtual">
+  <button class="x" onclick="toggleLab()" aria-label="Fechar">×</button>
+  <h4>Laboratório virtual</h4>
+  <p style="font-size:.82rem;color:var(--muted);margin:0">Mude os parâmetros e todos os gráficos e números da página se atualizam.</p>
+  <div class="row"><label for="mat">Material dos gráficos 3D</label>
+    <select id="mat"><option value="CdS">CdS (sulfeto de cádmio)</option><option value="CuS">CuS (sulfeto de cobre)</option></select></div>
+  <div class="row"><label for="R">Raio do núcleo: <output id="Ro"></output> nm</label><input id="R" type="range" min="1.2" max="6" step="0.1" value="2.0"></div>
+  <div class="row"><label for="coat">Revestimento</label>
+    <select id="coat"><option value="bare">Ligante curto, sem casca</option><option value="zns">Casca de ZnS</option><option value="peg">PEG (furtivo)</option></select></div>
+  <div class="row"><label for="lex">Cor da luz que chega: <output id="lexo"></output> nm</label><input id="lex" type="range" min="300" max="1300" step="5" value="405"></div>
+  <div class="row"><label for="dose">Dose injetada: <output id="doseo"></output> mg/kg</label><input id="dose" type="range" min="1" max="50" step="1" value="10"></div>
+  <div class="row"><label for="conc">Concentração nas células: <output id="conco"></output> µg/mL</label><input id="conc" type="range" min="1" max="200" step="1" value="50"></div>
+  <div class="row"><label for="light">Luz terapêutica (ligada em 4 h)</label>
+    <select id="light"><option value="none">Sem luz</option><option value="b405">405 nm azul, 0,1 W/cm²</option><option value="n808" selected>808 nm infravermelho, 1 W/cm²</option><option value="n980">980 nm infravermelho, 1 W/cm²</option><option value="n1064">1064 nm infravermelho, 0,8 W/cm²</option></select></div>
+  <div class="row"><label for="imm">Célula imune comparada</label>
+    <select id="imm"><option value="1">Macrófagos</option><option value="2">Células dendríticas</option><option value="3">Linfócitos T CD8⁺</option><option value="4">Células NK</option></select></div>
+</aside>
+
+<script>
+const H=1.054571817e-34,M0=9.1093837e-31,QE=1.602176634e-19,E0=8.8541878128e-12,HC=1239.84,EM=1.77;
+const MAT={
+  CdS:{label:'CdS',Eg:2.42,me:0.19,mh:0.80,er:5.7,stokes:0.08,trapShift:0.65,trapW:0.18,
+    QY:{bare:0.05,zns:0.40,peg:0.25},trapFrac:{bare:0.65,zns:0.10,peg:0.45},
+    kdiss:{bare:0.020,zns:0.003,peg:0.010},ros:{bare:1.0,zns:0.3,peg:0.7},ionFrac:112.41/144.47,ion:'Cd²⁺',RESel:0.001},
+  CuS:{label:'CuS',Eg:1.55,me:0.25,mh:0.80,er:8.0,stokes:0.12,trapShift:0.40,trapW:0.22,
+    QY:{bare:0.01,zns:0.03,peg:0.015},trapFrac:{bare:0.7,zns:0.4,peg:0.6},
+    kdiss:{bare:0.015,zns:0.006,peg:0.010},ros:{bare:0.6,zns:0.2,peg:0.45},ionFrac:63.55/95.61,ion:'Cu⁺/Cu²⁺',RESel:0.012,
+    lspr:{N:1.0e22,mstar:0.8,einf:8.0}}
+};
+const SHELL={bare:1.0,zns:1.6,peg:5.0};
+const COATNAME={bare:'ligante curto',zns:'casca de ZnS',peg:'PEG'};
+const LIGHT={none:null,b405:{lam:405,P:0.1},n808:{lam:808,P:1.0},n980:{lam:980,P:1.0},n1064:{lam:1064,P:0.8}};
+const EC50={CdS:20,CuS:90};
+const COATM={CdS:{bare:1,zns:6,peg:4},CuS:{bare:1,zns:1.8,peg:2.5}};
+const CELLS=[
+  {id:'tumor',name:'Tumorais',U:1.0,sCd:1.0,sCu:0.7},
+  {id:'mac',name:'Macrófagos',U:3.0,sCd:0.9,sCu:1.3},
+  {id:'dc',name:'Dendríticas',U:2.0,sCd:0.8,sCu:1.3},
+  {id:'t8',name:'Linfócitos T CD8⁺',U:0.3,sCd:0.25,sCu:0.6},
+  {id:'nk',name:'Células NK',U:0.4,sCd:0.3,sCu:0.7}];
+
+const gauss=(x,m,s)=>Math.exp(-((x-m)**2)/(2*s*s));
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+const fmt=(x,d=2)=>x.toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d});
+
+function brus(m,R){const r=R*1e-9;
+  const conf=H*H*Math.PI**2/(2*r*r*M0)*(1/m.me+1/m.mh)/QE;
+  const coul=1.786*QE/(4*Math.PI*E0*m.er*r);
+  return{Eg:m.Eg+conf-coul,conf,coul};}
+function sigE(m,R){const d=Math.abs(brus(m,R-0.01).Eg-brus(m,R+0.01).Eg)/0.02;return Math.sqrt(0.05**2+(d*0.08*R)**2);}
+function lspr(m,R){if(!m.lspr)return null;const L=m.lspr;
+  const wp=Math.sqrt(L.N*1e6*QE*QE/(E0*L.mstar*M0));const Ep=H*wp/QE;const g=0.15+0.35/R;
+  const Esp=Math.sqrt(Ep*Ep/(L.einf+2*EM)-g*g);return{Ep,Esp,hw:g+0.15,lam:HC/Esp};}
+function absParts(m,R,E){
+  const b=brus(m,R).Eg,s=sigE(m,R);
+  const exc=gauss(E,b,s)+0.55*gauss(E,b+0.45*(b-m.Eg)+0.18,s*1.4)+0.8*Math.sqrt(Math.max(0,E-b))/(1+Math.exp(-(E-b)/s));
+  let pl=0;const L=lspr(m,R);if(L)pl=1.3*L.hw*L.hw/((E-L.Esp)**2+L.hw*L.hw);
+  return{exc,pl,tot:exc+pl};}
+function plSpec(m,R,coat,E){
+  const b=brus(m,R).Eg,s=sigE(m,R),tf=m.trapFrac[coat];
+  return m.QY[coat]*((1-tf)*gauss(E,b-m.stokes,s)/s+tf*gauss(E,b-m.trapShift,m.trapW)/m.trapW)*0.1;}
+function plMean(m,R,coat){const b=brus(m,R).Eg,tf=m.trapFrac[coat];return (1-tf)*(b-m.stokes)+tf*(b-m.trapShift);}
+function energyBalance(m,R,coat,lam){
+  const Eph=HC/lam,b=brus(m,R).Eg,a=absParts(m,R,Eph);
+  if(a.tot<0.02)return{Eph,absorbs:false,a};
+  const fE=a.exc/a.tot,fP=a.pl/a.tot;
+  const therm=fE*Math.max(0,Eph-b)/Eph;
+  const rad=fE*m.QY[coat]*plMean(m,R,coat)/Eph;
+  const nonrad=fE*Math.min(Eph,b)/Eph-rad;
+  return{Eph,absorbs:true,a,therm,rad,nonrad,plas:fP};}
+function pkRun(mat,R,coat){
+  const m=MAT[mat],HD=2*R+2*SHELL[coat];
+  const kr=1.2/(1+Math.exp((HD-5.5)/0.5));
+  const kRES=(0.15+0.35*HD/(HD+20))*(coat==='peg'?0.3:1);
+  const kTin=0.012*(coat==='peg'?1.6:1),kTout=0.03*8/(HD+8),kO=0.08,kOb=0.04,kREl=m.RESel;
+  let Cp=100,RES=0,T=0,O=0,U=0;const dt=0.02,out={t:[],Cp:[],RES:[],T:[],O:[],U:[]};
+  for(let i=0;i<=3600;i++){const t=i*dt;
+    if(i%25===0){out.t.push(t);out.Cp.push(Cp);out.RES.push(RES);out.T.push(T);out.O.push(O);out.U.push(U);}
+    const dCp=-(kr+kRES+kTin+kO)*Cp+kTout*T+kOb*O,dRES=kRES*Cp-kREl*RES,dT=kTin*Cp-kTout*T,dO=kO*Cp-kOb*O,dU=kr*Cp+kREl*RES;
+    Cp+=dCp*dt;RES+=dRES*dt;T+=dT*dt;O+=dO*dt;U+=dU*dt;}
+  out.HD=HD;out.thalf=Math.log(2)/(kr+kRES+kTin+kO);
+  return out;}
+function photo(st){
+  const L=LIGHT[st.light];if(!L)return{aE:0,aT:0,P:0};
+  const a=absParts(MAT[st.mat],st.R,HC/L.lam);
+  return{aE:clamp(a.exc/1.2,0,1),aT:clamp(a.tot/1.2,0,1),P:L.P,lam:L.lam};}
+function viab(st,cell,C,t,ph){
+  const m=MAT[st.mat],kd=m.kdiss[st.coat];
+  const g=x=>(1-Math.exp(-x/6))*(0.35+0.65*(1-Math.exp(-kd*3*x)));
+  const lf=clamp((t-4)/2,0,1);
+  const boost=1+4*ph.aE*m.ros[st.coat]*Math.min(ph.P/0.1,3);
+  const EC=EC50[st.mat]*COATM[st.mat][st.coat]*(st.mat==='CdS'?cell.sCd:cell.sCu)/(1+(boost-1)*lf);
+  const D=C*cell.U*g(t)/g(24),n=1.6;
+  const Vc=1-0.95*D**n/(EC**n+D**n);
+  const T=37+28*ph.aT*C/(C+40)*ph.P;
+  const Sth=1/(1+Math.exp((T-45.5)/1.0));
+  return{V:Vc*(1-(1-Sth)*lf),T,boost};}
+function ic50(st,cell,ph){
+  if(viab(st,cell,5000,24,ph).V>0.5)return Infinity;
+  let lo=Math.log(0.01),hi=Math.log(5000);
+  for(let i=0;i<50;i++){const mid=(lo+hi)/2;viab(st,cell,Math.exp(mid),24,ph).V>0.5?lo=mid:hi=mid;}
+  return Math.exp((lo+hi)/2);}
+function crystal(mat,R){
+  const atoms=[];
+  if(mat==='CdS'){const a=0.5818,f=[[0,0,0],[0,.5,.5],[.5,0,.5],[.5,.5,0]],n=Math.ceil(R/a)+1;
+    for(let i=-n;i<=n;i++)for(let j=-n;j<=n;j++)for(let k=-n;k<=n;k++)for(const b of f){
+      for(const [sh,el] of [[0,'Cd'],[.25,'S']]){const x=(i+b[0]+sh)*a,y=(j+b[1]+sh)*a,z=(k+b[2]+sh)*a;
+        if(x*x+y*y+z*z<=R*R)atoms.push([x,y,z,el]);}}}
+  else{const a=0.3792,c=1.6344,z2=0.107,z4=0.064;
+    const fr=[[1/3,2/3,.75,'Cu'],[2/3,1/3,.25,'Cu'],[1/3,2/3,z2,'Cu'],[2/3,1/3,z2+.5,'Cu'],[2/3,1/3,-z2,'Cu'],[1/3,2/3,.5-z2,'Cu'],
+      [1/3,2/3,.25,'S'],[2/3,1/3,.75,'S'],[0,0,z4,'S'],[0,0,z4+.5,'S'],[0,0,-z4,'S'],[0,0,.5-z4,'S']];
+    const n=Math.ceil(R/a)+2,nc=Math.ceil(R/c)+1;
+    for(let i=-n;i<=n;i++)for(let j=-n;j<=n;j++)for(let k=-nc;k<=nc;k++)for(const [u,v,w,el] of fr){
+      const U=i+u,V=j+v,x=(U-V/2)*a,y=V*Math.sqrt(3)/2*a,z=(k+w)*c;
+      if(x*x+y*y+z*z<=R*R)atoms.push([x,y,z,el]);}}
+  return atoms;}
+// cor aproximada de um comprimento de onda (visível); fora do visível retorna null
+function lamRGB(l){
+  if(l<380||l>780)return null;let r=0,g=0,b=0;
+  if(l<440){r=-(l-440)/60;b=1}else if(l<490){g=(l-440)/50;b=1}else if(l<510){g=1;b=-(l-510)/20}
+  else if(l<580){r=(l-510)/70;g=1}else if(l<645){r=1;g=-(l-645)/65}else r=1;
+  const f=l<420?0.3+0.7*(l-380)/40:(l>700?0.3+0.7*(780-l)/80:1);
+  const c=v=>Math.round(255*Math.pow(v*f,0.8));return `rgb(${c(r)},${c(g)},${c(b)})`;}
+
+function css(n){return getComputedStyle(document.documentElement).getPropertyValue(n).trim();}
+function ax(t){return{title:{text:t},gridcolor:css('--line'),zerolinecolor:css('--line'),color:css('--muted'),backgroundcolor:'rgba(0,0,0,0)'};}
+function L3(title,xt,yt,zt){return{title:{text:title,font:{size:14}},paper_bgcolor:'rgba(0,0,0,0)',plot_bgcolor:'rgba(0,0,0,0)',
+  font:{color:css('--ink'),size:11},margin:{l:0,r:0,t:40,b:0},uirevision:'keep',showlegend:true,
+  legend:{orientation:'h',y:0.98,x:0},
+  scene:{xaxis:ax(xt),yaxis:ax(yt),zaxis:ax(zt),camera:{eye:{x:1.55,y:-1.55,z:0.85}},aspectmode:'cube'}};}
+const CFG={responsive:true,displaylogo:false};
+const SCALE={CdS:[[0,'#1b1f3a'],[0.35,'#5b3c88'],[0.7,'#e06c3c'],[1,'#ffd34d']],CuS:[[0,'#0f2430'],[0.35,'#16627a'],[0.7,'#2fb39a'],[1,'#d8f6a0']]};
+const $=id=>document.getElementById(id);
+function state(){return{mat:$('mat').value,R:+$('R').value,coat:$('coat').value,lex:+$('lex').value,dose:+$('dose').value,
+  conc:+$('conc').value,light:$('light').value,imm:+$('imm').value};}
+function setLive(k,v){document.querySelectorAll(`[data-live="${k}"]`).forEach(e=>e.textContent=v);}
+
+function drawSpectra(st){
+  const m=MAT[st.mat],lams=[],Rs=[];for(let l=300;l<=1400;l+=8)lams.push(l);for(let r=1.2;r<=6.001;r+=0.2)Rs.push(+r.toFixed(1));
+  const zA=Rs.map(R=>lams.map(l=>absParts(m,R,HC/l).tot)),zP=Rs.map(R=>lams.map(l=>plSpec(m,R,st.coat,HC/l)));
+  const line=z=>({type:'scatter3d',mode:'lines',x:lams,y:lams.map(()=>st.R),z,line:{color:css('--accent'),width:6},name:'tamanho escolhido ('+fmt(st.R,1)+' nm)'});
+  Plotly.react('pAbs',[{type:'surface',x:lams,y:Rs,z:zA,colorscale:SCALE[st.mat],opacity:0.92,showscale:false,name:'Absorção',
+    hovertemplate:'λ %{x} nm<br>R %{y} nm<br>absorção %{z:.2f}<extra></extra>'},line(lams.map(l=>absParts(m,st.R,HC/l).tot))],
+    L3('Quanta luz o '+m.label+' absorve','λ (nm)','R (nm)','Absorção (u.a.)'),CFG);
+  Plotly.react('pPL',[{type:'surface',x:lams,y:Rs,z:zP,colorscale:SCALE[st.mat],opacity:0.92,showscale:false,name:'Emissão',
+    hovertemplate:'λ %{x} nm<br>R %{y} nm<br>brilho %{z:.3f}<extra></extra>'},line(lams.map(l=>plSpec(m,st.R,st.coat,HC/l)))],
+    L3('Quanta luz o '+m.label+' emite','λ (nm)','R (nm)','Brilho (u.a.)'),CFG);
+}
+function drawEnergy(st){
+  const names=['CdS','CuS'],rows=names.map(k=>energyBalance(MAT[k],st.R,st.coat,st.lex));
+  const mk=(key,label,color)=>({type:'bar',orientation:'h',y:names,x:rows.map(r=>r.absorbs?100*r[key]:0),name:label,marker:{color},
+    hovertemplate:label+': %{x:.1f}%<extra></extra>'});
+  Plotly.react('pEnergy',[mk('therm','Sobra → calor','#e07b39'),mk('nonrad','Defeitos → calor','#b8483a'),
+    mk('plas','Plasmon → calor','#7a3fa0'),mk('rad','Luz emitida',css('--accent'))],
+    {title:{text:'Para onde vai a energia de um fóton de '+st.lex+' nm ('+fmt(HC/st.lex,2)+' eV)',font:{size:14}},barmode:'stack',
+     paper_bgcolor:'rgba(0,0,0,0)',plot_bgcolor:'rgba(0,0,0,0)',font:{color:css('--ink'),size:11},
+     margin:{l:44,r:10,t:44,b:40},uirevision:'keep',xaxis:{title:{text:'% da energia absorvida'},range:[0,100],gridcolor:css('--line')},
+     legend:{orientation:'h',y:-0.35,font:{size:10}},
+     annotations:rows.map((r,i)=>r.absorbs?null:{x:50,y:names[i],text:'não absorve esta luz',showarrow:false,font:{color:css('--muted')}}).filter(Boolean)},CFG);
+}
+function drawSizeTable(){
+  const Rs=[1.5,2,2.5,3,4,5];
+  let h='<thead><tr><th>Raio</th><th>Diâmetro</th><th class="cdsT">CdS gap</th><th class="cdsT">absorve</th><th class="cdsT">emite</th><th class="cusT">CuS gap</th><th class="cusT">absorve</th><th class="cusT">plasmon</th></tr></thead><tbody>';
+  for(const R of Rs){const a=brus(MAT.CdS,R).Eg,b=brus(MAT.CuS,R).Eg,l=lspr(MAT.CuS,R);
+    h+=`<tr><td class="num">${fmt(R,1)} nm</td><td class="num">${fmt(2*R,0)} nm</td><td class="num">${fmt(a,2)} eV</td><td class="num">${Math.round(HC/a)} nm</td><td class="num">${Math.round(HC/(a-MAT.CdS.stokes))} nm</td><td class="num">${fmt(b,2)} eV</td><td class="num">${Math.round(HC/b)} nm</td><td class="num">${Math.round(l.lam)} nm</td></tr>`;}
+  $('tSize').innerHTML=h+'</tbody>';
+  const row=(mk,lbl)=>{let s=`<p style="margin:10px 0 0;font-weight:700" class="${mk==='CdS'?'cdsT':'cusT'}">${lbl}</p><div class="dots">`;
+    for(const R of [1.5,2,2.5,3,4,5]){const m=MAT[mk],lam=Math.round(HC/(brus(m,R).Eg-m.stokes)),c=lamRGB(lam),d=Math.round(10+R*7);
+      s+=`<div class="dot"><i style="width:${d}px;height:${d}px;background:${c||'#555'};color:${c||'transparent'}"></i>R ${fmt(R,1)} nm<br><b>${lam} nm</b>${c?'':(lam<380?'<br>(ultravioleta)':'<br>(infravermelho)')}</div>`;}
+    return s+'</div>';};
+  $('colorDots').innerHTML=row('CdS','CdS: fluorescência forte')+row('CuS','CuS: emissão fraca (cor teórica)');
+}
+function drawCrystal(st){
+  const Rd=Math.min(st.R,3.0),atoms=crystal(st.mat,Rd);
+  const col={Cd:'#d99a00',S:'#f4e04d',Cu:'#c46a2f'},nm={Cd:'Cádmio',S:'Enxofre',Cu:'Cobre'};const els=st.mat==='CdS'?['Cd','S']:['Cu','S'];
+  const tr=els.map(el=>{const p=atoms.filter(a=>a[3]===el);return{type:'scatter3d',mode:'markers',name:nm[el]+' ('+el+')',x:p.map(a=>a[0]),y:p.map(a=>a[1]),z:p.map(a=>a[2]),
+    marker:{size:el==='S'?3.2:4,color:col[el],line:{width:0}},hovertemplate:nm[el]+'<extra></extra>'};});
+  const nL=Math.round(4*Math.PI*(Rd+0.5)**2*1.5),lx=[],ly=[],lz=[],rr=Rd+0.55,ga=Math.PI*(3-Math.sqrt(5));
+  for(let i=0;i<nL;i++){const y=1-2*(i+0.5)/nL,r=Math.sqrt(1-y*y),th=ga*i;lx.push(rr*r*Math.cos(th));ly.push(rr*y);lz.push(rr*r*Math.sin(th));}
+  tr.push({type:'scatter3d',mode:'markers',name:st.coat==='zns'?'Casca de ZnS':(st.coat==='peg'?'PEG':'Ligantes'),x:lx,y:ly,z:lz,
+    marker:{size:2.5,color:st.coat==='zns'?'#9aa7b4':'#6fa8dc',opacity:0.35},hoverinfo:'skip'});
+  const lay=L3('Nanocristal de '+MAT[st.mat].label+' átomo por átomo','x (nm)','y (nm)','z (nm)');lay.scene.aspectmode='data';
+  Plotly.react('pXtal',tr,lay,CFG);
+  const surf=atoms.filter(a=>Math.hypot(a[0],a[1],a[2])>Rd-0.35).length;
+  const fsurf=st.R<=3?surf/atoms.length:1-((st.R-0.35)/st.R)**3;
+  setLive('fsurf',fmt(100*fsurf,0)+'%');
+  $('xtalCap').innerHTML=`${st.mat==='CdS'?'CdS em estrutura cúbica (blenda de zinco): cada cádmio é cercado por 4 enxofres, como um tetraedro.':'CuS covelita, estrutura hexagonal em camadas; os enxofres formam pares ligados (S–S). Posições atômicas aproximadas.'} ${st.R>3?'Exibido com raio de 3 nm para manter o gráfico leve. ':''}${atoms.length.toLocaleString('pt-BR')} átomos, dos quais cerca de <b>${fmt(100*fsurf,0)}% estão na superfície</b>.`;
+}
+function drawPK(st){
+  const r=pkRun(st.mat,st.R,st.coat),comps=[['Cp','Sangue','#5aade6'],['RES','Fígado/baço','#b8483a'],['T','Tumor','#2fb39a'],['O','Outros tecidos','#a08bd0'],['U','Eliminado','#9aa3ad']];
+  const lay=L3('Onde está a partícula ao longo do tempo','Tempo (h)','','% da dose');lay.scene.yaxis.tickvals=[0,1,2,3,4];lay.scene.yaxis.ticktext=comps.map(c=>c[1]);
+  Plotly.react('pPK',comps.map(([k,n,c],i)=>({type:'scatter3d',mode:'lines',x:r.t,y:r.t.map(()=>i),z:r[k],name:n,line:{color:c,width:7},
+    hovertemplate:n+'<br>%{x:.1f} h: %{z:.1f}% da dose<extra></extra>'})),lay,CFG);
+  const Rs=[];for(let x=1.2;x<=6.001;x+=0.2)Rs.push(+x.toFixed(1));
+  const runs=Rs.map(R=>pkRun(st.mat,R,st.coat)),f=st.dose*0.4;
+  Plotly.react('pPK2',[{type:'surface',x:runs[0].t,y:Rs,z:runs.map(q=>q.T.map(v=>v*f)),colorscale:SCALE[st.mat],showscale:false,name:'Tumor',
+    hovertemplate:'%{x:.1f} h<br>R %{y} nm<br>%{z:.1f} µg/g<extra></extra>'},
+    {type:'scatter3d',mode:'lines',x:r.t,y:r.t.map(()=>st.R),z:r.T.map(v=>v*f),line:{color:css('--accent'),width:6},name:'tamanho escolhido'}],
+    L3('Quanto chega ao tumor, por tamanho','Tempo (h)','R (nm)','Tumor (µg/g)'),CFG);
+  const iPk=r.T.indexOf(Math.max(...r.T)),ion=100*(1-Math.exp(-MAT[st.mat].kdiss[st.coat]*72));
+  const card=(k,v,n,cls='')=>`<div class="card"><div class="k">${k}</div><div class="v ${cls}">${v}</div><div class="n">${n}</div></div>`;
+  $('pkCards').innerHTML=card('Tamanho na água',fmt(r.HD,1)+' nm',r.HD<5.5?'passa pelo filtro dos rins':'grande demais para os rins')+
+    card('Meia-vida no sangue',fmt(r.thalf,1)+' h','tempo para cair pela metade')+
+    card('Pico no tumor',fmt(r.T[iPk]*st.dose*0.4,1)+' µg/g',`${fmt(r.T[iPk],1)}% da dose, em ${fmt(r.t[iPk],0)} h`)+
+    card('Íons liberados em 72 h',fmt(ion,0)+'%',MAT[st.mat].ion+' da partícula internalizada',st.mat==='CdS'&&ion>20?'bad':'');
+  setLive('HD',fmt(r.HD,1));
+}
+function drawPD(st){
+  const ph=photo(st),cell=CELLS[st.imm],Cs=[],ts=[];for(let i=0;i<=40;i++)Cs.push(+(Math.pow(10,i/40*Math.log10(200))).toFixed(2));for(let t=0;t<=48;t+=1.5)ts.push(t);
+  const surf=c=>ts.map(t=>Cs.map(C=>viab(st,c,C,t,ph).V*100));
+  const lay=L3('Células vivas: tumor × '+cell.name.toLowerCase(),'Concentração (µg/mL)','Tempo (h)','Células vivas (%)');lay.scene.xaxis.type='log';lay.scene.zaxis.range=[0,105];
+  Plotly.react('pPD',[
+    {type:'surface',x:Cs,y:ts,z:surf(CELLS[0]),colorscale:[[0,'#7a1f1f'],[1,'#f2a07b']],showscale:false,opacity:0.9,name:'Tumorais',showlegend:true,
+     hovertemplate:'Tumorais<br>%{x} µg/mL, %{y} h<br>%{z:.0f}% vivas<extra></extra>'},
+    {type:'surface',x:Cs,y:ts,z:surf(cell),colorscale:[[0,'#123a5c'],[1,'#8fd3ff']],showscale:false,opacity:0.6,name:cell.name,showlegend:true,
+     hovertemplate:cell.name+'<br>%{x} µg/mL, %{y} h<br>%{z:.0f}% vivas<extra></extra>'}],lay,CFG);
+  const cols=['#e0643c','#b8483a','#d9a400','#5aade6','#a08bd0'];
+  const lay2=L3('Sensibilidade de cada tipo de célula (24 h)','Concentração (µg/mL)','','Células vivas (%)');lay2.scene.xaxis.type='log';lay2.scene.zaxis.range=[0,105];
+  lay2.scene.yaxis.tickvals=[0,1,2,3,4];lay2.scene.yaxis.ticktext=['Tumor','Macróf.','Dendrít.','T CD8⁺','NK'];
+  Plotly.react('pPD2',CELLS.map((c,i)=>({type:'scatter3d',mode:'lines',x:Cs,y:Cs.map(()=>i),z:Cs.map(C=>viab(st,c,C,24,ph).V*100),
+    name:c.name,line:{color:cols[i],width:7},hovertemplate:c.name+'<br>%{x} µg/mL: %{z:.0f}% vivas<extra></extra>'})),lay2,CFG);
+  const lt=LIGHT[st.light];
+  $('pdCap').textContent=`${MAT[st.mat].label}, ${COATNAME[st.coat]}, raio ${fmt(st.R,1)} nm, ${lt?('luz de '+lt.lam+' nm ligada em 4 h'):'sem luz'}.`;
+  const ics=CELLS.map(c=>ic50(st,c,ph));const immMean=Math.exp(ics.slice(1).map(x=>Math.log(Math.min(x,5000))).reduce((a,b)=>a+b)/4);
+  const SI=immMean/Math.min(ics[0],5000);
+  let h='<thead><tr><th>Tipo celular</th><th>Quanto "come" (relativo)</th><th>IC₅₀ 24 h</th><th>Vivas em '+st.conc+' µg/mL</th></tr></thead><tbody>';
+  CELLS.forEach((c,i)=>{const v=viab(st,c,st.conc,24,ph).V;h+=`<tr><td>${c.name}</td><td class="num">${fmt(c.U,1)}×</td><td class="num">${isFinite(ics[i])?fmt(ics[i],1)+' µg/mL':'&gt; 5000'}</td><td class="num">${fmt(100*v,0)}%</td></tr>`;});
+  h+=`<tr><td colspan="2"><b>Índice de seletividade</b></td><td class="num"><b class="${SI>2?'good':(SI<1.2?'bad':'')}">${fmt(SI,2)}</b></td><td>${SI>2?'tumor morre primeiro':(SI<1.2?'imunes sofrem igual ou mais':'moderado')}</td></tr>`;
+  $('tIC').innerHTML=h+'</tbody>';
+  const vt=viab(st,CELLS[0],st.conc,24,ph),vi=CELLS.slice(1).map(c=>viab(st,c,st.conc,24,ph).V),vdc=vi[1],vimm=vi.reduce((a,b)=>a+b)/4;
+  const T=vt.T,icdHeat=T>40?Math.exp(-(((T-46)/3.5)**2)):0,icdRos=Math.min(1,(vt.boost-1)/4)*0.6,base=st.mat==='CuS'?0.3:0.1;
+  const ICD=(1-vt.V)*Math.min(1,icdHeat+icdRos+base),idx=clamp(ICD*vdc-0.8*(1-vimm),-1,1);
+  let pol;
+  if(idx>0.25)pol='<b class="good">Ativação imune.</b> O tumor morre liberando sinais de alarme, as células dendríticas amadurecem e os macrófagos tendem ao perfil M1 (combatente). É o cenário desejado.';
+  else if(idx>-0.1)pol='<b>Resposta neutra ou mista.</b> O tumor morre pouco ou sem alarme, ou parte das células imunes também é afetada. Na prática, costuma-se combinar com imunoterapia (anti-PD-1) ou ajustar a dose de luz.';
+  else pol='<b class="bad">Imunossupressão.</b> As células de defesa sofrem mais que o tumor'+(st.mat==='CdS'?', efeito típico do cádmio, que também favorece macrófagos M2 e inflamação crônica.':', provavelmente por calor excessivo (acima de ~52 °C) ou cobre em excesso.');
+  const card=(k,v,n,cls='')=>`<div class="card"><div class="k">${k}</div><div class="v ${cls}">${v}</div><div class="n">${n}</div></div>`;
+  $('immTxt').innerHTML=`<p>Resultado da simulação agora (${MAT[st.mat].label}, ${st.conc} µg/mL, 24 h, ${lt?'luz '+lt.lam+' nm':'sem luz'}):</p><div class="cards">`+
+    card('Temperatura no tumor',fmt(T,1)+' °C',T>52?'queima tudo (ablação)':(T>42?'faixa terapêutica':'sem efeito térmico'))+
+    card('Tumor vivo',fmt(100*vt.V,0)+'%','após 24 h')+
+    card('Defesa viva (média)',fmt(100*vimm,0)+'%','macrófagos, DCs, T e NK')+
+    card('Saldo imunológico',(idx>0?'+':'')+fmt(idx,2),'−1 suprime … +1 ativa',idx>0.25?'good':(idx<-0.1?'bad':''))+
+    `</div><p>${pol}</p><p style="font-size:.88rem;color:var(--muted)">Experimente: escolha CuS com luz de 808 nm e mude a concentração para levar a temperatura até 42–50 °C. Depois troque para CdS sem luz e compare a defesa viva.</p>`;
+}
+function drawLive(st){
+  const c=brus(MAT.CdS,st.R),l=lspr(MAT.CuS,st.R);
+  setLive('R',fmt(st.R,1));setLive('conf',fmt(c.conf,2));setLive('coul',fmt(c.coul,2));setLive('EgCdS',fmt(c.Eg,2));
+  setLive('lspr',Math.round(l.lam));setLive('lex',st.lex);
+}
+let tm;
+function update(){
+  const st=state();$('Ro').textContent=fmt(st.R,1);$('lexo').textContent=st.lex;$('doseo').textContent=st.dose;$('conco').textContent=st.conc;
+  clearTimeout(tm);tm=setTimeout(()=>{drawLive(st);drawSpectra(st);drawEnergy(st);drawCrystal(st);drawPK(st);drawPD(st);},60);
+}
+function toggleLab(){const o=$('lab').classList.toggle('open');$('labBtn').setAttribute('aria-expanded',o);$('labBtn').textContent=o?'Fechar laboratório':'Laboratório virtual';}
+function openLab(){if(!$('lab').classList.contains('open'))toggleLab();}
+document.querySelectorAll('#lab input,#lab select').forEach(e=>e.addEventListener('input',update));
+try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',update);}catch(e){}
+drawSizeTable();update();
+</script>
+</body>
+</html>
