@@ -29,6 +29,30 @@
 <meta name="twitter:title" content="Walida — Qualificação Térmica e Validação no Nordeste">
 <meta name="twitter:description" content="Qualificação de câmaras climáticas, frias, autoclaves e áreas controladas. Conforme RDC 658, ISO 17025 e ICH — atendendo todo o Nordeste.">
 <meta name="twitter:image" content="https://walidanordeste-create.github.io/site-walida/foto-camara-estabilidade.jpg">
+<meta property="og:locale" content="pt_BR">
+<meta name="robots" content="index, follow">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Walida",
+  "description": "Qualificação de instalação, operação e performance (QI/QO/QP) de câmaras climáticas, frias, autoclaves e áreas controladas.",
+  "url": "https://walidanordeste-create.github.io/site-walida/",
+  "logo": "https://walidanordeste-create.github.io/site-walida/logo-walida.png",
+  "image": "https://walidanordeste-create.github.io/site-walida/foto-camara-estabilidade.jpg",
+  "email": "walida.nordeste@gmail.com",
+  "telephone": "+5581995861615",
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Nordeste do Brasil"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "PE",
+    "addressCountry": "BR"
+  }
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,6 +74,16 @@
 
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{
+  outline:2px solid var(--accent-2);outline-offset:3px;
+}
+.skip-link{
+  position:absolute;top:-48px;left:12px;z-index:200;
+  background:var(--accent-2);color:#fff;padding:12px 20px;border-radius:8px;
+  font-family:'Space Grotesk',sans-serif;font-weight:600;text-decoration:none;
+  transition:top .2s;
+}
+.skip-link:focus{top:12px}
 body{
   font-family:'Inter',sans-serif;
   background:var(--bg);
@@ -514,6 +548,20 @@ section{position:relative;padding:140px 0}
 .diff-card h4{font-size:24px;margin-bottom:14px}
 .diff-card p{color:var(--text-2);font-size:15px;line-height:1.7}
 
+/* ===== Artigos dos parceiros ===== */
+.articles{background:var(--surface)}
+.articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,380px),1fr));gap:28px}
+.article-card{display:flex;flex-direction:column;background:var(--bg);border:1px solid var(--line);border-radius:20px;overflow:hidden;text-decoration:none;color:var(--text);transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
+.article-card:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(107,87,184,.18)}
+.article-cover{aspect-ratio:16/9;background:linear-gradient(135deg,#18053A 0%,#3B2470 55%,#6B57B8 100%);position:relative;overflow:hidden}
+.article-cover svg{position:absolute;inset:0;width:100%;height:100%}
+.article-body{padding:28px 28px 32px;display:flex;flex-direction:column;gap:12px;flex:1}
+.article-tag{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-2)}
+.article-card h4{font-size:22px;line-height:1.25}
+.article-card p{color:var(--text-2);font-size:15px;line-height:1.7}
+.article-meta{margin-top:auto;padding-top:8px;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--text-3)}
+.article-meta .go{color:var(--accent);font-weight:600}
+
 /* ===== CTA ===== */
 .cta{
   position:relative;padding:140px 0;overflow:hidden;
@@ -811,6 +859,8 @@ section{position:relative;padding:140px 0}
 </head>
 <body>
 
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
 <!-- Scroll progress bar -->
 <div class="scroll-progress"><div class="scroll-progress-bar" id="progressBar"></div></div>
 <!-- Cursor glow -->
@@ -828,6 +878,7 @@ section{position:relative;padding:140px 0}
         <li><a href="#servicos">Serviços</a></li>
         <li><a href="#processo">Processo</a></li>
         <li><a href="#setores">Setores</a></li>
+        <li><a href="#artigos">Artigos</a></li>
         <li><a href="#contato">Contato</a></li>
         <li><a href="#simulador">Simulador</a></li>
       </ul>
@@ -838,6 +889,8 @@ section{position:relative;padding:140px 0}
     </nav>
   </div>
 </header>
+
+<main id="conteudo">
 
 <!-- Hero -->
 <section class="hero">
@@ -910,7 +963,7 @@ section{position:relative;padding:140px 0}
       <div class="client-item"><img src="logos/hospital-onofre-lopes.png" alt="Hospital Onofre Lopes" loading="lazy"></div>
       <div class="client-item"><img src="logos/hospital-clinicas-pe.png" alt="Hospital das Clínicas PE" loading="lazy"></div>
       <div class="client-item"><img src="logos/fundacao-altino-ventura.png" alt="Fundação Altino Ventura" loading="lazy"></div>
-      <div class="client-item"><img src="https://abraceesperanca.org.br/wp-content/uploads/2024/11/logo-300x80-1.png" alt="ABRACE Esperança PB" loading="lazy"></div>
+      <div class="client-item"><img src="logos/abrace-esperanca.png" alt="ABRACE Esperança PB" loading="lazy"></div>
       <div class="client-item"><img src="logos/hospital-esperanca-recife.svg" alt="Hospital Esperança Recife" loading="lazy"></div>
       <div class="client-item"><img src="logos/memorial-sao-jose.svg" alt="Memorial São José" loading="lazy"></div>
       <div class="client-item"><img src="logos/hapvida.webp" alt="Hapvida" loading="lazy"></div>
@@ -923,11 +976,12 @@ section{position:relative;padding:140px 0}
       <div class="client-item"><img src="logos/hospital-da-mulher.png" alt="Hospital da Mulher" loading="lazy"></div>
       <div class="client-item"><img src="logos/ambipar.png" alt="Ambipar" loading="lazy"></div>
       <div class="client-item"><img src="logos/drogaria-economia.png" alt="Drogaria da Economia" loading="lazy"></div>
+      <div class="client-item"><img src="logos/bellobella.png" alt="Bellobella" loading="lazy"></div>
       <!-- Set 2 — duplicado para loop infinito -->
       <div class="client-item"><img src="logos/hospital-onofre-lopes.png" alt="Hospital Onofre Lopes" loading="lazy"></div>
       <div class="client-item"><img src="logos/hospital-clinicas-pe.png" alt="Hospital das Clínicas PE" loading="lazy"></div>
       <div class="client-item"><img src="logos/fundacao-altino-ventura.png" alt="Fundação Altino Ventura" loading="lazy"></div>
-      <div class="client-item"><img src="https://abraceesperanca.org.br/wp-content/uploads/2024/11/logo-300x80-1.png" alt="ABRACE Esperança PB" loading="lazy"></div>
+      <div class="client-item"><img src="logos/abrace-esperanca.png" alt="ABRACE Esperança PB" loading="lazy"></div>
       <div class="client-item"><img src="logos/hospital-esperanca-recife.svg" alt="Hospital Esperança Recife" loading="lazy"></div>
       <div class="client-item"><img src="logos/memorial-sao-jose.svg" alt="Memorial São José" loading="lazy"></div>
       <div class="client-item"><img src="logos/hapvida.webp" alt="Hapvida" loading="lazy"></div>
@@ -940,6 +994,7 @@ section{position:relative;padding:140px 0}
       <div class="client-item"><img src="logos/hospital-da-mulher.png" alt="Hospital da Mulher" loading="lazy"></div>
       <div class="client-item"><img src="logos/ambipar.png" alt="Ambipar" loading="lazy"></div>
       <div class="client-item"><img src="logos/drogaria-economia.png" alt="Drogaria da Economia" loading="lazy"></div>
+      <div class="client-item"><img src="logos/bellobella.png" alt="Bellobella" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -1369,6 +1424,43 @@ section{position:relative;padding:140px 0}
   </div>
 </section>
 
+<!-- Artigos dos parceiros -->
+<section class="articles" id="artigos">
+  <div class="container">
+    <div class="section-head fade-up">
+      <h2>Artigos dos<br><span style="background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">parceiros.</span></h2>
+      <div class="right">
+        Conteúdos técnicos e científicos escritos em linguagem acessível, com aprofundamento para quem quer ir além.
+      </div>
+    </div>
+
+    <div class="articles-grid">
+      <a class="article-card fade-up" href="artigos/pontos-quanticos.html">
+        <div class="article-cover" aria-hidden="true">
+          <svg viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <radialGradient id="qdA" cx="35%" cy="35%" r="65%"><stop offset="0" stop-color="#FFE38A"/><stop offset="1" stop-color="#E8522A"/></radialGradient>
+              <radialGradient id="qdB" cx="35%" cy="35%" r="65%"><stop offset="0" stop-color="#B9F5E6"/><stop offset="1" stop-color="#1A8F7A"/></radialGradient>
+            </defs>
+            <g opacity=".35" stroke="#fff" stroke-width=".6" fill="none"><path d="M0 170 Q50 120 100 170 T200 170 T300 170 T400 170"/><path d="M0 190 Q50 150 100 190 T200 190 T300 190 T400 190"/></g>
+            <circle cx="140" cy="100" r="12" fill="#7B4FFF" opacity=".9"/><circle cx="175" cy="96" r="17" fill="#2F8BFF" opacity=".9"/><circle cx="218" cy="92" r="23" fill="#2FE08A" opacity=".9"/>
+            <circle cx="88" cy="112" r="36" fill="url(#qdA)"/><circle cx="300" cy="96" r="44" fill="url(#qdB)"/>
+            <g fill="#FFB27A" opacity=".85"><path d="M300 40 q6 6 0 12 q-6 6 0 12"/></g>
+            <text x="88" y="118" text-anchor="middle" font-family="Anton,sans-serif" font-size="20" fill="#18053A">CdS</text>
+            <text x="300" y="104" text-anchor="middle" font-family="Anton,sans-serif" font-size="24" fill="#0B2E28">CuS</text>
+          </svg>
+        </div>
+        <div class="article-body">
+          <span class="article-tag">Nanomedicina · Interativo 3D</span>
+          <h4>Pontos quânticos de CdS e CuS: da luz à célula</h4>
+          <p>Como o tamanho define a cor, como esses nanocristais recebem energia e emitem luz, como viajam pelo corpo e como agem em células tumorais e imunes, com simulações e gráficos 3D.</p>
+          <div class="article-meta"><span>Por Luís Felipe Alves Dionísio, com auxílio da IA Claude</span><span class="go">Ler artigo →</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta" id="contato">
   <div class="container cta-inner">
@@ -1404,22 +1496,22 @@ section{position:relative;padding:140px 0}
         <div class="form-row">
           <div class="form-group">
             <label for="nome">Nome *</label>
-            <input type="text" id="nome" name="name" placeholder="Seu nome completo" required>
+            <input type="text" id="nome" name="name" placeholder="Seu nome completo" autocomplete="name" required>
           </div>
           <div class="form-group">
             <label for="empresa">Empresa</label>
-            <input type="text" id="empresa" name="empresa" placeholder="Nome da instituição">
+            <input type="text" id="empresa" name="empresa" placeholder="Nome da instituição" autocomplete="organization">
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
             <label for="email">E-mail *</label>
-            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" autocomplete="email" required>
           </div>
           <div class="form-group">
             <label for="telefone">WhatsApp / Telefone</label>
-            <input type="tel" id="telefone" name="telefone" placeholder="(81) 9 0000-0000">
+            <input type="tel" id="telefone" name="telefone" placeholder="(81) 9 0000-0000" autocomplete="tel" inputmode="tel">
           </div>
         </div>
 
@@ -1454,6 +1546,7 @@ section{position:relative;padding:140px 0}
 
   </div>
 </section>
+</main>
 
 <!-- Footer -->
 <footer class="footer">
@@ -1480,6 +1573,7 @@ section{position:relative;padding:140px 0}
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#processo">Processo</a></li>
           <li><a href="#setores">Setores</a></li>
+          <li><a href="#artigos">Artigos dos parceiros</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </div>
