@@ -41,7 +41,7 @@
   "datePublished": "2026-10-28",
   "dateModified": "2026-10-28",
   "inLanguage": "pt-BR",
-  "author": {"@type": "Person", "name": "Luís Felipe Alves Dionísio"},
+  "author": {"@type": "Person", "name": "Luís Felipe Alves Dionísio", "image": "https://walidanordeste-create.github.io/site-walida/foto-luis-felipe.jpg"},
   "publisher": {
     "@type": "Organization",
     "name": "Walida",
@@ -144,6 +144,15 @@ dl.gl dd{margin:2px 0 0 0;color:var(--muted)}
 #lab select{width:100%;padding:6px 8px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font:inherit;font-size:.9rem}
 #lab .x{float:right;border:0;background:none;color:var(--muted);font-size:1.3rem;cursor:pointer;line-height:1}
 .live{font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+.author{display:flex;align-items:center;gap:14px;margin:14px 0 18px}
+.author img{width:60px;height:60px;border-radius:50%;object-fit:cover;flex:none;border:2px solid var(--line)}
+.author .name{font:700 1.08rem/1.3 'Source Serif 4',Georgia,serif;color:var(--ink)}
+.author .role{font:600 12px/1.5 'Inter',Helvetica,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.author-box{display:flex;gap:16px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:40px}
+.author-box img{width:84px;height:84px;border-radius:50%;object-fit:cover;flex:none}
+.author-box .k{font:600 12px 'Inter',Helvetica,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.author-box .name{font:800 1.2rem/1.3 'Source Serif 4',Georgia,serif}
+.author-box p{margin:4px 0 0;font-size:.92rem;color:var(--muted)}
 /* cabeçalho do blog (blog.css) mantém a cor da marca e o fundo claro */
 .site-header{--accent:#E8522A;font-family:'Inter',Helvetica,Arial,sans-serif}
 .site-header a{color:inherit;text-decoration:none}
@@ -186,7 +195,14 @@ svg text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 <header class="hero">
   <div class="kicker">Artigo de parceiro · Nanomedicina</div>
   <h1>Pontos quânticos de sulfeto de cádmio e de sulfeto de cobre: da luz à célula</h1>
-  <p class="byline">Por <b>Luís Felipe Alves Dionísio</b>, com auxílio da IA Claude · 28 de outubro de 2026 · Leitura: 25 min</p>
+  <div class="author">
+    <img src="foto-luis-felipe.jpg" alt="Foto de Luís Felipe Alves Dionísio" width="60" height="60">
+    <div>
+      <div class="name">Luís Felipe Alves Dionísio</div>
+      <div class="role">Autor convidado · com auxílio da IA Claude</div>
+      <div class="role">28 de outubro de 2026 · Leitura: 25 min</div>
+    </div>
+  </div>
   <p class="lead">Um guia em camadas. Cada seção começa com uma explicação simples, para qualquer leitor, e depois traz a parte aprofundada, com equações, simulações e gráficos 3D que você pode girar e ajustar.</p>
   <div class="simple"><b class="t">Resumo em 30 segundos</b>
     <p>• <b>Pontos quânticos</b> são cristais tão pequenos (poucos nanômetros) que a cor da luz que absorvem e emitem depende do tamanho deles.</p>
@@ -629,6 +645,15 @@ PD:     EC50 base (24 h, U=1): CdS 20 µg/mL · CuS 90 µg/mL; ZnS ×6 / ×1,8; 
 <li>Tsvetkov, P. et al. <i>Science</i> 375, 1254 (2022).</li>
 </ul></div></details>
 </section>
+
+<aside class="author-box" aria-label="Sobre o autor">
+  <img src="foto-luis-felipe.jpg" alt="Foto de Luís Felipe Alves Dionísio" width="84" height="84">
+  <div>
+    <div class="k">Sobre o autor</div>
+    <div class="name">Luís Felipe Alves Dionísio</div>
+    <p>Autor convidado do blog Walida. Artigo escrito com auxílio da IA Claude.</p>
+  </div>
+</aside>
 
 <footer>Conteúdo educativo gerado a partir de simulação computacional. Gráficos interativos feitos com Plotly.js.<br>
 <a href="blog.html">← Voltar para o blog</a> · <a href="index.html">Página inicial da Walida</a></footer>
