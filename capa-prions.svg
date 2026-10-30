@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#14203a"/><stop offset=".55" stop-color="#2d2f62"/><stop offset="1" stop-color="#6B57B8"/>
+    </linearGradient>
+    <filter id="g" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="16"/></filter>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <g stroke="#ffffff" stroke-opacity=".10" fill="none" stroke-width="2">
+    <path d="M0 760 Q120 690 240 760 T480 760 T720 760 T960 760 T1200 760"/>
+    <path d="M0 820 Q120 750 240 820 T480 820 T720 820 T960 820 T1200 820"/>
+  </g>
+  <g transform="translate(290,400)">
+    <g filter="url(#g)" opacity=".55">
+      <path d="M-110 -90 q40 -46 80 0 q40 46 80 0" fill="none" stroke="#49BCD8" stroke-width="30" stroke-linecap="round"/>
+      <path d="M-110 10 q40 -46 80 0 q40 46 80 0" fill="none" stroke="#49BCD8" stroke-width="30" stroke-linecap="round"/>
+      <path d="M-110 110 q40 -46 80 0 q40 46 80 0" fill="none" stroke="#49BCD8" stroke-width="30" stroke-linecap="round"/>
+    </g>
+    <path d="M-110 -90 q40 -46 80 0 q40 46 80 0" fill="none" stroke="#7FE2F5" stroke-width="22" stroke-linecap="round"/>
+    <path d="M-110 10 q40 -46 80 0 q40 46 80 0" fill="none" stroke="#7FE2F5" stroke-width="22" stroke-linecap="round"/>
+    <path d="M-110 110 q40 -46 80 0 q40 46 80 0" fill="none" stroke="#7FE2F5" stroke-width="22" stroke-linecap="round"/>
+    <text x="0" y="210" text-anchor="middle" font-family="Georgia,serif" font-weight="800" font-size="46" fill="#9BEBFB">PrP sadia</text>
+  </g>
+  <g stroke="#ffffff" stroke-width="7" fill="none" stroke-linecap="round" opacity=".85">
+    <path d="M540 400 L650 400"/><path d="M620 372 L652 400 L620 428"/>
+  </g>
+  <g transform="translate(900,400)">
+    <g filter="url(#g)" opacity=".6" fill="#E8522A">
+      <rect x="-130" y="-150" width="260" height="26" rx="13"/><rect x="-130" y="-108" width="260" height="26" rx="13"/>
+      <rect x="-130" y="-66" width="260" height="26" rx="13"/><rect x="-130" y="-24" width="260" height="26" rx="13"/>
+      <rect x="-130" y="18" width="260" height="26" rx="13"/><rect x="-130" y="60" width="260" height="26" rx="13"/>
+      <rect x="-130" y="102" width="260" height="26" rx="13"/>
+    </g>
+    <g fill="#FF9270">
+      <rect x="-130" y="-150" width="260" height="22" rx="11"/><rect x="-130" y="-108" width="260" height="22" rx="11"/>
+      <rect x="-130" y="-66" width="260" height="22" rx="11"/><rect x="-130" y="-24" width="260" height="22" rx="11"/>
+      <rect x="-130" y="18" width="260" height="22" rx="11"/><rect x="-130" y="60" width="260" height="22" rx="11"/>
+      <rect x="-130" y="102" width="260" height="22" rx="11"/>
+    </g>
+    <text x="0" y="210" text-anchor="middle" font-family="Georgia,serif" font-weight="800" font-size="46" fill="#FFB49A">PrP doente</text>
+  </g>
+  <text x="600" y="150" text-anchor="middle" font-family="Georgia,serif" font-weight="800" font-size="72" fill="#ffffff">PRÍONS</text>
+  <text x="600" y="840" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-weight="700" font-size="28" letter-spacing="5" fill="#ffffff" fill-opacity=".78">A PROTEÍNA QUE ENSINA OUTRAS A ADOECER</text>
+</svg>

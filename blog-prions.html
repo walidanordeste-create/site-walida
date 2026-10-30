@@ -1,0 +1,1056 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Príons: a proteína que o autoclave comum não elimina | Blog Walida</title>
+<meta name="description" content="Guia ilustrado e interativo sobre príons: todos os tipos de doença priônica, como o processo começa, avança e termina, e as boas práticas de esterilização em cirurgias de encéfalo e na medicina veterinária.">
+<link rel="canonical" href="https://walidanordeste-create.github.io/site-walida/blog-prions.html">
+<link rel="icon" href="logo-walida.png">
+<meta name="theme-color" content="#E8522A">
+<meta name="author" content="André Monteiro de Araújo">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Príons: a proteína que ensina outras a adoecer">
+<meta property="og:description" content="Todos os tipos de doença priônica, como o processo começa, avança e termina, e os protocolos de descontaminação que a esterilização de rotina não cobre.">
+<meta property="og:url" content="https://walidanordeste-create.github.io/site-walida/blog-prions.html">
+<meta property="og:image" content="https://walidanordeste-create.github.io/site-walida/capa-prions.svg">
+<link rel="sitemap" type="application/xml" href="/site-walida/sitemap.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Início", "item": "https://walidanordeste-create.github.io/site-walida/"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://walidanordeste-create.github.io/site-walida/blog.html"},
+    {"@type": "ListItem", "position": 3, "name": "Príons e esterilização", "item": "https://walidanordeste-create.github.io/site-walida/blog-prions.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Príons: a proteína que ensina outras a adoecer",
+  "alternativeHeadline": "Todos os tipos de doença priônica, como o processo começa, avança e termina, e as boas práticas de esterilização",
+  "description": "Guia ilustrado e interativo sobre príons, doenças priônicas humanas e animais, o ciclo molecular da conversão e os protocolos de descontaminação de materiais reutilizáveis.",
+  "image": "https://walidanordeste-create.github.io/site-walida/capa-prions.svg",
+  "datePublished": "2026-10-29",
+  "dateModified": "2026-10-29",
+  "inLanguage": "pt-BR",
+  "author": {"@type": "Person", "name": "André Monteiro de Araújo", "jobTitle": "Analista de Validação Sênior", "image": "https://walidanordeste-create.github.io/site-walida/foto-andre-monteiro.jpg", "worksFor": {"@type": "Organization", "name": "Walida Soluções"}},
+  "publisher": {
+    "@type": "Organization",
+    "name": "Walida",
+    "logo": {"@type": "ImageObject", "url": "https://walidanordeste-create.github.io/site-walida/logo-walida.png"}
+  },
+  "mainEntityOfPage": "https://walidanordeste-create.github.io/site-walida/blog-prions.html"
+}
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.27.0/plotly.min.js"></script>
+<style>
+:root{
+  --bg:#fbfaf7;--panel:#ffffff;--ink:#1b2127;--muted:#5a636d;--line:#e2e4e7;--soft:#f1f3f5;
+  --accent:#6B57B8;--accent-soft:#EDE8F8;--sane:#1a7f9c;--sane-soft:#e2f2f7;--sick:#b8432c;--sick-soft:#fbe9e4;
+  --bad:#b83227;--good:#1d7d45;--simple:#fff7e0;--simple-ink:#5e4500;--heat:#d4582c;--light:#2f7fd1;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#111417;--panel:#1a1e22;--ink:#e6e9ec;--muted:#9da6b0;--line:#2c3238;--soft:#22282e;
+    --accent:#62b1ea;--accent-soft:#1c2b38;--sane:#49bcd8;--sane-soft:#112a31;--sick:#ff7d6e;--sick-soft:#2e1a16;
+    --bad:#ff7d6e;--good:#5fd38d;--simple:#2a2414;--simple-ink:#f0d79a;--heat:#ff8a5c;--light:#6fb2f2;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#111417;--panel:#1a1e22;--ink:#e6e9ec;--muted:#9da6b0;--line:#2c3238;--soft:#22282e;
+  --accent:#62b1ea;--accent-soft:#1c2b38;--sane:#49bcd8;--sane-soft:#112a31;--sick:#ff7d6e;--sick-soft:#2e1a16;
+  --bad:#ff7d6e;--good:#5fd38d;--simple:#2a2414;--simple-ink:#f0d79a;--heat:#ff8a5c;--light:#6fb2f2;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:980px;margin:0 auto;padding:0 16px 96px}
+header.hero{padding:8px 0 28px}
+.kicker{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:650}
+h1{font-size:clamp(1.8rem,4.6vw,2.7rem);line-height:1.15;margin:8px 0 12px;letter-spacing:-.02em}
+.dek{font:400 1.25rem/1.45 'Source Serif 4',Georgia,serif;color:var(--muted);margin:0 0 6px}
+.lead{font-size:1.15rem;color:var(--muted);max-width:760px}
+h2{font-size:clamp(1.4rem,3vw,1.8rem);line-height:1.25;margin:64px 0 8px;letter-spacing:-.01em}
+h2 .num{display:inline-block;min-width:1.6em;color:var(--accent)}
+h3{font-size:1.12rem;margin:26px 0 6px}
+h1,h2,h3,.mat h3{font-family:'Source Serif 4',Georgia,serif;font-weight:800}
+p{margin:8px 0 12px}
+a{color:var(--accent)}
+.q{font-size:1.05rem;color:var(--muted);font-style:italic;margin:0 0 14px}
+.simple{background:var(--simple);color:var(--simple-ink);border-radius:14px;padding:14px 18px;margin:14px 0}
+.simple b.t{display:block;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.simple p{margin:4px 0}
+details.deep{background:var(--panel);border:1px solid var(--line);border-radius:14px;margin:14px 0;overflow:hidden}
+details.deep>summary{cursor:pointer;padding:12px 18px;font-weight:650;list-style:none;display:flex;gap:10px;align-items:center}
+details.deep>summary::-webkit-details-marker{display:none}
+details.deep>summary::before{content:"+";display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;flex:none}
+details.deep[open]>summary::before{content:"−"}
+details.deep .body{padding:0 18px 14px}
+figure{margin:18px 0;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px}
+figure svg{width:100%;height:auto;display:block}
+figcaption{font-size:.88rem;color:var(--muted);margin-top:8px}
+.plot{width:100%;height:460px}
+.plot.short{height:320px}
+.howto{font-size:.9rem;background:var(--soft);border-radius:10px;padding:10px 14px;margin-top:8px}
+.howto b{color:var(--accent)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:10px;margin:14px 0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.card .k{font-size:.78rem;color:var(--muted)}
+.card .v{font-size:1.3rem;font-weight:700;font-variant-numeric:tabular-nums}
+.card .n{font-size:.8rem;color:var(--muted)}
+.mat{border-radius:14px;padding:16px 18px}
+.mat.sane{background:var(--sane-soft)} .mat.sick{background:var(--sick-soft)}
+.mat h3{margin-top:0}
+.saneT{color:var(--sane);font-weight:700}.sickT{color:var(--sick);font-weight:700}
+.bad{color:var(--bad)}.good{color:var(--good)}
+.toc{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-top:22px}
+.toc ol{margin:6px 0 0;padding-left:22px;columns:2;column-gap:28px}
+@media (max-width:640px){.toc ol{columns:1}}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:.88rem}
+th,td{padding:8px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:var(--soft);font-weight:650}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.sec td{background:var(--soft);font-weight:700}
+.tag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:.74rem;background:var(--soft);white-space:nowrap}
+.tag.hi{color:var(--bad);font-weight:600}.tag.lo{color:var(--heat)}.tag.no{color:var(--good)}
+.eq{font-family:ui-monospace,Consolas,monospace;font-size:.84rem;background:var(--soft);border-radius:10px;padding:10px 12px;display:block;overflow-x:auto;white-space:pre}
+.warn{border-left:4px solid var(--heat);background:var(--panel);padding:10px 14px;border-radius:0 10px 10px 0;font-size:.93rem;margin:14px 0}
+.warn.strong{border-left-color:var(--bad);background:var(--sick-soft)}
+dl.gl dt{font-weight:700;margin-top:12px}
+dl.gl dd{margin:2px 0 0 0;color:var(--muted)}
+.faq details{border-bottom:1px solid var(--line);padding:10px 0}
+.faq summary{cursor:pointer;font-weight:650}
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--accent);color:var(--accent);background:var(--panel);border-radius:999px;padding:6px 14px;font:inherit;font-size:.9rem;cursor:pointer}
+.btn:hover{background:var(--accent-soft)}
+ol.steps{counter-reset:s;list-style:none;padding:0;margin:14px 0}
+ol.steps li{counter-increment:s;position:relative;padding:10px 0 10px 52px;border-bottom:1px solid var(--line)}
+ol.steps li:last-child{border-bottom:0}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:10px;width:34px;height:34px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;display:grid;place-items:center}
+ol.steps b{display:block}
+#labBtn{position:fixed;right:16px;bottom:16px;z-index:30;background:var(--accent);color:#fff;border:0;border-radius:999px;padding:12px 18px;font:inherit;font-weight:650;box-shadow:0 6px 20px rgba(0,0,0,.2);cursor:pointer}
+#lab{position:fixed;right:16px;bottom:76px;z-index:31;width:min(370px,calc(100vw - 32px));max-height:min(78vh,700px);overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px 16px;box-shadow:0 12px 40px rgba(0,0,0,.25);display:none}
+#lab.open{display:block}
+#lab h4{margin:0 0 4px;font-size:1rem}
+#lab .row{margin:10px 0}
+#lab label{display:block;font-size:.8rem;color:var(--muted);margin-bottom:2px}
+#lab output{font-weight:700;color:var(--ink)}
+#lab input[type=range]{width:100%}
+#lab select{width:100%;padding:6px 8px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font:inherit;font-size:.9rem}
+#lab .x{float:right;border:0;background:none;color:var(--muted);font-size:1.3rem;cursor:pointer;line-height:1}
+.live{font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+.author{display:flex;align-items:center;gap:14px;margin:14px 0 18px}
+.author img{width:60px;height:60px;border-radius:50%;object-fit:cover;flex:none;border:2px solid var(--line)}
+.author .name{font:700 1.08rem/1.3 'Source Serif 4',Georgia,serif;color:var(--ink)}
+.author .role{font:600 12px/1.5 'Inter',Helvetica,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.author-box{display:flex;gap:16px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:40px}
+.author-box img{width:84px;height:84px;border-radius:50%;object-fit:cover;flex:none}
+.author-box .k{font:600 12px 'Inter',Helvetica,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.author-box .name{font:800 1.2rem/1.3 'Source Serif 4',Georgia,serif}
+.author-box p{margin:4px 0 0;font-size:.92rem;color:var(--muted)}
+.contrib{font-size:.93rem;color:var(--muted);border-left:3px solid var(--accent);padding-left:12px;margin:0 0 18px}
+.contrib b{color:var(--ink)}
+.field{background:var(--accent-soft);border-radius:14px;padding:16px 18px;margin:18px 0}
+.field .k{font:600 12px 'Inter',Helvetica,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.field .who{font:700 1.02rem/1.3 'Source Serif 4',Georgia,serif;color:var(--ink)}
+.field .role2{font-size:.86rem;color:var(--muted);margin-bottom:8px}
+.field p{margin:8px 0 0;font-size:.95rem}
+.people{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px;margin-top:40px}
+.people .author-box{margin-top:0}
+.site-header{--accent:#E8522A;font-family:'Inter',Helvetica,Arial,sans-serif}
+.site-header a{color:inherit;text-decoration:none}
+.site-header img{display:block}
+.back{display:inline-block;margin-top:22px;font:600 13px 'Inter',Helvetica,Arial,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent)}
+.byline{font:600 12px 'Inter',Helvetica,Arial,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.cards .card + .card{margin-top:0;padding-top:12px;border-top:1px solid var(--line)}
+footer{margin-top:60px;font-size:.85rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+.s-ink{fill:var(--ink)}.s-mut{fill:var(--muted)}.s-strk{stroke:var(--ink)}
+.s-sane{fill:var(--sane)}.s-sick{fill:var(--sick)}.s-acc{fill:var(--accent)}.s-heat{fill:var(--heat)}
+.s-panel{fill:var(--panel)}.s-soft{fill:var(--soft)}
+svg text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="hdr">
+    <a href="index.html" class="brand"><img src="logo-walida.png" alt="Walida"></a>
+    <ul>
+      <li><a href="index.html#sobre">Sobre</a></li>
+      <li><a href="servicos.html">Serviços</a></li>
+      <li><a href="index.html#processo">Processo</a></li>
+      <li><a href="index.html#setores">Setores</a></li>
+      <li><a href="blog.html" aria-current="page">Blog</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="index.html#contato">Contato</a></li>
+      <li><a href="index.html#simulador">Simulador</a></li>
+    </ul>
+    <a href="index.html#contato" class="pill">Orçamento</a>
+  </div>
+</header>
+<main>
+
+<a class="back" href="blog.html">← Blog</a>
+<header class="hero">
+  <div class="kicker">Artigo de parceiro · Príons e biossegurança</div>
+  <h1>Príons: a proteína que ensina outras a adoecer</h1>
+  <p class="dek">Todos os tipos de doença priônica, como o processo começa, avança e termina, e por que a esterilização de rotina não dá conta deles</p>
+  <div class="author">
+    <img src="foto-andre-monteiro.jpg" alt="Foto de André Monteiro de Araújo" width="60" height="60">
+    <div>
+      <div class="name">André Monteiro de Araújo</div>
+      <div class="role">Analista de Validação Sênior · Walida Soluções</div>
+      <div class="role">29 de outubro de 2026 · Leitura: 30 min · com auxílio da IA Claude</div>
+    </div>
+  </div>
+  <p class="contrib">O autor participou da elaboração de boas práticas no Brasil na parte de <b>qualificação térmica do esterilizador/descontaminizador</b> de materiais priônicos, em laboratório de encefalopatias da UFRPE.</p>
+  <p class="lead">Um guia em camadas. Cada seção começa com uma explicação simples, para qualquer leitor, e depois traz a parte aprofundada, com os modelos, as tabelas de protocolo e gráficos 3D que você pode girar e ajustar.</p>
+  <div class="simple"><b class="t">Resumo em 30 segundos</b>
+    <p>• Um <b>príon</b> não é vírus nem bactéria. É uma <b>proteína do nosso próprio corpo</b> que se dobra errado e força as vizinhas a se dobrarem errado também.</p>
+    <p>• Não tem material genético. Por isso, <b>não morre</b> como um micróbio: álcool, formol, óxido de etileno e o ciclo comum de autoclave não resolvem.</p>
+    <p>• As doenças priônicas são <b>raras, sem cura e de evolução rápida</b>. A mais comum em humanos é a doença de Creutzfeldt-Jakob (DCJ), que vitimou o aviador e comunicador <b>Lito Sousa</b> em outubro de 2026.</p>
+    <p>• Na prática hospitalar, o que protege é um <b>protocolo próprio</b>: manter o instrumental úmido, não usar fixadores, identificar o caso suspeito e aplicar descontaminação química associada à autoclave.</p>
+  </div>
+  <button class="btn" onclick="openLab()">Abrir o laboratório virtual e ajustar os gráficos</button>
+  <nav class="toc" aria-label="Sumário"><b>Sumário</b>
+    <ol>
+      <li><a href="#s1">O que é um príon?</a></li>
+      <li><a href="#s2">A proteína sadia e a proteína doente</a></li>
+      <li><a href="#s3">Como o processo começa</a></li>
+      <li><a href="#s4">Como se desenvolve: a fase silenciosa</a></li>
+      <li><a href="#s5">O ciclo final: a fase clínica</a></li>
+      <li><a href="#s6">Todos os tipos de doença priônica</a></li>
+      <li><a href="#s7">O caso de Lito Sousa</a></li>
+      <li><a href="#s8">Como se faz o diagnóstico</a></li>
+      <li><a href="#s9">Onde mora a infectividade</a></li>
+      <li><a href="#s10">Boas práticas de esterilização</a></li>
+      <li><a href="#s11">Cirurgias de encéfalo e casos suspeitos</a></li>
+      <li><a href="#s12">Medicina veterinária</a></li>
+      <li><a href="#s13">Interações moleculares</a></li>
+      <li><a href="#s14">Glossário</a></li>
+      <li><a href="#s15">Perguntas frequentes</a></li>
+      <li><a href="#s16">Fontes e método</a></li>
+    </ol>
+  </nav>
+</header>
+
+<!-- 1 -->
+<section id="s1">
+<h2><span class="num">1</span>O que é um príon?</h2>
+<p class="q">Como uma proteína sozinha, sem DNA, consegue causar uma doença transmissível?</p>
+<div class="simple"><b class="t">Em palavras simples</b>
+<p>Imagine uma fábrica de origami onde todo mundo dobra o papel do mesmo jeito, seguindo o manual. Um dia, uma folha é dobrada de um jeito diferente e errado. Essa folha errada tem uma propriedade estranha: quando encosta numa folha certa, ela <b>força a vizinha a se dobrar igual a ela</b>. E agora são duas. Depois quatro, oito, dezesseis.</p>
+<p>O príon é isso. A proteína existe normalmente no seu cérebro agora, fazendo o trabalho dela. Quando uma única cópia se dobra na forma errada, ela vira um molde que corrompe as outras. Não há invasor: <b>o agente da doença é a sua própria proteína, com a forma trocada</b>.</p>
+<p>A palavra vem do inglês <i>proteinaceous infectious particle</i>, "partícula infecciosa proteica". Quem propôs o conceito foi Stanley Prusiner, em 1982, e ele levou o Nobel de Medicina em 1997 por isso.</p></div>
+<figure>
+<svg viewBox="0 0 900 230" role="img" aria-label="Comparação entre vírus, bactéria e príon">
+  <g class="s-mut" font-size="13" text-anchor="middle">
+    <text x="150" y="210">Bactéria</text><text x="450" y="210">Vírus</text><text x="750" y="210">Príon</text>
+  </g>
+  <g text-anchor="middle" font-size="12" class="s-mut">
+    <text x="150" y="30">tem DNA, se reproduz sozinha</text>
+    <text x="450" y="30">tem DNA ou RNA, usa a célula</text>
+    <text x="750" y="30">não tem material genético</text>
+  </g>
+  <ellipse cx="150" cy="120" rx="80" ry="48" fill="none" class="s-strk" stroke-width="2"/>
+  <path d="M110 110 q20 -14 40 0 q20 14 40 0" fill="none" class="s-strk" stroke-width="2" opacity=".6"/>
+  <path d="M110 130 q20 -14 40 0 q20 14 40 0" fill="none" class="s-strk" stroke-width="2" opacity=".6"/>
+  <text x="150" y="166" text-anchor="middle" font-size="11" class="s-mut">~1000 nm</text>
+  <polygon points="450,80 490,105 490,150 450,175 410,150 410,105" fill="none" class="s-strk" stroke-width="2"/>
+  <circle cx="450" cy="128" r="14" class="s-soft"/>
+  <text x="450" y="196" text-anchor="middle" font-size="11" class="s-mut">~100 nm</text>
+  <g transform="translate(750,125)">
+    <path d="M-40 -18 q14 -16 28 0 q14 16 28 0" fill="none" stroke="var(--sane)" stroke-width="9" stroke-linecap="round"/>
+    <g fill="var(--sick)">
+      <rect x="-34" y="6" width="68" height="7" rx="3"/><rect x="-28" y="18" width="56" height="7" rx="3"/><rect x="-34" y="30" width="68" height="7" rx="3"/>
+    </g>
+  </g>
+  <text x="750" y="196" text-anchor="middle" font-size="11" class="s-mut">~10 nm (uma proteína)</text>
+</svg>
+<figcaption>O príon é ordens de grandeza menor que um vírus, e não é um organismo. É uma molécula de proteína numa conformação alterada. É justamente essa simplicidade que o torna tão resistente aos métodos que matam micro-organismos.</figcaption>
+</figure>
+<details class="deep"><summary>Aprofundando: por que isso quebrou um dogma</summary><div class="body">
+<p>Até os anos 1980, a regra era que todo agente infeccioso precisava carregar ácido nucleico (DNA ou RNA) para se replicar. O trabalho de Prusiner com o <i>scrapie</i> em ovelhas mostrou que a infectividade resistia a tratamentos que destroem ácidos nucleicos, mas era reduzida por tratamentos que destroem proteínas.</p>
+<p>A confirmação definitiva veio dos camundongos sem o gene <i>PRNP</i>: um animal que não produz a proteína normal (PrP<sup>C</sup>) <b>não desenvolve a doença mesmo quando inoculado</b>, e não propaga a infecção. Ou seja, o agente precisa do substrato do hospedeiro para existir. Não há replicação de um genoma: há <b>conversão conformacional</b> de um estoque que já estava lá.</p>
+<p>Esse mesmo princípio, de uma proteína mal dobrada que se propaga como molde, hoje é estudado em doenças muito mais comuns, como Alzheimer e Parkinson. A diferença crucial é que <b>essas doenças não são transmissíveis</b> entre pessoas no convívio, enquanto as priônicas clássicas podem ser transmitidas em situações específicas, quase sempre médicas.</p>
+</div></details>
+</section>
+
+<!-- 2 -->
+<section id="s2">
+<h2><span class="num">2</span>A proteína sadia e a proteína doente</h2>
+<div class="simple"><b class="t">Em palavras simples</b>
+<p>A mesma proteína, com exatamente a mesma sequência de aminoácidos, pode assumir duas formas:</p>
+<p>• <b class="saneT">PrP<sup>C</sup> (celular, a sadia):</b> enrolada principalmente em espirais, as hélices alfa. É flexível, solúvel na água do corpo e as enzimas de limpeza da célula conseguem digeri-la normalmente. Fica ancorada na superfície dos neurônios.</p>
+<p>• <b class="sickT">PrP<sup>Sc</sup> (scrapie, a doente):</b> achatada em camadas empilhadas, as folhas beta. É rígida, não dissolve, gruda em outras iguais formando fibras e <b>resiste às enzimas que deveriam destruí-la</b>.</p>
+<p>A diferença não está no "texto" da proteína, e sim em como esse texto foi "dobrado". É por isso que nenhum exame de DNA comum encontra um príon: o gene está normal na maioria dos casos.</p></div>
+<figure>
+<div id="pFold" class="plot"></div>
+<figcaption>Modelo 3D esquemático das duas conformações. À esquerda, a forma sadia, dominada por três hélices alfa. À direita, a forma doente, organizada como um solenoide de folhas beta empilhadas, que serve de molde para a próxima subunidade.</figcaption>
+<div class="howto"><b>Como ler:</b> gire com o mouse ou o dedo. As fitas azuis são hélices alfa (espirais) e as barras vermelhas são folhas beta (camadas planas). Repare que a forma doente é <b>empilhável</b>: cada camada nova se encaixa na anterior, e é assim que a fibra cresce.</div>
+</figure>
+<div class="grid2">
+<div class="mat sane"><h3 class="saneT">PrP<sup>C</sup> — a forma normal</h3>
+<p><b>Estrutura:</b> cerca de 42% de hélices alfa e quase nada de folhas beta.</p>
+<p><b>Onde está:</b> ancorada por GPI na membrana dos neurônios, e também em outras células.</p>
+<p><b>Para que serve:</b> ainda em discussão. Há evidências de papel na proteção contra estresse oxidativo, no transporte de cobre, na manutenção da bainha de mielina e na sinapse.</p>
+<p><b>Comportamento:</b> solúvel, digerida pela proteinase K, meia-vida de poucas horas.</p></div>
+<div class="mat sick"><h3 class="sickT">PrP<sup>Sc</sup> — a forma patogênica</h3>
+<p><b>Estrutura:</b> cerca de 43% de folhas beta, com perda das hélices.</p>
+<p><b>Onde está:</b> agregada em fibrilas e placas no tecido nervoso.</p>
+<p><b>O que faz:</b> serve de molde, recruta PrP<sup>C</sup> e cresce. Os agregados são tóxicos para o neurônio.</p>
+<p><b>Comportamento:</b> insolúvel, <b>resiste parcialmente à proteinase K</b> (é essa resistência que o laboratório usa para identificá-la) e resiste a calor, radiação e à maioria dos desinfetantes.</p></div>
+</div>
+<details class="deep"><summary>Aprofundando: o códon 129 e as cepas</summary><div class="body">
+<p>O gene <i>PRNP</i>, no cromossomo 20, tem um <b>polimorfismo no códon 129</b> que pode codificar metionina (M) ou valina (V). Toda pessoa é MM, MV ou VV. Essa posição não causa doença sozinha, mas influencia fortemente a suscetibilidade e o formato clínico: a grande maioria dos casos da variante da DCJ ocorreu em pessoas MM, e o genótipo também se associa a subtipos e durações diferentes na forma esporádica.</p>
+<p>Outro ponto que desafia a intuição: existem <b>cepas</b> de príon. Sem genoma, a informação que distingue uma cepa de outra está na <b>própria conformação</b> e no padrão de glicosilação. Cepas diferentes produzem tempos de incubação diferentes, lesões em regiões diferentes do cérebro e perfis diferentes na eletroforese após digestão com proteinase K. Essa é a base da chamada "barreira de espécie": quanto mais diferente a sequência de PrP entre doador e receptor, mais difícil a conversão, e é por isso que a transmissão entre espécies costuma ser ineficiente, mas não impossível.</p>
+</div></details>
+</section>
+
+<!-- 3 -->
+<section id="s3">
+<h2><span class="num">3</span>Como o processo começa</h2>
+<p class="q">De onde vem a primeira molécula dobrada errado?</p>
+<div class="simple"><b class="t">Em palavras simples</b>
+<p>Há três portas de entrada, e elas definem a classificação de toda doença priônica:</p>
+<p>• <b>Por acaso (esporádica).</b> Em alguma célula, uma proteína se dobra errado sozinha. É um evento raríssimo, mas cada um de nós produz essas proteínas a vida inteira, então a chance acumulada existe. Responde por <b>cerca de 85% dos casos humanos</b> e não tem causa conhecida, não é hereditária e não vem de alimento ou contágio.</p>
+<p>• <b>Por herança (genética).</b> A pessoa nasce com uma mutação no gene <i>PRNP</i> que torna a proteína instável, com tendência a se dobrar errado. Responde por cerca de 10% a 15% dos casos.</p>
+<p>• <b>Por contato (adquirida).</b> Uma partícula já dobrada errado entra no corpo e serve de semente. É a menor fatia, menos de 1%, e vem quase sempre de procedimentos médicos antigos ou de situações alimentares específicas.</p></div>
+<figure>
+<svg viewBox="0 0 900 290" role="img" aria-label="As três origens do processo priônico">
+  <rect x="20" y="40" width="250" height="130" rx="14" class="s-soft"/>
+  <text x="145" y="72" text-anchor="middle" font-size="16" font-weight="700" class="s-ink">Esporádica</text>
+  <text x="145" y="98" text-anchor="middle" font-size="13" class="s-mut">~85% dos casos</text>
+  <text x="145" y="124" text-anchor="middle" font-size="12" class="s-mut">erro espontâneo de dobramento</text>
+  <text x="145" y="144" text-anchor="middle" font-size="12" class="s-mut">sem causa conhecida</text>
+  <rect x="325" y="40" width="250" height="130" rx="14" class="s-soft"/>
+  <text x="450" y="72" text-anchor="middle" font-size="16" font-weight="700" class="s-ink">Genética</text>
+  <text x="450" y="98" text-anchor="middle" font-size="13" class="s-mut">~10–15% dos casos</text>
+  <text x="450" y="124" text-anchor="middle" font-size="12" class="s-mut">mutação no gene PRNP</text>
+  <text x="450" y="144" text-anchor="middle" font-size="12" class="s-mut">herdada da família</text>
+  <rect x="630" y="40" width="250" height="130" rx="14" fill="var(--sick-soft)"/>
+  <text x="755" y="72" text-anchor="middle" font-size="16" font-weight="700" class="s-ink">Adquirida</text>
+  <text x="755" y="98" text-anchor="middle" font-size="13" class="s-mut">&lt;1% dos casos</text>
+  <text x="755" y="124" text-anchor="middle" font-size="12" class="s-mut">semente externa entra no corpo</text>
+  <text x="755" y="144" text-anchor="middle" font-size="12" class="s-mut">iatrogênica, alimentar, ritual</text>
+  <g class="s-strk" stroke-width="2" fill="none" marker-end="url(#ar)">
+    <path d="M145 170 L145 210"/><path d="M450 170 L450 210"/><path d="M755 170 L755 210"/>
+  </g>
+  <rect x="250" y="214" width="400" height="56" rx="28" fill="var(--sick)" opacity=".18"/>
+  <text x="450" y="249" text-anchor="middle" font-size="16" font-weight="700" class="s-ink">Uma primeira PrP<tspan font-size="11" dy="-6">Sc</tspan><tspan dy="6"> no tecido nervoso</tspan></text>
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" class="s-ink"/></marker></defs>
+</svg>
+<figcaption>Três caminhos diferentes levam ao mesmo ponto de partida: a existência de pelo menos uma molécula na conformação patogênica dentro do sistema nervoso. A partir daí, o processo é o mesmo nos três casos.</figcaption>
+</figure>
+<details class="deep"><summary>Aprofundando: a barreira termodinâmica e por que o evento é raro</summary><div class="body">
+<p>PrP<sup>C</sup> e PrP<sup>Sc</sup> são dois mínimos de energia da mesma cadeia polipeptídica. O estado agregado é, na verdade, <b>termodinamicamente mais estável</b>: a fibrila amiloide é um poço profundo. O que nos protege é uma <b>barreira cinética alta</b> entre os dois estados. A proteína fica presa no mínimo local sadio porque a conversão exige passar por um intermediário desfavorável.</p>
+<span class="eq">PrP^C  --(ΔG‡ alto)-->  intermediário parcialmente desdobrado  -->  PrP^Sc (mais estável, agregado)
+O que reduz a barreira: mutação no PRNP · pH ácido do endossomo · metais · estresse oxidativo · uma semente já formada</span>
+<p>Por isso as três origens convergem: a mutação <b>abaixa a barreira</b>, a semente externa <b>contorna a barreira</b> (a conversão sobre um molde pronto é muito mais fácil que a nucleação do zero) e o caso esporádico é a barreira sendo vencida por acaso, uma vez em muitos anos, entre um número gigantesco de moléculas.</p>
+<p>Há ainda um detalhe relevante para a clínica: a conversão parece ocorrer preferencialmente em compartimentos <b>endolisossomais</b>, onde o pH ácido favorece o desdobramento parcial. É o mesmo tipo de ambiente que discutimos em outro artigo sobre nanopartículas, e mostra como o compartimento celular define o destino de uma molécula.</p>
+</div></details>
+</section>
+
+<!-- 4 -->
+<section id="s4">
+<h2><span class="num">4</span>Como se desenvolve: a longa fase silenciosa</h2>
+<div class="simple"><b class="t">Em palavras simples</b>
+<p>Depois da primeira molécula errada, nada acontece por muito tempo. Meses, anos ou até décadas. Essa é a <b>fase de incubação</b>, e a pessoa está completamente normal.</p>
+<p>O que acontece nesse silêncio é um processo de duas etapas que se repete:</p>
+<p>1. <b>A fibra cresce.</b> A ponta da fibra captura uma proteína sadia, dobra ela e a incorpora. A fibra fica um pouco mais longa.</p>
+<p>2. <b>A fibra quebra.</b> De vez em quando a fibra se parte. E aqui está o truque cruel: <b>onde havia uma ponta, agora há duas</b>. O número de "fábricas" dobra.</p>
+<p>Enquanto só existem poucas fibras, o crescimento é lento e invisível. Quando o número de pontas fica grande, o processo acelera de repente, e é aí que os sintomas aparecem. É o mesmo formato de curva de juros compostos: parece que nada acontece, até que tudo acontece ao mesmo tempo.</p></div>
+<figure>
+<svg viewBox="0 0 900 250" role="img" aria-label="Ciclo de elongação e fragmentação da fibrila">
+  <text x="450" y="26" text-anchor="middle" font-size="15" font-weight="700" class="s-ink">O ciclo que multiplica os príons</text>
+  <g transform="translate(60,70)">
+    <g fill="var(--sick)"><rect x="0" y="10" width="60" height="9" rx="4"/><rect x="0" y="24" width="60" height="9" rx="4"/><rect x="0" y="38" width="60" height="9" rx="4"/></g>
+    <text x="30" y="78" text-anchor="middle" font-size="12" class="s-mut">semente</text>
+  </g>
+  <path d="M135 100 L185 100" class="s-strk" stroke-width="2" marker-end="url(#ar2)"/>
+  <text x="160" y="88" text-anchor="middle" font-size="11" class="s-mut">+ PrP<tspan font-size="8">C</tspan></text>
+  <g transform="translate(200,70)">
+    <g fill="var(--sick)"><rect x="0" y="10" width="60" height="9" rx="4"/><rect x="0" y="24" width="60" height="9" rx="4"/><rect x="0" y="38" width="60" height="9" rx="4"/><rect x="0" y="52" width="60" height="9" rx="4"/><rect x="0" y="66" width="60" height="9" rx="4"/></g>
+    <path d="M-34 14 q10 -12 22 0" fill="none" stroke="var(--sane)" stroke-width="6" stroke-linecap="round"/>
+    <text x="30" y="98" text-anchor="middle" font-size="12" class="s-mut">elongação</text>
+  </g>
+  <path d="M275 100 L325 100" class="s-strk" stroke-width="2" marker-end="url(#ar2)"/>
+  <g transform="translate(340,56)">
+    <g fill="var(--sick)"><rect x="0" y="10" width="60" height="9" rx="4"/><rect x="0" y="24" width="60" height="9" rx="4"/></g>
+    <g fill="var(--sick)" transform="translate(0,52)"><rect x="0" y="10" width="60" height="9" rx="4"/><rect x="0" y="24" width="60" height="9" rx="4"/><rect x="0" y="38" width="60" height="9" rx="4"/></g>
+    <path d="M-12 48 L72 48" stroke="var(--heat)" stroke-width="3" stroke-dasharray="6 5"/>
+    <text x="30" y="124" text-anchor="middle" font-size="12" class="s-mut">fragmentação</text>
+  </g>
+  <path d="M415 100 C470 100 480 100 520 100" class="s-strk" stroke-width="2" marker-end="url(#ar2)" fill="none"/>
+  <text x="470" y="88" text-anchor="middle" font-size="11" class="s-mut">2 pontas</text>
+  <g transform="translate(540,50)">
+    <g fill="var(--sick)" opacity=".95"><rect x="0" y="0" width="54" height="8" rx="4"/><rect x="0" y="12" width="54" height="8" rx="4"/><rect x="70" y="0" width="54" height="8" rx="4"/><rect x="70" y="12" width="54" height="8" rx="4"/>
+    <rect x="0" y="50" width="54" height="8" rx="4"/><rect x="0" y="62" width="54" height="8" rx="4"/><rect x="70" y="50" width="54" height="8" rx="4"/><rect x="70" y="62" width="54" height="8" rx="4"/>
+    <rect x="35" y="96" width="54" height="8" rx="4"/><rect x="35" y="108" width="54" height="8" rx="4"/></g>
+    <text x="62" y="140" text-anchor="middle" font-size="12" class="s-mut">crescimento exponencial</text>
+  </g>
+  <path d="M690 100 q60 -40 110 10" class="s-strk" stroke-width="2" fill="none" marker-end="url(#ar2)" opacity=".7"/>
+  <text x="800" y="140" text-anchor="middle" font-size="13" font-weight="700" fill="var(--sick)">repete</text>
+  <text x="800" y="160" text-anchor="middle" font-size="13" font-weight="700" fill="var(--sick)">sem parar</text>
+  <defs><marker id="ar2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" class="s-ink"/></marker></defs>
+</svg>
+<figcaption>Elongação mais fragmentação é o motor da doença. A fragmentação é o passo decisivo: sem ela, uma fibra só ficaria comprida e o processo seria linear. Com ela, o número de pontas ativas dobra periodicamente, e o crescimento vira exponencial.</figcaption>
+</figure>
+<div class="cards" id="kinCards"></div>
+<div class="grid2">
+<figure><div id="pKin" class="plot"></div>
+<div class="howto"><b>Como ler:</b> a altura é a carga de príon no tecido. Para o lado, o tempo em meses. Para a frente, o tamanho da semente inicial, de quase nada até uma dose grande. Repare que <b>a curva não muda de formato</b>: ela só desliza no tempo. Uma dose mil vezes maior não causa uma doença mil vezes pior, apenas antecipa o início.</div></figure>
+<figure><div id="pIncub" class="plot"></div>
+<div class="howto"><b>Como ler:</b> cada fita é um cenário clínico. Mostra a faixa de incubação relatada na literatura, de meses a décadas, e por que a doença pode aparecer muitos anos depois da exposição.</div></figure>
+</div>
+<details class="deep"><summary>Aprofundando: o modelo de nucleação e polimerização</summary><div class="body">
+<p>O comportamento acima é descrito pelo modelo de <b>nucleação dependente de semente</b> com fragmentação. Em sua forma mínima:</p>
+<span class="eq">dP/dt = k_f · M                      P = número de extremidades ativas (fibras)
+dM/dt = 2 · k_e · m · P             M = massa convertida em PrP^Sc
+m(t)  = max(0, m₀ − M)              m = reserva de PrP^C disponível
+Início clínico quando M ultrapassa o limiar de disfunção sináptica (aqui, 0,25 de m₀)</span>
+<p>Duas consequências práticas saem direto das equações:</p>
+<ul>
+<li>O tempo de incubação escala aproximadamente com <b>o logaritmo da dose</b>, não com a dose. Por isso diluições enormes do inóculo apenas adiam o quadro, em vez de evitá-lo.</li>
+<li>O tempo depende do <b>nível de PrP<sup>C</sup> disponível</b>. Em modelos animais, reduzir a expressão da proteína normal prolonga muito a incubação, e eliminá-la impede a doença. É exatamente essa a lógica das terapias experimentais que tentam <b>baixar a produção da proteína normal</b>, com oligonucleotídeos antissenso, em vez de atacar o agregado.</li>
+</ul>
+<p>No laboratório, o mesmo ciclo é usado a nosso favor: o <b>RT-QuIC</b> agita a amostra com PrP recombinante para forçar fragmentação e acelerar artificialmente um processo que no corpo levaria anos. É o assunto da seção 8.</p>
+</div></details>
+</section>
+
+<!-- 5 -->
+<section id="s5">
+<h2><span class="num">5</span>O ciclo final: a fase clínica</h2>
+<div class="simple"><b class="t">Em palavras simples</b>
+<p>Quando a quantidade de proteína alterada ultrapassa certo ponto, o cérebro não consegue mais compensar. A partir daí, três coisas acontecem juntas:</p>
+<p>• <b>As sinapses param de funcionar.</b> As conexões entre neurônios são as primeiras a falhar, antes mesmo de qualquer célula morrer. É por isso que os primeiros sintomas costumam ser sutis: esquecimento, desequilíbrio, alteração de humor, sensações estranhas.</p>
+<p>• <b>Os neurônios morrem.</b> O acúmulo e o estresse levam à morte celular, e as perdas são permanentes.</p>
+<p>• <b>O tecido fica esponjoso.</b> No lugar dos neurônios perdidos surgem microvacúolos. Ao microscópio, o cérebro parece uma esponja, e daí vem o nome da família: <b>encefalopatias espongiformes</b>.</p>
+<p>A deterioração é rápida e contínua. Em geral, a pessoa perde a fala, a coordenação e a capacidade de se mover, e passa a depender integralmente de cuidados. Não existe, hoje, tratamento capaz de deter o processo.</p></div>
+<figure>
+<div id="pBrain" class="plot"></div>
+<figcaption>Simulação esquemática da progressão. A carga de príon se espalha a partir de uma região inicial seguindo as conexões neuronais, e a intensidade da cor acompanha a quantidade acumulada em cada ponto. Use o controle de tempo no laboratório virtual.</figcaption>
+<div class="howto"><b>Como ler:</b> cada ponto é uma região do tecido. Azul é tecido preservado e vermelho é tecido com carga alta. Mude o "mês da doença" no laboratório virtual para ver o avanço. O modelo é didático: serve para mostrar o padrão de difusão, não para representar a anatomia real de um paciente.</div>
+</figure>
+<figure>
+<svg viewBox="0 0 900 220" role="img" aria-label="Linha do tempo da doença priônica">
+  <line x1="60" y1="120" x2="840" y2="120" class="s-strk" stroke-width="3"/>
+  <g class="s-strk" stroke-width="2"><line x1="90" y1="112" x2="90" y2="128"/><line x1="420" y1="112" x2="420" y2="128"/><line x1="620" y1="112" x2="620" y2="128"/><line x1="800" y1="112" x2="800" y2="128"/></g>
+  <rect x="90" y="96" width="330" height="48" rx="10" fill="var(--sane)" opacity=".2"/>
+  <rect x="420" y="96" width="200" height="48" rx="10" fill="var(--heat)" opacity=".25"/>
+  <rect x="620" y="96" width="180" height="48" rx="10" fill="var(--sick)" opacity=".3"/>
+  <text x="255" y="126" text-anchor="middle" font-size="14" font-weight="700" class="s-ink">Incubação silenciosa</text>
+  <text x="520" y="126" text-anchor="middle" font-size="14" font-weight="700" class="s-ink">Sintomas iniciais</text>
+  <text x="710" y="126" text-anchor="middle" font-size="14" font-weight="700" class="s-ink">Fase avançada</text>
+  <text x="255" y="78" text-anchor="middle" font-size="12" class="s-mut">meses a décadas · sem sintomas</text>
+  <text x="520" y="78" text-anchor="middle" font-size="12" class="s-mut">memória, equilíbrio, humor, visão</text>
+  <text x="710" y="78" text-anchor="middle" font-size="12" class="s-mut">mioclonias, mutismo, imobilidade</text>
+  <text x="255" y="168" text-anchor="middle" font-size="12" class="s-mut">carga priônica cresce em silêncio</text>
+  <text x="520" y="168" text-anchor="middle" font-size="12" class="s-mut">falha sináptica</text>
+  <text x="710" y="168" text-anchor="middle" font-size="12" class="s-mut">perda neuronal e espongiose</text>
+  <text x="90" y="196" text-anchor="middle" font-size="11" class="s-mut">evento inicial</text>
+  <text x="420" y="196" text-anchor="middle" font-size="11" class="s-mut">1º sintoma</text>
+  <text x="800" y="196" text-anchor="middle" font-size="11" class="s-mut">desfecho</text>
+</svg>
+<figcaption>Na forma esporádica da DCJ, a mediana entre o primeiro sintoma e o desfecho costuma ser de poucos meses, e a maioria dos casos evolui em menos de um ano. Na variante e em algumas formas genéticas, o curso clínico pode ser mais longo.</figcaption>
+</figure>
+</section>
+
+<!-- 6 -->
+<section id="s6">
+<h2><span class="num">6</span>Todos os tipos de doença priônica</h2>
+<div class="simple"><b class="t">Em palavras simples</b>
+<p>Existe uma família inteira de doenças priônicas, em humanos e em animais. Todas compartilham o mesmo mecanismo, e mudam a origem, a velocidade e a região do cérebro mais atingida.</p></div>
+<h3>Em humanos</h3>
+<div class="tw"><table>
+<thead><tr><th>Doença</th><th>Origem</th><th>Frequência</th><th>Quadro típico</th><th>Curso</th></tr></thead>
+<tbody>
+<tr class="sec"><td colspan="5">Esporádicas (sem causa conhecida)</td></tr>
+<tr><td><b>DCJ esporádica (DCJe)</b></td><td>Erro espontâneo de dobramento</td><td>~85% dos casos; cerca de 1 a 2 por milhão ao ano</td><td>Demência de evolução rápida, mioclonias, ataxia, alterações visuais</td><td>Rápido, mediana de poucos meses</td></tr>
+<tr><td>Insônia esporádica fatal</td><td>Espontânea</td><td>Muito rara</td><td>Insônia grave, disautonomia, demência</td><td>Meses a poucos anos</td></tr>
+<tr><td>Prionopatia sensível à protease variável (VPSPr)</td><td>Espontânea</td><td>Muito rara</td><td>Alterações de fala e comportamento, parkinsonismo</td><td>Mais arrastado que a DCJe</td></tr>
+<tr class="sec"><td colspan="5">Genéticas (mutação no gene PRNP)</td></tr>
+<tr><td><b>DCJ genética</b></td><td>Mutação herdada, padrão autossômico dominante</td><td>~10–15% dos casos</td><td>Semelhante à esporádica, costuma começar mais cedo</td><td>Variável</td></tr>
+<tr><td><b>Insônia familiar fatal (IFF)</b></td><td>Mutação D178N com metionina no códon 129</td><td>Rara, poucas famílias descritas</td><td>Insônia intratável, hipertensão e sudorese, perda de peso, demência</td><td>Cerca de um a dois anos</td></tr>
+<tr><td><b>Gerstmann-Sträussler-Scheinker (GSS)</b></td><td>Mutação, com frequência P102L</td><td>Rara</td><td>Ataxia cerebelar predominante, demência mais tardia</td><td>Vários anos, mais lento</td></tr>
+<tr class="sec"><td colspan="5">Adquiridas (semente externa)</td></tr>
+<tr><td><b>Kuru</b></td><td>Canibalismo ritual fúnebre entre os Fore, na Papua-Nova Guiné</td><td>Praticamente extinta após o fim da prática</td><td>Ataxia, tremor, riso involuntário</td><td>Incubação de anos a décadas</td></tr>
+<tr><td><b>DCJ iatrogênica</b></td><td>Procedimentos médicos: hormônio de crescimento de cadáver, enxerto de dura-máter, córnea, instrumental de neurocirurgia e eletrodos profundos</td><td>Mais de 500 casos descritos no mundo</td><td>Semelhante à esporádica; ataxia precoce é comum</td><td>Incubação de anos a décadas</td></tr>
+<tr><td><b>Variante da DCJ (vDCJ)</b></td><td>Exposição alimentar ao agente da EEB bovina</td><td>Surto no Reino Unido a partir de 1996; <b>nenhum caso confirmado no Brasil</b></td><td>Começa com sintomas psiquiátricos e dor, em pessoas mais jovens</td><td>Mais longo que a esporádica</td></tr>
+</tbody></table></div>
+<h3>Em animais</h3>
+<div class="tw"><table>
+<thead><tr><th>Doença</th><th>Espécie</th><th>Situação</th><th>Relevância</th></tr></thead>
+<tbody>
+<tr><td><b>Scrapie</b> (paraplexia enzoótica)</td><td>Ovinos e caprinos</td><td>Conhecida há mais de 250 anos</td><td>Primeira doença priônica estudada; <b>sem evidência de transmissão ao ser humano</b></td></tr>
+<tr><td><b>EEB (encefalopatia espongiforme bovina), a "vaca louca"</b></td><td>Bovinos</td><td>Forma clássica associada ao uso de farinha de carne e ossos na ração; formas atípicas ocorrem de modo espontâneo em animais idosos</td><td>Única com ligação comprovada a casos humanos (vDCJ)</td></tr>
+<tr><td><b>Doença debilitante crônica (CWD)</b></td><td>Cervídeos</td><td>Em expansão na América do Norte; alta transmissibilidade entre animais, inclusive pelo ambiente</td><td>Principal preocupação atual em vigilância; sem caso humano comprovado até hoje</td></tr>
+<tr><td>Encefalopatia transmissível do vison</td><td>Vison de criação</td><td>Surtos raros e isolados</td><td>Associada à alimentação com material contaminado</td></tr>
+<tr><td>Encefalopatia espongiforme felina</td><td>Gatos domésticos e felinos de zoológico</td><td>Casos no período do surto britânico de EEB</td><td>Mostrou a passagem do agente da EEB para outras espécies</td></tr>
+<tr><td>Encefalopatias de ungulados exóticos</td><td>Antílopes e afins, em cativeiro</td><td>Casos ligados ao mesmo período</td><td>Idem</td></tr>
+</tbody></table></div>
+<div class="warn"><b>Uma distinção importante.</b> Alzheimer, Parkinson e outras doenças neurodegenerativas também envolvem proteínas mal dobradas que se propagam de célula para célula por um mecanismo "tipo príon". Isso <b>não</b> significa que sejam transmissíveis entre pessoas. Não há evidência de contágio dessas doenças no convívio, em transfusão ou em cirurgia de rotina, e elas não são tratadas como doenças priônicas na biossegurança hospitalar.</div>
+</section>
+
+<!-- 7 -->
+<section id="s7">
+<h2><span class="num">7</span>O caso de Lito Sousa</h2>
+<div class="simple"><b class="t">Em palavras simples</b>
+<p>Em 1º de outubro de 2026, morreu aos 59 anos <b>Lito Sousa</b>, aviador, mecânico de aeronaves e criador do canal Aviões e Músicas, que ensinou aviação a milhões de brasileiros. A causa, informada pela família, foi a <b>doença de Creutzfeldt-Jakob</b>.</p>
+<p>O relato público da família descreve um começo discreto, com um formigamento no braço, e uma evolução muito rápida: <b>menos de dois meses entre o diagnóstico e a morte</b>. O diagnóstico foi apoiado em exame do líquido da espinha, o RT-QuIC, e em ressonância magnética compatível.</p>
+<p>A família não divulgou qual das formas da doença foi identificada. Como cerca de 85% dos casos são esporádicos, ou seja, sem causa conhecida, não é possível, nem correto, afirmar a origem no caso dele.</p></div>
+<div class="warn"><b>O que não se deve concluir a partir desse caso.</b> A forma esporádica <b>não</b> é hereditária, <b>não</b> vem de alimentação e <b>não</b> se transmite no convívio, no abraço, no mesmo ambiente ou pelo compartilhamento de utensílios. Não há qualquer risco para familiares, amigos ou profissionais que conviveram com o paciente em cuidado de rotina. A doença também não tem relação demonstrada com outras condições clínicas que a pessoa tenha tido antes.</div>
+<p>O caso teve um efeito colateral positivo: trouxe ao debate público uma doença que a maioria das pessoas nunca tinha ouvido falar, e com ela um tema que raramente sai dos corredores técnicos, que é <b>como se processa um instrumental cirúrgico quando existe suspeita de doença priônica</b>. É disso que tratam as próximas seções.</p>
+<details class="deep"><summary>Aprofundando: a doença no Brasil, em números</summary><div class="body">
+<p>A DCJ é de <b>notificação compulsória no Brasil desde 2005</b>, e o Ministério da Saúde mantém protocolo próprio de notificação e investigação, com atenção especial à identificação da variante. A vigilância fica a cargo da Secretaria de Vigilância em Saúde e Ambiente.</p>
+<p>As reportagens publicadas após o anúncio do diagnóstico citam números diferentes porque medem coisas diferentes: <b>notificações de casos suspeitos</b> (mais de mil ao longo de dezessete anos) e <b>casos confirmados</b> (centenas no mesmo período). Os dois números não devem ser comparados entre si. O ponto consistente é a ordem de grandeza: trata-se de uma doença <b>rara</b>, com incidência mundial em torno de um a dois casos por milhão de habitantes por ano.</p>
+<p>Sobre a variante ligada à EEB: desde a implantação da vigilância, <b>não há caso confirmado de vDCJ no Brasil</b>.</p>
+</div></details>
+</section>
+
+<!-- 8 -->
+<section id="s8">
+<h2><span class="num">8</span>Como se faz o diagnóstico</h2>
+<div class="simple"><b class="t">Em palavras simples</b>
+<p>Durante muito tempo, a confirmação só vinha após a morte, com exame do tecido cerebral. Hoje existe um exame que mudou o cenário: o <b>RT-QuIC</b>.</p>
+<p>A ideia é engenhosa. O laboratório pega o líquido da espinha do paciente, mistura com proteína sadia feita em laboratório e <b>sacode a mistura</b>. Se houver qualquer partícula priônica na amostra, ela serve de semente, converte a proteína sadia, forma fibras, e a agitação quebra essas fibras, criando mais sementes. O que levaria anos no cérebro acontece em horas no tubo.</p>
+<p>Um corante que brilha ao se ligar nas fibras mostra o resultado: se a curva de brilho sobe, a amostra tinha semente. Quanto antes ela sobe, mais semente havia.</p></div>
+<figure>
+<div id="pQuic" class="plot"></div>
+<figcaption>Simulação de curvas de RT-QuIC. Cada fita é uma diluição diferente da amostra. Quanto menos semente, mais tempo leva para a curva subir. A amostra negativa permanece na linha de base durante todo o ensaio.</figcaption>
+<div class="howto"><b>Como ler:</b> o eixo do tempo são as horas de ensaio e a altura é o sinal de fluorescência. O ponto em que cada fita "decola" é o <b>tempo de latência</b>. Esse deslocamento ordenado é a assinatura de um resultado verdadeiro, e é também o que permite estimar a quantidade de semente.</div>
+</figure>
+<div class="tw"><table>
+<thead><tr><th>Exame</th><th>O que mostra</th><th>Observação</th></tr></thead>
+<tbody>
+<tr><td><b>RT-QuIC</b> no líquor (e em esfregaço nasal, em alguns protocolos)</td><td>Presença de atividade de semente priônica</td><td>Alta especificidade; mudou o diagnóstico em vida e integra os critérios atuais</td></tr>
+<tr><td><b>Ressonância magnética</b> (difusão e FLAIR)</td><td>Padrões característicos de sinal no córtex e nos núcleos profundos</td><td>Muito útil; depende de protocolo adequado e de leitura experiente</td></tr>
+<tr><td><b>Eletroencefalograma</b></td><td>Complexos periódicos em parte dos casos</td><td>Sugestivo, mas pode estar ausente, sobretudo no início e na variante</td></tr>
+<tr><td>Proteína <b>14-3-3</b> e tau no líquor</td><td>Marcadores de lesão neuronal</td><td>Inespecíficos: sobem em outras causas de dano neuronal agudo</td></tr>
+<tr><td><b>Sequenciamento do PRNP</b></td><td>Mutações e genótipo do códon 129</td><td>Diferencia a forma genética e orienta aconselhamento familiar</td></tr>
+<tr><td><b>Exame do tecido cerebral</b></td><td>Espongiose, perda neuronal, gliose e depósito de PrP</td><td>Padrão-ouro de certeza; biópsia só em situações selecionadas</td></tr>
+</tbody></table></div>
+<p class="q">Por que o diagnóstico demora tanto? Porque os primeiros sintomas imitam quadros muito mais comuns: depressão, labirintite, ansiedade, outras demências. A velocidade da piora é justamente o sinal que levanta a suspeita.</p>
+</section>
+
+<!-- 9 -->
+<section id="s9">
+<h2><span class="num">9</span>Onde mora a infectividade</h2>
+<div class="simple"><b class="t">Em palavras simples</b>
+<p>Nem todo tecido do corpo carrega risco igual. A Organização Mundial da Saúde separa em três níveis, e <b>essa classificação é a base de toda decisão prática</b> de esterilização.</p>
+<p>O que importa reter: o risco está concentrado no <b>sistema nervoso central e no olho</b>. Sangue, saliva, urina, suor e pele não têm infectividade detectável, e é por isso que o paciente não precisa de isolamento, pode ficar em enfermaria comum e não exige cuidado especial com talheres, roupa de cama ou utensílios.</p></div>
+<figure>
+<svg viewBox="0 0 900 300" role="img" aria-label="Distribuição da infectividade no corpo">
+  <g transform="translate(130,20)">
+    <ellipse cx="60" cy="48" rx="40" ry="44" fill="var(--sick)" opacity=".75"/>
+    <rect x="50" y="88" width="20" height="96" rx="9" fill="var(--sick)" opacity=".75"/>
+    <circle cx="36" cy="44" r="8" fill="var(--sick)"/><circle cx="84" cy="44" r="8" fill="var(--sick)"/>
+    <path d="M18 120 q42 -22 84 0 l0 96 q-42 18 -84 0 z" fill="var(--heat)" opacity=".4"/>
+    <path d="M18 216 l26 60 M102 216 l-26 60" stroke="var(--sane)" stroke-width="16" stroke-linecap="round" opacity=".5"/>
+    <path d="M22 140 l-26 56 M98 140 l26 56" stroke="var(--sane)" stroke-width="13" stroke-linecap="round" opacity=".5"/>
+  </g>
+  <g font-size="13">
+    <rect x="380" y="26" width="24" height="24" rx="6" fill="var(--sick)" opacity=".75"/>
+    <text x="418" y="36" class="s-ink" font-weight="700">Alta infectividade</text>
+    <text x="418" y="56" class="s-mut" font-size="12">cérebro · medula espinhal · olho</text>
+    <rect x="380" y="100" width="24" height="24" rx="6" fill="var(--heat)" opacity=".4"/>
+    <text x="418" y="110" class="s-ink" font-weight="700">Baixa infectividade</text>
+    <text x="418" y="130" class="s-mut" font-size="12">líquor · rim · fígado · pulmão · linfonodos e baço · placenta</text>
+    <rect x="380" y="174" width="24" height="24" rx="6" fill="var(--sane)" opacity=".5"/>
+    <text x="418" y="184" class="s-ink" font-weight="700">Sem infectividade detectável</text>
+    <text x="418" y="204" class="s-mut" font-size="12">sangue · saliva · urina · fezes · leite · lágrima · suor · sêmen</text>
+    <text x="418" y="224" class="s-mut" font-size="12">músculo · nervo periférico · coração · tireoide · próstata · intestino</text>
+    <text x="418" y="258" class="s-mut" font-size="12">Classificação da OMS (2000). Para fins de controle de infecção, os tecidos</text>
+    <text x="418" y="276" class="s-mut" font-size="12">sem infectividade detectável são tratados como não infecciosos.</text>
+  </g>
+</svg>
+<figcaption>O gradiente de risco é o que define a conduta. Um procedimento que não toca sistema nervoso central nem olho segue as precauções padrão. O cuidado especial se concentra em neurocirurgia, oftalmologia do segmento posterior, procedimentos na coluna e necropsia.</figcaption>
+</figure>
+</section>
+
+<!-- 10 -->
+<section id="s10">
+<h2><span class="num">10</span>Boas práticas de esterilização de materiais reutilizáveis</h2>
+<div class="warn strong"><b>Leia antes de prosseguir.</b> Esta seção é informativa e reúne, em linguagem acessível, o que está publicado nas diretrizes da OMS e nas recomendações do CDC. Ela <b>não substitui</b> o POP da instituição, a orientação do fabricante do equipamento, as normas vigentes nem a avaliação da CCIH e do SCIH. Em caso suspeito, a conduta deve ser definida pela equipe de controle de infecção da instituição, e os parâmetros aqui citados devem ser conferidos nos documentos originais antes de qualquer aplicação.</div>
+<div class="simple"><b class="t">Em palavras simples</b>
+<p>Um micro-organismo morre porque tem estrutura viva para ser destruída. Um príon <b>já é só uma proteína enrolada do jeito errado</b>: não há o que matar. Para inativá-lo, é preciso <b>desmontar a proteína</b>, e isso exige condições muito mais agressivas que as da rotina.</p>
+<p>Três regras guiam tudo o que vem a seguir:</p>
+<p>1. <b>Nunca deixar secar.</b> Material seco é o pior cenário possível: a secagem estabiliza o agente e o protege. O instrumental precisa ficar úmido do momento do uso até a descontaminação.</p>
+<p>2. <b>Nunca usar fixador.</b> Álcool, formol e glutaraldeído <b>pioram a situação</b>: fixam a proteína e aumentam a resistência dela. É contraintuitivo, porque são exatamente os produtos associados a "desinfecção" no senso comum.</p>
+<p>3. <b>Combinar métodos.</b> O que funciona é juntar química agressiva e calor úmido, em vez de confiar em um só.</p></div>
+<figure>
+<div id="pDecon" class="plot"></div>
+<figcaption>Comparação esquemática da eficácia relativa dos métodos, na ordem apresentada pela OMS, do mais para o menos severo. A escala é qualitativa e serve para ordenar as opções, não para quantificar redução logarítmica.</figcaption>
+<div class="howto"><b>Como ler:</b> cada barra é um método. Quanto mais alta, maior a eficácia esperada. As barras em cinza são os métodos <b>ineficazes</b>, incluídos de propósito para mostrar o tamanho da diferença. Troque a carga de tecido no laboratório virtual para ver como material seco ou fixado derruba a eficácia de todos eles.</div>
+</figure>
+<h3>Os métodos recomendados, do mais para o menos severo</h3>
+<p>A referência consolidada é o <b>Anexo III das diretrizes de controle de infecção da OMS para encefalopatias espongiformes transmissíveis</b> (documento WHO/CDS/CSR/APH/2000.3), adotado também pelo CDC. Os métodos estão listados <b>em ordem decrescente de eficácia</b>:</p>
+<div class="tw"><table>
+<thead><tr><th>#</th><th>Método</th><th>Aplicação</th></tr></thead>
+<tbody>
+<tr class="sec"><td colspan="3">1. Incineração</td></tr>
+<tr><td>1.1</td><td><b>Incinerar</b></td><td>Todo material descartável, resíduos e materiais usados. É o <b>método preferencial</b> para qualquer instrumento que contatou tecido de alta infectividade.</td></tr>
+<tr class="sec"><td colspan="3">2. Autoclave com química, para instrumentos resistentes ao calor</td></tr>
+<tr><td>2.1</td><td>Imergir em <b>NaOH 1N</b> e aquecer em <b>autoclave de deslocamento por gravidade a 121 °C por 30 min</b>; limpar, enxaguar e seguir com esterilização de rotina</td><td>Mais severo da categoria</td></tr>
+<tr><td>2.2</td><td>Imergir em <b>NaOH 1N ou hipoclorito a 20.000 ppm de cloro disponível por 1 h</b>; transferir para água; autoclave por gravidade a <b>121 °C por 1 h</b>; limpar e esterilizar</td><td></td></tr>
+<tr><td>2.3</td><td>Imergir como acima por 1 h; enxaguar; transferir para <b>bandeja aberta</b> e aquecer em autoclave por gravidade (121 °C) <b>ou</b> de carga porosa (134 °C) <b>por 1 h</b>; limpar e esterilizar</td><td></td></tr>
+<tr><td>2.4</td><td>Imergir em NaOH e <b>ferver por 10 min</b> à pressão atmosférica; limpar, enxaguar e esterilizar</td><td></td></tr>
+<tr><td>2.5</td><td>Imergir em <b>hipoclorito</b> (preferido) ou NaOH à temperatura ambiente <b>por 1 h</b>; limpar, enxaguar e esterilizar</td><td></td></tr>
+<tr><td>2.6</td><td><b>Autoclave a 134 °C por 18 minutos</b></td><td class="bad">É o <b>último</b> da lista. A própria OMS registra em nota que, no pior cenário, com tecido cerebral ressecado sobre a superfície, a infectividade é removida em grande parte, <b>mas não completamente</b>.</td></tr>
+<tr class="sec"><td colspan="3">3. Superfícies e instrumentos sensíveis ao calor</td></tr>
+<tr><td>3.1</td><td>Inundar com <b>NaOH 2N ou hipoclorito não diluído</b>, deixar agir <b>1 h</b>, recolher e enxaguar</td><td>Bancadas, pisos e equipamentos que não entram em autoclave</td></tr>
+<tr><td>3.2</td><td>Onde a superfície não tolera esses produtos, <b>limpeza mecânica exaustiva</b> remove boa parte da carga por diluição</td><td>Solução de contingência, não equivalente</td></tr>
+<tr class="sec"><td colspan="3">4. Materiais secos (tecidos, campos, instrumental embalado)</td></tr>
+<tr><td>4.1</td><td>Pequenos itens que toleram: imergir em NaOH ou hipoclorito e aquecer em <b>autoclave de carga porosa a 121 °C ou mais, por 1 h</b></td><td></td></tr>
+<tr><td>4.2</td><td>Itens volumosos ou que não toleram química: <b>autoclave de carga porosa a 134 °C por 1 h</b></td><td></td></tr>
+</tbody></table></div>
+<div class="simple"><b class="t">Traduzindo para a rotina da CME</b>
+<p>• O ciclo <b>134 °C por 18 min</b>, que muita gente guarda como "o ciclo de príon", é o <b>menos eficaz</b> da lista da OMS, e sozinho não é considerado garantia.</p>
+<p>• O que mais pesa não é só o pico de temperatura: é a <b>associação de hidrólise alcalina com calor úmido</b>, e o <b>tempo de patamar</b>, de uma hora na maior parte dos métodos.</p>
+<p>• NaOH 1N é 40 g de hidróxido de sódio por litro, e precisa ser <b>preparado na hora</b>, porque reage com o CO₂ do ar e perde atividade.</p>
+<p>• Hipoclorito precisa atingir <b>20.000 ppm de cloro disponível</b>. Alvejante comercial comum, na concentração usual, é usado puro para chegar perto disso.</p>
+<p>• Os dois produtos são <b>corrosivos</b> para muitos instrumentos. Há risco real de dano ao material e de dano à câmara do equipamento, e isso precisa estar previsto no procedimento, com uso de recipiente adequado.</p></div>
+<div class="field">
+  <div class="k">Experiência de campo do autor</div>
+  <div class="who">André Monteiro de Araújo</div>
+  <div class="role2">Analista de Validação Sênior · Walida Soluções</div>
+  <p>Participou da <b>elaboração de boas práticas no Brasil</b> para a validação do processo de descontaminação de materiais priônicos, na parte referente à <b>qualificação térmica do esterilizador/descontaminizador</b>, com respaldo em documentação canadense de boas práticas. O trabalho foi conduzido com amostras de cérebro bovino em um laboratório de encefalopatias da <b>Universidade Federal Rural de Pernambuco (UFRPE)</b>.</p>
+  <p>O ponto central dessa experiência é o que separa o protocolo do papel: <b>não basta adotar o método, é preciso validar que ele foi entregue</b>. Isso significa demonstrar, com instrumentação rastreável, que a temperatura e o tempo chegaram a toda a carga, inclusive ao ponto mais frio, e que a etapa química foi executada na concentração e no tempo previstos. Em um protocolo que já opera no limite do que se consegue inativar, um desvio que passaria despercebido em um ciclo de rotina deixa de ser aceitável.</p>
+</div>
+
+<h3>O que não funciona</h3>
+<p>A lista de métodos ineficazes é tão importante quanto a dos eficazes, porque muitos deles fazem parte da rotina de desinfecção comum e podem dar uma falsa sensação de segurança:</p>
+<div class="tw"><table>
+<thead><tr><th>Categoria</th><th>Ineficazes</th><th>Parcial ou variavelmente eficazes</th></tr></thead>
+<tbody>
+<tr><td>Químicos</td><td>Álcool · amônia · β-propiolactona · <b>formol</b> · ácido clorídrico · <b>peróxido de hidrogênio</b> · <b>ácido peracético</b> · fenólicos · SDS a 5%</td><td>Dióxido de cloro · <b>glutaraldeído</b> · tiocianato de guanidínio 4 M · iodóforos · dicloroisocianurato de sódio · metaperiodato de sódio · ureia 6 M</td></tr>
+<tr><td>Gasosos</td><td><b>Óxido de etileno</b> · formaldeído</td><td>—</td></tr>
+<tr><td>Físicos</td><td>Fervura · <b>calor seco abaixo de 300 °C</b> · radiação ionizante, ultravioleta ou micro-ondas</td><td><b>Autoclave a 121 °C por 15 min</b> · fervura em SDS a 3%</td></tr>
+</tbody></table></div>
+<div class="warn"><b>Dois pontos que merecem destaque na prática diária.</b> O primeiro: o ciclo padrão de autoclave, 121 °C por 15 minutos, aparece na lista como apenas parcialmente eficaz. Ou seja, o ciclo que esteriliza com segurança qualquer micro-organismo <b>não é suficiente</b> aqui. O segundo: álcool, formol e glutaraldeído não só falham como <b>fixam o agente</b> e aumentam a resistência dele. Por isso a instrução de manter o material úmido e nunca aplicar fixador antes da descontaminação.</div>
+</section>
+
+<!-- 11 -->
+<section id="s11">
+<h2><span class="num">11</span>Cirurgias de encéfalo e casos suspeitos</h2>
+<div class="simple"><b class="t">Em palavras simples</b>
+<p>O ponto mais sensível de todos é a neurocirurgia em um paciente com suspeita de doença priônica, porque junta as duas piores condições: <b>tecido de alta infectividade</b> e <b>instrumental que vai voltar a ser usado em outro cérebro</b>.</p>
+<p>A regra de ouro é organizar a decisão <b>antes</b> do procedimento, e não depois. Se a suspeita só aparece dias depois, pelo resultado de um exame, o instrumental já se dispersou pelo fluxo normal da CME e rastrear fica muito difícil.</p></div>
+<ol class="steps">
+<li><b>Antes: levantar a suspeita e comunicar</b> Sinalizar a suspeita na programação cirúrgica e acionar a CCIH. A decisão sobre instrumental é institucional, e precisa estar tomada antes da incisão.</li>
+<li><b>Antes: priorizar o descartável</b> A OMS recomenda fortemente usar instrumental de uso único quando houver contato com tecido de alta infectividade, e destruí-lo por incineração depois. É a única conduta sem ambiguidade.</li>
+<li><b>Antes: montar a mesa mínima</b> Levar ao campo apenas o necessário. Tudo que entra na mesa passa a ser considerado potencialmente contaminado, mesmo sem contato direto aparente.</li>
+<li><b>Antes: proteger o que não pode ser descontaminado</b> Microscópios, equipamentos de monitorização e endoscópios não toleram a química agressiva. A orientação é protegê-los com cobertura descartável e, no que tocar tecido, aplicar o método mais eficaz que o equipamento suportar.</li>
+<li><b>Durante: cobrir superfícies e manter tudo úmido</b> Cobrir a mesa e as superfícies com material descartável, que depois será incinerado. Nunca deixar o instrumental secar: manter imerso em água ou em solução apropriada entre os tempos cirúrgicos.</li>
+<li><b>Depois: quarentena, não descarte imediato</b> Quando a instituição consegue manter quarentena com segurança, o instrumental é limpo pelo melhor método não destrutivo, esterilizado, embalado, <b>identificado e datado</b>, e guardado em local próprio até o diagnóstico ser confirmado ou afastado. Isso evita destruir material caro em casos que depois se mostram outra doença.</li>
+<li><b>Depois: destinação conforme o diagnóstico</b> Confirmada a doença priônica, o instrumental segue para incineração ou para um dos métodos do Anexo III, conforme a decisão institucional. Afastada a suspeita, volta ao fluxo normal.</li>
+<li><b>Sempre: rastreabilidade</b> A capacidade de saber <b>quais instrumentos</b> foram usados em <b>qual paciente</b> é o que torna todo o resto possível. Sem rastreabilidade, não há como executar quarentena nem como responder a uma suspeita retrospectiva.</li>
+<li><b>Resíduos e EPI</b> Material descartável, coberturas e resíduos vão para recipiente rígido identificado e seguem para incineração.</li>
+</ol>
+<div class="warn"><b>Um ponto de serenidade.</b> O CDC registra que, embora mais de 500 casos de transmissão iatrogênica tenham sido descritos no mundo, a maioria ligada a hormônio de crescimento de cadáver e a enxertos de dura-máter, <b>não há relato de transmissão por instrumental cirúrgico desde 1976</b>, quando os procedimentos de descontaminação foram aprimorados. O protocolo funciona. O que ele exige é que a suspeita seja levantada a tempo.</div>
+<details class="deep"><summary>Aprofundando: por que limpar antes importa tanto</summary><div class="body">
+<p>Há um debate técnico sobre a ordem entre limpeza mecânica e descontaminação química. A orientação predominante da OMS é <b>limpar mecanicamente antes</b>, por duas razões: reduzir a carga biológica, já que matéria orgânica aderida protege o agente de qualquer tratamento, e proteger o próprio instrumento do dano causado por tecido ressecado. Nesse caso, o material de limpeza passa a ser resíduo infectante e a estação de limpeza precisa ser descontaminada por um dos métodos do Anexo III. Uma opinião minoritária registrada no mesmo documento defende descontaminar antes de limpar.</p>
+<p>Há ainda uma vantagem química pouco lembrada: a <b>hidrólise alcalina a quente</b> não apenas inativa, ela <b>degrada</b> macromoléculas em subunidades. Ou seja, o NaOH aquecido limpa e inativa ao mesmo tempo, o que ajuda justamente no cenário mais difícil, que é o de resíduo aderido em articulações, lúmens e serrilhas.</p>
+<p>É aqui que o tema encontra o trabalho de qualificação térmica: o protocolo pressupõe que a autoclave <b>realmente entregue</b> 121 °C ou 134 °C <b>em toda a carga, pelo tempo inteiro</b>. Um ciclo com bolsão de ar frio, com remoção de ar deficiente ou com sensor descalibrado pode cumprir o registro no papel sem cumprir a condição física. Em um protocolo onde o método já é o limite do que se consegue, não sobra margem para desvio de temperatura.</p>
+</div></details>
+</section>
+
+<!-- 12 -->
+<section id="s12">
+<h2><span class="num">12</span>Medicina veterinária e o elo alimentar</h2>
+<div class="simple"><b class="t">Em palavras simples</b>
+<p>A epidemia britânica de "vaca louca" nos anos 1980 e 1990 aconteceu por um motivo que hoje parece óbvio: <b>bois herbívoros estavam sendo alimentados com farinha feita de restos de outros ruminantes</b>. O agente circulou dentro da própria cadeia alimentar do rebanho, amplificando-se a cada ciclo.</p>
+<p>Quando o elo foi cortado, a epidemia caiu. As duas medidas centrais foram:</p>
+<p>• <b>Proibir ruminante na alimentação de ruminante.</b> Fecha o ciclo de amplificação.</p>
+<p>• <b>Remover o material especificado de risco no abate.</b> Cérebro, medula, olhos, amígdalas e partes do intestino de animais acima de certa idade são retirados e destruídos, e não entram na cadeia alimentar nem na de subprodutos.</p>
+<p>A lógica é a mesma do hospital, aplicada em escala industrial: <b>identificar onde o risco se concentra e tirá-lo do fluxo</b>.</p></div>
+<figure>
+<svg viewBox="0 0 900 250" role="img" aria-label="Ciclo de amplificação da EEB e os pontos de corte">
+  <ellipse cx="200" cy="120" rx="150" ry="86" fill="none" stroke="var(--sick)" stroke-width="3" stroke-dasharray="8 6"/>
+  <text x="200" y="34" text-anchor="middle" font-size="14" font-weight="700" class="s-ink">Ciclo de amplificação</text>
+  <text x="200" y="110" text-anchor="middle" font-size="13" class="s-mut">rebanho</text>
+  <text x="200" y="134" text-anchor="middle" font-size="13" class="s-mut">↓ abate ↓</text>
+  <text x="200" y="158" text-anchor="middle" font-size="13" class="s-mut">farinha de carne e ossos</text>
+  <text x="200" y="182" text-anchor="middle" font-size="13" class="s-mut">↑ ração ↑</text>
+  <g stroke="var(--good)" stroke-width="5" stroke-linecap="round">
+    <path d="M320 150 L376 186"/><path d="M376 150 L320 186"/>
+  </g>
+  <text x="348" y="216" text-anchor="middle" font-size="12" font-weight="700" fill="var(--good)">proibição</text>
+  <rect x="430" y="52" width="200" height="60" rx="12" fill="var(--sick)" opacity=".2"/>
+  <text x="530" y="78" text-anchor="middle" font-size="14" font-weight="700" class="s-ink">Material de risco</text>
+  <text x="530" y="98" text-anchor="middle" font-size="12" class="s-mut">cérebro · medula · olhos · íleo</text>
+  <path d="M630 82 L690 82" class="s-strk" stroke-width="2" marker-end="url(#ar3)"/>
+  <rect x="700" y="52" width="170" height="60" rx="12" fill="var(--good)" opacity=".18"/>
+  <text x="785" y="88" text-anchor="middle" font-size="14" font-weight="700" class="s-ink">destruição</text>
+  <rect x="430" y="146" width="200" height="60" rx="12" fill="var(--sane)" opacity=".2"/>
+  <text x="530" y="172" text-anchor="middle" font-size="14" font-weight="700" class="s-ink">Carne e músculo</text>
+  <text x="530" y="192" text-anchor="middle" font-size="12" class="s-mut">sem infectividade detectável</text>
+  <path d="M630 176 L690 176" class="s-strk" stroke-width="2" marker-end="url(#ar3)"/>
+  <rect x="700" y="146" width="170" height="60" rx="12" class="s-soft"/>
+  <text x="785" y="182" text-anchor="middle" font-size="14" font-weight="700" class="s-ink">cadeia alimentar</text>
+  <defs><marker id="ar3" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" class="s-ink"/></marker></defs>
+</svg>
+<figcaption>Duas barreiras independentes: fechar o ciclo de reciclagem na ração e retirar do abate os tecidos onde a infectividade se concentra. A segunda barreira é a mesma lógica da tabela de infectividade da seção 9.</figcaption>
+</figure>
+<h3>A situação do Brasil</h3>
+<div class="tw"><table>
+<thead><tr><th>Aspecto</th><th>Situação</th></tr></thead>
+<tbody>
+<tr><td>Status sanitário</td><td>O Brasil é reconhecido pela OMSA (Organização Mundial da Saúde Animal) como país de <b>risco insignificante</b> para EEB desde 2012.</td></tr>
+<tr><td>Forma clássica</td><td><b>Nunca foi diagnosticada</b> no país.</td></tr>
+<tr><td>Casos atípicos</td><td>Alguns casos isolados foram detectados em animais idosos pela vigilância ativa. A forma atípica é considerada de ocorrência <b>espontânea</b>, não ligada à ração, e não altera o status do país.</td></tr>
+<tr><td>vDCJ humana</td><td><b>Nenhum caso confirmado</b> no Brasil desde o início da vigilância.</td></tr>
+<tr><td>Vigilância</td><td>Baseada em inspeção no abate, notificação de sinais neurológicos em bovinos e confirmação em laboratório de referência.</td></tr>
+</tbody></table></div>
+<h3>Os desafios que continuam abertos</h3>
+<ul>
+<li><b>Doença debilitante crônica em cervídeos (CWD).</b> É a doença priônica mais transmissível conhecida entre animais. Diferente das outras, ela se dissemina também pelo <b>ambiente</b>: o agente é eliminado em saliva, urina e fezes e <b>persiste no solo por anos</b>, mantendo infectividade. Está em expansão na América do Norte e é hoje a principal preocupação em vigilância de príons no mundo. Até o momento não há caso humano comprovado, mas a exposição crescente mantém o tema em monitoramento.</li>
+<li><b>Scrapie.</b> Conhecida há séculos em ovinos e caprinos, e <b>sem evidência de transmissão ao ser humano</b>, apesar de muitas décadas de convívio e consumo.</li>
+<li><b>Descontaminação no campo.</b> Os métodos da seção 10 são pensados para a CME. No ambiente veterinário e de necropsia, incineração e hidrólise alcalina continuam sendo as alternativas de referência, e superfícies porosas, como solo e madeira, são um problema prático sem solução simples.</li>
+<li><b>O laboratório de diagnóstico.</b> A vigilância depende de laboratórios que recebem e manipulam <b>amostras de cérebro bovino</b> justamente para procurar o agente. Esse é um dos poucos ambientes no país onde material de alta infectividade é rotina, e onde a validação do processo de descontaminação deixa de ser exercício teórico. Foi nesse contexto, em um laboratório de encefalopatias da UFRPE, que <b>o autor deste artigo</b>, da Walida Soluções, participou da elaboração de boas práticas brasileiras para essa validação, na parte de <b>qualificação térmica do esterilizador/descontaminizador</b>, com respaldo em documentação canadense.</li>
+</ul>
+</section>
+
+<!-- 13 -->
+<section id="s13">
+<h2><span class="num">13</span>As interações moleculares por trás de tudo</h2>
+<div class="simple"><b class="t">Em palavras simples</b>
+<p>Por que uma proteína dobrada de um jeito resiste ao que destrói quase tudo? Porque a forma doente é mantida por <b>muitas ligações fracas somadas</b>, e não por poucas ligações fortes. É a diferença entre quebrar uma corrente e desmanchar um velcro gigante: cada ponto individual é frágil, mas há milhares deles trabalhando juntos.</p></div>
+<div class="tw"><table>
+<thead><tr><th>Interação</th><th>Natureza</th><th>Em linguagem simples</th><th>Papel no príon</th><th>O que a quebra</th></tr></thead>
+<tbody>
+<tr><td>Ligação de hidrogênio na folha beta</td><td><span class="tag hi">estrutural</span></td><td>Milhares de "ímãs" fracos entre fitas paralelas da proteína</td><td>É o que sustenta o empilhamento e dá a rigidez da fibrila</td><td>Hidrólise alcalina a quente; calor úmido prolongado</td></tr>
+<tr><td>Empilhamento em registro (<i>steric zipper</i>)</td><td><span class="tag hi">estrutural</span></td><td>As camadas se encaixam como um zíper, cada uma idêntica à anterior</td><td>Torna a fibra um molde fiel: é a base da "herança" da cepa sem DNA</td><td>Desnaturantes fortes; hidrólise</td></tr>
+<tr><td>Interação hidrofóbica</td><td><span class="tag hi">estrutural</span></td><td>As partes "que não gostam de água" se escondem no interior</td><td>Estabiliza o núcleo da fibrila e torna o agregado insolúvel</td><td>Detergentes fortes em alta temperatura; apenas parcialmente</td></tr>
+<tr><td>Ligação peptídica da cadeia principal</td><td><span class="tag hi">covalente</span></td><td>A "costura" que liga um aminoácido ao outro</td><td>Enquanto estiver íntegra, a proteína pode voltar a agregar</td><td class="good"><b>NaOH a quente</b> (hidrólise alcalina) e incineração: é o que realmente desmonta</td></tr>
+<tr><td>Ponte dissulfeto</td><td><span class="tag lo">covalente</span></td><td>Um "grampo" químico entre dois pontos da proteína</td><td>Presente na PrP e contribui para a estabilidade</td><td>Redutores; condições alcalinas severas</td></tr>
+<tr><td>Âncora GPI e glicosilação</td><td><span class="tag lo">pós-traducional</span></td><td>O "pé" que prende a proteína na membrana e os açúcares ligados a ela</td><td>Definem localização e influenciam o padrão de cepa na eletroforese</td><td>Não é alvo de inativação</td></tr>
+<tr><td>Coordenação com cobre</td><td><span class="tag lo">química</span></td><td>A região repetitiva da PrP liga íons de cobre</td><td>Associada à função normal; sob estresse oxidativo pode favorecer a conversão</td><td>Quelantes, em contexto experimental</td></tr>
+<tr><td>Resistência à proteinase K</td><td><span class="tag hi">consequência</span></td><td>As tesouras moleculares da célula não conseguem cortar a forma compacta</td><td>É a propriedade usada no laboratório para distinguir as duas formas</td><td>É um marcador, não um alvo</td></tr>
+<tr><td>Adsorção em aço inoxidável</td><td><span class="tag hi">superfície</span></td><td>A proteína <b>gruda com muita força</b> no metal, e continua infecciosa ali</td><td>É a razão central de todo o protocolo cirúrgico</td><td>Hidrólise alcalina; incineração</td></tr>
+<tr><td>Fixação por álcool, formol e glutaraldeído</td><td><span class="tag hi">armadilha</span></td><td>Em vez de destruir, "endurece" e sela a proteína</td><td class="bad">Aumenta a resistência: por isso é <b>contraindicado</b> antes da descontaminação</td><td>—</td></tr>
+<tr><td>Estabilização por secagem</td><td><span class="tag hi">armadilha</span></td><td>Material seco protege o agente, como um esmalte</td><td class="bad">É o pior cenário dos testes da OMS</td><td>Prevenção: manter úmido desde o uso</td></tr>
+</tbody></table></div>
+</section>
+
+<!-- 14 -->
+<section id="s14">
+<h2><span class="num">14</span>Glossário</h2>
+<dl class="gl">
+<dt>Príon</dt><dd>Partícula infecciosa composta apenas de proteína, sem material genético.</dd>
+<dt>PrP<sup>C</sup></dt><dd>A forma normal e celular da proteína priônica, presente em todos nós.</dd>
+<dt>PrP<sup>Sc</sup></dt><dd>A forma alterada e patogênica. "Sc" vem de <i>scrapie</i>, a doença das ovelhas.</dd>
+<dt>Gene PRNP</dt><dd>O gene humano que codifica a proteína priônica, no cromossomo 20.</dd>
+<dt>Códon 129</dt><dd>Posição do gene que pode ser metionina ou valina e influencia a suscetibilidade e o formato clínico.</dd>
+<dt>Hélice alfa e folha beta</dt><dd>As duas formas básicas de dobramento de uma proteína: espiral e camada plana.</dd>
+<dt>Amiloide</dt><dd>Agregado de proteínas organizado em folhas beta empilhadas, insolúvel e resistente.</dd>
+<dt>Nucleação</dt><dd>Formação do primeiro agregado estável, o passo mais difícil e lento do processo.</dd>
+<dt>Elongação</dt><dd>Crescimento da fibra pela incorporação de novas proteínas na ponta.</dd>
+<dt>Fragmentação</dt><dd>Quebra da fibra, que multiplica o número de pontas ativas e acelera tudo.</dd>
+<dt>Incubação</dt><dd>Período entre o evento inicial e o primeiro sintoma, sem manifestação clínica.</dd>
+<dt>Espongiforme</dt><dd>Aspecto de esponja do tecido cerebral, causado por microvacúolos.</dd>
+<dt>DCJ</dt><dd>Doença de Creutzfeldt-Jakob, a doença priônica humana mais comum.</dd>
+<dt>vDCJ</dt><dd>Variante da DCJ, ligada à exposição ao agente da EEB bovina.</dd>
+<dt>Iatrogênico</dt><dd>Causado por procedimento médico.</dd>
+<dt>EEB</dt><dd>Encefalopatia espongiforme bovina, a "vaca louca".</dd>
+<dt>CWD</dt><dd>Doença debilitante crônica dos cervídeos.</dd>
+<dt>RT-QuIC</dt><dd>Exame que amplifica a conversão priônica em tubo de ensaio para detectar o agente.</dd>
+<dt>Proteinase K</dt><dd>Enzima que digere proteínas; a forma doente resiste parcialmente a ela.</dd>
+<dt>Material especificado de risco</dt><dd>Tecidos retirados e destruídos no abate por concentrarem infectividade.</dd>
+<dt>Hidrólise alcalina</dt><dd>Quebra das ligações da proteína por base forte, como o NaOH, geralmente com calor.</dd>
+<dt>NaOH 1N</dt><dd>Solução de 40 g de hidróxido de sódio em 1 litro de água, preparada na hora.</dd>
+<dt>Autoclave por gravidade</dt><dd>O ar é empurrado para fora pelo vapor. Indicada para líquidos e descontaminação geral.</dd>
+<dt>Autoclave de carga porosa</dt><dd>O ar é retirado por vácuo. Indicada para instrumentos limpos, campos e tecidos; não serve para líquidos.</dd>
+<dt>Quarentena de instrumental</dt><dd>Guardar o material identificado até o diagnóstico ser confirmado ou afastado.</dd>
+</dl>
+</section>
+
+<!-- 15 -->
+<section id="s15" class="faq">
+<h2><span class="num">15</span>Perguntas frequentes</h2>
+<details><summary>Doença priônica pega por contato, abraço ou mesmo ambiente?</summary><p>Não. As diretrizes da OMS são explícitas: o paciente não precisa de isolamento, pode ser cuidado em enfermaria comum com precauções padrão, e não há necessidade de cuidado especial com talheres, sondas de alimentação, roupa de cama ou itens de higiene. Secreções e excreções estão na categoria sem infectividade detectável.</p></details>
+<details><summary>Comer carne bovina no Brasil oferece risco?</summary><p>O Brasil é classificado pela OMSA como de risco insignificante para EEB, nunca teve um caso clássico e nunca teve um caso humano de variante da DCJ. A carne muscular está na categoria sem infectividade detectável, e o material de risco é retirado no abate.</p></details>
+<details><summary>Se a maioria dos casos é espontânea, dá para prevenir?</summary><p>Não existe prevenção para a forma esporádica, porque não há causa conhecida nem fator de risco estabelecido. O que se previne são as formas adquiridas, e é aí que atuam as regras de biossegurança, a vigilância veterinária e o controle de hemoderivados e enxertos.</p></details>
+<details><summary>Por que o ciclo de autoclave normal não resolve?</summary><p>Porque não há organismo para matar. A esterilização de rotina age sobre estruturas vivas; o príon é uma proteína já desnaturada numa conformação estável. O ciclo de 121 °C por 15 minutos aparece nas tabelas da OMS como apenas parcialmente eficaz contra esses agentes.</p></details>
+<details><summary>Plasma, peróxido de hidrogênio ou ácido peracético servem?</summary><p>Segundo a tabela da OMS, peróxido de hidrogênio e ácido peracético constam como ineficazes para esse fim específico, e óxido de etileno também. Isso não diminui o valor deles na rotina: significa apenas que não devem ser considerados suficientes quando a questão é príon.</p></details>
+<details><summary>Existe tratamento ou vacina?</summary><p>Não há tratamento capaz de deter a doença. As linhas de pesquisa mais promissoras tentam reduzir a produção da proteína normal, usando oligonucleotídeos antissenso, em vez de atacar o agregado já formado. Isso faz sentido à luz do modelo: sem substrato, a conversão não avança. São estudos em andamento, sem eficácia comprovada em pessoas.</p></details>
+<details><summary>Quem cuida de um paciente corre risco?</summary><p>No cuidado de rotina, não. O risco ocupacional se concentra em exposição direta a tecido de alta infectividade: neurocirurgia, necropsia, manipulação de amostras de SNC em laboratório. Nesses contextos valem as precauções específicas descritas aqui.</p></details>
+<details><summary>Devo me preocupar se fiz uma cirurgia no passado?</summary><p>O CDC não registra transmissão por instrumental cirúrgico desde 1976, quando os procedimentos foram aprimorados. Os casos iatrogênicos conhecidos concentram-se em hormônio de crescimento extraído de cadáver e enxertos de dura-máter, práticas que foram descontinuadas ou substituídas.</p></details>
+</section>
+
+<!-- 16 -->
+<section id="s16">
+<h2><span class="num">16</span>Fontes e método das simulações</h2>
+<div class="warn">As simulações desta página são <b>modelos didáticos</b>, com parâmetros escolhidos para reproduzir comportamentos qualitativos descritos na literatura: dependência logarítmica do tempo de incubação com a dose, efeito do nível de PrP<sup>C</sup>, deslocamento ordenado das curvas de RT-QuIC por diluição e ordenação relativa dos métodos de descontaminação. Elas <b>não</b> são dados experimentais, não representam um paciente e não devem ser usadas para decisão clínica ou para definição de protocolo.</div>
+<details class="deep" open><summary>Parâmetros e equações</summary><div class="body">
+<span class="eq">Cinética (nucleação e polimerização com fragmentação)
+  dP/dt = k_f · M ;  dM/dt = 2 · k_e · m · P ;  m = max(0, m₀ − M)
+  k_e = 0,9/mês × (nível de PrP^C) ;  k_f = 0,05/mês × (fator de fragmentação) ;  m₀ = 1
+  Semente inicial: 10⁻⁶ a 10⁻¹ ;  P₀ = semente/10
+  Limiar de sintoma: M = 0,25 ;  fase avançada: M = 0,60 ;  integração de Euler, dt = 0,02 mês
+
+RT-QuIC (esquemático)
+  latência(h) = 4 + 2,6 × (−log₁₀ diluição) ;  sinal = máx / (1 + e^(−(t − latência)/1,6))
+
+Propagação (esquemática)
+  difusão em grade 3D a partir de um foco, com intensidade normalizada por tempo
+
+Descontaminação
+  escala qualitativa 0–10 construída a partir da ORDEM de eficácia do Anexo III da OMS,
+  com fator de penalização para tecido seco ou fixado. Não corresponde a redução logarítmica medida.</span>
+<h3>Fontes</h3>
+<ul style="font-size:.92rem">
+<li><b>Organização Mundial da Saúde.</b> <i>WHO Infection Control Guidelines for Transmissible Spongiform Encephalopathies</i>. WHO/CDS/CSR/APH/2000.3. Genebra, 2000. Base das tabelas de infectividade, dos métodos do Anexo III e da lista de métodos ineficazes.</li>
+<li><b>CDC.</b> <i>Infection Control for CJD</i>. Centers for Disease Control and Prevention. Base das recomendações para instrumentos, superfícies e do histórico de transmissão iatrogênica.</li>
+<li><b>Ministério da Saúde (Brasil).</b> <i>Protocolo de notificação e investigação da doença de Creutzfeldt-Jakob</i>, e página oficial de vigilância da DCJ.</li>
+<li><b>OMSA (Organização Mundial da Saúde Animal)</b> e Ministério da Agricultura e Pecuária, sobre status de risco para EEB e vigilância.</li>
+<li><b>Prusiner, S. B.</b> "Novel proteinaceous infectious particles cause scrapie". <i>Science</i>, 216, 136 (1982).</li>
+<li>Literatura sobre modelos de nucleação e polimerização e sobre RT-QuIC aplicada ao diagnóstico de doenças priônicas.</li>
+</ul>
+<p style="font-size:.9rem;color:var(--muted)">Dados públicos sobre o caso citado na seção 7 vieram de reportagens que relatam o comunicado da família. O subtipo da doença não foi divulgado e, por isso, não é afirmado aqui.</p>
+</div></details>
+</section>
+
+<aside class="author-box" aria-label="Sobre o autor">
+  <img src="foto-andre-monteiro.jpg" alt="Foto de André Monteiro de Araújo" width="84" height="84">
+  <div>
+    <div class="k">Sobre o autor</div>
+    <div class="name">André Monteiro de Araújo</div>
+    <p>Analista de Validação Sênior da Walida Soluções. Participou da elaboração de boas práticas no Brasil para a validação da descontaminação de materiais priônicos, na parte de qualificação térmica do esterilizador/descontaminizador, em laboratório de encefalopatias da UFRPE. Artigo escrito com auxílio da IA Claude.</p>
+  </div>
+</aside>
+
+<footer>Conteúdo educativo, baseado em diretrizes públicas de controle de infecção. Não substitui o protocolo institucional nem orientação profissional. Gráficos interativos feitos com Plotly.js.<br>
+<a href="blog.html">← Voltar para o blog</a> · <a href="index.html">Página inicial da Walida</a></footer>
+</main>
+
+<button id="labBtn" onclick="toggleLab()" aria-controls="lab" aria-expanded="false">Laboratório virtual</button>
+<aside id="lab" aria-label="Laboratório virtual">
+  <button class="x" onclick="toggleLab()" aria-label="Fechar">×</button>
+  <h4>Laboratório virtual</h4>
+  <p style="font-size:.82rem;color:var(--muted);margin:0">Mude os parâmetros e os gráficos e números da página se atualizam.</p>
+  <div class="row"><label for="seed">Tamanho da semente inicial: 10<sup><output id="seedo"></output></sup></label><input id="seed" type="range" min="-6" max="-1" step="0.1" value="-4"></div>
+  <div class="row"><label for="prp">Nível de PrP<sup>C</sup> disponível: <output id="prpo"></output>×</label><input id="prp" type="range" min="0.3" max="1.6" step="0.05" value="1"></div>
+  <div class="row"><label for="frag">Fator de fragmentação: <output id="frago"></output>×</label><input id="frag" type="range" min="0.3" max="2.5" step="0.05" value="1"></div>
+  <div class="row"><label for="mes">Mês da doença (mapa de propagação): <output id="meso"></output></label><input id="mes" type="range" min="1" max="60" step="1" value="24"></div>
+  <div class="row"><label for="carga">Estado do material (descontaminação)</label>
+    <select id="carga">
+      <option value="umido">Úmido, logo após o uso</option>
+      <option value="pouco">Resíduo aderido, parcialmente seco</option>
+      <option value="seco">Tecido ressecado sobre a superfície</option>
+      <option value="fixado">Fixado com álcool ou formol</option>
+    </select></div>
+  <div class="row"><label for="dil">Diluição mais alta no RT-QuIC: 10<sup>−<output id="dilo"></output></sup></label><input id="dil" type="range" min="4" max="9" step="1" value="7"></div>
+</aside>
+
+<script>
+const $=id=>document.getElementById(id);
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+const fmt=(x,d=1)=>x.toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d});
+function css(n){return getComputedStyle(document.documentElement).getPropertyValue(n).trim()}
+function ax(t){return{title:{text:t},gridcolor:css('--line'),zerolinecolor:css('--line'),color:css('--muted'),backgroundcolor:'rgba(0,0,0,0)'}}
+function L3(title,xt,yt,zt){return{title:{text:title,font:{size:14}},paper_bgcolor:'rgba(0,0,0,0)',plot_bgcolor:'rgba(0,0,0,0)',
+  font:{color:css('--ink'),size:11},margin:{l:0,r:0,t:40,b:0},uirevision:'keep',showlegend:true,
+  legend:{orientation:'h',y:0.98,x:0},
+  scene:{xaxis:ax(xt),yaxis:ax(yt),zaxis:ax(zt),camera:{eye:{x:1.6,y:-1.6,z:0.85}},aspectmode:'cube'}}}
+const CFG={responsive:true,displaylogo:false};
+const SCALE=[[0,'#12304a'],[0.35,'#2f6f9e'],[0.7,'#d87b48'],[1,'#f2c744']];
+
+function state(){return{seed:Math.pow(10,+$('seed').value),prp:+$('prp').value,frag:+$('frag').value,
+  mes:+$('mes').value,carga:$('carga').value,dil:+$('dil').value}}
+
+/* ---------- cinética de nucleação e polimerização ---------- */
+function kinetics(seed,prp,frag,T=180,dt=0.02){
+  const ke=0.9*prp, kf=0.05*frag;
+  let M=seed,P=seed/10,t=0,onset=null,late=null;
+  const ts=[],Ms=[];
+  const n=Math.round(T/dt);
+  for(let i=0;i<=n;i++){
+    if(i%25===0){ts.push(+t.toFixed(2));Ms.push(Math.min(1,M))}
+    const m=Math.max(0,1-M);
+    const dP=kf*M, dM=2*ke*m*P;
+    P+=dP*dt; M+=dM*dt; t+=dt;
+    if(onset===null&&M>0.25)onset=t;
+    if(late===null&&M>0.60)late=t;
+  }
+  return{ts,Ms,onset,late};
+}
+function drawKin(st){
+  const seeds=[];for(let e=-6;e<=-1.001;e+=0.25)seeds.push(+e.toFixed(2));
+  const base=kinetics(1e-4,st.prp,st.frag);
+  const z=seeds.map(e=>kinetics(Math.pow(10,e),st.prp,st.frag).Ms.map(v=>v*100));
+  const cur=kinetics(st.seed,st.prp,st.frag);
+  Plotly.react('pKin',[
+    {type:'surface',x:base.ts,y:seeds,z,colorscale:SCALE,showscale:false,opacity:.93,name:'carga de príon',
+     hovertemplate:'%{x:.0f} meses<br>semente 10^%{y}<br>%{z:.0f}% convertido<extra></extra>'},
+    {type:'scatter3d',mode:'lines',x:cur.ts,y:cur.ts.map(()=>Math.log10(st.seed)),z:cur.Ms.map(v=>v*100),
+     line:{color:css('--accent'),width:7},name:'cenário escolhido'}
+  ],L3('Carga de príon no tecido ao longo do tempo','Tempo (meses)','log₁₀ da semente','Convertido (%)'),CFG);
+  const card=(k,v,n,cls='')=>`<div class="card"><div class="k">${k}</div><div class="v ${cls}">${v}</div><div class="n">${n}</div></div>`;
+  const o=cur.onset,l=cur.late;
+  $('kinCards').innerHTML=
+    card('Início dos sintomas',o?fmt(o/12,1)+' anos':'> 15 anos','a partir do evento inicial')+
+    card('Fase avançada',l?fmt(l/12,1)+' anos':'> 15 anos','carga acima de 60%')+
+    card('Fase clínica',(o&&l)?fmt(l-o,1)+' meses':'—','do 1º sintoma ao estágio avançado')+
+    card('Semente inicial','10<sup style="font-size:.6em">'+fmt(Math.log10(st.seed),1)+'</sup>','fração da reserva de PrPᶜ');
+}
+
+/* ---------- conformações 3D ---------- */
+function helix(cx,cy,cz,turns,R,h,n,ang){
+  const x=[],y=[],z=[];
+  for(let i=0;i<=n;i++){const t=i/n*turns*2*Math.PI;
+    const px=R*Math.cos(t),py=R*Math.sin(t),pz=(i/n-0.5)*h;
+    x.push(cx+px*Math.cos(ang)-pz*Math.sin(ang));y.push(cy+py);z.push(cz+px*Math.sin(ang)+pz*Math.cos(ang));}
+  return{x,y,z};
+}
+function drawFold(){
+  const tr=[];
+  const hs=[[-3.4,0,1.2,2.6,.55,2.6,.3],[-3.0,1.1,-1.0,2.2,.5,2.2,-.5],[-3.9,-1.0,-1.1,2.0,.5,2.0,1.2]];
+  hs.forEach((h,i)=>{const c=helix(h[0],h[1],h[2],h[3],h[4],h[5],160,h[6]);
+    tr.push({type:'scatter3d',mode:'lines',x:c.x,y:c.y,z:c.z,line:{color:css('--sane'),width:12},
+      name:i===0?'PrPᶜ · hélices alfa':'',showlegend:i===0,hovertemplate:'hélice alfa<extra></extra>'})});
+  const coil={x:[],y:[],z:[]};
+  for(let i=0;i<=90;i++){const t=i/90;coil.x.push(-3.4+1.6*Math.sin(t*6));coil.y.push(-1.9+0.5*Math.cos(t*5));coil.z.push(-2.2+t*0.8)}
+  tr.push({type:'scatter3d',mode:'lines',x:coil.x,y:coil.y,z:coil.z,line:{color:css('--muted'),width:5},name:'região flexível'});
+  const nL=7;
+  for(let L=0;L<nL;L++){
+    const zc=(L-(nL-1)/2)*0.62;
+    for(let s=0;s<3;s++){
+      const y0=-1.5+s*1.5, x=[],y=[],z=[];
+      for(let i=0;i<=24;i++){const t=i/24;
+        x.push(3.2+(t-0.5)*3.4);y.push(y0+0.26*Math.sin(t*Math.PI*4));z.push(zc);}
+      tr.push({type:'scatter3d',mode:'lines',x,y,z,line:{color:css('--sick'),width:9},
+        name:(L===0&&s===0)?'PrPˢᶜ · folhas beta':'',showlegend:(L===0&&s===0),
+        hovertemplate:'folha beta empilhada<extra></extra>'});
+    }
+  }
+  const lay=L3('As duas conformações da mesma proteína','x (nm)','y (nm)','z (nm)');
+  lay.scene.aspectmode='data';lay.scene.annotations=[
+    {x:-3.4,y:0,z:3.2,text:'PrPᶜ (sadia)',showarrow:false,font:{color:css('--sane'),size:13}},
+    {x:3.2,y:0,z:3.2,text:'PrPˢᶜ (doente)',showarrow:false,font:{color:css('--sick'),size:13}}];
+  Plotly.react('pFold',tr,lay,CFG);
+}
+
+/* ---------- incubação por cenário ---------- */
+const INCUB=[
+  ['Kuru',4.5,40,'ritual fúnebre'],
+  ['DCJ iatrogênica (hormônio)',5,30,'procedimento médico antigo'],
+  ['DCJ iatrogênica (dura-máter)',1.5,25,'enxerto'],
+  ['Variante da DCJ',8,16,'exposição alimentar'],
+  ['EEB em bovinos',2.5,8,'ração contaminada'],
+  ['Scrapie em ovinos',1.5,5,'entre animais']
+];
+function drawIncub(){
+  const cols=['#b8432c','#d87b48','#e0a33c','#6B57B8','#2f6f9e','#1a7f9c'];
+  const tr=INCUB.map((d,i)=>({type:'scatter3d',mode:'lines+markers',
+    x:[d[1],d[2]],y:[i,i],z:[1,1],line:{color:cols[i],width:16},marker:{size:5,color:cols[i]},
+    name:d[0],hovertemplate:d[0]+'<br>'+d[1]+' a '+d[2]+' anos<br>'+d[3]+'<extra></extra>'}));
+  const lay=L3('Faixas de incubação relatadas','Anos até o primeiro sintoma','','');
+  lay.scene.yaxis.tickvals=INCUB.map((_,i)=>i);
+  lay.scene.yaxis.ticktext=INCUB.map(d=>d[0].length>22?d[0].slice(0,20)+'…':d[0]);
+  lay.scene.zaxis.visible=false;lay.scene.aspectratio={x:1.6,y:1.1,z:0.5};lay.scene.aspectmode='manual';
+  lay.showlegend=false;
+  Plotly.react('pIncub',tr,lay,CFG);
+}
+
+/* ---------- RT-QuIC ---------- */
+function drawQuic(st){
+  const ts=[];for(let t=0;t<=60;t+=0.5)ts.push(t);
+  const tr=[];const cols=['#b8432c','#d2663a','#e0a33c','#6B57B8','#3f7fb5','#2f6f9e'];
+  const dils=[];for(let d=2;d<=st.dil;d++)dils.push(d);
+  dils.forEach((d,i)=>{
+    const lag=4+2.6*d;
+    tr.push({type:'scatter3d',mode:'lines',x:ts,y:ts.map(()=>i),
+      z:ts.map(t=>100/(1+Math.exp(-(t-lag)/1.6))),
+      line:{color:cols[i%cols.length],width:7},name:'10⁻'+d,
+      hovertemplate:'diluição 10⁻'+d+'<br>%{x} h: %{z:.0f}%<extra></extra>'});
+  });
+  tr.push({type:'scatter3d',mode:'lines',x:ts,y:ts.map(()=>dils.length),z:ts.map(()=>2+Math.random()*1.5),
+    line:{color:css('--muted'),width:6},name:'controle negativo',hovertemplate:'negativo<extra></extra>'});
+  const lay=L3('RT-QuIC: curvas por diluição da amostra','Tempo de ensaio (h)','','Sinal de fluorescência (%)');
+  lay.scene.yaxis.tickvals=dils.map((_,i)=>i).concat([dils.length]);
+  lay.scene.yaxis.ticktext=dils.map(d=>'10⁻'+d).concat(['negativo']);
+  Plotly.react('pQuic',tr,lay,CFG);
+}
+
+/* ---------- propagação no tecido ---------- */
+function drawBrain(st){
+  const pts={x:[],y:[],z:[],c:[]};
+  const t=st.mes/60;
+  for(let i=0;i<1500;i++){
+    const u=Math.random()*2*Math.PI,v=Math.acos(2*Math.random()-1),r=Math.cbrt(Math.random());
+    let x=r*Math.sin(v)*Math.cos(u)*1.35,y=r*Math.sin(v)*Math.sin(u)*1.0,z=r*Math.cos(v)*0.85;
+    if(z<-0.1&&Math.abs(x)<0.25)z-=0.5;
+    const d=Math.hypot(x-(-0.75),y-0.1,z-(-0.15));
+    const front=t*2.9;
+    const load=clamp((front-d)/0.9,0,1)*clamp(t*2.2,0,1);
+    pts.x.push(x);pts.y.push(y);pts.z.push(z);pts.c.push(load*100);
+  }
+  Plotly.react('pBrain',[{type:'scatter3d',mode:'markers',x:pts.x,y:pts.y,z:pts.z,
+    marker:{size:3.1,color:pts.c,colorscale:[[0,'#2f6f9e'],[0.5,'#d87b48'],[1,'#b8432c']],cmin:0,cmax:100,opacity:.75,
+      colorbar:{title:{text:'carga (%)',font:{size:11}},thickness:12,len:.6,tickfont:{size:10,color:css('--muted')}}},
+    hovertemplate:'carga local %{marker.color:.0f}%<extra></extra>',name:'tecido'}],
+    (()=>{const l=L3('Propagação no tecido · mês '+st.mes,'x','y','z');l.scene.aspectmode='data';l.showlegend=false;
+      l.scene.xaxis.visible=false;l.scene.yaxis.visible=false;l.scene.zaxis.visible=false;return l})(),CFG);
+}
+
+/* ---------- descontaminação ---------- */
+const METODOS=[
+  ['Incineração',10.0,'ok'],
+  ['NaOH 1N + autoclave 121 °C/30 min',9.4,'ok'],
+  ['NaOH ou hipoclorito 1 h + autoclave 121 °C/1 h',9.1,'ok'],
+  ['Imersão 1 h + autoclave 121 °C ou 134 °C/1 h',8.7,'ok'],
+  ['NaOH + fervura 10 min',7.0,'ok'],
+  ['Hipoclorito ou NaOH 1 h, temperatura ambiente',6.2,'ok'],
+  ['Autoclave 134 °C/18 min (isolado)',5.0,'ok'],
+  ['Autoclave 121 °C/15 min (ciclo de rotina)',2.4,'ruim'],
+  ['Glutaraldeído',1.2,'ruim'],
+  ['Óxido de etileno',0.6,'ruim'],
+  ['Peróxido de hidrogênio / ácido peracético',0.6,'ruim'],
+  ['Álcool ou formol (fixa o agente)',0.2,'ruim']
+];
+const PENAL={umido:1.0,pouco:0.88,seco:0.72,fixado:0.55};
+function drawDecon(st){
+  const p=PENAL[st.carga];
+  const tr=METODOS.map((m,i)=>{
+    const v=m[2]==='ok'?m[1]*p:m[1]*Math.min(1,p+0.1);
+    return{type:'scatter3d',mode:'lines',x:[i,i],y:[0,0],z:[0,v],
+      line:{color:m[2]==='ok'?(v>8?'#1d7d45':(v>5?'#d87b48':'#b8432c')):css('--muted'),width:22},
+      name:m[0],hovertemplate:m[0]+'<br>eficácia relativa %{z:.1f}/10<extra></extra>'};
+  });
+  const lay=L3('Eficácia relativa dos métodos (escala qualitativa)','','','Eficácia relativa (0–10)');
+  lay.scene.xaxis.tickvals=METODOS.map((_,i)=>i);
+  lay.scene.xaxis.ticktext=METODOS.map(m=>m[0].length>26?m[0].slice(0,24)+'…':m[0]);
+  lay.scene.xaxis.tickfont={size:9};
+  lay.scene.zaxis.range=[0,10.5];
+  lay.scene.aspectratio={x:2.0,y:0.5,z:0.9};lay.scene.aspectmode='manual';
+  lay.scene.camera={eye:{x:1.5,y:-2.0,z:0.9}};
+  lay.showlegend=false;
+  Plotly.react('pDecon',tr,lay,CFG);
+}
+
+let tm;
+function update(){
+  const st=state();
+  $('seedo').textContent=fmt(+$('seed').value,1);$('prpo').textContent=fmt(st.prp,2);
+  $('frago').textContent=fmt(st.frag,2);$('meso').textContent=st.mes;$('dilo').textContent=st.dil;
+  clearTimeout(tm);tm=setTimeout(()=>{drawKin(st);drawQuic(st);drawBrain(st);drawDecon(st)},60);
+}
+function toggleLab(){const o=$('lab').classList.toggle('open');$('labBtn').setAttribute('aria-expanded',o);$('labBtn').textContent=o?'Fechar laboratório':'Laboratório virtual'}
+function openLab(){if(!$('lab').classList.contains('open'))toggleLab()}
+document.querySelectorAll('#lab input,#lab select').forEach(e=>e.addEventListener('input',update));
+try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{drawFold();drawIncub();update()})}catch(e){}
+drawFold();drawIncub();update();
+</script>
+</body>
+</html>
