@@ -415,6 +415,9 @@ O que reduz a barreira: mutação no PRNP · pH ácido do endossomo · metais ·
 <figcaption>Elongação mais fragmentação é o motor da doença. A fragmentação é o passo decisivo: sem ela, uma fibra só ficaria comprida e o processo seria linear. Com ela, o número de pontas ativas dobra periodicamente, e o crescimento vira exponencial.</figcaption>
 </figure>
 <div class="cards" id="kinCards"></div>
+<figure><div id="pPhases" class="plot short"></div>
+<figcaption>Separação entre as duas fases. A curva azul é o título de PrPˢᶜ, que satura cedo; a vermelha é o dano acumulado, que continua subindo depois do platô. É essa defasagem que explica por que a carga máxima é atingida muito antes do primeiro sintoma.</figcaption>
+<div class="howto"><b>Como ler:</b> as duas curvas estão normalizadas na própria escala, para serem comparadas no tempo. A linha pontilhada marca o platô do título e a laranja marca o primeiro sintoma. Reduza o nível de PrPᶜ no laboratório virtual e veja o processo parar.</div></figure>
 <div class="grid2">
 <figure><div id="pKin" class="plot"></div>
 <div class="howto"><b>Como ler:</b> a altura é a carga de príon no tecido. Para o lado, o tempo em meses. Para a frente, o tamanho da semente inicial, de quase nada até uma dose grande. Repare que <b>a curva não muda de formato</b>: ela só desliza no tempo. Uma dose mil vezes maior não causa uma doença mil vezes pior, apenas antecipa o início.</div></figure>
@@ -423,14 +426,20 @@ O que reduz a barreira: mutação no PRNP · pH ácido do endossomo · metais ·
 </div>
 <details class="deep"><summary>Aprofundando: o modelo de nucleação e polimerização</summary><div class="body">
 <p>O comportamento acima é descrito pelo modelo de <b>nucleação dependente de semente</b> com fragmentação. Em sua forma mínima:</p>
-<span class="eq">dP/dt = k_f · M                      P = número de extremidades ativas (fibras)
-dM/dt = 2 · k_e · m · P             M = massa convertida em PrP^Sc
-m(t)  = max(0, m₀ − M)              m = reserva de PrP^C disponível
-Início clínico quando M ultrapassa o limiar de disfunção sináptica (aqui, 0,25 de m₀)</span>
-<p>Duas consequências práticas saem direto das equações:</p>
+<span class="eq">dm/dt = α·s − δ_c·m − 2·k_e·m·P     m = PrP^C disponível (síntese contínua α, renovação δ_c, consumo pela conversão)
+dP/dt = k_f·M − δ_P·P               P = extremidades ativas (fragmentação cria, depuração remove)
+dM/dt = 2·k_e·m·P − δ_M·M           M = título de PrP^Sc (conversão menos depuração)
+dX/dt = k_t·M                       X = dano acumulado; 1º sintoma em X = 1, estágio avançado em X = 2,5</span>
+<p>Três escolhas fazem esse modelo descrever o príon melhor do que a versão simplificada que circula em material didático:</p>
 <ul>
-<li>O tempo de incubação escala aproximadamente com <b>o logaritmo da dose</b>, não com a dose. Por isso diluições enormes do inóculo apenas adiam o quadro, em vez de evitá-lo.</li>
-<li>O tempo depende do <b>nível de PrP<sup>C</sup> disponível</b>. Em modelos animais, reduzir a expressão da proteína normal prolonga muito a incubação, e eliminá-la impede a doença. É exatamente essa a lógica das terapias experimentais que tentam <b>baixar a produção da proteína normal</b>, com oligonucleotídeos antissenso, em vez de atacar o agregado.</li>
+<li><b>A PrP<sup>C</sup> não é um tanque que esvazia.</b> Ela é produzida continuamente e renovada em horas. Por isso entra como um <b>fluxo</b> (α·s), e não como um estoque finito. Sem isso, a curva termina por falta de substrato, o que não é o que acontece.</li>
+<li><b>Há depuração.</b> Com δ_M e δ_P, o título de PrP<sup>Sc</sup> <b>satura num platô</b>, em vez de crescer indefinidamente. Esse platô é observado experimentalmente.</li>
+<li><b>Propagação e toxicidade são separadas.</b> O dano X se acumula a partir do título, e não se confunde com ele. É por isso que o platô aparece anos antes do primeiro sintoma, como descreveram Sandberg e colegas em 2011: o título máximo é atingido cedo, e a doença clínica vem da fase tóxica que se segue.</li>
+</ul>
+<p>Duas consequências saem direto das equações, e ambas têm correspondência experimental:</p>
+<ul>
+<li>O tempo até o sintoma escala com <b>o logaritmo da dose</b>, não com a dose. Diluir o inóculo mil vezes adia o quadro, não o evita.</li>
+<li>Existe um <b>limiar de substrato</b>. Quando a PrP<sup>C</sup> cai abaixo do ponto em que 2·k_e·k_f·m supera δ_M·δ_P, a propagação simplesmente não se sustenta. Baixe o nível de PrP<sup>C</sup> no laboratório virtual e veja o gráfico parar. É o fundamento das terapias experimentais que reduzem a produção da proteína normal, em vez de atacar o agregado.</li>
 </ul>
 <p>No laboratório, o mesmo ciclo é usado a nosso favor: o <b>RT-QuIC</b> agita a amostra com PrP recombinante para forçar fragmentação e acelerar artificialmente um processo que no corpo levaria anos. É o assunto da seção 8.</p>
 </div></details>
@@ -447,8 +456,8 @@ Início clínico quando M ultrapassa o limiar de disfunção sináptica (aqui, 0
 <p>A deterioração é rápida e contínua. Em geral, a pessoa perde a fala, a coordenação e a capacidade de se mover, e passa a depender integralmente de cuidados. Não existe, hoje, tratamento capaz de deter o processo.</p></div>
 <figure>
 <div id="pBrain" class="plot"></div>
-<figcaption>Simulação esquemática da progressão. A carga de príon se espalha a partir de uma região inicial seguindo as conexões neuronais, e a intensidade da cor acompanha a quantidade acumulada em cada ponto. Use o controle de tempo no laboratório virtual.</figcaption>
-<div class="howto"><b>Como ler:</b> cada ponto é uma região do tecido. Azul é tecido preservado e vermelho é tecido com carga alta. Mude o "mês da doença" no laboratório virtual para ver o avanço. O modelo é didático: serve para mostrar o padrão de difusão, não para representar a anatomia real de um paciente.</div>
+<figcaption>Propagação por uma rede de regiões conectadas, e não por difusão no espaço. O avanço segue os caminhos da rede a partir dos focos iniciais, como ocorre na transmissão sináptica e axonal. O padrão de início muda conforme a forma clínica escolhida.</figcaption>
+<div class="howto"><b>Como ler:</b> cada esfera é uma região e as linhas são as conexões entre elas. Azul é tecido preservado, vermelho é carga alta, e o tamanho acompanha a carga. As regiões com borda escura são os focos iniciais. Mude o padrão de início e o mês no laboratório virtual. As posições são esquemáticas, não um atlas anatômico.</div>
 </figure>
 <figure>
 <svg viewBox="0 0 900 220" role="img" aria-label="Linha do tempo da doença priônica">
@@ -535,8 +544,8 @@ Início clínico quando M ultrapassa o limiar de disfunção sináptica (aqui, 0
 <p>Um corante que brilha ao se ligar nas fibras mostra o resultado: se a curva de brilho sobe, a amostra tinha semente. Quanto antes ela sobe, mais semente havia.</p></div>
 <figure>
 <div id="pQuic" class="plot"></div>
-<figcaption>Simulação de curvas de RT-QuIC. Cada fita é uma diluição diferente da amostra. Quanto menos semente, mais tempo leva para a curva subir. A amostra negativa permanece na linha de base durante todo o ensaio.</figcaption>
-<div class="howto"><b>Como ler:</b> o eixo do tempo são as horas de ensaio e a altura é o sinal de fluorescência. O ponto em que cada fita "decola" é o <b>tempo de latência</b>. Esse deslocamento ordenado é a assinatura de um resultado verdadeiro, e é também o que permite estimar a quantidade de semente.</div>
+<figcaption>Simulação de RT-QuIC com <b>quatro réplicas por diluição</b>, como se faz na bancada. Quanto menos semente, maior a latência e maior a dispersão entre réplicas. Perto do limite de detecção, parte das réplicas simplesmente não converte, e o resultado passa a ser lido pela proporção de positivas.</figcaption>
+<div class="howto"><b>Como ler:</b> o eixo do tempo são as horas de ensaio e a altura é o sinal de fluorescência. O ponto em que cada curva "decola" é o <b>tempo de latência</b>. O rótulo de cada diluição mostra quantas das quatro réplicas converteram. Réplicas que ficam na linha de base são negativas.</div>
 </figure>
 <div class="tw"><table>
 <thead><tr><th>Exame</th><th>O que mostra</th><th>Observação</th></tr></thead>
@@ -598,8 +607,9 @@ Início clínico quando M ultrapassa o limiar de disfunção sináptica (aqui, 0
 <p>3. <b>Combinar métodos.</b> O que funciona é juntar química agressiva e calor úmido, em vez de confiar em um só.</p></div>
 <figure>
 <div id="pDecon" class="plot"></div>
-<figcaption>Comparação esquemática da eficácia relativa dos métodos, na ordem apresentada pela OMS, do mais para o menos severo. A escala é qualitativa e serve para ordenar as opções, não para quantificar redução logarítmica.</figcaption>
-<div class="howto"><b>Como ler:</b> cada barra é um método. Quanto mais alta, maior a eficácia esperada. As barras em cinza são os métodos <b>ineficazes</b>, incluídos de propósito para mostrar o tamanho da diferença. Troque a carga de tecido no laboratório virtual para ver como material seco ou fixado derruba a eficácia de todos eles.</div>
+<figcaption>Os métodos na <b>ordem exata do Anexo III da OMS</b>, do mais para o menos severo. O eixo vertical é a posição nessa ordem, não uma medida de eficácia: a OMS ordena os métodos, mas não lhes atribui um valor numérico de redução. Em cinza, à direita, os métodos que ficam fora da lista por serem ineficazes ou apenas parcialmente eficazes.</figcaption>
+<div class="howto"><b>Como ler:</b> cada barra é um método e a altura é a <b>posição na ordem da OMS</b>: a primeira é a mais severa. Verde são os métodos recomendados, laranja os menos severos da lista e cinza os que estão fora dela. Troque o estado do material no laboratório virtual: a nota abaixo do gráfico muda conforme o que a OMS registra para tecido seco ou fixado.</div>
+<div id="deconNota"></div>
 </figure>
 <h3>Os métodos recomendados, do mais para o menos severo</h3>
 <p>A referência consolidada é o <b>Anexo III das diretrizes de controle de infecção da OMS para encefalopatias espongiformes transmissíveis</b> (documento WHO/CDS/CSR/APH/2000.3), adotado também pelo CDC. Os métodos estão listados <b>em ordem decrescente de eficácia</b>:</p>
@@ -965,23 +975,31 @@ Início clínico quando M ultrapassa o limiar de disfunção sináptica (aqui, 0
 <p>As informações sobre o diagnóstico e a evolução do caso de Lito Sousa vieram de reportagens da imprensa brasileira publicadas em agosto e outubro de 2026, que relatam comunicados da família. O subtipo da doença não foi divulgado publicamente e, por isso, não é afirmado neste artigo.</p>
 
 <h3>Método das simulações</h3>
-<div class="warn">As simulações desta página são <b>modelos didáticos</b>, com parâmetros escolhidos para reproduzir comportamentos qualitativos descritos na literatura: dependência logarítmica do tempo de incubação com a dose, efeito do nível de PrP<sup>C</sup>, deslocamento ordenado das curvas de RT-QuIC por diluição e ordenação relativa dos métodos de descontaminação. Elas <b>não</b> são dados experimentais, não representam um paciente e não devem ser usadas para decisão clínica ou para definição de protocolo.</div>
+<div class="warn">As simulações desta página usam os <b>modelos aceitos na literatura</b>, com constantes calibradas para reproduzir comportamentos descritos experimentalmente: dependência logarítmica do tempo de incubação com a dose, limiar de substrato de PrP<sup>C</sup>, saturação do título em platô antes da fase clínica, dispersão entre réplicas no RT-QuIC e propagação pelas conexões neuronais. As constantes <b>não</b> foram ajustadas a um conjunto de dados publicado, e as escalas de tempo são ilustrativas. Nenhum gráfico representa um paciente, e nenhum deles deve ser usado para decisão clínica ou para definição de protocolo. O gráfico de descontaminação exibe a <b>ordem</b> do Anexo III, e não uma medida de eficácia.</div>
 <details class="deep"><summary>Parâmetros e equações</summary><div class="body">
-<span class="eq">Cinética (nucleação e polimerização com fragmentação)
-  dP/dt = k_f · M ;  dM/dt = 2 · k_e · m · P ;  m = max(0, m₀ − M)
-  k_e = 0,9/mês × (nível de PrP^C) ;  k_f = 0,05/mês × (fator de fragmentação) ;  m₀ = 1
-  Semente inicial: 10⁻⁶ a 10⁻¹ ;  P₀ = semente/10
-  Limiar de sintoma: M = 0,25 ;  fase avançada: M = 0,60 ;  integração de Euler, dt = 0,02 mês
+<span class="eq">Cinética — nucleação e polimerização com síntese contínua, depuração e dano acumulado
+  dm/dt = α·s − δ_c·m − 2·k_e·m·P      dP/dt = k_f·M − δ_P·P
+  dM/dt = 2·k_e·m·P − δ_M·M            dX/dt = k_t·M
+  α = δ_c = 6,0/mês · k_e = 0,8 · k_f = 0,143 · δ_M = δ_P = 0,35 · k_t = 0,019
+  s = nível de PrP^C (0,3 a 1,6) · semente 10⁻⁶ a 10⁻¹ · P₀ = semente/10
+  1º sintoma em X = 1,0 · estágio avançado em X = 2,5 · Euler, dt = 0,04 mês
+  Título exibido em relação ao platô de referência (s = 1, fragmentação = 1)
 
-RT-QuIC (esquemático)
-  latência(h) = 4 + 2,6 × (−log₁₀ diluição) ;  sinal = máx / (1 + e^(−(t − latência)/1,6))
+RT-QuIC — quatro réplicas por diluição
+  latência = 4 + 2,6·d ± (0,5 + 0,45·d) h, d = expoente da diluição
+  probabilidade de conversão por réplica = 1/(1 + e^((d − 7,6)/0,75))
+  sinal = 100/(1 + e^(−(t − latência)/1,6)) · gerador pseudoaleatório com semente fixa
 
-Propagação (esquemática)
-  difusão em grade 3D a partir de um foco, com intensidade normalizada por tempo
+Propagação — rede de regiões conectadas
+  15 regiões, 29 conexões; distância de Dijkstra a partir dos focos da forma clínica escolhida
+  carga_i(t) = 100 · clamp((frente(t) − d_i)/0,55) · clamp(2,4·t), frente(t) = 2,6·t
+  As coordenadas são esquemáticas e não constituem atlas anatômico
 
-Descontaminação
-  escala qualitativa 0–10 construída a partir da ORDEM de eficácia do Anexo III da OMS,
-  com fator de penalização para tecido seco ou fixado. Não corresponde a redução logarítmica medida.</span>
+Descontaminação — ordem, não escala
+  O eixo vertical é a POSIÇÃO do método na ordem do Anexo III da OMS (1º a 7º).
+  Não há valor numérico de eficácia: a OMS ordena os métodos, mas não os quantifica.
+  Os métodos fora da lista aparecem em cinza. O estado do material altera apenas a nota
+  textual, reproduzindo o que o documento registra para tecido seco ou fixado.</span>
 </div></details>
 
 <h3>Como citar este artigo</h3>
@@ -1009,6 +1027,14 @@ Descontaminação
   <div class="row"><label for="seed">Tamanho da semente inicial: 10<sup><output id="seedo"></output></sup></label><input id="seed" type="range" min="-6" max="-1" step="0.1" value="-4"></div>
   <div class="row"><label for="prp">Nível de PrP<sup>C</sup> disponível: <output id="prpo"></output>×</label><input id="prp" type="range" min="0.3" max="1.6" step="0.05" value="1"></div>
   <div class="row"><label for="frag">Fator de fragmentação: <output id="frago"></output>×</label><input id="frag" type="range" min="0.3" max="2.5" step="0.05" value="1"></div>
+  <div class="row"><label for="forma">Padrão de início (mapa de propagação)</label>
+    <select id="forma">
+      <option value="cortical">DCJ esporádica, início cortical</option>
+      <option value="occipital">Variante de Heidenhain (visual)</option>
+      <option value="talamico">Início talâmico e cerebelar</option>
+      <option value="iff">Insônia familiar fatal</option>
+      <option value="vdcj">Variante da DCJ (pulvinar)</option>
+    </select></div>
   <div class="row"><label for="mes">Mês da doença (mapa de propagação): <output id="meso"></output></label><input id="mes" type="range" min="1" max="60" step="1" value="24"></div>
   <div class="row"><label for="carga">Estado do material (descontaminação)</label>
     <select id="carga">
@@ -1032,47 +1058,81 @@ function L3(title,xt,yt,zt){return{title:{text:title,font:{size:14}},paper_bgcol
   scene:{xaxis:ax(xt),yaxis:ax(yt),zaxis:ax(zt),camera:{eye:{x:1.6,y:-1.6,z:0.85}},aspectmode:'cube'}}}
 const CFG={responsive:true,displaylogo:false};
 const SCALE=[[0,'#12304a'],[0.35,'#2f6f9e'],[0.7,'#d87b48'],[1,'#f2c744']];
+/* gerador pseudoaleatório com semente fixa: o gráfico não muda a cada redesenho */
+function rng(seed){let a=seed>>>0;return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
 
 function state(){return{seed:Math.pow(10,+$('seed').value),prp:+$('prp').value,frag:+$('frag').value,
-  mes:+$('mes').value,carga:$('carga').value,dil:+$('dil').value}}
+  mes:+$('mes').value,carga:$('carga').value,dil:+$('dil').value,forma:$('forma').value}}
 
-/* ---------- cinética de nucleação e polimerização ---------- */
-function kinetics(seed,prp,frag,T=180,dt=0.02){
-  const ke=0.9*prp, kf=0.05*frag;
-  let M=seed,P=seed/10,t=0,onset=null,late=null;
-  const ts=[],Ms=[];
+/* ============ 1. Cinética: síntese contínua de PrPᶜ, depuração e dano acumulado ============ */
+const K={a:6.0,dc:6.0,ke:0.8,kf:0.143,dM:0.35,dP:0.35,kt:0.019,MREF:7.965,X1:1.0,X2:2.5};
+function kinetics(seed,prp,frag,T=360,dt=0.04){
+  let m=prp,P=seed/10,M=seed,X=0,t=0,Mmax=0,plateau=null,onset=null,late=null;
+  const ts=[],Ms=[],Xs=[];
   const n=Math.round(T/dt);
   for(let i=0;i<=n;i++){
-    if(i%25===0){ts.push(+t.toFixed(2));Ms.push(Math.min(1,M))}
-    const m=Math.max(0,1-M);
-    const dP=kf*M, dM=2*ke*m*P;
-    P+=dP*dt; M+=dM*dt; t+=dt;
-    if(onset===null&&M>0.25)onset=t;
-    if(late===null&&M>0.60)late=t;
+    if(i%10===0){ts.push(+(t/12).toFixed(3));Ms.push(M/K.MREF);Xs.push(X)}
+    const conv=2*K.ke*m*P;
+    m+=(K.a*prp-K.dc*m-conv)*dt;
+    P+=(K.kf*frag*M-K.dP*P)*dt;
+    M+=(conv-K.dM*M)*dt;
+    X+=K.kt*M*dt; t+=dt;
+    if(M>Mmax)Mmax=M;
+    if(plateau===null&&Mmax>0.05&&M>0.95*Mmax&&t>5)plateau=t;
+    if(onset===null&&X>K.X1)onset=t;
+    if(late===null&&X>K.X2)late=t;
   }
-  return{ts,Ms,onset,late};
+  return{ts,Ms,Xs,plateau,onset,late,Mmax,propaga:Mmax>0.02};
 }
 function drawKin(st){
   const seeds=[];for(let e=-6;e<=-1.001;e+=0.25)seeds.push(+e.toFixed(2));
   const base=kinetics(1e-4,st.prp,st.frag);
   const z=seeds.map(e=>kinetics(Math.pow(10,e),st.prp,st.frag).Ms.map(v=>v*100));
   const cur=kinetics(st.seed,st.prp,st.frag);
-  Plotly.react('pKin',[
-    {type:'surface',x:base.ts,y:seeds,z,colorscale:SCALE,showscale:false,opacity:.93,name:'carga de príon',
-     hovertemplate:'%{x:.0f} meses<br>semente 10^%{y}<br>%{z:.0f}% convertido<extra></extra>'},
+  const tr=[{type:'surface',x:base.ts,y:seeds,z,colorscale:SCALE,showscale:false,opacity:.93,name:'título de PrPˢᶜ',
+     hovertemplate:'%{x:.1f} anos<br>semente 10^%{y}<br>título %{z:.0f}% do platô de referência<extra></extra>'},
     {type:'scatter3d',mode:'lines',x:cur.ts,y:cur.ts.map(()=>Math.log10(st.seed)),z:cur.Ms.map(v=>v*100),
-     line:{color:css('--accent'),width:7},name:'cenário escolhido'}
-  ],L3('Carga de príon no tecido ao longo do tempo','Tempo (meses)','log₁₀ da semente','Convertido (%)'),CFG);
+     line:{color:css('--accent'),width:7},name:'cenário escolhido'}];
+  const lay=L3('Título de PrPˢᶜ no tecido ao longo do tempo','Tempo (anos)','log₁₀ da semente','Título (% do platô de referência)');
+  if(!cur.propaga)lay.scene.annotations=[{x:base.ts[Math.floor(base.ts.length/2)],y:Math.log10(st.seed),z:20,
+    text:'sem propagação sustentada',showarrow:false,font:{color:css('--good'),size:13}}];
+  Plotly.react('pKin',tr,lay,CFG);
   const card=(k,v,n,cls='')=>`<div class="card"><div class="k">${k}</div><div class="v ${cls}">${v}</div><div class="n">${n}</div></div>`;
-  const o=cur.onset,l=cur.late;
+  if(!cur.propaga){
+    $('kinCards').innerHTML=card('Propagação','interrompida','substrato abaixo do limiar','good')+
+      card('Título de PrPˢᶜ','≈ 0','a conversão não se sustenta','good')+
+      card('Doença','não ocorre','nestas condições','good')+
+      card('Leitura','é o fundamento','das terapias que reduzem a PrPᶜ');
+    return;
+  }
+  const y=v=>fmt(v/12,1)+' anos';
   $('kinCards').innerHTML=
-    card('Início dos sintomas',o?fmt(o/12,1)+' anos':'> 15 anos','a partir do evento inicial')+
-    card('Fase avançada',l?fmt(l/12,1)+' anos':'> 15 anos','carga acima de 60%')+
-    card('Fase clínica',(o&&l)?fmt(l-o,1)+' meses':'—','do 1º sintoma ao estágio avançado')+
-    card('Semente inicial','10<sup style="font-size:.6em">'+fmt(Math.log10(st.seed),1)+'</sup>','fração da reserva de PrPᶜ');
+    card('Platô do título',cur.plateau?y(cur.plateau):'—','a carga para de crescer')+
+    card('Início dos sintomas',cur.onset?y(cur.onset):'> 30 anos','quando o dano cruza o limiar')+
+    card('Intervalo silencioso',(cur.plateau&&cur.onset)?fmt((cur.onset-cur.plateau)/12,1)+' anos':'—','de platô atingido a 1º sintoma')+
+    card('Fase clínica',(cur.onset&&cur.late)?fmt(cur.late-cur.onset,0)+' meses':'—','do 1º sintoma ao estágio avançado');
+}
+/* duas fases: título satura cedo, dano continua */
+function drawPhases(st){
+  const c=kinetics(st.seed,st.prp,st.frag);
+  const tr=[
+    {type:'scatter3d',mode:'lines',x:c.ts,y:c.ts.map(()=>0),z:c.Ms.map(v=>v*100),
+     line:{color:'#2f8bbf',width:8},name:'Título de PrPˢᶜ (propagação)',
+     hovertemplate:'%{x:.1f} anos · título %{z:.0f}%<extra></extra>'},
+    {type:'scatter3d',mode:'lines',x:c.ts,y:c.ts.map(()=>1),z:c.Xs.map(v=>100*v/K.X2),
+     line:{color:'#b8432c',width:8},name:'Dano acumulado (toxicidade)',
+     hovertemplate:'%{x:.1f} anos · dano %{z:.0f}%<extra></extra>'}];
+  if(c.propaga&&c.plateau)tr.push({type:'scatter3d',mode:'lines',x:[c.plateau/12,c.plateau/12],y:[0,1],z:[0,100],
+    line:{color:css('--muted'),width:3,dash:'dot'},name:'platô do título'});
+  if(c.onset)tr.push({type:'scatter3d',mode:'lines',x:[c.onset/12,c.onset/12],y:[0,1],z:[0,100],
+    line:{color:css('--heat'),width:4},name:'1º sintoma'});
+  const lay=L3('Propagação e toxicidade são fases distintas','Tempo (anos)','','% da escala de cada curva');
+  lay.scene.yaxis.tickvals=[0,1];lay.scene.yaxis.ticktext=['título','dano'];
+  lay.scene.zaxis.range=[0,110];lay.scene.aspectratio={x:1.9,y:0.7,z:0.8};lay.scene.aspectmode='manual';
+  Plotly.react('pPhases',tr,lay,CFG);
 }
 
-/* ---------- conformações 3D ---------- */
+/* ============ 2. Conformações ============ */
 function helix(cx,cy,cz,turns,R,h,n,ang){
   const x=[],y=[],z=[];
   for(let i=0;i<=n;i++){const t=i/n*turns*2*Math.PI;
@@ -1093,12 +1153,11 @@ function drawFold(){
   for(let L=0;L<nL;L++){
     const zc=(L-(nL-1)/2)*0.62;
     for(let s=0;s<3;s++){
-      const y0=-1.5+s*1.5, x=[],y=[],z=[];
-      for(let i=0;i<=24;i++){const t=i/24;
-        x.push(3.2+(t-0.5)*3.4);y.push(y0+0.26*Math.sin(t*Math.PI*4));z.push(zc);}
+      const y0=-1.5+s*1.5,x=[],y=[],z=[];
+      for(let i=0;i<=24;i++){const t=i/24;x.push(3.2+(t-0.5)*3.4);y.push(y0+0.26*Math.sin(t*Math.PI*4));z.push(zc)}
       tr.push({type:'scatter3d',mode:'lines',x,y,z,line:{color:css('--sick'),width:9},
-        name:(L===0&&s===0)?'PrPˢᶜ · folhas beta':'',showlegend:(L===0&&s===0),
-        hovertemplate:'folha beta empilhada<extra></extra>'});
+        name:(L===0&&s===0)?'PrPˢᶜ · solenoide beta':'',showlegend:(L===0&&s===0),
+        hovertemplate:'folha beta empilhada em registro<extra></extra>'});
     }
   }
   const lay=L3('As duas conformações da mesma proteína','x (nm)','y (nm)','z (nm)');
@@ -1108,21 +1167,16 @@ function drawFold(){
   Plotly.react('pFold',tr,lay,CFG);
 }
 
-/* ---------- incubação por cenário ---------- */
-const INCUB=[
-  ['Kuru',4.5,40,'ritual fúnebre'],
-  ['DCJ iatrogênica (hormônio)',5,30,'procedimento médico antigo'],
-  ['DCJ iatrogênica (dura-máter)',1.5,25,'enxerto'],
-  ['Variante da DCJ',8,16,'exposição alimentar'],
-  ['EEB em bovinos',2.5,8,'ração contaminada'],
-  ['Scrapie em ovinos',1.5,5,'entre animais']
-];
+/* ============ 3. Incubação observada ============ */
+const INCUB=[['Kuru',4.5,40,'ritual fúnebre'],['DCJ iatrogênica (hormônio)',5,30,'procedimento médico antigo'],
+  ['DCJ iatrogênica (dura-máter)',1.5,25,'enxerto'],['Variante da DCJ',8,16,'exposição alimentar'],
+  ['EEB em bovinos',2.5,8,'ração contaminada'],['Scrapie em ovinos',1.5,5,'entre animais']];
 function drawIncub(){
   const cols=['#b8432c','#d87b48','#e0a33c','#6B57B8','#2f6f9e','#1a7f9c'];
-  const tr=INCUB.map((d,i)=>({type:'scatter3d',mode:'lines+markers',
-    x:[d[1],d[2]],y:[i,i],z:[1,1],line:{color:cols[i],width:16},marker:{size:5,color:cols[i]},
-    name:d[0],hovertemplate:d[0]+'<br>'+d[1]+' a '+d[2]+' anos<br>'+d[3]+'<extra></extra>'}));
-  const lay=L3('Faixas de incubação relatadas','Anos até o primeiro sintoma','','');
+  const tr=INCUB.map((d,i)=>({type:'scatter3d',mode:'lines+markers',x:[d[1],d[2]],y:[i,i],z:[1,1],
+    line:{color:cols[i],width:16},marker:{size:5,color:cols[i]},name:d[0],
+    hovertemplate:d[0]+'<br>'+d[1]+' a '+d[2]+' anos<br>'+d[3]+'<extra></extra>'}));
+  const lay=L3('Faixas de incubação relatadas na literatura','Anos até o primeiro sintoma','','');
   lay.scene.yaxis.tickvals=INCUB.map((_,i)=>i);
   lay.scene.yaxis.ticktext=INCUB.map(d=>d[0].length>22?d[0].slice(0,20)+'…':d[0]);
   lay.scene.zaxis.visible=false;lay.scene.aspectratio={x:1.6,y:1.1,z:0.5};lay.scene.aspectmode='manual';
@@ -1130,80 +1184,141 @@ function drawIncub(){
   Plotly.react('pIncub',tr,lay,CFG);
 }
 
-/* ---------- RT-QuIC ---------- */
+/* ============ 4. RT-QuIC com réplicas ============ */
 function drawQuic(st){
-  const ts=[];for(let t=0;t<=60;t+=0.5)ts.push(t);
-  const tr=[];const cols=['#b8432c','#d2663a','#e0a33c','#6B57B8','#3f7fb5','#2f6f9e'];
+  const ts=[];for(let t=0;t<=70;t+=0.5)ts.push(t);
+  const tr=[];const cols=['#b8432c','#d2663a','#e0a33c','#6B57B8','#3f7fb5','#2f6f9e','#1a7f9c'];
   const dils=[];for(let d=2;d<=st.dil;d++)dils.push(d);
+  const pos=[];
   dils.forEach((d,i)=>{
-    const lag=4+2.6*d;
-    tr.push({type:'scatter3d',mode:'lines',x:ts,y:ts.map(()=>i),
-      z:ts.map(t=>100/(1+Math.exp(-(t-lag)/1.6))),
-      line:{color:cols[i%cols.length],width:7},name:'10⁻'+d,
-      hovertemplate:'diluição 10⁻'+d+'<br>%{x} h: %{z:.0f}%<extra></extra>'});
+    const r=rng(1000+d*7);
+    const base=4+2.6*d, sd=0.5+0.45*d;
+    const pconv=1/(1+Math.exp((d-7.6)/0.75));
+    let n=0;
+    for(let k=0;k<4;k++){
+      const converte=r()<pconv;
+      const lag=base+(r()*2-1)*sd;
+      if(converte)n++;
+      tr.push({type:'scatter3d',mode:'lines',x:ts,y:ts.map(()=>i+(k-1.5)*0.12),
+        z:ts.map(t=>converte?100/(1+Math.exp(-(t-lag)/1.6)):1.5+r()*0.6),
+        line:{color:cols[i%cols.length],width:3},opacity:converte?0.95:0.45,
+        name:'10⁻'+d,showlegend:k===0,legendgroup:'d'+d,
+        hovertemplate:'diluição 10⁻'+d+' · réplica '+(k+1)+'<br>%{x} h: %{z:.0f}%<extra></extra>'});
+    }
+    pos.push(n);
   });
-  tr.push({type:'scatter3d',mode:'lines',x:ts,y:ts.map(()=>dils.length),z:ts.map(()=>2+Math.random()*1.5),
-    line:{color:css('--muted'),width:6},name:'controle negativo',hovertemplate:'negativo<extra></extra>'});
-  const lay=L3('RT-QuIC: curvas por diluição da amostra','Tempo de ensaio (h)','','Sinal de fluorescência (%)');
+  const r2=rng(99);
+  for(let k=0;k<4;k++)tr.push({type:'scatter3d',mode:'lines',x:ts,y:ts.map(()=>dils.length+(k-1.5)*0.12),
+    z:ts.map(()=>1.5+r2()*0.6),line:{color:css('--muted'),width:3},opacity:.6,
+    name:'controle negativo',showlegend:k===0,legendgroup:'neg',hovertemplate:'negativo<extra></extra>'});
+  const lay=L3('RT-QuIC: 4 réplicas por diluição','Tempo de ensaio (h)','','Sinal de fluorescência (%)');
   lay.scene.yaxis.tickvals=dils.map((_,i)=>i).concat([dils.length]);
-  lay.scene.yaxis.ticktext=dils.map(d=>'10⁻'+d).concat(['negativo']);
+  lay.scene.yaxis.ticktext=dils.map((d,i)=>'10⁻'+d+'  ('+pos[i]+'/4)').concat(['negativo (0/4)']);
+  lay.scene.yaxis.tickfont={size:10};
   Plotly.react('pQuic',tr,lay,CFG);
 }
 
-/* ---------- propagação no tecido ---------- */
-function drawBrain(st){
-  const pts={x:[],y:[],z:[],c:[]};
-  const t=st.mes/60;
-  for(let i=0;i<1500;i++){
-    const u=Math.random()*2*Math.PI,v=Math.acos(2*Math.random()-1),r=Math.cbrt(Math.random());
-    let x=r*Math.sin(v)*Math.cos(u)*1.35,y=r*Math.sin(v)*Math.sin(u)*1.0,z=r*Math.cos(v)*0.85;
-    if(z<-0.1&&Math.abs(x)<0.25)z-=0.5;
-    const d=Math.hypot(x-(-0.75),y-0.1,z-(-0.15));
-    const front=t*2.9;
-    const load=clamp((front-d)/0.9,0,1)*clamp(t*2.2,0,1);
-    pts.x.push(x);pts.y.push(y);pts.z.push(z);pts.c.push(load*100);
+/* ============ 5. Propagação por rede neuroanatômica ============ */
+const NODES=[
+  ['Córtex frontal',0,1.10,0.35],['Córtex parietal',0,0.10,0.78],['Córtex occipital',0,-1.05,0.22],
+  ['Córtex temporal D',0.85,0.35,-0.22],['Córtex temporal E',-0.85,0.35,-0.22],
+  ['Hipocampo D',0.50,0.00,-0.32],['Hipocampo E',-0.50,0.00,-0.32],
+  ['Estriado D',0.45,0.45,0.06],['Estriado E',-0.45,0.45,0.06],
+  ['Tálamo D',0.20,0.05,0.00],['Tálamo E',-0.20,0.05,0.00],
+  ['Pulvinar D',0.30,-0.28,0.00],['Pulvinar E',-0.30,-0.28,0.00],
+  ['Cerebelo',0,-0.95,-0.70],['Tronco encefálico',0,-0.20,-0.78]];
+const EDGES=[[0,1],[1,2],[0,7],[0,8],[7,9],[8,10],[9,10],[9,11],[10,12],[11,12],[11,2],[12,2],
+  [9,0],[10,0],[9,1],[10,1],[3,5],[4,6],[5,9],[6,10],[3,1],[4,1],[13,14],[14,9],[14,10],[13,9],[13,10],[3,0],[4,0]];
+const FORMAS={
+  cortical:{nome:'DCJ esporádica, início cortical',focos:[0,1]},
+  occipital:{nome:'Variante de Heidenhain (visual)',focos:[2]},
+  talamico:{nome:'Início talâmico e cerebelar',focos:[9,10,13]},
+  iff:{nome:'Insônia familiar fatal',focos:[9,10]},
+  vdcj:{nome:'Variante da DCJ (pulvinar)',focos:[11,12]}
+};
+function graphDist(focos){
+  const n=NODES.length,adj=Array.from({length:n},()=>[]);
+  EDGES.forEach(([a,b])=>{
+    const w=Math.hypot(NODES[a][1]-NODES[b][1],NODES[a][2]-NODES[b][2],NODES[a][3]-NODES[b][3]);
+    adj[a].push([b,w]);adj[b].push([a,w]);
+  });
+  const d=Array(n).fill(Infinity);focos.forEach(f=>d[f]=0);
+  const vis=Array(n).fill(false);
+  for(let it=0;it<n;it++){
+    let u=-1,best=Infinity;
+    for(let i=0;i<n;i++)if(!vis[i]&&d[i]<best){best=d[i];u=i}
+    if(u<0)break;vis[u]=true;
+    adj[u].forEach(([v,w])=>{if(d[u]+w<d[v])d[v]=d[u]+w});
   }
-  Plotly.react('pBrain',[{type:'scatter3d',mode:'markers',x:pts.x,y:pts.y,z:pts.z,
-    marker:{size:3.1,color:pts.c,colorscale:[[0,'#2f6f9e'],[0.5,'#d87b48'],[1,'#b8432c']],cmin:0,cmax:100,opacity:.75,
-      colorbar:{title:{text:'carga (%)',font:{size:11}},thickness:12,len:.6,tickfont:{size:10,color:css('--muted')}}},
-    hovertemplate:'carga local %{marker.color:.0f}%<extra></extra>',name:'tecido'}],
-    (()=>{const l=L3('Propagação no tecido · mês '+st.mes,'x','y','z');l.scene.aspectmode='data';l.showlegend=false;
-      l.scene.xaxis.visible=false;l.scene.yaxis.visible=false;l.scene.zaxis.visible=false;return l})(),CFG);
+  return d;
+}
+function drawBrain(st){
+  const f=FORMAS[st.forma]||FORMAS.cortical;
+  const d=graphDist(f.focos);
+  const t=st.mes/60;
+  const frente=t*2.6;
+  const carga=d.map(dist=>100*clamp((frente-dist)/0.55,0,1)*clamp(t*2.4,0,1));
+  const ex=[],ey=[],ez=[];
+  EDGES.forEach(([a,b])=>{ex.push(NODES[a][1],NODES[b][1],null);ey.push(NODES[a][2],NODES[b][2],null);ez.push(NODES[a][3],NODES[b][3],null)});
+  const tr=[
+    {type:'scatter3d',mode:'lines',x:ex,y:ey,z:ez,line:{color:css('--line'),width:3},
+     name:'conexões',hoverinfo:'skip'},
+    {type:'scatter3d',mode:'markers+text',x:NODES.map(n=>n[1]),y:NODES.map(n=>n[2]),z:NODES.map(n=>n[3]),
+     text:NODES.map((n,i)=>carga[i]>12?n[0]:''),textposition:'top center',textfont:{size:9,color:css('--muted')},
+     marker:{size:NODES.map((_,i)=>9+carga[i]*0.11),color:carga,
+       colorscale:[[0,'#2f6f9e'],[0.5,'#d87b48'],[1,'#b8432c']],cmin:0,cmax:100,
+       line:{width:NODES.map((_,i)=>f.focos.includes(i)?2.5:0),color:css('--ink')},
+       colorbar:{title:{text:'carga (%)',font:{size:11}},thickness:12,len:.6,tickfont:{size:10,color:css('--muted')}}},
+     customdata:NODES.map((n,i)=>[n[0],carga[i]]),
+     hovertemplate:'%{customdata[0]}<br>carga %{customdata[1]:.0f}%<extra></extra>',name:'regiões'}];
+  const lay=L3('Propagação pelas conexões · '+f.nome+' · mês '+st.mes,'','','');
+  lay.scene.aspectmode='data';lay.showlegend=false;
+  lay.scene.xaxis.visible=false;lay.scene.yaxis.visible=false;lay.scene.zaxis.visible=false;
+  Plotly.react('pBrain',tr,lay,CFG);
 }
 
-/* ---------- descontaminação ---------- */
+/* ============ 6. Descontaminação: ordem do Anexo III, sem escala numérica inventada ============ */
 const METODOS=[
-  ['Incineração',10.0,'ok'],
-  ['NaOH 1N + autoclave 121 °C/30 min',9.4,'ok'],
-  ['NaOH ou hipoclorito 1 h + autoclave 121 °C/1 h',9.1,'ok'],
-  ['Imersão 1 h + autoclave 121 °C ou 134 °C/1 h',8.7,'ok'],
-  ['NaOH + fervura 10 min',7.0,'ok'],
-  ['Hipoclorito ou NaOH 1 h, temperatura ambiente',6.2,'ok'],
-  ['Autoclave 134 °C/18 min (isolado)',5.0,'ok'],
-  ['Autoclave 121 °C/15 min (ciclo de rotina)',2.4,'ruim'],
-  ['Glutaraldeído',1.2,'ruim'],
-  ['Óxido de etileno',0.6,'ruim'],
-  ['Peróxido de hidrogênio / ácido peracético',0.6,'ruim'],
-  ['Álcool ou formol (fixa o agente)',0.2,'ruim']
-];
-const PENAL={umido:1.0,pouco:0.88,seco:0.72,fixado:0.55};
+  ['Incineração','1','rec'],
+  ['NaOH 1N + autoclave gravidade 121 °C / 30 min','2.1','rec'],
+  ['NaOH ou hipoclorito 1 h + autoclave 121 °C / 1 h','2.2','rec'],
+  ['Imersão 1 h + autoclave 121 °C ou 134 °C / 1 h','2.3','rec'],
+  ['NaOH + fervura 10 min','2.4','menos'],
+  ['Hipoclorito ou NaOH 1 h, temperatura ambiente','2.5','menos'],
+  ['Autoclave 134 °C / 18 min (isolado)','2.6','menos'],
+  ['Autoclave 121 °C / 15 min (ciclo de rotina)','—','fora'],
+  ['Glutaraldeído','—','fora'],
+  ['Óxido de etileno','—','fora'],
+  ['Peróxido de hidrogênio / ácido peracético','—','fora'],
+  ['Álcool ou formol (fixa o agente)','—','fora']];
+const CORES={rec:'#1d7d45',menos:'#d87b48',fora:'#9aa3ad'};
+const CARGA_TXT={umido:null,pouco:null,
+  seco:'Com tecido ressecado sobre a superfície, a OMS registra que o item 2.6 remove a infectividade em grande parte, mas não completamente.',
+  fixado:'Fixar com álcool, formol ou glutaraldeído estabiliza o agente: nenhum método da lista tem eficácia assegurada depois disso.'};
 function drawDecon(st){
-  const p=PENAL[st.carga];
+  const nList=METODOS.filter(m=>m[2]!=='fora').length;
   const tr=METODOS.map((m,i)=>{
-    const v=m[2]==='ok'?m[1]*p:m[1]*Math.min(1,p+0.1);
-    return{type:'scatter3d',mode:'lines',x:[i,i],y:[0,0],z:[0,v],
-      line:{color:m[2]==='ok'?(v>8?'#1d7d45':(v>5?'#d87b48':'#b8432c')):css('--muted'),width:22},
-      name:m[0],hovertemplate:m[0]+'<br>eficácia relativa %{z:.1f}/10<extra></extra>'};
+    const listado=m[2]!=='fora';
+    const z=listado?(nList-i):0.45;
+    const alerta=(st.carga==='seco'&&m[1]==='2.6')||(st.carga==='fixado'&&listado&&m[1]!=='1');
+    return{type:'scatter3d',mode:'lines',x:[i,i],y:[0,0],z:[0,z],
+      line:{color:alerta?'#b8432c':CORES[m[2]],width:22},name:m[0],
+      hovertemplate:m[0]+(listado?'<br>Anexo III, item '+m[1]+'<br>posição '+(i+1)+' de '+nList+' na ordem de severidade':'<br>fora da lista: ineficaz ou apenas parcialmente eficaz')+'<extra></extra>'};
   });
-  const lay=L3('Eficácia relativa dos métodos (escala qualitativa)','','','Eficácia relativa (0–10)');
+  const lay=L3('Ordem de severidade do Anexo III da OMS','','','Posição na ordem (mais severo no topo)');
   lay.scene.xaxis.tickvals=METODOS.map((_,i)=>i);
-  lay.scene.xaxis.ticktext=METODOS.map(m=>m[0].length>26?m[0].slice(0,24)+'…':m[0]);
+  lay.scene.xaxis.ticktext=METODOS.map((m,i)=>(m[2]!=='fora'?(i+1)+'º · ':'✕ ')+(m[0].length>30?m[0].slice(0,28)+'…':m[0]));
   lay.scene.xaxis.tickfont={size:9};
-  lay.scene.zaxis.range=[0,10.5];
-  lay.scene.aspectratio={x:2.0,y:0.5,z:0.9};lay.scene.aspectmode='manual';
+  lay.scene.zaxis.tickvals=[0,1,2,3,4,5,6,7];
+  lay.scene.zaxis.ticktext=['fora da lista','7º','6º','5º','4º','3º','2º','1º'];
+  lay.scene.zaxis.range=[0,7.6];
+  lay.scene.aspectratio={x:2.1,y:0.45,z:0.95};lay.scene.aspectmode='manual';
   lay.scene.camera={eye:{x:1.5,y:-2.0,z:0.9}};
   lay.showlegend=false;
   Plotly.react('pDecon',tr,lay,CFG);
+  const txt=CARGA_TXT[st.carga];
+  $('deconNota').innerHTML=txt?('<div class="warn" style="margin:10px 0 0"><b>Atenção:</b> '+txt+'</div>'):
+    '<p class="note" style="margin:10px 0 0">Material mantido úmido desde o uso: condição em que os métodos da lista foram descritos.</p>';
 }
 
 let tm;
@@ -1211,7 +1326,7 @@ function update(){
   const st=state();
   $('seedo').textContent=fmt(+$('seed').value,1);$('prpo').textContent=fmt(st.prp,2);
   $('frago').textContent=fmt(st.frag,2);$('meso').textContent=st.mes;$('dilo').textContent=st.dil;
-  clearTimeout(tm);tm=setTimeout(()=>{drawKin(st);drawQuic(st);drawBrain(st);drawDecon(st)},60);
+  clearTimeout(tm);tm=setTimeout(()=>{drawKin(st);drawPhases(st);drawQuic(st);drawBrain(st);drawDecon(st)},60);
 }
 function toggleLab(){const o=$('lab').classList.toggle('open');$('labBtn').setAttribute('aria-expanded',o);$('labBtn').textContent=o?'Fechar laboratório':'Laboratório virtual'}
 function openLab(){if(!$('lab').classList.contains('open'))toggleLab()}
