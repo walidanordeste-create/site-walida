@@ -365,7 +365,7 @@ svg text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 <span class="eq">PrP^C  --(ΔG‡ alto)-->  intermediário parcialmente desdobrado  -->  PrP^Sc (mais estável, agregado)
 O que reduz a barreira: mutação no PRNP · pH ácido do endossomo · metais · estresse oxidativo · uma semente já formada</span>
 <p>Por isso as três origens convergem: a mutação <b>abaixa a barreira</b>, a semente externa <b>contorna a barreira</b> (a conversão sobre um molde pronto é muito mais fácil que a nucleação do zero) e o caso esporádico é a barreira sendo vencida por acaso, uma vez em muitos anos, entre um número gigantesco de moléculas.</p>
-<p>Há ainda um detalhe relevante para a clínica: a conversão parece ocorrer preferencialmente em compartimentos <b>endolisossomais</b>, onde o pH ácido favorece o desdobramento parcial. É o mesmo tipo de ambiente que discutimos em outro artigo sobre nanopartículas, e mostra como o compartimento celular define o destino de uma molécula.</p>
+<p>Há ainda um detalhe relevante para a clínica: a conversão parece ocorrer preferencialmente em compartimentos <b>endolisossomais</b>, onde o pH ácido favorece o desdobramento parcial. É o mesmo tipo de ambiente tratado no artigo deste blog sobre <a href="blog-pontos-quanticos.html">nanopartículas</a>, e mostra como o compartimento celular define o destino de uma molécula.</p>
 </div></details>
 </section>
 
@@ -377,7 +377,8 @@ O que reduz a barreira: mutação no PRNP · pH ácido do endossomo · metais ·
 <p>O que acontece nesse silêncio é um processo de duas etapas que se repete:</p>
 <p>1. <b>A fibra cresce.</b> A ponta da fibra captura uma proteína sadia, dobra ela e a incorpora. A fibra fica um pouco mais longa.</p>
 <p>2. <b>A fibra quebra.</b> De vez em quando a fibra se parte. E aqui está o truque cruel: <b>onde havia uma ponta, agora há duas</b>. O número de "fábricas" dobra.</p>
-<p>Enquanto só existem poucas fibras, o crescimento é lento e invisível. Quando o número de pontas fica grande, o processo acelera de repente, e é aí que os sintomas aparecem. É o mesmo formato de curva de juros compostos: parece que nada acontece, até que tudo acontece ao mesmo tempo.</p></div>
+<p>Enquanto só existem poucas fibras, o crescimento é lento e invisível. Quando o número de pontas fica grande, o processo acelera de repente, como juros compostos: parece que nada acontece, até que tudo acontece ao mesmo tempo.</p>
+<p>Mas há uma segunda surpresa, e ela é menos conhecida. A quantidade de proteína alterada <b>para de crescer</b> em certo ponto, porque o organismo também remove parte dela. E os sintomas <b>não aparecem aí</b>: eles vêm depois, conforme o dano se acumula. É por isso que a carga máxima costuma ser atingida anos antes do primeiro sinal da doença.</p></div>
 <figure>
 <svg viewBox="0 0 900 250" role="img" aria-label="Ciclo de elongação e fragmentação da fibrila">
   <text x="450" y="26" text-anchor="middle" font-size="15" font-weight="700" class="s-ink">O ciclo que multiplica os príons</text>
@@ -420,12 +421,12 @@ O que reduz a barreira: mutação no PRNP · pH ácido do endossomo · metais ·
 <div class="howto"><b>Como ler:</b> as duas curvas estão normalizadas na própria escala, para serem comparadas no tempo. A linha pontilhada marca o platô do título e a laranja marca o primeiro sintoma. Reduza o nível de PrPᶜ no laboratório virtual e veja o processo parar.</div></figure>
 <div class="grid2">
 <figure><div id="pKin" class="plot"></div>
-<div class="howto"><b>Como ler:</b> a altura é a carga de príon no tecido. Para o lado, o tempo em meses. Para a frente, o tamanho da semente inicial, de quase nada até uma dose grande. Repare que <b>a curva não muda de formato</b>: ela só desliza no tempo. Uma dose mil vezes maior não causa uma doença mil vezes pior, apenas antecipa o início.</div></figure>
+<div class="howto"><b>Como ler:</b> a altura é o título de PrPˢᶜ no tecido, em relação ao platô de referência. Para o lado, o tempo em anos. Para a frente, o tamanho da semente inicial, de quase nada até uma dose grande. Repare que <b>a curva não muda de formato</b>: ela só desliza no tempo. Uma dose mil vezes maior não causa uma doença mil vezes pior, apenas antecipa o processo.</div></figure>
 <figure><div id="pIncub" class="plot"></div>
 <div class="howto"><b>Como ler:</b> cada fita é um cenário clínico. Mostra a faixa de incubação relatada na literatura, de meses a décadas, e por que a doença pode aparecer muitos anos depois da exposição.</div></figure>
 </div>
 <details class="deep"><summary>Aprofundando: o modelo de nucleação e polimerização</summary><div class="body">
-<p>O comportamento acima é descrito pelo modelo de <b>nucleação dependente de semente</b> com fragmentação. Em sua forma mínima:</p>
+<p>O comportamento acima é descrito pelo modelo de <b>nucleação dependente de semente</b> com fragmentação. A versão usada aqui acrescenta a renovação do substrato e a depuração do agregado:</p>
 <span class="eq">dm/dt = α·s − δ_c·m − 2·k_e·m·P     m = PrP^C disponível (síntese contínua α, renovação δ_c, consumo pela conversão)
 dP/dt = k_f·M − δ_P·P               P = extremidades ativas (fragmentação cria, depuração remove)
 dM/dt = 2·k_e·m·P − δ_M·M           M = título de PrP^Sc (conversão menos depuração)
@@ -449,7 +450,7 @@ dX/dt = k_t·M                       X = dano acumulado; 1º sintoma em X = 1, e
 <section id="s5">
 <h2><span class="num">5</span>O ciclo final: a fase clínica</h2>
 <div class="simple"><b class="t">Em palavras simples</b>
-<p>Quando a quantidade de proteína alterada ultrapassa certo ponto, o cérebro não consegue mais compensar. A partir daí, três coisas acontecem juntas:</p>
+<p>A carga de proteína alterada já parou de crescer há bastante tempo. O que muda agora é outra coisa: o <b>dano acumulado</b> chega ao ponto em que o cérebro não consegue mais compensar. A partir daí, três coisas acontecem juntas:</p>
 <p>• <b>As sinapses param de funcionar.</b> As conexões entre neurônios são as primeiras a falhar, antes mesmo de qualquer célula morrer. É por isso que os primeiros sintomas costumam ser sutis: esquecimento, desequilíbrio, alteração de humor, sensações estranhas.</p>
 <p>• <b>Os neurônios morrem.</b> O acúmulo e o estresse levam à morte celular, e as perdas são permanentes.</p>
 <p>• <b>O tecido fica esponjoso.</b> No lugar dos neurônios perdidos surgem microvacúolos. Ao microscópio, o cérebro parece uma esponja, e daí vem o nome da família: <b>encefalopatias espongiformes</b>.</p>
@@ -527,7 +528,7 @@ dX/dt = k_t·M                       X = dano acumulado; 1º sintoma em X = 1, e
 <p>O relato público da família descreve um começo discreto, com um formigamento no braço, e uma evolução muito rápida: <b>menos de dois meses entre o diagnóstico e a morte</b>. O diagnóstico foi apoiado em exame do líquido da espinha, o RT-QuIC, e em ressonância magnética compatível.</p>
 <p>A família não divulgou qual das formas da doença foi identificada. Como cerca de 85% dos casos são esporádicos, ou seja, sem causa conhecida, não é possível, nem correto, afirmar a origem no caso dele.</p></div>
 <div class="warn"><b>O que não se deve concluir a partir desse caso.</b> A forma esporádica <b>não</b> é hereditária, <b>não</b> vem de alimentação e <b>não</b> se transmite no convívio, no abraço, no mesmo ambiente ou pelo compartilhamento de utensílios. Não há qualquer risco para familiares, amigos ou profissionais que conviveram com o paciente em cuidado de rotina. A doença também não tem relação demonstrada com outras condições clínicas que a pessoa tenha tido antes.</div>
-<p>O caso teve um efeito colateral positivo: trouxe ao debate público uma doença que a maioria das pessoas nunca tinha ouvido falar, e com ela um tema que raramente sai dos corredores técnicos, que é <b>como se processa um instrumental cirúrgico quando existe suspeita de doença priônica</b>. É disso que tratam as próximas seções.</p>
+<p>O caso teve um efeito colateral positivo: trouxe ao debate público uma doença de que a maioria das pessoas nunca tinha ouvido falar, e com ela um tema que raramente sai dos corredores técnicos, que é <b>como se processa um instrumental cirúrgico quando existe suspeita de doença priônica</b>. É disso que tratam as próximas seções.</p>
 <details class="deep"><summary>Aprofundando: a doença no Brasil, em números</summary><div class="body">
 <p>A DCJ é de <b>notificação compulsória no Brasil desde 2005</b>, e o Ministério da Saúde mantém protocolo próprio de notificação e investigação, com atenção especial à identificação da variante. A vigilância fica a cargo da Secretaria de Vigilância em Saúde e Ambiente.</p>
 <p>As reportagens publicadas após o anúncio do diagnóstico citam números diferentes porque medem coisas diferentes: <b>notificações de casos suspeitos</b> (mais de mil ao longo de dezessete anos) e <b>casos confirmados</b> (centenas no mesmo período). Os dois números não devem ser comparados entre si. O ponto consistente é a ordem de grandeza: trata-se de uma doença <b>rara</b>, com incidência mundial em torno de um a dois casos por milhão de habitantes por ano.</p>
@@ -565,7 +566,7 @@ dX/dt = k_t·M                       X = dano acumulado; 1º sintoma em X = 1, e
 <h2><span class="num">9</span>Onde mora a infectividade</h2>
 <div class="simple"><b class="t">Em palavras simples</b>
 <p>Nem todo tecido do corpo carrega risco igual. A Organização Mundial da Saúde separa em três níveis, e <b>essa classificação é a base de toda decisão prática</b> de esterilização.</p>
-<p>O que importa reter: o risco está concentrado no <b>sistema nervoso central e no olho</b>. Sangue, saliva, urina, suor e pele não têm infectividade detectável, e é por isso que o paciente não precisa de isolamento, pode ficar em enfermaria comum e não exige cuidado especial com talheres, roupa de cama ou utensílios.</p></div>
+<p>O que importa reter: o risco está concentrado no <b>sistema nervoso central e no olho</b>. Sangue, saliva, urina, lágrima e suor não têm infectividade detectável, e é por isso que o paciente não precisa de isolamento, pode ficar em enfermaria comum e não exige cuidado especial com talheres, roupa de cama ou utensílios.</p></div>
 <figure>
 <svg viewBox="0 0 900 300" role="img" aria-label="Distribuição da infectividade no corpo">
   <g transform="translate(130,20)">
@@ -612,7 +613,7 @@ dX/dt = k_t·M                       X = dano acumulado; 1º sintoma em X = 1, e
 <div id="deconNota"></div>
 </figure>
 <h3>Os métodos recomendados, do mais para o menos severo</h3>
-<p>A referência consolidada é o <b>Anexo III das diretrizes de controle de infecção da OMS para encefalopatias espongiformes transmissíveis</b> (documento WHO/CDS/CSR/APH/2000.3), adotado também pelo CDC. Os métodos estão listados <b>em ordem decrescente de eficácia</b>:</p>
+<p>A referência consolidada é o <b>Anexo III das diretrizes de controle de infecção da OMS para encefalopatias espongiformes transmissíveis</b> (documento WHO/CDS/CSR/APH/2000.3), adotado também pelo CDC. Os métodos estão listados <b>em ordem decrescente de eficácia</b>, que o próprio anexo descreve como do tratamento mais severo para o menos severo:</p>
 <div class="tw"><table>
 <thead><tr><th>#</th><th>Método</th><th>Aplicação</th></tr></thead>
 <tbody>
@@ -902,7 +903,7 @@ dX/dt = k_t·M                       X = dano acumulado; 1º sintoma em X = 1, e
 <details><summary>Comer carne bovina no Brasil oferece risco?</summary><p>O Brasil é classificado pela OMSA como de risco insignificante para EEB, nunca teve um caso clássico e nunca teve um caso humano de variante da DCJ. A carne muscular está na categoria sem infectividade detectável, e o material de risco é retirado no abate.</p></details>
 <details><summary>Se a maioria dos casos é espontânea, dá para prevenir?</summary><p>Não existe prevenção para a forma esporádica, porque não há causa conhecida nem fator de risco estabelecido. O que se previne são as formas adquiridas, e é aí que atuam as regras de biossegurança, a vigilância veterinária e o controle de hemoderivados e enxertos.</p></details>
 <details><summary>Por que o ciclo de autoclave normal não resolve?</summary><p>Porque não há organismo para matar. A esterilização de rotina age sobre estruturas vivas; o príon é uma proteína já desnaturada numa conformação estável. O ciclo de 121 °C por 15 minutos aparece nas tabelas da OMS como apenas parcialmente eficaz contra esses agentes.</p></details>
-<details><summary>Plasma, peróxido de hidrogênio ou ácido peracético servem?</summary><p>Segundo a tabela da OMS, peróxido de hidrogênio e ácido peracético constam como ineficazes para esse fim específico, e óxido de etileno também. Isso não diminui o valor deles na rotina: significa apenas que não devem ser considerados suficientes quando a questão é príon.</p></details>
+<details><summary>Plasma, peróxido de hidrogênio ou ácido peracético servem?</summary><p>Segundo a tabela da OMS, peróxido de hidrogênio e ácido peracético constam como ineficazes para esse fim específico, e óxido de etileno também. Isso não diminui o valor deles na rotina: significa apenas que não devem ser considerados suficientes quando a questão é príon. Quanto aos sistemas de plasma de peróxido de hidrogênio, o documento da OMS é de 2000 e não os avalia separadamente: nesse caso valem a validação do fabricante para essa indicação específica e a decisão da CCIH.</p></details>
 <details><summary>Existe tratamento ou vacina?</summary><p>Não há tratamento capaz de deter a doença. As linhas de pesquisa mais promissoras tentam reduzir a produção da proteína normal, usando oligonucleotídeos antissenso, em vez de atacar o agregado já formado. Isso faz sentido à luz do modelo: sem substrato, a conversão não avança. São estudos em andamento, sem eficácia comprovada em pessoas.</p></details>
 <details><summary>Para onde vai o lixo gerado nesses casos?</summary><p>No Brasil esse resíduo é o <b>Subgrupo A5</b>, definido pela Resolução CONAMA nº 358/2005 e pela RDC ANVISA nº 222/2018. A destinação é a <b>incineração</b>, com acondicionamento em saco vermelho duplo e recipiente exclusivo identificado. Nenhum resíduo do Grupo A pode ser reciclado, reutilizado ou reaproveitado, inclusive para alimentação animal.</p></details>
 <details><summary>Quem cuida de um paciente corre risco?</summary><p>No cuidado de rotina, não. O risco ocupacional se concentra em exposição direta a tecido de alta infectividade: neurocirurgia, necropsia, manipulação de amostras de SNC em laboratório. Nesses contextos valem as precauções específicas descritas aqui.</p></details>
