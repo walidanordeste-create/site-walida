@@ -69,4 +69,12 @@
       <image:caption>Logo da empresa Walida — Qualificação Térmica e Validação</image:caption>
     </image:image>
   </url>
+  <url>
+    <loc>https://walidanordeste-create.github.io/site-walida/blog-prions.html</loc>
+    <image:image>
+      <image:loc>https://walidanordeste-create.github.io/site-walida/capa-prions.svg</image:loc>
+      <image:title>Príons: proteína sadia e proteína doente</image:title>
+      <image:caption>Ilustração das duas conformações da proteína priônica, PrP C e PrP Sc</image:caption>
+    </image:image>
+  </url>
 </urlset>
